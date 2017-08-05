@@ -46,7 +46,9 @@ FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_integer('batch_size', 32,
                             """Number of images to process in a batch.""")
-tf.app.flags.DEFINE_integer('image_size', 299,
+tf.app.flags.DEFINE_integer('image_height', 299,
+                            """Provide square images of this size.""")
+tf.app.flags.DEFINE_integer('image_width', 299,
                             """Provide square images of this size.""")
 tf.app.flags.DEFINE_integer('num_preprocess_threads', 4,
                             """Number of preprocessing threads per tower. """
@@ -86,8 +88,8 @@ def inputs(dataset, batch_size=None, num_preprocess_threads=None):
       None defaults to FLAGS.num_preprocess_threads.
 
   Returns:
-    images: Images. 4D tensor of size [batch_size, FLAGS.image_size,
-                                       image_size, 3].
+    images: Images. 4D tensor of size [batch_size, FLAGS.image_height,
+                                       FLAGS.image_width, 3].
     labels: 1-D integer Tensor of [FLAGS.batch_size].
   """
     if not batch_size:
@@ -120,8 +122,8 @@ def distorted_inputs(dataset, batch_size=None, num_preprocess_threads=None):
       None defaults to FLAGS.num_preprocess_threads.
 
   Returns:
-    images: Images. 4D tensor of size [batch_size, FLAGS.image_size,
-                                       FLAGS.image_size, 3].
+    images: Images. 4D tensor of size [batch_size, FLAGS.image_height,
+                                       FLAGS.image_width, 3].
     labels: 1-D integer Tensor of [batch_size].
   """
     if not batch_size:
@@ -265,10 +267,10 @@ def distort_image(image, height, width, bbox, thread_id=0, scope=None):
                              tf.expand_dims(distorted_image, 0))
 
         # Randomly flip the image horizontally.
-        distorted_image = tf.image.random_flip_left_right(distorted_image)
+        # distorted_image = tf.image.random_flip_left_right(distorted_image)
 
         # Randomly distort the colors.
-        distorted_image = distort_color(distorted_image, thread_id)
+        # distorted_image = distort_color(distorted_image, thread_id)
 
         if not thread_id:
             tf.summary.image('final_distorted_image',
@@ -293,11 +295,11 @@ def eval_image(image, height, width, scope=None):
         # the original image.
         image = tf.image.central_crop(image, central_fraction=0.875)
 
-        # Resize the image to the original height and width.
-        image = tf.expand_dims(image, 0)
+        # Resize the image to the expected height and width for the neural network
+        image = tf.expand_dims(image, 0)    # add an additional dimension so that it can be passed into resize_bilinear
         image = tf.image.resize_bilinear(image, [height, width],
                                          align_corners=False)
-        image = tf.squeeze(image, [0])
+        image = tf.squeeze(image, [0])  # removes the extra dimension we added earlier
         return image
 
 
@@ -322,8 +324,8 @@ def image_preprocessing(image_buffer, bbox, train, thread_id=0):
         raise ValueError('Please supply a bounding box.')
 
     image = decode_jpeg(image_buffer)
-    height = FLAGS.image_size
-    width = FLAGS.image_size
+    height = FLAGS.image_height
+    width = FLAGS.image_width
 
     if train:
         image = distort_image(image, height, width, bbox, thread_id)
@@ -500,8 +502,8 @@ def batch_inputs(dataset, batch_size, train, num_preprocess_threads=None,
             capacity=2 * num_preprocess_threads * batch_size)
 
         # Reshape images into these desired dimensions.
-        height = FLAGS.image_size
-        width = FLAGS.image_size
+        height = FLAGS.image_height
+        width = FLAGS.image_width
         depth = 3
 
         images = tf.cast(images, tf.float32)
