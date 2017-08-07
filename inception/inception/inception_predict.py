@@ -28,7 +28,7 @@ import tensorflow as tf
 
 from inception.inception import image_processing
 from inception.inception import inception_model as inception
-from inception.inception.cv_data import ShopeeData
+from inception.inception.cv_data import CVData
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -46,7 +46,7 @@ tf.app.flags.DEFINE_string('checkpoint_dir_image',
 tf.app.flags.DEFINE_string('subset', 'validation',
                            """Either 'validation' or 'train'.""")
 
-dataset = ShopeeData(subset=FLAGS.subset)
+dataset = CVData(subset=FLAGS.subset)
 
 
 def predict(image_path, checkpoint_path=None):

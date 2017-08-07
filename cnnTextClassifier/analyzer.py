@@ -4,7 +4,7 @@ from numpy import *
 import matplotlib.pyplot as plt
 from pylab import *
 from sklearn import metrics
-import data_helpers
+from cnnTextClassifier import data_helpers
 from tensorflow.contrib import learn
 import csv
 from sklearn import metrics
