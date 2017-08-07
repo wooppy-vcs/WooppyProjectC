@@ -9,7 +9,6 @@ import time
 import datetime
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, render_template, jsonify
 from werkzeug.utils import secure_filename
-
 from cnnTextClassifier import predictor
 from inception.inception import inception_predict as inception
 from PIL import Image
