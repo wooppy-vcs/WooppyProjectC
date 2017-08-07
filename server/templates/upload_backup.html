@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>CNN Product Categorizer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+
+        .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<title>Upload new File</title>
+
+<body>
+    <section id="banner">
+        <h1>Wooppy Category Inferrer V1.1</h1>
+        <p>Upload a file and/or header and we will categorize it!</p>
+    </section>
+    <section id="one" class="wrapper">
+        <div class="inner">
+            <form action="/upload" method=post enctype=multipart/form-data>
+                <p>
+                    <label class="custom-file-upload">
+                    <input type=file name=file/>
+                                        Choose File
+                    </label>
+                                    <br />
+                    <input type=submit value=Upload>
+                </p>
+            </form>
+        </div>
+    </section>
+    <section id="two" class="wrapper">
+        <div class="inner">
+            <form action="/submit" method=post>
+                <p>
+                    <input type=text name=text placeholder="Type header here:">
+                    <input type=submit value=Submit>
+                </p>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

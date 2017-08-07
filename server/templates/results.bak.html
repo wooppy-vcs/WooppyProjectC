@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>CNN Product Categorizer</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"/>
+    <style>
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<title>Upload new File</title>
+
+<body>
+<section id="banner">
+    <h1>Wooppy Category Inferrer V1.1</h1>
+    <p>Upload a file and/or header and we will categorize it!</p>
+</section>
+<section id="one" class="wrapper">
+    <div class="inner">
+        {% for result in result_json %}
+        <h3>Model: {{ result["model"] }}</h3>
+        <div class="flex flex-4">
+            <article>
+                <h2>1st Prediction:</h2>
+                <h1>Category:</h1>
+                <p>
+                    {{ result["data"]["1st Prediction"]["category"] }}
+                </p>
+                <h1>Probability:</h1>
+                <p>
+                    {{ result["data"]["1st Prediction"]["probability"] }}
+                </p>
+            </article>
+            <article>
+
+                <h2>2nd Prediction:</h2>
+                <h1>Category:</h1>
+                <p>
+                    {{ result["data"]["2nd Prediction"]["category"] }}
+                </p>
+                <h1>Probability:</h1>
+                <p>
+                    {{ result["data"]["2nd Prediction"]["probability"] }}
+                </p>
+            </article>
+
+            <article>
+
+                <h2>3rd Prediction:</h2>
+                <h1>Category:</h1>
+                <p>
+                    {{ result["data"]["3rd Prediction"]["category"] }}
+                </p>
+                <h1>Probability:</h1>
+                <p>
+                    {{ result["data"]["3rd Prediction"]["probability"] }}
+                </p>
+                            </article>
+
+                  <article>
+                <h1>All Probabilities:</h1>
+                <table>
+                  <tr>
+                    <th>Category</th>
+                    <th>Probability</th>
+                  </tr>
+                    {% for pair in result["data"]["All classes"] %}
+                    <tr>
+                    <td>{{ pair["category"] }}</td>
+                    <td>{{ pair["probability"] }}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </article>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+</body>
+
+</html>

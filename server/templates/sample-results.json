@@ -1,0 +1,66 @@
+[
+  "Overall",
+  {
+    "1st Prediction": "Screen Protectors        0.9506",
+    "2nd Prediction": "Mobile Phones            0.0402",
+    "3rd Prediction": "Cables & Charges         0.0401",
+    "All classes": [
+      "Screen Protectors        0.9506",
+      "Mobile Phones            0.0402",
+      "Cables & Charges         0.0401",
+      "Storage & Memory Cards   0.0399",
+      "Cases & Covers           0.0399",
+      "Camera & Accessories     0.0390",
+      "Audio                    0.0388",
+      "Powerbanks & Batteries   0.0382",
+      "Cool Gadgets             0.0371",
+      "Wearables                0.0366",
+      "Tablets                  0.0358",
+      "Others                   0.0350",
+      "Mobile Car Accessories   0.0337"
+    ]
+  },
+  "Text",
+  {
+    "1st Prediction": "Mobile Phones            0.0773",
+    "2nd Prediction": "Camera & Accessories     0.0765",
+    "3rd Prediction": "Audio                    0.0751",
+    "All classes": [
+      "Mobile Phones            0.0773",
+      "Camera & Accessories     0.0765",
+      "Audio                    0.0751",
+      "Storage & Memory Cards   0.0750",
+      "Cables & Charges         0.0738",
+      "Cases & Covers           0.0738",
+      "Powerbanks & Batteries   0.0720",
+      "Selfie Accessories       0.0704",
+      "Wearables                0.0704",
+      "Tablets                  0.0695",
+      "Others                   0.0689",
+      "Cool Gadgets             0.0689",
+      "Mobile Car Accessories   0.0647",
+      "Screen Protectors        0.0637"
+    ]
+  },
+  "Image",
+  {
+    "1st Prediction": "Screen Protectors        0.9506",
+    "2nd Prediction": "Cables & Charges         0.0064",
+    "3rd Prediction": "Cases & Covers           0.0060",
+    "All classes": [
+      "Screen Protectors        0.9506",
+      "Cables & Charges         0.0064",
+      "Cases & Covers           0.0060",
+      "Cool Gadgets             0.0052",
+      "Storage & Memory Cards   0.0048",
+      "Powerbanks & Batteries   0.0044",
+      "Mobile Phones            0.0032",
+      "Wearables                0.0029",
+      "Mobile Car Accessories   0.0027",
+      "Audio                    0.0024",
+      "Tablets                  0.0021",
+      "Camera & Accessories     0.0016",
+      "Others                   0.0012"
+    ]
+  }
+]
