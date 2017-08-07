@@ -5,11 +5,12 @@ import operator
 import collections
 import os
 import tensorflow as tf
-import cnnTextClassifier.eval as eval
 import time
 import datetime
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, render_template, jsonify
 from werkzeug.utils import secure_filename
+
+from cnnTextClassifier import predictor
 from inception.inception import inception_predict as inception
 from PIL import Image
 from tensorflow.python.platform import gfile
@@ -117,7 +118,7 @@ def infer_category():
 
         # TEXT
         if has_text:
-            prediction, probabilities = eval.predict(x_raw=text,
+            prediction, probabilities = predictor.predict(x_raw=text,
                                                      checkpoint_dir="models/text/cnn_text_bk_with04/checkpoints")
 
             idtoprobability_dict = collections.OrderedDict()
