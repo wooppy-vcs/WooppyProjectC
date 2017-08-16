@@ -1,0 +1,4 @@
+Install Tesseract - must be on path
+Install ImageMagick
+Install ImageMagick shared library urgh
+Install GhostScript - put on path (for Windows)

@@ -31,7 +31,7 @@
 
 <body>
 <section id="banner">
-    <h1>Wooppy Category Inferrer V1.1</h1>
+    <h1>Wooppy CV Inferrer V1.0</h1>
     <p>Upload a file and/or header and we will categorize it!</p>
 </section>
 <section id="one" class="wrapper">
@@ -43,28 +43,28 @@
                     <img class="image" id="image">
                 </div>
             </p>
-            <script>
-                document.getElementById("imagefile").onchange = function () {
-                    var reader = new FileReader();
+            <!--<script>-->
+                <!--document.getElementById("imagefile").onchange = function () {-->
+                    <!--var reader = new FileReader();-->
 
-                    reader.onload = function (e) {
-                    // get loaded data and render thumbnail.
-                        document.getElementById("image").style.visibility="visible";
-                        document.getElementById("image").src = e.target.result;
-                    };
+                    <!--reader.onload = function (e) {-->
+                    <!--// get loaded data and render thumbnail.-->
+                        <!--document.getElementById("image").style.visibility="visible";-->
+                        <!--document.getElementById("image").src = e.target.result;-->
+                    <!--};-->
 
-                    // read the image file as a data URL.
-                    try {
-                        reader.readAsDataURL(this.files[0]);
-                    } catch (err) {
-                        document.getElementById("image").style.visibility="hidden";
-                    }
-                };
+                    <!--// read the image file as a data URL.-->
+                    <!--try {-->
+                        <!--reader.readAsDataURL(this.files[0]);-->
+                    <!--} catch (err) {-->
+                        <!--document.getElementById("image").style.visibility="hidden";-->
+                    <!--}-->
+                <!--};-->
 
-            </script>
-            <p>
-                <input type=text name=text placeholder="Type header here" style="text-align:top;">
-            </p>
+            <!--</script>-->
+            <!--<p>-->
+                <!--<input type=text name=text placeholder="Type header here" style="text-align:top;">-->
+            <!--</p>-->
             <p>
                 <input type=submit value=Wooppy!>
                 <!--<input type=image src="/static/images/icon.png" alt="Wooppy!">-->
