@@ -3,9 +3,10 @@
 import tensorflow as tf
 import numpy as np
 import os
-from cnnTextClassifier import data_helpers
 from tensorflow.contrib import learn
-import yaml
+import argparse
+from cnnTextClassifier import data_helpers
+# import yaml
 
 
 def softmax(x):
@@ -16,10 +17,9 @@ def softmax(x):
     exp_x = np.exp(x - max_x)
     return exp_x / np.sum(exp_x, axis=1).reshape((-1, 1))
 
-
 def predict(x_raw, checkpoint_dir):
-    with open("config.yml", 'r') as ymlfile:
-        cfg = yaml.load(ymlfile)
+    # with open("config.yml", 'r') as ymlfile:
+    #     cfg = yaml.load(ymlfile)
 
     # Parameters
     # ==================================================
@@ -28,6 +28,9 @@ def predict(x_raw, checkpoint_dir):
 
     # Eval Parameters
     # tf.flags.DEFINE_string("checkpoint_dir", "", "Checkpoint directory from training run")
+    # if "checkpoint_dir" not in tf.flags:
+    tf.app.flags.FLAGS = tf.flags._FlagValues()
+    tf.flags._global_parser = argparse.ArgumentParser()
     tf.flags.DEFINE_string("checkpoint_dir", checkpoint_dir, "Checkpoint directory from training run")
     # Misc Parameters
     tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
@@ -35,21 +38,22 @@ def predict(x_raw, checkpoint_dir):
 
     FLAGS = tf.flags.FLAGS
     FLAGS._parse_flags()
-    print("\nParameters:")
-    for attr, value in sorted(FLAGS.__flags.items()):
-        print("{}={}".format(attr.upper(), value))
-    print("")
+    # print("\nParameters:")
+    # for attr, value in sorted(FLAGS.__flags.items()):
+    #     print("{}={}".format(attr.upper(), value))
+    # print("")
 
     # Map data into vocabulary
     vocab_path = os.path.join(FLAGS.checkpoint_dir, "..", "vocab")
     vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
     x_raw = [data_helpers.clean_str(x_raw)]
     x_test = np.array(list(vocab_processor.transform(x_raw)))
-    print("\nEvaluating...\n")
+    # print(x_test)
+    # print("\nEvaluating...\n")
 
     # Evaluation
     # ==================================================
-    print(FLAGS.checkpoint_dir)
+    # print(FLAGS.checkpoint_dir)
     checkpoint_file = tf.train.latest_checkpoint(FLAGS.checkpoint_dir)
     graph = tf.Graph()
     with graph.as_default():

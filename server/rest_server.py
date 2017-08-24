@@ -119,7 +119,7 @@ def infer_category():
         # TEXT
         if has_text:
             prediction, probabilities = predictor.predict(x_raw=text,
-                                                     checkpoint_dir="models/text/cnn_text_bk_with04/checkpoints")
+                                                     checkpoint_dir="D:/Projects/WooppyProjectC/cnnTextClassifier/runs/1500262295/checkpoints")
 
             idtoprobability_dict = collections.OrderedDict()
             classtoprobability_dict = collections.OrderedDict()

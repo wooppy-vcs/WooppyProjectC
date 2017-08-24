@@ -67,6 +67,9 @@ if FLAGS.eval_train:
                                                          categories=cfg["datasets"][dataset_name]["categories"],
                                                          shuffle=cfg["datasets"][dataset_name]["shuffle"],
                                                          random_state=cfg["datasets"][dataset_name]["random_state"])
+    elif dataset_name == "localdata":
+        datasets = data_helpers.get_datasets_localdata(container_path=cfg["datasets"][dataset_name]["test_data_file"]["path"])
+
     elif dataset_name == "localdatasingledata":
         datasets = data_helpers.get_datasets_localdatasinglefile(data_file=cfg["datasets"][dataset_name]["test_data_file"]["path"],
                                                                  categories=cfg["datasets"][dataset_name]["categories"])
