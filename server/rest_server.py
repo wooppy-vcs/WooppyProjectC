@@ -7,13 +7,17 @@ import os
 import tensorflow as tf
 import time
 import datetime
+import magic
+
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, render_template, jsonify
 from werkzeug.utils import secure_filename
-
 from cnnTextClassifier import predictor
 from inception.inception import inception_predict as inception
 from PIL import Image
 from tensorflow.python.platform import gfile
+from pdf_manipulator import pdf_to_text
+from pdf_manipulator import wand_pdf_to_image
+from pdf_manipulator import image_to_text
 
 IMAGE_UPLOAD_FOLDER = os.path.join('uploads', 'image_files')
 TEXT_UPLOAD_FOLDER = os.path.join('uploads', 'texts')
@@ -88,80 +92,93 @@ def infer_category():
     has_image = True
 
     if request.method == 'POST':
-        if 'text' not in request.form:
-            has_text = False
-            flash('No file part')
-            # return redirect(request.url)
-        text = request.form['text']
-
-        if text.strip() == '':
-            has_text = False
-            flash('No text detected')
-            # return redirect(request.url)
 
         if 'file' not in request.files:
-            has_image = False
-            flash('No file part')
-            # return redirect(request.url)
+            flash('No file detected. Please upload a file!')
+            return redirect(request.url)
 
         file = request.files['file']
-        # if user does not select file, browser also
-        # submit a empty part without filename
+        # mime = magic.Magic(mime=True)
+        # print(file.content_type)
+        if file.content_type != 'application/pdf':
+            flash('File uploaded is not a PDF document. Please upload file in PDF format!')
+            return redirect(request.url)
+
         if file.filename == '':
-            has_image = False
-            flash('No selected file')
-            # return redirect(request.url)
+            flash('No selected file. Found empty filename.')
+            return redirect(request.url)
+
+        folder_id = time.strftime("%Y%m%dT%H%M%S")
+        pdf_save_path = os.path.join('uploads', folder_id, 'pdf')
+        try_make_dir(pdf_save_path)
+        pdf_path = os.path.join(pdf_save_path, folder_id + ".pdf")
+        file.save(pdf_path)
+
+        # Try to extract text. Removes trailing whitespaces
+        extracted_text = pdf_to_text.extract_text(files=[pdf_path]).strip()
+
+        # print(extracted_text)
+        # Try to convert pdf to image
+        image_save_path = os.path.join('uploads', folder_id, 'image')
+        try_make_dir(image_save_path)
+        num_pages = wand_pdf_to_image.save_as_image(file=pdf_path, destination=image_save_path)
+
+        # If no text found
+        if not extracted_text:
+            # Run OCR SHIT
+            extracted_text = ""
+            for page in range(num_pages):
+                extracted_text = extracted_text + image_to_text.extract_text_from_image(filepath=os.path.join(image_save_path, str(page) + '.png')) + "\n"
+
+                # print(extracted_text)
+
+        prediction, probabilities = predictor.predict(x_raw=extracted_text,
+                                                      checkpoint_dir="models/text/cnn_text_bk_with04/checkpoints")
+
+        idtoprobability_dict = collections.OrderedDict()
+        classtoprobability_dict = collections.OrderedDict()
+        for idx, probability in enumerate(probabilities[0:14]):
+            idtoprobability_dict[int(idx)] = float(probability)
+            classtoprobability_dict[classification_dict[int(idx)]] = float(probability)
+
+        sorted_idtoprobability = sorted(idtoprobability_dict.items(), key=operator.itemgetter(1), reverse=True)
+        sorted_classtoprobability = sorted(classtoprobability_dict.items(), key=operator.itemgetter(1),
+                                           reverse=True)
+
+        beautified_text = []
+
+        for x in sorted_classtoprobability:
+            beautified_text.append(format_category_and_confidence(x[0], x[1]))
+
+        text_json = {"1st Prediction": format_category_and_confidence(
+            classification_dict[sorted_idtoprobability[0][0]], sorted_idtoprobability[0][1]),
+            "2nd Prediction": format_category_and_confidence(
+                classification_dict[sorted_idtoprobability[1][0]], sorted_idtoprobability[1][1]),
+            "3rd Prediction": format_category_and_confidence(
+                classification_dict[sorted_idtoprobability[2][0]], sorted_idtoprobability[2][1]),
+            "All classes": beautified_text}
+        #
+        # with open(os.path.join(app.config['TEXT_UPLOAD_FOLDER'], 'textlog_short.txt'), 'a') as logfileshort:
+        #     logfileshort.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
+        #     logfileshort.write('Input: ' + text + '\n')
+        #     logfileshort.write(classification_dict[sorted_idtoprobability[0][0]].ljust(25) + str("%.4f" % sorted_idtoprobability[0][1]) + '\n')
+        #     logfileshort.write(classification_dict[sorted_idtoprobability[1][0]].ljust(25) + str("%.4f" % sorted_idtoprobability[1][1]) + '\n')
+        #     logfileshort.write(classification_dict[sorted_idtoprobability[2][0]].ljust(25) + str("%.4f" % sorted_idtoprobability[2][1]) + '\n\n')
+        #
+        #     logfileshort.close()
+        #
+        # with open(os.path.join(app.config['TEXT_UPLOAD_FOLDER'], 'textlog_long.txt'), 'a') as logfilelong:
+        #     logfilelong.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
+        #     logfilelong.write('Input: ' + text + '\n')
+        #     for x in sorted_classtoprobability:
+        #         logfilelong.write(x[0].ljust(25) + str("%.8f" % x[1]) + '\n')
+        #     logfilelong.write('\n')
+        #
+        #     logfilelong.close()
 
         if not has_image and not has_text:
             flash('No file or text detected. At least one must be present!')
             return redirect(request.url)
-
-        # TEXT
-        if has_text:
-            prediction, probabilities = predictor.predict(x_raw=text,
-                                                     checkpoint_dir="D:/Projects/WooppyProjectC/cnnTextClassifier/runs/1500262295/checkpoints")
-
-            idtoprobability_dict = collections.OrderedDict()
-            classtoprobability_dict = collections.OrderedDict()
-            for idx, probability in enumerate(probabilities[0:14]):
-                idtoprobability_dict[int(idx)] = float(probability)
-                classtoprobability_dict[classification_dict[int(idx)]] = float(probability)
-
-            # THIS
-            sorted_idtoprobability = sorted(idtoprobability_dict.items(), key=operator.itemgetter(1), reverse=True)
-            sorted_classtoprobability = sorted(classtoprobability_dict.items(), key=operator.itemgetter(1),
-                                               reverse=True)
-
-            beautified_text = []
-
-            for x in sorted_classtoprobability:
-                beautified_text.append(format_category_and_confidence(x[0], x[1]))
-
-            text_json = {"1st Prediction": format_category_and_confidence(
-                classification_dict[sorted_idtoprobability[0][0]], sorted_idtoprobability[0][1]),
-                "2nd Prediction": format_category_and_confidence(
-                    classification_dict[sorted_idtoprobability[1][0]], sorted_idtoprobability[1][1]),
-                "3rd Prediction": format_category_and_confidence(
-                    classification_dict[sorted_idtoprobability[2][0]], sorted_idtoprobability[2][1]),
-                "All classes": beautified_text}
-            #
-            # with open(os.path.join(app.config['TEXT_UPLOAD_FOLDER'], 'textlog_short.txt'), 'a') as logfileshort:
-            #     logfileshort.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
-            #     logfileshort.write('Input: ' + text + '\n')
-            #     logfileshort.write(classification_dict[sorted_idtoprobability[0][0]].ljust(25) + str("%.4f" % sorted_idtoprobability[0][1]) + '\n')
-            #     logfileshort.write(classification_dict[sorted_idtoprobability[1][0]].ljust(25) + str("%.4f" % sorted_idtoprobability[1][1]) + '\n')
-            #     logfileshort.write(classification_dict[sorted_idtoprobability[2][0]].ljust(25) + str("%.4f" % sorted_idtoprobability[2][1]) + '\n\n')
-            #
-            #     logfileshort.close()
-            #
-            # with open(os.path.join(app.config['TEXT_UPLOAD_FOLDER'], 'textlog_long.txt'), 'a') as logfilelong:
-            #     logfilelong.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
-            #     logfilelong.write('Input: ' + text + '\n')
-            #     for x in sorted_classtoprobability:
-            #         logfilelong.write(x[0].ljust(25) + str("%.8f" % x[1]) + '\n')
-            #     logfilelong.write('\n')
-            #
-            #     logfilelong.close()
 
         # IMAGE
         if has_image:
@@ -286,7 +303,7 @@ def infer_category():
 
 
 if __name__ == '__main__':
-    try_make_dir(app.config['IMAGE_UPLOAD_FOLDER'])
+    # try_make_dir(app.config['IMAGE_UPLOAD_FOLDER'])
     # vggnet_b_classifier = tf.estimator.Estimator(
     #     model_fn=vggnet_b.vgg_net_b_dil,
     #     params=vggnet_b.DEFAULT_PARAMS,
