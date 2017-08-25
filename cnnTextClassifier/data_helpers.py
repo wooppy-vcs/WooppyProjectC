@@ -2,6 +2,9 @@ import json
 
 import numpy as np
 import re
+import collections
+
+from os import listdir
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.datasets import load_files
 
@@ -160,6 +163,53 @@ def get_datasets_localdatasinglefile(data_file,categories):
     return datasets
 
 
+def get_datasets_localdatacategorizedbyfilename(container_path=None, categories=None, categories_dict=None, load_content=True,
+                           encoding='utf-8', shuffle=True, random_state=42):
+    """
+    # Load text files categorized by filename.
+    :return: data and labels of the dataset
+    """
+    # Load data from files
+
+    target = []
+    target_names = []
+    target_names_dict = categories_dict
+    data = []
+
+    files = [f for f in sorted(listdir(container_path))]
+
+    for label, file in enumerate(files):
+        filename = file[:-4]
+
+        with open(container_path+"/"+file, 'r') as f:
+            alllines = f.readlines()
+            data_element = ""
+            data_count = 0
+            for count, currentline in enumerate(alllines):
+                if "|##|JDNUMBER_" in currentline or count == len(alllines)-1:
+                    if count != 0:
+                        data_count = data_count + 1
+                        # print(currentline + "\t" + str(data_count))
+                        # print(str(count) + "\t" + str(len(alllines)))
+                        target.append(target_names_dict[filename])
+                        data.append(data_element)
+                        data_element = ""
+                else:
+                    data_element = data_element + '\n' + currentline
+
+
+    target_names_dict = collections.OrderedDict(sorted(categories_dict.items()))
+
+    for k, v in target_names_dict.items():
+        target_names.append(target_names_dict[k])
+    print(target_names)
+
+    datasets = dict()
+    datasets['data'] = data
+    datasets['target'] = target
+    datasets['target_names'] = target_names
+    return datasets
+
 def load_data_labels(datasets):
     """
     Load data and labels
@@ -171,6 +221,9 @@ def load_data_labels(datasets):
     x_text = [clean_str(sent) for sent in x_text]
     # Generate labels
     labels = []
+    print(len(x_text))
+    print(len(datasets['target']))
+
     for i in range(len(x_text)):
         label = [0 for j in datasets['target_names']]
         label[datasets['target'][i]] = 1

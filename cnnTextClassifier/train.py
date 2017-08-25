@@ -38,11 +38,12 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 # tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 # tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 # tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
-tf.flags.DEFINE_integer("batch_size", 4, "Batch Size (default: 64)")
+tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("num_epochs", 10, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
+
 
 
 # Misc Parameters
@@ -59,7 +60,7 @@ with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
 dataset_name = cfg["datasets"]["default"]
-print("TRAINING DATA PATH = " + cfg["datasets"][dataset_name]["data_file"]["path"])
+
 if FLAGS.enable_word_embeddings and cfg['word_embeddings']['default'] is not None:
     embedding_name = cfg['word_embeddings']['default']
     embedding_dimension = cfg['word_embeddings'][embedding_name]['dimension']
@@ -77,6 +78,7 @@ print("")
 print("Loading data...")
 print("")
 datasets = None
+print("dataset_name : " + dataset_name)
 if dataset_name == "mrpolarity":
     datasets = data_helpers.get_datasets_mrpolarity(cfg["datasets"][dataset_name]["positive_data_file"]["path"],
                                                     cfg["datasets"][dataset_name]["negative_data_file"]["path"])
@@ -94,10 +96,17 @@ elif dataset_name == "localdatasingledata":
     datasets = data_helpers.get_datasets_localdatasinglefile(data_file=cfg["datasets"][dataset_name]["data_file"]["path"],
                                                              categories=cfg["datasets"][dataset_name]["categories"])
 
+elif dataset_name == "localdatacategorizedbyfilename":
+    datasets = data_helpers.get_datasets_localdatacategorizedbyfilename(container_path=cfg["datasets"][dataset_name]["data_file"]["path"],
+                                                             categories_dict=cfg["datasets"][dataset_name]["categories_dict"])
+
 x_text, y = data_helpers.load_data_labels(datasets)
 
 # Build vocabulary
 max_document_length = max([len(x.split(" ")) for x in x_text])
+print("max_document_length" + str(max_document_length))
+
+# max_document_length = 200
 vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
 x = np.array(list(vocab_processor.fit_transform(x_text)))
 
@@ -255,7 +264,7 @@ with tf.Graph().as_default():
             print("{}: step {}, loss {:g}, acc {:g}".format(time_str, step, loss, accuracy))
             if writer:
                 writer.add_summary(summaries, step)
-
+        print(x_train)
         # Generate batches
         batches = data_helpers.batch_iter(
             list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)

@@ -17,7 +17,8 @@ word_embeddings:
 
 datasets:
   # Support currently 3 datasets: mrpolarity, 20newsgroup and localdata
-  default: localdatasingledata
+  default: localdatacategorizedbyfilename
+#  default: localdatasingledata
 #  default: localdata
 #  default: mrpolarity
 #  default: 20newsgroup
@@ -65,6 +66,7 @@ datasets:
 #      - category_4
     shuffle: True
     random_state: 42
+
   localdatasingledata:
     # Load single tab delimited text file.
     data_file:
@@ -98,181 +100,22 @@ datasets:
         -   Powerbanks & Batteries
         -   Camera & Accessories
         -   Selfie Accessories
-#        - Accessories_Belts
-#        - Accessories_Eyewear
-#        - Accessories_Hair Accessories
-#        - Accessories_Hats & Caps
-#        - Accessories_Jewellery
-#        - Accessories_More Accessories
-#        - Accessories_Others
-#        - Computers & Laptops_Components
-#        - Computers & Laptops_Computer Accessories
-#        - Computers & Laptops_Hard Drives & SSDs
-#        - Computers & Laptops_Laptops
-#        - Computers & Laptops_Network Components
-#        - Computers & Laptops_Others
-#        - Computers & Laptops_Printers & Projectors
-#        - Everything Else_Car Care & Parts
-#        - Everything Else_Electronic Cigarettes
-#        - Everything Else_Others
-#        - Everything Else_Pets
-#        - Everything Else_Religion & Beliefs
-#        - Food_Beverages
-#        - Food_Candy & Chocolate
-#        - Food_Instant & Packaged Food
-#        - Food_Others
-#        - Food_Snacks & Desserts
-#        - Health & Beauty_Bath & Body
-#        - Health & Beauty_Brushes & Beauty Tools
-#        - Health & Beauty_Eye Care
-#        - Health & Beauty_Eye Make Up
-#        - Health & Beauty_Face Make Up
-#        - Health & Beauty_Fragrances
-#        - Health & Beauty_Lips
-#        - Health & Beauty_Medical Supplies
-#        - Health & Beauty_Men's Grooming
-#        - Health & Beauty_Others
-#        - Health & Beauty_Pedicure & Manicure
-#        - Health & Beauty_Personal Care
-#        - Health & Beauty_Skincare
-#        - Health & Beauty_Supplements
-#        - Hobbies, Games & Collectibles_Consoles & Accessories
-#        - Hobbies, Games & Collectibles_Games & Collectibles
-#        - Hobbies, Games & Collectibles_Games for Consoles
-#        - Hobbies, Games & Collectibles_Media & Music
-#        - Hobbies, Games & Collectibles_Others
-#        - Home & Living_Bath & Bedding
-#        - Home & Living_Fabric & Materials
-#        - Home & Living_Furniture
-#        - Home & Living_Handmade
-#        - Home & Living_Home Decor
-#        - Home & Living_Home Improvement
-#        - Home & Living_Home Storage & Organization
-#        - Home & Living_Housekeeping & Supplies
-#        - Home & Living_Kitchen & Dining
-#        - Home & Living_Kitchen Storage
-#        - Home & Living_Others
-#        - Home & Living_Stationery
-#        - Home Appliances_Cooling & Heating
-#        - Home Appliances_Garment Care
-#        - Home Appliances_Home Entertainment
-#        - Home Appliances_Housekeeping & Improvement
-#        - Home Appliances_Kitchen Appliances
-#        - Home Appliances_Large Appliances
-#        - Home Appliances_Others
-#        - Home Appliances_Security & Surveillance
-#        - Men's Bags & Wallets_Laptop Bags
-#        - Men's Bags & Wallets_Luggage & Travel
-#        - Men's Bags & Wallets_Men's Backpacks
-#        - Men's Bags & Wallets_Men's Wallets
-#        - Men's Bags & Wallets_Messenger Bags
-#        - Men's Bags & Wallets_Others
-#        - Men's Bags & Wallets_Waist & Cross Body Bags
-#        - Men's Clothing_Innerwear
-#        - Men's Clothing_Men's Outerwear
-#        - Men's Clothing_Others
-#        - Men's Clothing_Pants
-#        - Men's Clothing_Polo Shirts
-#        - Men's Clothing_Shirts
-#        - Men's Clothing_Sports Wear
-#        - Men's Clothing_T-shirts & Singlets
-#        - Men's Shoes_Formal Shoes & Boots
-#        - Men's Shoes_Loafers & Slip-Ons
-#        - Men's Shoes_Others
-#        - Men's Shoes_Sandals & Flip Flops
-#        - Men's Shoes_Shoe Care & Accessories
-#        - Men's Shoes_Sneakers
-#        - Men's Shoes_Sports Shoes
-#        - Mobile & Gadgets_Audio
-#        - Mobile & Gadgets_Cables & Chargers
-#        - Mobile & Gadgets_Camera & Accessories
-#        - Mobile & Gadgets_Cases & Covers
-#        - Mobile & Gadgets_Cool Gadgets
-#        - Mobile & Gadgets_Mobile Car Accessories
-#        - Mobile & Gadgets_Mobile Phones
-#        - Mobile & Gadgets_Others
-#        - Mobile & Gadgets_Powerbanks & Batteries
-#        - Mobile & Gadgets_Screen Protectors
-#        - Mobile & Gadgets_Selfie Accessories
-#        - Mobile & Gadgets_Storage & Memory Cards
-#        - Mobile & Gadgets_Tablets
-#        - Mobile & Gadgets_Wearables
-#        - Muslim Wear_Batik & Songket
-#        - Muslim Wear_Blouse
-#        - Muslim Wear_Hijab
-#        - Muslim Wear_Muslimah Jubah
-#        - Muslim Wear_Muslimah Wear
-#        - Muslim Wear_Muslimin Wear
-#        - Muslim Wear_Others
-#        - Sports & Outdoor_Fitness Equipment
-#        - Sports & Outdoor_Others
-#        - Sports & Outdoor_Outdoor & Adventure
-#        - Sports & Outdoor_Sports Gear & Accessories
-#        - Tickets & Vouchers_Bill Payments
-#        - Tickets & Vouchers_Events & Travel Vouchers
-#        - Tickets & Vouchers_Mobile Reloads & Sim Cards
-#        - Tickets & Vouchers_Others
-#        - Tickets & Vouchers_Restaurant & Spa Vouchers
-#        - Tickets & Vouchers_Services
-#        - Tickets & Vouchers_Shopee & Retail Vouchers
-#        - Toys, Kids & Babies_Accessories
-#        - Toys, Kids & Babies_Baby Clothing
-#        - Toys, Kids & Babies_Baby Gear
-#        - Toys, Kids & Babies_Bath & Skincare
-#        - Toys, Kids & Babies_Diapers & Potties
-#        - Toys, Kids & Babies_Feeding & Nursing
-#        - Toys, Kids & Babies_Formula, Food & Supplements
-#        - Toys, Kids & Babies_Kids Fashion
-#        - Toys, Kids & Babies_Maternity Care
-#        - Toys, Kids & Babies_Nursery
-#        - Toys, Kids & Babies_Others
-#        - Toys, Kids & Babies_Toys & Education
-#        - Watches_Couple & Set Watches
-#        - Watches_Luxury
-#        - Watches_Men's Watches
-#        - Watches_Others
-#        - Watches_Sports
-#        - Watches_Watch Accessories
-#        - Watches_Women's Watches
-#        - Women's Bags & Purses_Clutches & Wristlets
-#        - Women's Bags & Purses_Handbags
-#        - Women's Bags & Purses_Laptop Bags
-#        - Women's Bags & Purses_Luggage & Travel
-#        - Women's Bags & Purses_Luxury Bags
-#        - Women's Bags & Purses_Others
-#        - Women's Bags & Purses_Purses & Pouches
-#        - Women's Bags & Purses_Shoulder Bags
-#        - Women's Bags & Purses_Sling Bags
-#        - Women's Bags & Purses_Tote Bags
-#        - Women's Bags & Purses_Women's Backpacks
-#        - Women's Clothing_Dresses
-#        - Women's Clothing_Lingerie & Nightwear
-#        - Women's Clothing_Maternity Wear
-#        - Women's Clothing_Others
-#        - Women's Clothing_Pants & Shorts
-#        - Women's Clothing_Playsuits & Jumpsuits
-#        - Women's Clothing_Set Wear
-#        - Women's Clothing_Skirts
-#        - Women's Clothing_Socks & Tights
-#        - Women's Clothing_Sports & Beachwear
-#        - Women's Clothing_Tops
-#        - Women's Clothing_Traditional Wear
-#        - Women's Clothing_Women's Outerwear
-#        - Women's Shoes_Boots
-#        - Women's Shoes_Flats
-#        - Women's Shoes_Heels
-#        - Women's Shoes_Loafers & Slip-Ons
-#        - Women's Shoes_Others
-#        - Women's Shoes_Sandals & Slippers
-#        - Women's Shoes_Shoe Care & Accessories
-#        - Women's Shoes_Sneakers
-#        - Women's Shoes_Sports Shoes
-
-
-
-
-
 
     shuffle: True
     random_state: 42
+
+
+  localdatacategorizedbyfilename:
+    data_file:
+      path: "data/CategorizedByFilename"
+    test_data_file:
+#      path: "data/Singlefile/alltestdata_20000_with04.txt"
+    container_path: "data/CategorizedByFilename"
+    categories_dict :
+      Category 1: 0
+      Category 2: 1
+
+    shuffle: True
+    random_state: 42
+
 

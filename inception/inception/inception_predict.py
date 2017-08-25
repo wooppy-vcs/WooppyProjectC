@@ -35,7 +35,9 @@ FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string('test_file_path', '',
                            """JPEG file to predict with graph""")
 tf.app.flags.DEFINE_string('checkpoint_dir_image',
-                           os.path.join('models',
+                           os.path.join('inception',
+                                        'inception',
+                                        'models',
                                         'image',
                                         '299x299x3',
                                         'inception',
@@ -58,8 +60,8 @@ def predict(image_path, checkpoint_path=None):
 
         # reshape into correct dimensions for graph
         image = tf.cast(image, tf.float32)
-        height = FLAGS.image_size
-        width = FLAGS.image_size
+        height = FLAGS.image_height
+        width = FLAGS.image_width
         depth = 3
         image = tf.reshape(image, shape=[-1, height, width, depth])
 

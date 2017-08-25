@@ -6,6 +6,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"/>
+    <script src="assets/js/Chart.js"></script>
     <style>
         .custom-file-upload {
             border: 1px solid #ccc;
@@ -68,6 +69,119 @@
                 </div>
     </div>
 </section>
+<section>
+
+<canvas id="myChart" width="800" height="400"></canvas>
+    <script>
+    <!--var result_json_js = [{"data": {"1st Prediction": {"category": "Mobile Phones", "probability": "0.0718"}, "2nd Prediction": {"category": "Others", "probability": "0.0717"}, "3rd Prediction": {"category": "Cables \u0026 Charges", "probability": "0.0716"}, "All classes": [{"category": "Mobile Phones", "probability": "0.0718"}, {"category": "Others", "probability": "0.0717"}, {"category": "Cables \u0026 Charges", "probability": "0.0716"}, {"category": "Cool Gadgets", "probability": "0.0716"}, {"category": "Audio", "probability": "0.0716"}, {"category": "Selfie Accessories", "probability": "0.0716"}, {"category": "Camera \u0026 Accessories", "probability": "0.0714"}, {"category": "Cases \u0026 Covers", "probability": "0.0714"}, {"category": "Wearables", "probability": "0.0714"}, {"category": "Storage \u0026 Memory Cards", "probability": "0.0714"}, {"category": "Mobile Car Accessories", "probability": "0.0714"}, {"category": "Screen Protectors", "probability": "0.0712"}, {"category": "Tablets", "probability": "0.0710"}, {"category": "Powerbanks \u0026 Batteries", "probability": "0.0709"}]}, "model": "Text"}];-->
+    var result_json_js = {{result_json| tojson}}
+    console.log(result_json_js[0]["data"]["All classes"]);
+    for (var i = 0; i < result_json_js.length; i++){
+        console.log(result_json_js[i]["model"]);
+        var probabilityList = [];
+        var labelList = [];
+        <!--for (pair in result_json_js[i]["data"]["All classes"]){-->
+        for (var j = 0; j < result_json_js[i]["data"]["All classes"].length; j++){
+            <!--probabilityList.push(parseFloat(pair["probability"]));-->
+            probabilityList.push(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));
+            labelList.push(result_json_js[i]["data"]["All classes"][j]["category"])
+            console.log(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));
+        }
+    }
+
+    var ctx = document.getElementById("myChart").getContext('2d');
+		var purple_orange_gradient = ctx.createLinearGradient(0, 0, 0, 600);
+      purple_orange_gradient.addColorStop(0, 'yellow');
+			<!-- purple_orange_gradient.addColorStop(0.25, 'cyan'); -->
+      <!-- purple_orange_gradient.addColorStop(0.5, 'green'); -->
+      <!-- purple_orange_gradient.addColorStop(0.75, 'yellow'); -->
+      purple_orange_gradient.addColorStop(1, 'red');
+
+    console.log("fsdfdsf");
+    for(x in probabilityList){
+    }
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+       			<!--labels : ["Others","Storage & Memory Cards", "Tablets", "Screen Protectors","Cool Gadgets","Cables & Charges","Mobile Phones","Cases & Covers","Mobile Car Accessories","Wearables","Audio","Powerbanks & Batteries","Camera & Accessories", "Selfie Accessories"],-->
+                labels : labelList,
+            datasets: [{
+                <!-- label: '# of Votes', -->
+
+                data: probabilityList,
+
+                <!-- backgroundColor : "rgba(255, 99, 132, 0.2)", -->
+                backgroundColor : purple_orange_gradient,
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive : false,
+            animation: {
+                duration:5000
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        autoSkip: false,
+                    		maxRotation: 90,
+                    		minRotation: 90
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Probability'
+     							 }
+                }],
+                xAxes: [{
+                    gridLines: {
+                    		display:false
+               		  },
+                    ticks: {
+                        beginAtZero:true,
+                        autoSkip: false,
+                    		maxRotation: 60,
+                    		minRotation: 60
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Categories'
+     							 }
+                }],
+            },
+            title: {
+                display: true,
+                text: 'Probabilities for result["model"]'
+            },
+            legend : {
+                display : false
+             }
+        }
+    });
+
+
+    </script>
+
+</section>
+
+
+
 </body>
 
 </html>
