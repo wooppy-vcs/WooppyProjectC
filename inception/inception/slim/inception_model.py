@@ -326,7 +326,8 @@ def inception_v3(inputs,
                                     restore=restore_logits)
                     # 1000
                     end_points['logits'] = logits
-                    end_points['predictions'] = tf.nn.softmax(logits, name='predictions')
+                    # end_points['predictions'] = tf.nn.softmax(logits, name='predictions')
+                    end_points['predictions'] = tf.nn.sigmoid(logits, name='predictions')
             return logits, end_points
 
 

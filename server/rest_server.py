@@ -7,13 +7,12 @@ import os
 import tensorflow as tf
 import time
 import datetime
-import magic
+import numpy as np
 
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, render_template, jsonify
 from werkzeug.utils import secure_filename
 from cnnTextClassifier import predictor
 from inception.inception import inception_predict as inception
-from PIL import Image
 from tensorflow.python.platform import gfile
 from pdf_manipulator import pdf_to_text
 from pdf_manipulator import wand_pdf_to_image
@@ -88,8 +87,6 @@ def uploaded_file(filename):
 
 @app.route('/infer', methods=['POST'])
 def infer_category():
-    has_text = True
-    has_image = True
 
     if request.method == 'POST':
 
@@ -108,6 +105,7 @@ def infer_category():
             flash('No selected file. Found empty filename.')
             return redirect(request.url)
 
+        # Saving each interaction into folders with time as unique id
         folder_id = time.strftime("%Y%m%dT%H%M%S")
         pdf_save_path = os.path.join('uploads', folder_id, 'pdf')
         try_make_dir(pdf_save_path)
@@ -116,12 +114,16 @@ def infer_category():
 
         # Try to extract text. Removes trailing whitespaces
         extracted_text = pdf_to_text.extract_text(files=[pdf_path]).strip()
-
         # print(extracted_text)
+
         # Try to convert pdf to image
         image_save_path = os.path.join('uploads', folder_id, 'image')
         try_make_dir(image_save_path)
-        num_pages = wand_pdf_to_image.save_as_image(file=pdf_path, destination=image_save_path)
+        num_pages, saved_image_path_list = wand_pdf_to_image.save_as_image(file=pdf_path, destination=image_save_path)
+
+        # Join all pages into one vertical image for image recognition
+        vertical_image_path = wand_pdf_to_image.make_vertical_image(saved_image_path_list=saved_image_path_list,
+                                                                    save_image_folder=image_save_path)
 
         # If no text found
         if not extracted_text:
@@ -129,9 +131,9 @@ def infer_category():
             extracted_text = ""
             for page in range(num_pages):
                 extracted_text = extracted_text + image_to_text.extract_text_from_image(filepath=os.path.join(image_save_path, str(page) + '.png')) + "\n"
-
                 # print(extracted_text)
 
+        # Run text classification
         prediction, probabilities = predictor.predict(x_raw=extracted_text,
                                                       checkpoint_dir="models/text/cnn_text_bk_with04/checkpoints")
 
@@ -176,126 +178,105 @@ def infer_category():
         #
         #     logfilelong.close()
 
-        if not has_image and not has_text:
-            flash('No file or text detected. At least one must be present!')
-            return redirect(request.url)
+        # Run image classification
 
-        # IMAGE
-        if has_image:
-            # filename = secure_filename(file.filename)
-            _, ext = os.path.splitext(file.filename)
-            filename = time.strftime("%Y%m%dT%H%M%S") + ext
+        logits, probs = inception.predict(vertical_image_path)
+        all_probabilities = probs[0][1:]
 
-            # saves file to ./uploads
-            save_path = os.path.join(app.config['IMAGE_UPLOAD_FOLDER'], 'original', filename)
-            file.save(save_path)
+        # for class_predictions in prediction:
+        #     predicted_class = int(class_predictions["classes"])
+        #     all_probabilities = list(class_predictions["probabilities"])
+        #     predicted_probability = float(all_probabilities[predicted_class])
+        #     # print(class_predictions["classes"])
+        #     # print(class_predictions["probabilities"])
+        #     break
 
-            # do stuff here with your file and
-            # then upload a json or whatever you want as response
-            logits, probs = inception.predict(save_path)
-            all_probabilities = probs[0][1:]
+        # Below code redirects to uploaded image
+        # return redirect(url_for('uploaded_file',
+        #                         filename=filename))
+        # all_classes_probabilities = {}
+        all_classes_probabilities = collections.OrderedDict()
 
-            # for class_predictions in prediction:
-            #     predicted_class = int(class_predictions["classes"])
-            #     all_probabilities = list(class_predictions["probabilities"])
-            #     predicted_probability = float(all_probabilities[predicted_class])
-            #     # print(class_predictions["classes"])
-            #     # print(class_predictions["probabilities"])
-            #     break
+        i = 0
+        for probabilities in all_probabilities:
+            all_classes_probabilities[classification_dict[i]] = float(probabilities)
+            i += 1
 
-            # Below code redirects to uploaded image
-            # return redirect(url_for('uploaded_file',
-            #                         filename=filename))
-            # all_classes_probabilities = {}
-            all_classes_probabilities = collections.OrderedDict()
+        sorted_all_classes_probabilities = sorted(all_classes_probabilities.items(), key=operator.itemgetter(1),
+                                                  reverse=True)
 
-            i = 0
-            for probabilities in all_probabilities:
-                all_classes_probabilities[classification_dict[i]] = float(probabilities)
-                i += 1
+        beautified_image = []
 
-            sorted_all_classes_probabilities = sorted(all_classes_probabilities.items(), key=operator.itemgetter(1),
-                                                      reverse=True)
+        for y in sorted_all_classes_probabilities:
+            beautified_image.append(format_category_and_confidence(y[0], y[1]))
 
-            beautified_image = []
+        # my_json = [{"predicted_class": classification_dict[predicted_class],
+        #             "probability": predicted_probability,
+        #             "all_probabilities": all_classes_probabilities}]
 
-            for y in sorted_all_classes_probabilities:
-                beautified_image.append(format_category_and_confidence(y[0], y[1]))
+        image_json = {"1st Prediction": format_category_and_confidence(
+            sorted_all_classes_probabilities[0][0], sorted_all_classes_probabilities[0][1]),
+            "2nd Prediction": format_category_and_confidence(
+                sorted_all_classes_probabilities[1][0], sorted_all_classes_probabilities[1][1]),
+            "3rd Prediction": format_category_and_confidence(
+                sorted_all_classes_probabilities[2][0], sorted_all_classes_probabilities[2][1]),
+            "All classes": beautified_image}
 
-            # my_json = [{"predicted_class": classification_dict[predicted_class],
-            #             "probability": predicted_probability,
-            #             "all_probabilities": all_classes_probabilities}]
-
-            image_json = {"1st Prediction": format_category_and_confidence(
-                sorted_all_classes_probabilities[0][0], sorted_all_classes_probabilities[0][1]),
-                "2nd Prediction": format_category_and_confidence(
-                    sorted_all_classes_probabilities[1][0], sorted_all_classes_probabilities[1][1]),
-                "3rd Prediction": format_category_and_confidence(
-                    sorted_all_classes_probabilities[2][0], sorted_all_classes_probabilities[2][1]),
-                "All classes": beautified_image}
-
-            # log the interaction
-            # with open(os.path.join(app.config['IMAGE_UPLOAD_FOLDER'], 'imagelog_short.txt'), 'a') as logfileshort:
-            #     logfileshort.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
-            #     logfileshort.write('Filename: ' + filename + '\n')
-            #     logfileshort.write(sorted_all_classes_probabilities[0][0].ljust(25) + str(
-            #         "%.4f" % sorted_all_classes_probabilities[0][1]) + '\n')
-            #     logfileshort.write(sorted_all_classes_probabilities[1][0].ljust(25) + str(
-            #         "%.4f" % sorted_all_classes_probabilities[1][1]) + '\n')
-            #     logfileshort.write(sorted_all_classes_probabilities[2][0].ljust(25) + str(
-            #         "%.4f" % sorted_all_classes_probabilities[2][1]) + '\n\n')
-            #
-            #     logfileshort.close()
-            #
-            # with open(os.path.join(app.config['IMAGE_UPLOAD_FOLDER'], 'imagelog_long.txt'), 'a') as logfilelong:
-            #     logfilelong.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
-            #     logfilelong.write('Filename: ' + filename + '\n')
-            #     for x in sorted_all_classes_probabilities:
-            #         logfilelong.write(x[0].ljust(25) + str("%.8f" % x[1]) + '\n')
-            #     logfilelong.write('\n')
-            #
-            #     logfilelong.close()
+        # log the interaction
+        # with open(os.path.join(app.config['IMAGE_UPLOAD_FOLDER'], 'imagelog_short.txt'), 'a') as logfileshort:
+        #     logfileshort.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
+        #     logfileshort.write('Filename: ' + filename + '\n')
+        #     logfileshort.write(sorted_all_classes_probabilities[0][0].ljust(25) + str(
+        #         "%.4f" % sorted_all_classes_probabilities[0][1]) + '\n')
+        #     logfileshort.write(sorted_all_classes_probabilities[1][0].ljust(25) + str(
+        #         "%.4f" % sorted_all_classes_probabilities[1][1]) + '\n')
+        #     logfileshort.write(sorted_all_classes_probabilities[2][0].ljust(25) + str(
+        #         "%.4f" % sorted_all_classes_probabilities[2][1]) + '\n\n')
+        #
+        #     logfileshort.close()
+        #
+        # with open(os.path.join(app.config['IMAGE_UPLOAD_FOLDER'], 'imagelog_long.txt'), 'a') as logfilelong:
+        #     logfilelong.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
+        #     logfilelong.write('Filename: ' + filename + '\n')
+        #     for x in sorted_all_classes_probabilities:
+        #         logfilelong.write(x[0].ljust(25) + str("%.8f" % x[1]) + '\n')
+        #     logfilelong.write('\n')
+        #
+        #     logfilelong.close()
 
         # LOGIC TO COMPARE RESULTS FROM IMAGE AND TEXT
-        if has_text and has_image:
+        mean_dict = collections.OrderedDict()
 
-            mean_dict = collections.OrderedDict()
+        threshold = 0.9
+        for key, value in all_classes_probabilities.items():
+            if value > threshold and classtoprobability_dict[key] > threshold:
+                mean_dict[key] = (value + classtoprobability_dict[key]) / 2
+            elif value > threshold:
+                mean_dict[key] = value
+            elif classtoprobability_dict[key] > threshold:
+                mean_dict[key] = classtoprobability_dict[key]
+            else:
+                mean_dict[key] = (value + classtoprobability_dict[key]) / 2
 
-            threshold = 0.9
-            for key, value in all_classes_probabilities.items():
-                if value > threshold and classtoprobability_dict[key] > threshold:
-                    mean_dict[key] = (value + classtoprobability_dict[key]) / 2
-                elif value > threshold:
-                    mean_dict[key] = value
-                elif classtoprobability_dict[key] > threshold:
-                    mean_dict[key] = classtoprobability_dict[key]
-                else:
-                    mean_dict[key] = (value + classtoprobability_dict[key]) / 2
+                # mean_dict[key] = (value + classtoprobability_dict[key]) / 2
 
-                    # mean_dict[key] = (value + classtoprobability_dict[key]) / 2
+        sorted_mean_dict = sorted(mean_dict.items(), key=operator.itemgetter(1), reverse=True)
 
-            sorted_mean_dict = sorted(mean_dict.items(), key=operator.itemgetter(1), reverse=True)
+        beautified_mean = []
 
-            beautified_mean = []
+        for z in sorted_mean_dict:
+            beautified_mean.append(format_category_and_confidence(z[0], z[1]))
 
-            for z in sorted_mean_dict:
-                beautified_mean.append(format_category_and_confidence(z[0], z[1]))
+        mean_json = {"1st Prediction": format_category_and_confidence(
+            sorted_mean_dict[0][0], sorted_mean_dict[0][1]),
+            "2nd Prediction": format_category_and_confidence(
+                sorted_mean_dict[1][0], sorted_mean_dict[1][1]),
+            "3rd Prediction": format_category_and_confidence(
+                sorted_mean_dict[2][0], sorted_mean_dict[2][1]),
+            "All classes": beautified_mean}
 
-            mean_json = {"1st Prediction": format_category_and_confidence(
-                sorted_mean_dict[0][0], sorted_mean_dict[0][1]),
-                "2nd Prediction": format_category_and_confidence(
-                    sorted_mean_dict[1][0], sorted_mean_dict[1][1]),
-                "3rd Prediction": format_category_and_confidence(
-                    sorted_mean_dict[2][0], sorted_mean_dict[2][1]),
-                "All classes": beautified_mean}
-
-            final_json = [{"model": "Overall", "data": mean_json}, {"model": "Text", "data": text_json},
-                          {"model": "Image", "data": image_json}]
-
-        elif has_text:
-            final_json = [{"model": "Text", "data": text_json}]
-        elif has_image:
-            final_json = [{"model": "Image", "data": image_json}]
+        final_json = [{"model": "Overall", "data": mean_json}, {"model": "Text", "data": text_json},
+                      {"model": "Image", "data": image_json}]
 
         return render_template(os.path.join('results.html'), result_json=final_json, original_string=text if has_text else None, file='uploads/'+filename if has_image else None)
 

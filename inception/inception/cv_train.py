@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from inception import inception_train
-from inception.cv_data import CVData
+from inception.inception import inception_train
+from inception.inception.cv_data import CVData
 
 FLAGS = tf.app.flags.FLAGS
 
