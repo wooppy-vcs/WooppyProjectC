@@ -112,8 +112,22 @@ datasets:
 #      path: "data/Singlefile/alltestdata_20000_with04.txt"
     container_path: "data/CategorizedByFilename"
     categories_dict :
-      Category 1: 0
-      Category 2: 1
+#      Category 1: 0
+#      Category 2: 1
+      AccountingFinance: 0
+      AdminHumanResources: 1
+      ArtsMediaCommunications: 2
+      BuildingConstruction: 3
+      ComputerInformationTechnology: 4
+      EducationTraining: 5
+      Engineering: 6
+      Healthcare: 7
+      HotelRestaurant: 8
+      Manufacturing: 9
+      Others: 10
+      SalesMarketing: 11
+      Sciences: 12
+      Services: 13
 
     shuffle: True
     random_state: 42

@@ -176,26 +176,32 @@ def get_datasets_localdatacategorizedbyfilename(container_path=None, categories=
     target_names_dict = categories_dict
     data = []
 
-    files = [f for f in sorted(listdir(container_path))]
+    folders = [f for f in sorted(listdir(container_path))]
+    print(folders)
+    for label, folder in enumerate(folders):
+        files = [f for f in sorted(listdir(container_path + "/" + folder))]
+        foldername = folder
+        # print(files)
+        # print(folder)
+        for sublabel, file in enumerate(files):
+            # filename = file[:-4]
 
-    for label, file in enumerate(files):
-        filename = file[:-4]
-
-        with open(container_path+"/"+file, 'r') as f:
-            alllines = f.readlines()
-            data_element = ""
-            data_count = 0
-            for count, currentline in enumerate(alllines):
-                if "|##|JDNUMBER_" in currentline or count == len(alllines)-1:
-                    if count != 0:
-                        data_count = data_count + 1
-                        # print(currentline + "\t" + str(data_count))
-                        # print(str(count) + "\t" + str(len(alllines)))
-                        target.append(target_names_dict[filename])
-                        data.append(data_element)
-                        data_element = ""
-                else:
-                    data_element = data_element + '\n' + currentline
+            with open(container_path+"/"+folder+"/"+file, 'r', encoding="utf8") as f:
+                print(container_path+"/"+folder+"/"+file)
+                alllines = f.readlines()
+                data_element = ""
+                data_count = 0
+                for count, currentline in enumerate(alllines):
+                    if "|##|JDNUMBER_" in currentline or count == len(alllines)-1:
+                        if count != 0:
+                            data_count = data_count + 1
+                            # print(currentline + "\t" + str(data_count))
+                            # print(str(count) + "\t" + str(len(alllines)))
+                            target.append(target_names_dict[foldername])
+                            data.append(data_element)
+                            data_element = ""
+                    else:
+                        data_element = data_element + '\n' + currentline
 
 
     target_names_dict = collections.OrderedDict(sorted(categories_dict.items()))
