@@ -373,7 +373,7 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets(data_file, vocab_tags_path, build_vocab = False, sentences = 0, tags = 1):
+def get_datasets_multiple_files(container_path, vocab_tags_path, build_vocab = False, sentences = 0, tags = 1):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -381,34 +381,88 @@ def get_datasets(data_file, vocab_tags_path, build_vocab = False, sentences = 0,
     :param random_state: seed integer to shuffle the dataset
     :return: data and labels of the dataset
     """
+
+    data = []
+    target_names = []
+
     # Load data from files
-    examples = list(open(data_file, "r", encoding="utf8").readlines())
-    examples = [s.split("\t") for s in examples]
+    files = [f for f in sorted(listdir(container_path))]
+    print("Folder List:" + str(f) for f in files)
+    for label, file in enumerate(files):
+        examples = list(open(container_path + "/" + file, 'r', encoding="utf8").readlines()[1:])
+        examples = [s.split("\t") for s in examples]
+        # a = [s[tags].strip() for s in examples]
+        for s in examples:
+            if s[6] == "0":
+                if s[8] == "English":
+                    data.extend([s[sentences].strip()])
+                    target_names.extend([s[tags].strip()])
 
     datasets = dict()
+    datasets['data'] = data
+    datasets['target'] = target_names
 
-    data = [s[sentences].strip() for s in examples]
-    target_names = [s[tags].strip() for s in examples]
-    # print(target_names)
+    return datasets
 
 
-    if(build_vocab):
+def get_datasets(data_path, vocab_tags_path, build_vocab = False, sentences = 0, tags = 1):
+    """
+    # Load single tab delimited text file.
+    :param container_path: The path of the container
+    :param shuffle: shuffle the list or not
+    :param random_state: seed integer to shuffle the dataset
+    :return: data and labels of the dataset
+    """
+
+    data = []
+    target_names = []
+    target = []
+
+    # Load data from files
+    examples = list(open(data_path, 'r', encoding="utf8").readlines())
+    examples = [s.split("\t") for s in examples]
+    data.append([s[sentences].strip() for s in examples])
+    target_names.append([s[tags].strip() for s in examples])
+
+    if build_vocab:
         vocab_tags = get_vocab_tags(target_names)
         write_vocab_tags(vocab_tags, vocab_tags_path)
 
     target_names_dict = load_vocab(vocab_tags_path)
 
-    target = []
-
-#changing tags' name to numbers
+# changing tags' name to numbers
     for s in target_names:
         target.append(int(target_names_dict[str(s)]))
 
+    datasets = dict()
     datasets['data'] = data
     datasets['target'] = target
     datasets['target_names'] = target_names_dict
 
     return datasets
+
+
+def write_data_to_file(sentences, tags, filename):
+    """
+    Writes data to a file
+
+    Args:
+        sentences: iterable that yields sentences
+        tags: iterable that yields tags
+        filename: path to data file
+    Returns:
+        write sentence tag pair per line
+    """
+    print("Writing data...")
+    with open(filename, "w", encoding="utf8") as f:
+        i=0
+        for sentence, tag in zip(sentences, tags):
+            if i != len(sentences) - 1:
+                f.write("{}\t{}\n".format(sentence, tag))
+            else:
+                f.write(sentence+"\t"+tag)
+            i+=1
+    print("- done. {} data".format(len(sentences)))
 
 
 # special error message

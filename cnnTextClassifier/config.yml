@@ -73,7 +73,7 @@ datasets:
     data_file:
 #      path: "data/Singlefile/alltrainingdata_25000_with04.txt"
 #      path: "data/Singlefile/alltrainingdata_25000_without04.txt"
-      path: "data/Test/test.txt"
+      path: "data/Project-A-R-Tagged-Data/test.txt"
 #      "data/Singlefile/alltrainingdata_80000_with04.txt"
 #      path: "data/Singlefile/alltrainingdata_80000_without04.txt"
 #      path: "data/Singlefile/all_training_800000.txt"
@@ -86,7 +86,7 @@ datasets:
 #      path: "data/Singlefile/alltestdata_4000_with04.txt"
 #      path: "data/Singlefile/alltestdata_4000_without04.txt"
       info: "Data source for data"
-    container_path: data/Test
+    container_path: data/Project-A-R-Tagged-Data
     categories:
         -   BillOutstanding
         -   None
@@ -106,17 +106,25 @@ datasets:
 
     shuffle: True
     random_state: 42
-
   localfile:
     data_file:
-      path: "data/Test/test.txt"
+      path: "data/Project-A-R/Training_data.txt"
       info: "Data source for data"
     test_data_file:
-      path: "data/Test/test.txt"
+      path: "data/Project-A-R/Test_data.txt"
       info: "Data source for data"
     vocab_write_path:
-      path: "data/tags_vocab.txt"
-    container_path: data/Test
+      path: "data/Project-A-R/tags_vocab.txt"
+    container_path: data/Project-A-R
+    shuffle: True
+    random_status: 42
+
+
+  datalocalfile:
+    data_folder:
+      path: "data/Project-A-R-Tagged-Data"
+      info: "Data source for data"
+    container_path: data/Project-A-R-Tagged-Data
     shuffle: True
     random_status: 42
 

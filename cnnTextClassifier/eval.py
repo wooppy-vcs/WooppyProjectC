@@ -79,7 +79,7 @@ if FLAGS.eval_train:
                                                                  categories=cfg["datasets"][dataset_name]["categories"])
     elif dataset_name == "localfile":
         datasets = data_helpers.get_datasets(
-            data_file=cfg["datasets"][dataset_name]["data_file"]["path"],
+            data_path=cfg["datasets"][dataset_name]["test_data_file"]["path"],
             vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
             sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 

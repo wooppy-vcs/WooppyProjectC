@@ -119,7 +119,7 @@ def main(args=None):
     else:
         outfp = open(A.outfile, "wb")
 
-    ## Test Code
+    ## Project-A-R-Tagged-Data Code
     outfp = extract_text(**vars(A))
     outfp.close()
     return 0
