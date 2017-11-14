@@ -16,7 +16,6 @@ with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
 datasets = data_helpers.get_datasets_multiple_files(container_path=cfg["datasets"]["datalocalfile"]["data_folder"]["path"],
-                                                    vocab_tags_path=None, build_vocab=False,
                                                     sentences=sentences_column, tags=tags_column)
 
 x_text, y = [datasets["data"], datasets["target"]]
