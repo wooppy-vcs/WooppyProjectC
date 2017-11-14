@@ -16,35 +16,37 @@ import yaml
 tf.flags.DEFINE_string("checkpoint_dir", "", "")
 # Data loading params
 tf.flags.DEFINE_float("dev_sample_percentage", .1, "Percentage of the training data to use for validation")
+tf.flags.DEFINE_integer("sentences_column", 0, "Column number of sentence data in data txt file")
+tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt file")
+
 
 # Model Hyperparameters
 tf.flags.DEFINE_boolean("enable_word_embeddings", True, "Enable/disable the word embedding (default: True)")
-# tf.flags.DEFINE_boolean("enable_word_embeddings", False, "Enable/disable the word embedding (default: True)")
-# tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
-# tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
-# tf.flags.DEFINE_integer("num_filters", 128, "Number of filters per filter size (default: 128)")
-# tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
-# tf.flags.DEFINE_float("l2_reg_lambda", 0.0, "L2 regularization lambda (default: 0.0)")
 tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
 tf.flags.DEFINE_integer("num_filters", 32, "Number of filters per filter size (default: 128)")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.0)")
 
+# tf.flags.DEFINE_boolean("enable_word_embeddings", False, "Enable/disable the word embedding (default: True)")
+# tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
+# tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
+# tf.flags.DEFINE_integer("num_filters", 128, "Number of filters per filter size (default: 128)")
+# tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
+# tf.flags.DEFINE_float("l2_reg_lambda", 0.0, "L2 regularization lambda (default: 0.0)")
 
 # Training parameters
-# tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-# tf.flags.DEFINE_integer("num_epochs", 200, "Number of training epochs (default: 200)")
-# tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
-# tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
-# tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 tf.flags.DEFINE_integer("batch_size", 16, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("num_epochs", 10, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 
-
+# tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
+# tf.flags.DEFINE_integer("num_epochs", 200, "Number of training epochs (default: 200)")
+# tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
+# tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
+# tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
@@ -70,15 +72,16 @@ else:
     print("{} = {}".format("WORD_EMBEDDINGS", "NONE"))
 
 print("{} = {}".format("EMBEDDING DIMENSION", str(embedding_dimension)))
-print("")
+print("=======================================================")
+
 # Data Preparation
 # ==================================================
 
 # Load data
 print("Loading data...")
-print("")
 datasets = None
 print("dataset_name : " + dataset_name)
+
 if dataset_name == "mrpolarity":
     datasets = data_helpers.get_datasets_mrpolarity(cfg["datasets"][dataset_name]["positive_data_file"]["path"],
                                                     cfg["datasets"][dataset_name]["negative_data_file"]["path"])
@@ -99,12 +102,16 @@ elif dataset_name == "localdatasingledata":
 elif dataset_name == "localdatacategorizedbyfilename":
     datasets = data_helpers.get_datasets_localdatacategorizedbyfilename(container_path=cfg["datasets"][dataset_name]["data_file"]["path"],
                                                              categories_dict=cfg["datasets"][dataset_name]["categories_dict"])
+elif dataset_name == "localfile":
+    datasets = data_helpers.get_datasets(
+        data_file=cfg["datasets"][dataset_name]["data_file"]["path"],
+        vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"], build_vocab=True, sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
 x_text, y = data_helpers.load_data_labels(datasets)
 
 # Build vocabulary
 max_document_length = max([len(x.split(" ")) for x in x_text])
-print("max_document_length" + str(max_document_length))
+# print("max_document_length: " + str(max_document_length))
 
 # max_document_length = 200
 vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
@@ -115,7 +122,8 @@ np.random.seed(10)
 shuffle_indices = np.random.permutation(np.arange(len(y)))
 x_shuffled = x[shuffle_indices]
 y_shuffled = y[shuffle_indices]
-print(y_shuffled.shape)
+# print(y_shuffled.shape)
+# ==================================================
 
 # Split train/test set
 # TODO: This is very crude, should use cross-validation
@@ -126,16 +134,17 @@ y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
 # print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
 # print(x_train)
 # print(y_train)
-
-print('Train/Dev split: %d/%d' % (len(y_train), len(y_dev)))
-print('train shape:', x_train.shape)
-print('dev shape:', x_dev.shape)
-print('vocab_size', len(vocab_processor.vocabulary_))
-print('sentence max words', max_document_length)
+print("=======================================================")
+print("Data Details:")
+print('Train/Dev split = %d/%d' % (len(y_train), len(y_dev)))
+print('Train shape = ', x_train.shape)
+print('Dev shape = ', x_dev.shape)
+print('Vocab_size = ', len(vocab_processor.vocabulary_))
+print('Sentence max words = ', max_document_length)
+print("=======================================================")
 
 
 # Training
-# ==================================================
 
 checkpoint_file = tf.train.latest_checkpoint(FLAGS.checkpoint_dir)
 with tf.Graph().as_default():
@@ -177,7 +186,9 @@ with tf.Graph().as_default():
         # Output directory for models and summaries
         timestamp = str(int(time.time()))
         out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp))
+        print("=======================================================")
         print("Writing to {}\n".format(out_dir))
+        print("=======================================================")
 
         # Summaries for loss and accuracy
         loss_summary = tf.summary.scalar("loss", cnn.loss)
@@ -214,8 +225,9 @@ with tf.Graph().as_default():
                 initW = data_helpers.load_embedding_vectors_word2vec(vocabulary,
                                                                      cfg['word_embeddings']['word2vec']['path'],
                                                                      cfg['word_embeddings']['word2vec']['binary'])
-                print(len(initW))
-                print("word2vec file has been loaded")
+                # print(len(initW))
+                print("word2vec file has been loaded...")
+                print("=======================================================")
             elif embedding_name == 'glove':
                 # load embedding vectors from the glove
                 print("Load glove file {}".format(cfg['word_embeddings']['glove']['path']))
@@ -223,6 +235,7 @@ with tf.Graph().as_default():
                                                                   cfg['word_embeddings']['glove']['path'],
                                                                   embedding_dimension)
                 print("glove file has been loaded\n")
+                print("=======================================================")
             sess.run(cnn.W.assign(initW))
 
         if FLAGS.checkpoint_dir:
@@ -233,7 +246,6 @@ with tf.Graph().as_default():
             """
             A single training step
             """
-            # print("fdsfdsfsdf")
             feed_dict = {
               cnn.input_x: x_batch,
               cnn.input_y: y_batch,
@@ -245,7 +257,7 @@ with tf.Graph().as_default():
                 feed_dict)
             # print("fdsfdsfsdf")
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}".format(time_str, step, loss, accuracy))
+            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy))
             train_summary_writer.add_summary(summaries, step)
 
         def dev_step(x_batch, y_batch, writer=None):
@@ -261,23 +273,30 @@ with tf.Graph().as_default():
                 [global_step, dev_summary_op, cnn.loss, cnn.accuracy],
                 feed_dict)
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}".format(time_str, step, loss, accuracy))
+            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy))
             if writer:
                 writer.add_summary(summaries, step)
-        print(x_train)
+        # print(x_train)
         # Generate batches
         batches = data_helpers.batch_iter(
             list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)
 
+        print("Training Starting.......")
         # Training loop. For each batch...
+        i=0
         for batch in batches:
             x_batch, y_batch = zip(*batch)
             train_step(x_batch, y_batch)
             current_step = tf.train.global_step(sess, global_step)
             if current_step % FLAGS.evaluate_every == 0:
+                print("=======================================================")
                 print("\nEvaluation:")
                 dev_step(x_dev, y_dev, writer=dev_summary_writer)
-                print("")
+                print("=======================================================")
             if current_step % FLAGS.checkpoint_every == 0:
                 path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                 print("Saved model checkpoint to {}\n".format(path))
+                print("Checkpoint Number = {}".format(i))
+                print("=======================================================")
+                i += 1
+

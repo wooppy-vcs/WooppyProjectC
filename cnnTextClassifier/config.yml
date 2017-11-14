@@ -17,7 +17,8 @@ word_embeddings:
 
 datasets:
   # Support currently 3 datasets: mrpolarity, 20newsgroup and localdata
-  default: localdatacategorizedbyfilename
+#  default: localdatacategorizedbyfilename
+  default: localfile
 #  default: localdatasingledata
 #  default: localdata
 #  default: mrpolarity
@@ -72,7 +73,8 @@ datasets:
     data_file:
 #      path: "data/Singlefile/alltrainingdata_25000_with04.txt"
 #      path: "data/Singlefile/alltrainingdata_25000_without04.txt"
-      path: "data/Singlefile/alltrainingdata_80000_with04.txt"
+      path: "data/Test/test.txt"
+#      "data/Singlefile/alltrainingdata_80000_with04.txt"
 #      path: "data/Singlefile/alltrainingdata_80000_without04.txt"
 #      path: "data/Singlefile/all_training_800000.txt"
 #      path: "data/Singlefile/all_training_100000.txt"
@@ -84,25 +86,40 @@ datasets:
 #      path: "data/Singlefile/alltestdata_4000_with04.txt"
 #      path: "data/Singlefile/alltestdata_4000_without04.txt"
       info: "Data source for data"
-    container_path: data/Singlefile
+    container_path: data/Test
     categories:
-        -   Others
-        -   Storage & Memory Cards
-        -   Tablets
-        -   Screen Protectors
-        -   Cool Gadgets
-        -   Cables & Charges
-        -   Mobile Phones
-        -   Cases & Covers
-        -   Mobile Car Accessories
-        -   Wearables
-        -   Audio
-        -   Powerbanks & Batteries
-        -   Camera & Accessories
-        -   Selfie Accessories
+        -   BillOutstanding
+        -   None
+        -   Wrong
+        -   Termination
+        -   PaymentStatus
+        -   BillBreakdown
+        -   TroubleShootingPayment
+        -   Barring
+        -   PaymentChannel
+        -   AutoDebitApplication
+        -   Branch
+        -   Document
+        -   PaymentCycle
+        -   TroubleshootingBilling
+        -   BillingOthers
 
     shuffle: True
     random_state: 42
+
+  localfile:
+    data_file:
+      path: "data/Test/test.txt"
+      info: "Data source for data"
+    test_data_file:
+      path: "data/Test/test.txt"
+      info: "Data source for data"
+    vocab_write_path:
+      path: "data/tags_vocab.txt"
+    container_path: data/Test
+    shuffle: True
+    random_status: 42
+
 
 
   localdatacategorizedbyfilename:
@@ -131,5 +148,7 @@ datasets:
 
     shuffle: True
     random_state: 42
+
+
 
 

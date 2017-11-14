@@ -33,13 +33,16 @@ with open("config.yml", 'r') as ymlfile:
 
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
+tf.flags.DEFINE_string("checkpoint_dir", "runs/1510549897/checkpoints", "Checkpoint directory from training run") #all 80000
+tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
+tf.flags.DEFINE_integer("sentences_column", 0, "Column number of sentence data in data txt file")
+tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt file")
+
+# tf.flags.DEFINE_boolean("eval_train", False, "Evaluate on all training data")
 # tf.flags.DEFINE_string("checkpoint_dir", "", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1498842055/checkpoints", "Checkpoint directory from training run") #no04_25000
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1499072698/checkpoints", "Checkpoint directory from training run") #all 25000
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1499154486/checkpoints", "Checkpoint directory from training run") #no04_80000
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1500262295/checkpoints", "Checkpoint directory from training run") #all 80000
-tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
-# tf.flags.DEFINE_boolean("eval_train", False, "Evaluate on all training data")
 
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
@@ -47,9 +50,10 @@ tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on 
 
 FLAGS = tf.flags.FLAGS
 FLAGS._parse_flags()
+
 print("\nParameters:")
 for attr, value in sorted(FLAGS.__flags.items()):
-    print("{}={}".format(attr.upper(), value))
+    print("{} = {}".format(attr.upper(), value))
 print("")
 
 datasets = None
@@ -57,7 +61,7 @@ y_test = None
 
 # CHANGE THIS: Load data. Load your own data here
 dataset_name = cfg["datasets"]["default"]
-print(dataset_name)
+# print(dataset_name)
 if FLAGS.eval_train:
     if dataset_name == "mrpolarity":
         datasets = data_helpers.get_datasets_mrpolarity(cfg["datasets"][dataset_name]["positive_data_file"]["path"],
@@ -73,7 +77,14 @@ if FLAGS.eval_train:
     elif dataset_name == "localdatasingledata":
         datasets = data_helpers.get_datasets_localdatasinglefile(data_file=cfg["datasets"][dataset_name]["test_data_file"]["path"],
                                                                  categories=cfg["datasets"][dataset_name]["categories"])
+    elif dataset_name == "localfile":
+        datasets = data_helpers.get_datasets(
+            data_file=cfg["datasets"][dataset_name]["data_file"]["path"],
+            vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+            sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
+
     x_raw, y_test = data_helpers.load_data_labels(datasets)
+
     y_test = np.argmax(y_test, axis=1)
     print("Total number of test examples: {}".format(len(y_test)))
 else:
@@ -85,7 +96,8 @@ else:
     elif dataset_name == "localdatasingledata":
         datasets = {"target_names": cfg["datasets"][dataset_name]["categories"]}
         print(datasets["target_names"])
-        x_raw = ["ipadmini", "ipad mini", "iphone5s", "s7edge", "A7-10"]
+        # x_raw = ["ipadmini", "ipad mini", "iphone5s", "s7edge", "A7-10"]
+        x_raw = ["What is my payment status?", "Check bill", "cannot pay bill", "line barred how?"]
         # y_test = [7, 1,2,6,3,7,5,6,5,8,9,10,5,11,12,6,13,6]
 
     # else:
@@ -98,7 +110,7 @@ else:
 vocab_path = os.path.join(FLAGS.checkpoint_dir, "..", "vocab")
 vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
 x_test = np.array(list(vocab_processor.transform(x_raw)))
-print(x_test)
+# print(x_test)
 # print("\nEvaluating...\n")
 
 # Evaluation
@@ -188,9 +200,8 @@ if y_test is not None:
         readable_probabilities = probabilities[0:len(available_target_names)]
         readable_probabilities_array.append(readable_probabilities)
     # print(readable_probabilities_array)
-    print(datasets['imageUrl'])
+    # print(datasets['imageUrl'])
     predictions_human_readable = np.column_stack((np.array(x_raw),
-                                                  np.array(datasets['imageUrl']),
                                                   [datasets['target_names'][int(prediction)] for prediction in
                                                    all_predictions],
                                                   [datasets['target_names'][int(expected_label)] for expected_label in

@@ -5,8 +5,8 @@ import re
 import collections
 
 from os import listdir
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.datasets import load_files
+# from sklearn.datasets import fetch_20newsgroups
+# from sklearn.datasets import load_files
 
 
 def clean_str(string):
@@ -37,8 +37,10 @@ def batch_iter(data, batch_size, num_epochs, shuffle=True):
     data = np.array(data)
     data_size = len(data)
     num_batches_per_epoch = int((len(data) - 1) / batch_size) + 1
-    print("data_size : " + str(data_size))
-    print("num_batches_per_epoch : " + str(num_batches_per_epoch))
+    print("Batch Details:")
+    print("data_size = " + str(data_size))
+    print("num_batches_per_epoch = " + str(num_batches_per_epoch))
+    print("=======================================================")
     for epoch in range(num_epochs):
         # Shuffle the data at each epoch
         if shuffle:
@@ -52,18 +54,18 @@ def batch_iter(data, batch_size, num_epochs, shuffle=True):
             yield shuffled_data[start_index:end_index]
 
 
-def get_datasets_20newsgroup(subset='train', categories=None, shuffle=True, random_state=42):
-    """
-    Retrieve data from 20 newsgroups
-    :param subset: train, test or all
-    :param categories: List of newsgroup name
-    :param shuffle: shuffle the list or not
-    :param random_state: seed integer to shuffle the dataset
-    :return: data and labels of the newsgroup
-    """
-    datasets = fetch_20newsgroups(subset=subset, categories=categories, shuffle=shuffle, random_state=random_state)
-
-    return datasets
+# def get_datasets_20newsgroup(subset='train', categories=None, shuffle=True, random_state=42):
+#     """
+#     Retrieve data from 20 newsgroups
+#     :param subset: train, test or all
+#     :param categories: List of newsgroup name
+#     :param shuffle: shuffle the list or not
+#     :param random_state: seed integer to shuffle the dataset
+#     :return: data and labels of the newsgroup
+#     """
+#     datasets = fetch_20newsgroups(subset=subset, categories=categories, shuffle=shuffle, random_state=random_state)
+#
+#     return datasets
 
 
 def get_datasets_mrpolarity(positive_data_file, negative_data_file):
@@ -86,23 +88,23 @@ def get_datasets_mrpolarity(positive_data_file, negative_data_file):
     return datasets
 
 
-def get_datasets_localdata(container_path=None, categories=None, load_content=True,
-                           encoding='utf-8', shuffle=True, random_state=42):
-    """
-    Load text files with categories as subfolder names.
-    Individual samples are assumed to be files stored a two levels folder structure.
-    :param container_path: The path of the container
-    :param categories: List of classes to choose, all classes are chosen by default (if empty or omitted)
-    :param shuffle: shuffle the list or not
-    :param random_state: seed integer to shuffle the dataset
-    :return: data and labels of the dataset
-    """
-    datasets = load_files(container_path=container_path, categories=categories,
-                          load_content=load_content, shuffle=shuffle, encoding=encoding,
-                          random_state=random_state)
-    # print(json.dumps(datasets))
-
-    return datasets
+# def get_datasets_localdata(container_path=None, categories=None, load_content=True,
+#                            encoding='utf-8', shuffle=True, random_state=42):
+#     """
+#     Load text files with categories as subfolder names.
+#     Individual samples are assumed to be files stored a two levels folder structure.
+#     :param container_path: The path of the container
+#     :param categories: List of classes to choose, all classes are chosen by default (if empty or omitted)
+#     :param shuffle: shuffle the list or not
+#     :param random_state: seed integer to shuffle the dataset
+#     :return: data and labels of the dataset
+#     """
+#     datasets = load_files(container_path=container_path, categories=categories,
+#                           load_content=load_content, shuffle=shuffle, encoding=encoding,
+#                           random_state=random_state)
+#     # print(json.dumps(datasets))
+#
+#     return datasets
 
 
 def get_datasets_localdatasinglefile(data_file,categories):
@@ -119,25 +121,26 @@ def get_datasets_localdatasinglefile(data_file,categories):
 
     datasets = dict()
     data = [s[0].strip() for s in examples]
-    imageUrl = [s[1].strip() for s in examples]
-    target = [s[2].strip() for s in examples]
+    # imageUrl = [s[1].strip() for s in examples]
+    target_names = [s[1].strip() for s in examples]
     # target = [s[3].strip() for s in examples] #for all data
-    # target_names_dict = {0: "Others",
-    #                      1: "Storage & Memory Cards",
-    #                      2: "Tablets",
-    #                      3: "Screen Protectors",
-    #                      4: "Cool Gadgets",
-    #                      5: "Cables & Charges",
-    #                      6: "Mobile Phones",
-    #                      7: "Cases & Covers",
-    #                      8: "Mobile Car Accessories",
-    #                      9: "Wearables",
-    #                      10: "Audio",
-    #                      11: "Powerbanks & Batteries",
-    #                      12: "Camera & Accessories",
-    #                      13: "Selfie Accessories"
-    #                      }
-    # target_names = ["Others",
+    target_names_dict = {"BillOutstanding": 0,
+                         "None": 1,
+                         "Wrong": 2,
+                         "Termination": 3,
+                         "PaymentStatus": 4,
+                         "BillBreakdown": 5,
+                         "TroubleShootingPayment": 6,
+                         "Barring": 7,
+                         "PaymentChannel": 8,
+                         "AutoDebitApplication": 9,
+                         "Branch": 10,
+                         "Document": 11,
+                         "PaymentCycle": 12,
+                         "TroubleShootingBilling": 13,
+                         "BillingOthers": 14
+                         }
+
     #                 "Storage & Memory Cards",
     #                 "Tablets",
     #                 "Screen Protectors",
@@ -152,13 +155,18 @@ def get_datasets_localdatasinglefile(data_file,categories):
     #                 "Camera & Accessories",
     #                 "Selfie Accessories"
     #                 ]
-    target_names = categories
-    # for s in examples:
-    #     target_names.append(target_names_dict[int(s[2].strip())])
+    # target_names = categories
+    # print(categories)
+    target = []
+    # print(target_names)
+    for s in target_names:
+        # print(str(s))
+        target.append(int(target_names_dict[str(s)]))
     datasets['data'] = data
-    datasets['target'] = [int(s) for s in target]
+    # print(target)
+    datasets['target'] = target
     datasets['target_names'] = target_names
-    datasets['imageUrl'] = imageUrl
+    # datasets['imageUrl'] = imageUrl
 
     return datasets
 
@@ -227,13 +235,15 @@ def load_data_labels(datasets):
     x_text = [clean_str(sent) for sent in x_text]
     # Generate labels
     labels = []
-    print(len(x_text))
-    print(len(datasets['target']))
+    # print(len(x_text))
+    # print(len(datasets['target']))
 
     for i in range(len(x_text)):
         label = [0 for j in datasets['target_names']]
         label[datasets['target'][i]] = 1
         labels.append(label)
+        # print("label is")
+        # print(label)
     y = np.array(labels)
     return [x_text, y]
 
@@ -284,8 +294,8 @@ def load_embedding_vectors_word2vec(vocabulary, filename, binary):
                 idx = vocabulary.get(word)
                 if idx != 0:
                     embedding_vectors[idx] = vector
-        print("replaced " + str(count))
-        print("vocab size " + str(len(vocabulary)))
+        print("replaced: " + str(count))
+        print("vocab size: " + str(len(vocabulary)))
         f.close()
         return embedding_vectors
 
@@ -304,3 +314,110 @@ def load_embedding_vectors_glove(vocabulary, filename, vector_size):
             embedding_vectors[idx] = vector
     f.close()
     return embedding_vectors
+
+
+# =================================================================================
+
+# Implementing tags auto detection and also assign each tag with a number
+
+
+def get_vocab_tags(datasets):
+    """
+    Args:
+        datasets: a list of tags
+    Return:
+        a set of all the words in the dataset
+    """
+    print("Building vocab...")
+    vocab_tags = set()
+    vocab_tags.update(datasets)
+    print("- done. {} tokens".format(len(vocab_tags)))
+    return vocab_tags
+
+
+def write_vocab_tags(vocab, filename):
+    """
+    Writes a vocab to a file
+
+    Args:
+        vocab: iterable that yields word
+        filename: path to vocab file
+    Returns:
+        write a word per line
+    """
+    print("Writing vocab...")
+    with open(filename, "w") as f:
+        for i, word in enumerate(vocab):
+            if i != len(vocab) - 1:
+                f.write("{}\n".format(word))
+            else:
+                f.write(word)
+    print("- done. {} tokens".format(len(vocab)))
+
+
+def load_vocab(filename):
+    """
+    Args:
+        filename: file with a word per line
+    Returns:
+        d: dict[word] = index
+    """
+    try:
+        d = dict()
+        with open(filename) as f:
+            for idx, word in enumerate(f):
+                word = word.strip()
+                d[word] = idx
+    except IOError:
+        raise MyIOError(filename)
+    return d
+
+
+def get_datasets(data_file, vocab_tags_path, build_vocab = False, sentences = 0, tags = 1):
+    """
+    # Load single tab delimited text file.
+    :param container_path: The path of the container
+    :param shuffle: shuffle the list or not
+    :param random_state: seed integer to shuffle the dataset
+    :return: data and labels of the dataset
+    """
+    # Load data from files
+    examples = list(open(data_file, "r", encoding="utf8").readlines())
+    examples = [s.split("\t") for s in examples]
+
+    datasets = dict()
+
+    data = [s[sentences].strip() for s in examples]
+    target_names = [s[tags].strip() for s in examples]
+    # print(target_names)
+    vocab_tags = get_vocab_tags(target_names)
+
+    if(build_vocab):
+        write_vocab_tags(vocab_tags, vocab_tags_path)
+
+
+    target_names_dict = load_vocab(vocab_tags_path)
+
+    target = []
+
+    for s in target_names:
+        target.append(int(target_names_dict[str(s)]))
+    datasets['data'] = data
+    datasets['target'] = target
+    datasets['target_names'] = vocab_tags
+
+    return datasets
+
+
+# special error message
+class MyIOError(Exception):
+    def __init__(self, filename):
+        # custom error message
+        message = """
+ERROR: Unable to locate file {}.
+
+FIX: Have you tried running python build_data.py first?
+This will build vocab file from your train, test and dev sets and
+trimm your word vectors.
+""".format(filename)
+        super(MyIOError, self).__init__(message)
