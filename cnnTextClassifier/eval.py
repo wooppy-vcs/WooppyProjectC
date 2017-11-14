@@ -33,8 +33,8 @@ with open("config.yml", 'r') as ymlfile:
 
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1510549897/checkpoints", "Checkpoint directory from training run") #all 80000
-tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
+tf.flags.DEFINE_string("checkpoint_dir", "runs/1510631310/checkpoints", "Checkpoint directory from training run") #all 80000
+tf.flags.DEFINE_boolean("eval_train", False, "Evaluate on all training data")
 tf.flags.DEFINE_integer("sentences_column", 0, "Column number of sentence data in data txt file")
 tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt file")
 
@@ -50,7 +50,7 @@ tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on 
 
 FLAGS = tf.flags.FLAGS
 FLAGS._parse_flags()
-
+print("=======================================================")
 print("\nParameters:")
 for attr, value in sorted(FLAGS.__flags.items()):
     print("{} = {}".format(attr.upper(), value))
@@ -86,6 +86,7 @@ if FLAGS.eval_train:
     x_raw, y_test = data_helpers.load_data_labels(datasets)
 
     y_test = np.argmax(y_test, axis=1)
+    print("=======================================================")
     print("Total number of test examples: {}".format(len(y_test)))
 else:
     if dataset_name == "mrpolarity":
@@ -115,6 +116,7 @@ x_test = np.array(list(vocab_processor.transform(x_raw)))
 
 # Evaluation
 # ==================================================
+print("=======================================================")
 print(FLAGS.checkpoint_dir)
 checkpoint_file = tf.train.latest_checkpoint(FLAGS.checkpoint_dir)
 graph = tf.Graph()
@@ -140,6 +142,7 @@ with graph.as_default():
         predictions = graph.get_operation_by_name("output/predictions").outputs[0]
 
         # Generate batches for one epoch
+        print("=======================================================")
         batches = data_helpers.batch_iter(list(x_test), FLAGS.batch_size, 1, shuffle=False)
 
         # Collect the predictions here
@@ -157,18 +160,24 @@ with graph.as_default():
                 all_probabilities = np.concatenate([all_probabilities, probabilities])
             else:
                 all_probabilities = probabilities
+print("=======================================================")
+idx_to_tag = {idx: tag for tag, idx in datasets['target_names'].items()}
 
 for idx, prediction in enumerate(all_predictions):
     print("Input       : " + x_raw[idx])
-    print("Predicted   : " + datasets['target_names'][int(prediction)])
+    # a = x_raw[idx]
+    # a1 = idx_to_tag[int(prediction)]
+    print("Predicted   : " + idx_to_tag[int(prediction)])
     print("")
 
 # Print accuracy if y_test is defined
 if y_test is not None:
     correct_predictions = float(sum(all_predictions == y_test))
+    print("=======================================================")
     print("Total number of test examples: {}".format(len(y_test)))
     print("Accuracy: {:g}".format(correct_predictions / float(len(y_test))))
-    print(datasets['target_names'])
+    print("=======================================================")
+    # print(datasets['target_names'])
     # print(y_test)
     # print(all_predictions)
     available_target_names = list(datasets['target_names'])
@@ -181,7 +190,7 @@ if y_test is not None:
     #         all_predictions_forconf = np.append(all_predictions, [idx])
 
     print(metrics.classification_report(y_test, all_predictions, target_names=available_target_names))
-    print(metrics.confusion_matrix(y_test, all_predictions))
+    # print(metrics.confusion_matrix(y_test, all_predictions))
 
     # Save the evaluation to a csv
     result = []
@@ -202,9 +211,9 @@ if y_test is not None:
     # print(readable_probabilities_array)
     # print(datasets['imageUrl'])
     predictions_human_readable = np.column_stack((np.array(x_raw),
-                                                  [datasets['target_names'][int(prediction)] for prediction in
+                                                  [idx_to_tag[int(prediction)] for prediction in
                                                    all_predictions],
-                                                  [datasets['target_names'][int(expected_label)] for expected_label in
+                                                  [idx_to_tag[int(expected_label)] for expected_label in
                                                    y_test],
                                                   result,
                                                   readable_probabilities_array))
@@ -217,18 +226,19 @@ if y_test is not None:
     #                                       readable_probabilities_array[idx])
 
     out_path = os.path.join(FLAGS.checkpoint_dir, "..", "prediction.csv")
+    print("=======================================================")
     print("Saving evaluation to {0}".format(out_path))
-
-    headers1 = ["Input", "ImageUrl", "Predicted", "Expected", "Accuracy"]
-    headers = headers1 + datasets['target_names']
+    print("=======================================================")
+    headers1 = ["Input", "Predicted", "Expected", "Accuracy"]
+    headers = headers1 + [tags for tags, idx in datasets['target_names'].items()]
     with open(out_path, 'w', newline='') as f:
         csv.writer(f).writerow(headers)
         csv.writer(f).writerows(predictions_human_readable)
         # for item in predictions_human_readable:
         #     f.write("%s\n" % item)
         # f.close()
-    print(y_test)
-    print(shape(y_test))
+    # print(y_test)
+    # print(shape(y_test))
 
     conf_arr = metrics.confusion_matrix(y_test, all_predictions)
 
@@ -246,8 +256,8 @@ if y_test is not None:
         norm_conf.append(tmp_arr)
 
     plt.clf()
-    print(len(available_target_names))
-    print(shape(array(norm_conf)))
+    # print(len(available_target_names))
+    # print(shape(array(norm_conf)))
     fig = plt.figure(figsize=(18, 18))
     ax = fig.add_subplot(111)
     res = ax.imshow(array(norm_conf), cmap=cm.jet, interpolation='nearest')

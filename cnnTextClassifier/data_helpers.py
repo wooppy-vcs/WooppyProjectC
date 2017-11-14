@@ -390,21 +390,23 @@ def get_datasets(data_file, vocab_tags_path, build_vocab = False, sentences = 0,
     data = [s[sentences].strip() for s in examples]
     target_names = [s[tags].strip() for s in examples]
     # print(target_names)
-    vocab_tags = get_vocab_tags(target_names)
+
 
     if(build_vocab):
+        vocab_tags = get_vocab_tags(target_names)
         write_vocab_tags(vocab_tags, vocab_tags_path)
-
 
     target_names_dict = load_vocab(vocab_tags_path)
 
     target = []
 
+#changing tags' name to numbers
     for s in target_names:
         target.append(int(target_names_dict[str(s)]))
+
     datasets['data'] = data
     datasets['target'] = target
-    datasets['target_names'] = vocab_tags
+    datasets['target_names'] = target_names_dict
 
     return datasets
 
