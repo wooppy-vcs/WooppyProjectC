@@ -33,8 +33,8 @@ with open("config.yml", 'r') as ymlfile:
 
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1510631310/checkpoints", "Checkpoint directory from training run") #all 80000
-tf.flags.DEFINE_boolean("eval_train", False, "Evaluate on all training data")
+tf.flags.DEFINE_string("checkpoint_dir", "runs/1510652159/checkpoints", "Checkpoint directory from training run") #all 80000
+tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
 tf.flags.DEFINE_integer("sentences_column", 0, "Column number of sentence data in data txt file")
 tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt file")
 

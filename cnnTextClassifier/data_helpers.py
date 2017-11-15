@@ -421,8 +421,8 @@ def get_datasets(data_path, vocab_tags_path, build_vocab = False, sentences = 0,
     # Load data from files
     examples = list(open(data_path, 'r', encoding="utf8").readlines())
     examples = [s.split("\t") for s in examples]
-    data.append([s[sentences].strip() for s in examples])
-    target_names.append([s[tags].strip() for s in examples])
+    data.extend([s[sentences].strip() for s in examples])
+    target_names.extend([s[tags].strip() for s in examples])
 
     if build_vocab:
         vocab_tags = get_vocab_tags(target_names)
