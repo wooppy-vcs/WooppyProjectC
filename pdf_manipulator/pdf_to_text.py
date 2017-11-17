@@ -135,7 +135,7 @@ def main(args=None):
     else:
         outfp = open(A.outfile, "wb")
 
-    ## Project-A-R-Tagged-Data Code
+    ## Project-A-R-Level-1-v2-dirty-Tagged-Data Code
     outfp = extract_text(**vars(A))
     outfp.close()
     return 0

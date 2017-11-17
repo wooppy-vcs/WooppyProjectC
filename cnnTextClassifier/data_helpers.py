@@ -3,6 +3,7 @@ import json
 import numpy as np
 import re
 import collections
+import math
 
 from os import listdir
 # from sklearn.datasets import fetch_20newsgroups
@@ -351,7 +352,7 @@ def write_vocab_tags(vocab, filename):
             if i != len(vocab) - 1:
                 f.write("{}\n".format(word))
             else:
-                f.write(word)
+                f.write(str(word))
     print("- done. {} tokens".format(len(vocab)))
 
 
@@ -373,7 +374,7 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets_multiple_files(container_path, sentences = 0, tags = 1):
+def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_path, sentences = 0, tags = 1):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -389,6 +390,7 @@ def get_datasets_multiple_files(container_path, sentences = 0, tags = 1):
     files = [f for f in sorted(listdir(container_path))]
     print("Folder List:" + str(f) for f in files)
     for label, file in enumerate(files):
+        # print(file)
         examples = list(open(container_path + "/" + file, 'r', encoding="utf8").readlines()[1:])
         examples = [s.split("\t") for s in examples]
         # a = [s[tags].strip() for s in examples]
@@ -396,16 +398,28 @@ def get_datasets_multiple_files(container_path, sentences = 0, tags = 1):
             if s[6] == "0":
                 if s[8] == "English":
                     data.extend([s[sentences].strip()])
-                    target_names.extend([s[tags].strip()])
+                    if s[tags].strip() == "":
+                        target_names.extend(["None"])
+                    else:
+                        target_names.extend([s[tags].strip()])
 
     datasets = dict()
     datasets['data'] = data
     datasets['target'] = target_names
+    target = []
 
+    vocab_tags = get_vocab_tags(target_names)
+    write_vocab_tags(vocab_tags, vocab_tags_path)
+    target_names_dict = load_vocab(vocab_tags_path)
+    for s in target_names:
+        target.append(int(target_names_dict[str(s)]))
+
+    class_weight = calculate_weight(target, target_names_dict)
+    write_vocab_tags(class_weight, class_weights_path)
     return datasets
 
 
-def get_datasets(data_path, vocab_tags_path, build_vocab = False, sentences = 0, tags = 1):
+def get_datasets(data_path, vocab_tags_path, class_weights_path=None, sentences = 0, tags = 1):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -417,6 +431,7 @@ def get_datasets(data_path, vocab_tags_path, build_vocab = False, sentences = 0,
     data = []
     target_names = []
     target = []
+    class_weights =[]
 
     # Load data from files
     examples = list(open(data_path, 'r', encoding="utf8").readlines())
@@ -424,9 +439,9 @@ def get_datasets(data_path, vocab_tags_path, build_vocab = False, sentences = 0,
     data.extend([s[sentences].strip() for s in examples])
     target_names.extend([s[tags].strip() for s in examples])
 
-    if build_vocab:
-        vocab_tags = get_vocab_tags(target_names)
-        write_vocab_tags(vocab_tags, vocab_tags_path)
+    # if build_vocab:
+    #     vocab_tags = get_vocab_tags(target_names)
+    #     write_vocab_tags(vocab_tags, vocab_tags_path)
 
     target_names_dict = load_vocab(vocab_tags_path)
 
@@ -434,10 +449,14 @@ def get_datasets(data_path, vocab_tags_path, build_vocab = False, sentences = 0,
     for s in target_names:
         target.append(int(target_names_dict[str(s)]))
 
+    if class_weights_path != None:
+        class_weights_open = list(open(class_weights_path, 'r', encoding="utf8").readlines())
+        class_weights.extend([float(s.strip()) for s in class_weights_open])
     datasets = dict()
     datasets['data'] = data
     datasets['target'] = target
     datasets['target_names'] = target_names_dict
+    datasets['class_weights'] = class_weights
 
     return datasets
 
@@ -463,6 +482,36 @@ def write_data_to_file(sentences, tags, filename):
                 f.write(sentence+"\t"+tag)
             i+=1
     print("- done. {} data".format(len(sentences)))
+
+
+def calculate_weight(target, target_names):
+    counter = np.zeros(len(target_names), dtype=np.int32)
+
+    for s in target:
+        counter[int(s)] += 1
+
+    # counter_None = 0
+    # counter_Wrong = 0
+    # counter_Bill = 0
+    #
+    # for s in target:
+    #     if s == 1:
+    #         counter_None += 1
+    #     # if s == 0:
+    #     #     counter_Wrong += 1
+    #     if s == 0:
+    #         counter_Bill += 1
+    # # counter = [counter_Wrong, counter_Bill, counter_None]
+    # counter = [counter_Bill, counter_None]
+    total_data = len(target)
+
+    weightsArray = []
+
+    for i in range(len(counter)):
+        weightsArray.append(math.log((total_data / counter[i])))
+
+    return weightsArray
+
 
 
 # special error message

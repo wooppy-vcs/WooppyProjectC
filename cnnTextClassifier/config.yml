@@ -73,7 +73,7 @@ datasets:
     data_file:
 #      path: "data/Singlefile/alltrainingdata_25000_with04.txt"
 #      path: "data/Singlefile/alltrainingdata_25000_without04.txt"
-      path: "data/Project-A-R-Tagged-Data/test.txt"
+      path: "data/Project-A-R-Level-1-v2-dirty-Tagged-Data/test.txt"
 #      "data/Singlefile/alltrainingdata_80000_with04.txt"
 #      path: "data/Singlefile/alltrainingdata_80000_without04.txt"
 #      path: "data/Singlefile/all_training_800000.txt"
@@ -86,7 +86,7 @@ datasets:
 #      path: "data/Singlefile/alltestdata_4000_with04.txt"
 #      path: "data/Singlefile/alltestdata_4000_without04.txt"
       info: "Data source for data"
-    container_path: data/Project-A-R-Tagged-Data
+    container_path: data/Project-A-R-Level-1-v2-dirty-Tagged-Data
     categories:
         -   BillOutstanding
         -   None
@@ -106,29 +106,6 @@ datasets:
 
     shuffle: True
     random_state: 42
-
-  localfile:
-    data_file:
-      path: "data/Project-A-R/Training_data.txt"
-      info: "Data source for data"
-    test_data_file:
-      path: "data/Project-A-R/Test_data.txt"
-      info: "Data source for data"
-    vocab_write_path:
-      path: "data/Project-A-R/tags_vocab.txt"
-    container_path: data/Project-A-R
-    shuffle: True
-    random_status: 42
-
-
-  datalocalfile:
-    data_folder:
-      path: "data/Project-A-R-Tagged-Data"
-      info: "Data source for data"
-    container_path: data/Project-A-R-Tagged-Data
-    shuffle: True
-    random_status: 42
-
 
 
   localdatacategorizedbyfilename:
@@ -158,6 +135,37 @@ datasets:
     shuffle: True
     random_state: 42
 
+##############################################################################
+# FOR PROJECT A-R
 
 
+# this is for data_organiser, for splitting training and test data.
+# path should be directed to the raw data folder.
+  datalocalfile:
+    data_folder:
+      path: "data/Project-A-R-Tagged-Data"
+      info: "Data source for data"
+    container_path: data/Project-A-R-Tagged-Data
+    shuffle: True
+    random_status: 42
 
+
+# data_file path: training data path (created from data_organiser)
+# test_data_file path: test data path (created from data_organiser)
+# vocab_write_path: path of writing and loading tags vocab of the data.
+  localfile:
+    data_file:
+      path: "data/Project-A-R-Scenario/Training_data.txt"
+      info: "Data source for data"
+    test_data_file:
+      path: "data/Project-A-R-Scenario/Test_data.txt"
+      info: "Data source for data"
+    vocab_write_path:
+      path: "data/Project-A-R-Scenario/tags_vocab.txt"
+    class_weights_path:
+      path: "data/Project-A-R-Scenario/class_weights.txt"
+    container_path: data/Project-A-R-Scenario
+    shuffle: True
+    random_status: 42
+
+#################################################################################

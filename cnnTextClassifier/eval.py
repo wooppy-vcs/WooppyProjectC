@@ -32,8 +32,20 @@ with open("config.yml", 'r') as ymlfile:
 # Data Parameters
 
 # Eval Parameters
-tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1510652159/checkpoints", "Checkpoint directory from training run") #all 80000
+tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
+
+
+
+## RUNS
+#  tf.flags.DEFINE_string("checkpoint_dir", "runs/1510746346/checkpoints", "Checkpoint directory from training run") #no penalised
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1510799220/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1510744440/checkpoints", "Checkpoint directory from training run") #penalised(100epochs)
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1510820356/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1510889604/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1510910997-Level-2/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
+tf.flags.DEFINE_string("checkpoint_dir", "runs/1510917891-Scenario/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
+
+
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
 tf.flags.DEFINE_integer("sentences_column", 0, "Column number of sentence data in data txt file")
 tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt file")
@@ -265,5 +277,7 @@ if y_test is not None:
     plt.xticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='vertical')
     plt.yticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='horizontal')
     # plt.yticks(available_target_names)
-    savefig("confmat.png", format="png")
+    out_path = os.path.join(FLAGS.checkpoint_dir, "..", "confmat.png")
+
+    savefig(out_path, format="png")
     # savefig("confmat.pdf", format="pdf")

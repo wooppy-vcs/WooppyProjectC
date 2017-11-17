@@ -6,9 +6,12 @@ import os
 import time
 import datetime
 from cnnTextClassifier import data_helpers
+# from cnnTextClassifier.data_helpers import calculate_weight
 from cnnTextClassifier.text_cnn import TextCNN
 from tensorflow.contrib import learn
 import yaml
+
+tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
 
 # Parameters
 # ==================================================
@@ -21,6 +24,7 @@ tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt fil
 
 
 # Model Hyperparameters
+# tf.flags.DEFINE_boolean("build_tags_vocab", True, "Enable building tags vocab if true")
 tf.flags.DEFINE_boolean("enable_word_embeddings", True, "Enable/disable the word embedding (default: True)")
 tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
@@ -36,8 +40,8 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 # tf.flags.DEFINE_float("l2_reg_lambda", 0.0, "L2 regularization lambda (default: 0.0)")
 
 # Training parameters
-tf.flags.DEFINE_integer("batch_size", 16, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 10, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
+tf.flags.DEFINE_integer("num_epochs", 50, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
@@ -51,6 +55,7 @@ tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (d
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
 tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on devices")
+
 
 FLAGS = tf.flags.FLAGS
 FLAGS._parse_flags()
@@ -105,7 +110,8 @@ elif dataset_name == "localdatacategorizedbyfilename":
 elif dataset_name == "localfile":
     datasets=data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["data_file"]["path"],
                                        vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
-                                       build_vocab=True, sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
+                                       class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
+                                       sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
 x_text, y = data_helpers.load_data_labels(datasets)
 
@@ -143,6 +149,9 @@ print('Vocab_size = ', len(vocab_processor.vocabulary_))
 print('Sentence max words = ', max_document_length)
 print("=======================================================")
 
+weightsArray = datasets['class_weights']
+print("Weights Array:")
+print(weightsArray)
 
 # Training
 
@@ -161,7 +170,9 @@ with tf.Graph().as_default():
             embedding_size=embedding_dimension,
             filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
             num_filters=FLAGS.num_filters,
-            l2_reg_lambda=FLAGS.l2_reg_lambda)
+            l2_reg_lambda=FLAGS.l2_reg_lambda
+            ,
+            weights_array=weightsArray)
 
         # # restoring from the checkpoint file
         # ckpt = tf.train.get_checkpoint_state(FLAGS.checkpoint_dir)
@@ -184,7 +195,7 @@ with tf.Graph().as_default():
         grad_summaries_merged = tf.summary.merge(grad_summaries)
 
         # Output directory for models and summaries
-        timestamp = str(int(time.time()))
+        timestamp = str(int(time.time()))+FLAGS.classifier_type
         out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp))
         print("=======================================================")
         print("Writing to {}\n".format(out_dir))
