@@ -43,7 +43,7 @@ tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1510820356/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1510889604/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1510910997-Level-2/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1510917891-Scenario/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
+tf.flags.DEFINE_string("checkpoint_dir", "runs/1510924069-Scenario/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
 
 
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
@@ -73,6 +73,7 @@ y_test = None
 
 # CHANGE THIS: Load data. Load your own data here
 dataset_name = cfg["datasets"]["default"]
+
 # print(dataset_name)
 if FLAGS.eval_train:
     if dataset_name == "mrpolarity":
@@ -196,12 +197,16 @@ if y_test is not None:
     # available_target_names.remove('Others')
     # available_target_names.remove('Cool Gadgets')
 
-    # for idx, i in enumerate(available_target_names):
-    #     if idx not in y_test:
-    #         y_test_forconf = np.append(y_test, [idx])
-    #         all_predictions_forconf = np.append(all_predictions, [idx])
+    y_test_forconf = y_test
+    all_predictions_forconf = all_predictions
+    for idx, i in enumerate(available_target_names):
+        if idx not in y_test:
+            y_test_forconf = np.append(y_test_forconf, [idx])
+            all_predictions_forconf = np.append(all_predictions_forconf, [idx])
 
-    print(metrics.classification_report(y_test, all_predictions, target_names=available_target_names))
+    print(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
+    # print(metrics.classification_report(y_test_forconf, all_predictions_forconf))
+    # print(metrics.classification_report(y_test, all_predictions))
     # print(metrics.confusion_matrix(y_test, all_predictions))
 
     # Save the evaluation to a csv
