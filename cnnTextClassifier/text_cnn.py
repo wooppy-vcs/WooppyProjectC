@@ -85,3 +85,12 @@ class TextCNN(object):
         with tf.name_scope("accuracy"):
             correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
             self.accuracy = tf.reduce_mean(tf.cast(correct_predictions, "float"), name="accuracy")
+
+        with tf.name_scope("weighted_accuracy"):
+            class_weight = tf.expand_dims(tf.constant(weights_array), 1)
+            correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
+            predictions_onehot = tf.one_hot(tf.argmax(self.input_y, 1), num_classes)
+            weighted_correct_predictions_temp = tf.matmul(predictions_onehot, class_weight)
+            weighted_correct_predictions = tf.multiply(weighted_correct_predictions_temp, tf.cast(correct_predictions, "float"))
+
+            self.weighted_accuracy = tf.reduce_mean(weighted_correct_predictions, name="weighted_accuracy")

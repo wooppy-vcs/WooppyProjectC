@@ -116,10 +116,11 @@ elif dataset_name == "localfile":
 x_text, y = data_helpers.load_data_labels(datasets)
 
 # Build vocabulary
-max_document_length = max([len(x.split(" ")) for x in x_text])
+### max_document_length = max([len(x.split(" ")) for x in x_text])
+
 # print("max_document_length: " + str(max_document_length))
 
-# max_document_length = 200
+max_document_length = 30
 vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
 x = np.array(list(vocab_processor.fit_transform(x_text)))
 
@@ -204,14 +205,15 @@ with tf.Graph().as_default():
         # Summaries for loss and accuracy
         loss_summary = tf.summary.scalar("loss", cnn.loss)
         acc_summary = tf.summary.scalar("accuracy", cnn.accuracy)
+        weighted_acc_summary = tf.summary.scalar("weighted_accuracy", cnn.weighted_accuracy)
 
         # Train Summaries
-        train_summary_op = tf.summary.merge([loss_summary, acc_summary, grad_summaries_merged])
+        train_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary, grad_summaries_merged])
         train_summary_dir = os.path.join(out_dir, "summaries", "train")
         train_summary_writer = tf.summary.FileWriter(train_summary_dir, sess.graph)
 
         # Dev summaries
-        dev_summary_op = tf.summary.merge([loss_summary, acc_summary])
+        dev_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary])
         dev_summary_dir = os.path.join(out_dir, "summaries", "dev")
         dev_summary_writer = tf.summary.FileWriter(dev_summary_dir, sess.graph)
 
@@ -263,12 +265,12 @@ with tf.Graph().as_default():
               cnn.dropout_keep_prob: FLAGS.dropout_keep_prob
             }
             # print("fdsfdsfsdf")
-            _, step, summaries, loss, accuracy = sess.run(
-                [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy],
+            _, step, summaries, loss, accuracy, weighted_accuracy = sess.run(
+                [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
                 feed_dict)
             # print("fdsfdsfsdf")
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy))
+            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
             train_summary_writer.add_summary(summaries, step)
 
         def dev_step(x_batch, y_batch, writer=None):
@@ -280,11 +282,11 @@ with tf.Graph().as_default():
               cnn.input_y: y_batch,
               cnn.dropout_keep_prob: 1.0
             }
-            step, summaries, loss, accuracy = sess.run(
-                [global_step, dev_summary_op, cnn.loss, cnn.accuracy],
+            step, summaries, loss, accuracy, weighted_accuracy = sess.run(
+                [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
                 feed_dict)
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy))
+            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
             if writer:
                 writer.add_summary(summaries, step)
         # print(x_train)
