@@ -42,9 +42,20 @@ class TextCNN(object):
                     name="conv")
                 # Apply nonlinearity
                 h = tf.nn.relu(tf.nn.bias_add(conv, b), name="relu")
+                # Second Convolution Layer
+                W1 = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name="W1")
+                b1 = tf.Variable(tf.constant(0.1, shape=[num_filters]), name="b1")
+                conv1 = tf.nn.conv2d(
+                    conv, W1,
+                    strides=[1, 1, 1, 1],
+                    padding="VALID",
+                    name="conv1"
+                )
+                # Apply nonlinearity
+                h1 = tf.nn.relu(tf.nn.bias_add(conv1, b1), name="relu1")
                 # Maxpooling over the outputs
                 pooled = tf.nn.max_pool(
-                    h,
+                    h1,
                     ksize=[1, sequence_length - filter_size + 1, 1, 1],
                     strides=[1, 1, 1, 1],
                     padding='VALID',
