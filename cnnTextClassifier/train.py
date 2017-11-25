@@ -11,7 +11,11 @@ from cnnTextClassifier.text_cnn import TextCNN
 from tensorflow.contrib import learn
 import yaml
 
+from cnnTextClassifier.text_cnn_v1 import TextCNNv1
+from cnnTextClassifier.text_cnn_v2 import TextCNNv2
+
 tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
+tf.flags.DEFINE_string("setting", "len90-2layersConv-CNNv1-featuresmap32_64-12epcohs", "classifier setting")
 
 # Parameters
 # ==================================================
@@ -26,9 +30,12 @@ tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt fil
 # Model Hyperparameters
 # tf.flags.DEFINE_boolean("build_tags_vocab", True, "Enable building tags vocab if true")
 tf.flags.DEFINE_boolean("enable_word_embeddings", True, "Enable/disable the word embedding (default: True)")
-tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
+tf.flags.DEFINE_integer("embedding_dim", 300, "Dimensionality of character embedding (default: 128)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
-tf.flags.DEFINE_integer("num_filters", 32, "Number of filters per filter size (default: 128)")
+# tf.flags.DEFINE_integer("num_filters", 32, "Number of filters per filter size (default: 128)")
+tf.flags.DEFINE_integer("num_filters_layer1", 32, "Number of filters per filter size (default: 128)")
+tf.flags.DEFINE_integer("num_filters_layer2", 64, "Number of filters per filter size (default: 128)")
+tf.flags.DEFINE_integer("num_filters_layer3", 128, "Number of filters per filter size (default: 128)")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.0)")
 
@@ -41,7 +48,7 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 50, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 11, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
@@ -120,7 +127,7 @@ x_text, y = data_helpers.load_data_labels(datasets)
 
 # print("max_document_length: " + str(max_document_length))
 
-max_document_length = 30
+max_document_length = 90
 vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
 x = np.array(list(vocab_processor.fit_transform(x_text)))
 
@@ -164,13 +171,15 @@ with tf.Graph().as_default():
     )
     sess = tf.Session(config=session_conf)
     with sess.as_default():
-        cnn = TextCNN(
+        cnn = TextCNNv1(
             sequence_length=x_train.shape[1],
             num_classes=y_train.shape[1],
             vocab_size=len(vocab_processor.vocabulary_),
             embedding_size=embedding_dimension,
             filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
-            num_filters=FLAGS.num_filters,
+            num_filters_layer1=FLAGS.num_filters_layer1,
+            num_filters_layer2=FLAGS.num_filters_layer2,
+            # num_filters_layer3=FLAGS.num_filters_layer3,
             l2_reg_lambda=FLAGS.l2_reg_lambda
             ,
             weights_array=weightsArray)
@@ -197,7 +206,7 @@ with tf.Graph().as_default():
 
         # Output directory for models and summaries
         timestamp = str(int(time.time()))+FLAGS.classifier_type
-        out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp))
+        out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp + "-" + FLAGS.setting))
         print("=======================================================")
         print("Writing to {}\n".format(out_dir))
         print("=======================================================")
@@ -270,7 +279,7 @@ with tf.Graph().as_default():
                 feed_dict)
             # print("fdsfdsfsdf")
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
+            print("{}: step {}, loss {:g}, acc {:g}, wacc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
             train_summary_writer.add_summary(summaries, step)
 
         def dev_step(x_batch, y_batch, writer=None):
@@ -282,11 +291,15 @@ with tf.Graph().as_default():
               cnn.input_y: y_batch,
               cnn.dropout_keep_prob: 1.0
             }
+            # JIALER MOD COMMENTED
+            # step, summaries, loss, accuracy, weighted_accuracy = sess.run(
+            #     [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
+            #     feed_dict)
             step, summaries, loss, accuracy, weighted_accuracy = sess.run(
                 [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
                 feed_dict)
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
+            print("{}: step {}, loss {:g}, acc {:g}, wacc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
             if writer:
                 writer.add_summary(summaries, step)
         # print(x_train)

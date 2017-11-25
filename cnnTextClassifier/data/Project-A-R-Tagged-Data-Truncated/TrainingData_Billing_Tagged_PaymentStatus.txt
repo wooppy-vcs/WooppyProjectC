@@ -1,0 +1,493 @@
+conversation_tagging_id	index_en	id	msg	time	chat_id	user_id	word count	Language	Preassigned Topic	Preassigned Subtopic	Topic_L1	Topic_L2	AnswerType	Confirmation	Scenario							
+3	41	27919	can i knw the latest bill already pay or not yet	1465009306	1333	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+29	731	33912	"I want to know the total amount paid. I am sure RedOne can work out, can;t he?"	1465187107	1611	0	17	English	Billing	Billing Details	Billing	PaymentStatus	ObjectNumeric	True	LastPayment							
+31	761	34019	"Successfully made monthly bill payment. However, this is no shown in the system"	1465188166	1618	0	13	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+56	1366	47800	I pay repay for bill payment did receive.	1465536872	2183	0	8	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+61	1483	48653	can you check for me whether it is updated?	1465545445	2216	0	9	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+67	1670	51466	so that payment was a successful 1?	1465708012	2339	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+71	1742	52354	"can u help me check,my bill may is pay or not?"	1465779895	2383	0	11	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+78	1932	54358	WHY I NOT RECEIVING STATEMENT REDONE EVERY MONTH? ONLY RECEIVE SMS	1465807892	2463	0	11	English	Billing	Billing Cycle	Billing	Document	Reason	False	RequestSendEveryMonth							
+90	2251	57440	"Hi Cust Service, please check whether you have received my email on the receipt for outstanding payment ?"	1465905940	2618	0	18	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	PaymentStatusOthers							
+93	2330	57852	my bill total amount is 342.17 ?<NL>but i have make payment on 1 / 6 / 2016. but didn't show at my bill i have paid	1465952217	2643	0	20	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+93	2344	58025	i already make the payment 243.00 	1465953464	2643	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+98	2454	58304	"Morning,<NL>On 13 june 2016 11 : 02 : 29 i pay bill via JomPay (ref. no : 36 D 3 M 21 R) but i wrong input Ref 1 no.<NL>I input my I.C no at Ref. 1. <NL>I was pay Rm 50. How about my money ?"	1465956697	2664	0	36	English	Billing	Payment Status	Billing	PaymentStatus	Procedure	True	PaymentStatusOthers							
+106	2622	60615	DID UR COMPANY RECEIVED ANY PAYMENT ON 4 JUNE FROM NOR HASHIRAH NABILAH BINTI RUSLI 930513115286. 	1465977170	2762	0	15	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+115	2850	62373	I forget to pay my bill.. I just done my payment..	1466035995	2830	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+116	2871	62452	We settle thar amount yesterday already	1466036780	2834	0	6	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+122	3079	66419	can u check in the redone system there's just a payment made by me just now?	1466125066	3002	0	16	English	Billing	Deposit Refund	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+136	3427	70728	I already made the payment for my number	1466320793	3197	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+143	3585	75270	I just wondering if I have just over paid my bills?	1466500947	3407	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+151	3769	76679	"hi,my phone cant call out now.but last few days i paid at kiosk machine.can u check the status"	1466592130	3488	0	18	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectName	False	LineStatus							
+157	3912	79277	you received the payment of 129.39 right? I made the payment like 30 mins ago	1466745430	3621	0	15	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+161	3959	81984	I a;ready paid the bill but why still in unbill status? please check !	1466929031	3743	0	14	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+165	4031	86747	"hi, i already pay the bill just now, why the bill still showing im not pay?"	1467103541	3937	0	16	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+167	4079	87022	"I have just paid to red 1, i have not receive any confirm message, can you please check?"	1467110994	3951	0	18	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+175	4252	87886	BECAUSE I DO PAYMENT LAST SUNDAY.	1467176929	3990	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+175	4258	87892	BECAUSE I DO PAYMENT ON LAST SATURDAY. 25 / 6 <NL> RM 238.00 .<NL>I GOT SMS FROM REDONE	1467177199	3990	0	14	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+181	4398	92758	"hi, payment via maybank 2 u need the billing acc id right?<NL>i already make payment via maybank 2 u. <NL>but when i check * 123 # , the amount still not deduct after i make the payment.<NL><NL>could you please assist me about this?<NL>or i need to wait after make the payment?"	1467335055	4219	0	45	English	Billing	Billing Details	Billing	PaymentStatus	Reason	True	WhyNotUpdated							
+185	4503	93569	HOW I WANT TO DOWNLOAD & PAY BILL ONLINE?	1467340040	4249	0	9	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay							
+193	4646	94269	already paid?	1467344826	4282	0	2	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	True	BillAmount							
+197	4744	94504	I paid online and timeout my bank still wasstill deducted but no record in redOne	1467347063	4294	0	15	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+202	4879	97638	payment made thru m 2 u	1467422950	4417	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+204	4914	97950	please sent me record of my payment history.	1467427110	4427	0	8	English	Billing	Billing Details	Billing	PaymentStatus	Request	False	LastPayment							
+204	4944	98037	just now i made rm 55 payment.	1467427869	4427	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+214	5179	102498	Is my payment already in?	1467537222	4631	0	5	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+215	5202	102892	I already pay my july bill on 1 / 7 / 16 but still don't get any massage from red 1. can u chk 4 me	1467542727	4649	0	19	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+226	5500	109152	BILL PAYMENT	1467718253	4934	0	2	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+227	5598	109256	so already received my payment ? its total RM 70 	1467720341	4937	0	9	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+254	6204	112587	i already settle the latest amount due for the account id : 201271492 	1467976447	5072	0	13	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+254	6205	112588	here is the invoice ID after the payment was made : 1607 - 2009949946 and the bank referance num of 3335065076 	1467976550	5072	0	19	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+254	6218	112604	Is there any problem with the payment	1467976899	5072	0	7	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+255	6247	112655	CAN I KHONW <NL>MY BILL JUNE PAYMENT PAY AREADY ?	1467977933	5074	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	True	BillAmount							
+264	6461	119060	Hi! Can u check for me for the last payment	1468312974	5344	0	10	English	Billing	Billing Details	Billing	PaymentStatus	ObjectNumeric	False	LastPayment							
+264	6471	119139	On saturday i made a payment at redone agent RM 106 till now still not got any msg from redone	1468313460	5344	0	20	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+272	6705	120599	I JUST DONE THE TRANSFER PAYMENT FROM BANK ACCOUNT. MAY I KNOW IS IT SUCCESSFUL ?	1468381513	5418	0	16	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+279	6858	125037	i already pay my bills but when i check though online no record	1468484884	5609	0	13	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+288	7099	140273	i paid this evening	1468835027	6270	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+292	7206	140761	I JUST MADE PAYMENT	1468845835	6287	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+292	7212	140769	I USED MAYBANK 2 U	1468845963	6287	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	None	False	PaymentChannelOthers							
+292	7213	140770	JOM PAID	1468845982	6287	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannelOthers	None	False	PaymentChannelOthers							
+293	7225	142363	HI I already paid my bill for July 2017 but the system seem not update	1468914307	6343	0	15	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+313	7707	148438	when is my latest payment as per redone system record?	1469167757	6587	0	10	English	Billing	Payment Status	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+313	7714	148451	can you check for me my latest payment in your system>	1469168031	6587	0	11	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	LastPayment							
+315	7741	148604	"How do I check my payment status after<NL>Paid? Done check 'download and pay bill', yet still have 'pay now' sign<NL><NL>No. 0111 0560 456 "	1469172391	6597	0	23	English	Billing	Billing Details	Billing	PaymentStatus	Procedure	False	HowConfirmPaymentReceived							
+335	8196	171552	"hai,i would like to update my payment"	1470050863	7596	0	7	English	Billing	Payment Status	Billing	PaymentStatus	Request	False	WantUpdate							
+335	8203	171565	payment made just now via maybank 2 u online banking	1470051054	7596	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+341	8343	179054	i have already pay for August RM 27.61. but why it still send message to me that say that i havent pay??	1470211847	7932	0	21	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+348	8476	179552	hi...good evening....can you please check my payment has been received<NL> or not?	1470218599	7958	0	12	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+348	8492	179618	i have forward the payment detail.	1470219748	7958	0	6	English	Billing	Payment Status	None	None	None	False	None							
+351	8573	181768	I just paid the july bill but yesterday i receive another bill. why?	1470294838	8058	0	13	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount							
+357	8761	182402	how can i check it wether my payment had done previously or not	1470300264	8084	0	13	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	Procedure	False	HowConfirmPaymentReceived							
+358	8776	182826	but payment not update in the system	1470305746	8099	0	7	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+358	8778	182829	can u check for me the status?	1470305756	8099	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+372	9042	194736	checking payment august 2016 	1470898455	8656	0	4	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	LastPayment							
+372	9070	194795	"so, after i email my payment, how long u can update in your system?"	1470899366	8656	0	14	English	Billing	Payment Status	Billing	PaymentStatus	ObjectTime	False	WantUpdate							
+375	9138	195560	"pls check my acc , i already made payment on 11 / 7 / 16 HLBB Credit card! But why Redone haven't receive? pls cal me 0124961001 for more detail, tq"	1470973369	8695	0	27	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+377	9173	195585	I would like to check my June Payment.	1470973609	8698	0	8	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	False	LastPayment							
+383	9326	197521	I have paid redone bill tru ambank amonline Jompay this morning. Pls assist to check my payment status.<NL>Details as follow :<NL><NL>Tel no : 0122743255 <NL>Acc no: 200298761 <NL>Amount Paid : Rm 131.36 <NL>Jompay Ref : 38 DNFEYB<NL>Appreciate yr feedback asap.<NL><NL>Thank you.	1471070546	8787	0	36	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+383	9344	197553	Is it possible for Redone to notify me if payment already in?	1471070995	8787	0	12	English	Billing	Payment Status	Billing	PaymentStatus	Request	True	WantUpdate							
+387	9409	197834	"Can you check for me why I receive this SMS & must pay double bill. In fact, I already paid for June bill so now I supposely pay for July bill only right?"	1471078520	8801	0	33	English	Billing	Payment Status	Billing	BillOutstanding	Reason	True	WhyBillAmount							
+427	10276	213759	could plz check on my august bill? Did i settle<NL> it?sorry it should be July	1471571666	9451	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+504	12115	240112	May I know the last payment that i did just now if for the fee of which month?	1472640430	10470	0	18	English	Billing	Billing Details	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+504	12123	240153	Can you please check for me the payment date that i did since i open this line?	1472640973	10470	0	17	English	Billing	Billing Details	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+504	12126	240156	how bout the payment before this?	1472641049	10470	0	6	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	False	LastPayment							
+504	12127	240157	How many payment that I have done in this year?	1472641113	10470	0	10	English	Billing	Billing Details	Billing	PaymentStatus	ObjectNumeric	False	LastPayment							
+512	12292	244227	"HELLO, i wan to check this number already update my payment o not? Just now i got go to ask again the hello smart tel shop , they tell me my payment already made just waiting redone to update <NL>this is my number 0109308006 "	1472707279	10650	0	44	English	Billing	Payment Status	Billing	PaymentStatus	Object	False	ConfirmPaymentReceived							
+528	12655	247814	"Hi my name is Afham... i already paid my bill but when i checked on credit movement, it shows 0.00. usually when i paid it will show total i pay in negative amount…"	1472780668	10798	0	33	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	PaymentStatusOthers							
+529	12673	247941	just now i got made payment	1472781588	10804	0	6	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+529	12680	247970	so did i success for the payment?	1472781763	10804	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+547	13190	267118	can u check for me just now i pay bill	1473306079	11537	0	10	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+547	13191	267121	received already or not	1473306086	11537	0	4	English	Billing	Payment Status	None	None	None	False	None							
+553	13330	268743	"just now did the twice reload RM 10 each, why just showed credit RM 10 only"	1473386306	11593	0	15	English	Billing	Billing Details	Billing	BillingOthers	Reason	False	None							
+561	13486	277515	"goodday,can u check for my why was d last month payment didnt pay? i was use my credit card to do d auto payment."	1473814121	11925	0	24	English	Billing	Auto Debit Application	Billing	BillingTroubleShooting	Reason	True	BillingTroubleShootingOthers							
+594	14177	292668	"Hello, I already make a payment and send payment receipt on behalf Pn Nor Hayati Binti Hassan, Acc. ID: 200231787. Please respond as soon as posibble."	1474247424	12530	0	26	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+596	14230	293009	"hi, please update my account<NL>I already made full payment<NL>Thank you."	1474251788	12545	0	10	English	Billing	Payment Status	Billing	PaymentStatus	Request	True	WantUpdate							
+601	14346	293438	may i know my bill is all paid?	1474258277	12562	0	8	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+615	14693	295448	I just made a payment	1474335883	12638	0	5	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+622	14826	296045	UPDATE PAYMENT	1474350853	12665	0	2	English	Billing	Payment Status	Billing	PaymentStatus	Request	False	WantUpdate							
+622	14830	296051	kindly inform to update payment for my bill	1474350904	12665	0	8	English	Billing	Payment Status	Billing	PaymentStatus	Request	False	WantUpdate							
+622	14845	296097	i made the payment thru online credit card	1474351366	12665	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+646	15456	298457	normal we pay online like maybank 2 u need how many days to update	1474427369	12765	0	12	English	Billing	Billing Details	Billing	PaymentChannel	ObjectTime	False	WhenProcess							
+650	15533	298735	already pay my september bill using JOMPAY bank islamic m'sia bhd this morning@ 0935 am	1474432481	12781	0	14	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+650	15534	298736	when my acc will be update	1474432501	12781	0	6	English	Billing	Billing Details	None	None	None	False	None							
+654	15625	299025	I pay my sept bill tru redone website using my visa card Maybank n status...successfull. Why redone never update my payment?	1474441399	12796	0	21	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+680	16165	300556	"I make payment through credit card, why blank in my receipt"	1474516392	12864	0	11	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+682	16199	300967	i had make pyt for RM 60.73 on 12 / 09 / 16 	1474523727	12882	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+682	16201	300969	but y the amt still shown in my acct?	1474523745	12882	0	9	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+687	16322	301210	"i already paid on 12 / 09 / 16 via FPX, but y the amount still appear in my acct?"	1474527537	12893	0	16	English	Billing	Billing Charges	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+689	16375	301461	"my name is mira mastura, i was wondering, i had made payment using BIMB jomPAY, and i have received message, it say my payment was succesfull. but, when i checked on my bill, i still have unpaid bills, and i dont received any confirmation message from red 1."	1474535221	12903	0	48	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+712	16895	302560	BUT UNTIL TODAY I STILL CANNOT RECEIVED ANY MESSAGE FOR SUCESSFUL PAYMENT	1474604333	12952	0	12	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+712	16899	302565	HOW MANY DAY TO MAKE IT MY PAYMENT CLEAR	1474604437	12952	0	9	English	Billing	Payment Status	Billing	PaymentChannel	ObjectTime	False	WhenProcess							
+740	17674	304944	"Can u check for me, i had paid on 21 / 09 it's still status in batred?"	1474763705	13048	0	15	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	True	LineStatus							
+756	18031	306415	please check and ensure the payment was received	1474849634	13107	0	8	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+768	18328	307030	"Hye, for bill on 1 Sep 2016 I had paid right? but why it still show ""pay now"" on ""Download & Pay Bill""?"	1474870491	13136	0	23	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+768	18335	307041	"Hye, for bill on 1 Sep 2016 I had paid right? but why it still show ""pay now"" on ""Download & Pay Bill""?"	1474870635	13136	0	23	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+771	18421	307377	so means i ady clear my latest sept bill right	1474876147	13147	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+775	18490	307506	hye i already make payment early morning yesterday..how long will update in the system?	1474878944	13155	0	14	English	Billing	Payment Status	Billing	PaymentChannel	ObjectTime	False	WhenProcess							
+779	18616	307772	"i just now pay online using credit card. But somehow, the payment is done or not <NL>my number 012 - 6531376 "	1474882629	13164	0	19	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+779	18628	307788	ok check for me whether already deduct from credit card and sms me the result	1474882906	13164	0	15	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+798	19088	309022	I just make a payment RM 50 through eWallet	1474948454	13218	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+828	19788	311108	"Hi, ive paid my bill using m 2 u and ive email you my POP. Why i still cant make a call?"	1475024000	13304	0	20	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyStillBar							
+833	19934	311526	now i just want to ask yesterday i already paid RM 50 is it posting?	1475028860	13321	0	14	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+838	20038	312114	i done make payment via maybank 2 u	1475037011	13345	0	6	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+842	20152	312508	i have made payment of rm 500 now i cannot use my data roaming. please check	1475041785	13363	0	15	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Wrong	Wrong	ObjectName	False	None							
+842	20163	312552	yes but i have made payment of rm 500 	1475042206	13363	0	8	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	PaymentStatus	None	False	InformPayment							
+842	20169	312558	payment of rm 500 hasn't reflected yet?	1475042333	13363	0	6	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+845	20224	312782	I HAVE PAY THIS MONTH.. BUT NOT UPDATE YET WHY?	1475044390	13376	0	10	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+848	20281	312859	check payment	1475044925	13380	0	2	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+848	20288	312892	I had make my payment RM 150 this morning by online banking	1475045152	13380	0	12	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+851	20333	313204	"Hello,<NL>I already paid the payment today at amount 165 but still the acct not updated and my internet receive so slow.."	1475049164	13392	0	21	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+852	20360	313304	I WOULD LIKE TO ASK WHY MY ACCOUNT STILL NOT YET UPDATE SINCE I HAD PAY THE BILLS LAST FEWS DAYS	1475050160	13396	0	21	English	Billing	Increase credit limit	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+854	20403	313424	I already made payment on 1 Sep' 16 anf the amount paid is RM 65.42 how come online still show it's outstanding amount?	1475051353	13404	0	21	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+857	20447	313688	Is my payment online a little while ago sussessful?	1475057019	13415	0	9	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+863	20621	313916	I just made a payment of RM 10 <NL>but I didn't receive the receipt	1475065159	13427	0	12	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+869	20826	314298	Please help to check when last time I pay d redone bill...bcoz i didnt see my pymnt of d current bill...tq	1475109402	13439	0	21	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	False	LastPayment							
+869	20833	314322	"Tx for checking..i aldy receive d oct bill..but when i check,didnt state dat i have paid as a u mention..n d total oso dont deduct d pymnt yet..anything prblm?"	1475109866	13439	0	29	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+870	20842	314417	"Hi there, would like to ask about my bill update. Since I just paid my bill for Sept yesterday, I still got a message remind me to pay the bill before 14 Oct 2016. "	1475111238	13445	0	34	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+879	21093	315628	I PAID THE BILL BUT WHEN I LOOK AT THE INVOICE STATEMENT THAT I HAVE AROUND 8 RINGGIT NOT SETTLE THE BILL. I HAVE PAID ALMOST 27 RINGGIT..	1475133256	13495	0	28	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount							
+883	21220	315971	i just want to make confirmation in case u did not get my last payment which is amount of RM 200. 	1475137073	13505	0	21	English	Billing	Billing Charges	Billing	PaymentStatus	Request	False	ConfirmPaymentReceived							
+890	21402	316251	HI I HAVE ALREADY PAY LAST MONTH REDONE BILL BUT SHY STILL HAVE BALANCE BRING FORWARD?	1475143088	13520	0	16	English	Billing	Payment Status	Billing	BillBreakdown	Reason	False	WhyItemAmount							
+891	21415	316365	can you check my account 200777515 sep 2016 payment already made?	1475145398	13523	0	11	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+898	21611	316863	any unsuccessful credit card transactions for today? the ones i tried since this morning.	1475201673	13544	0	14	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	ObjectName	True	TransactionCannotGoThrough							
+899	21619	316960	HI...Can you check this number 0128089559 <NL>?cos I did the double payment <NL>TKS	1475202827	13550	0	12	English	Billing	Deposit Refund	Billing	BillingOthers	None	True	DoublePayment							
+1203	29548	347816	It seems that RedOne did not register my payment made for June's bill	1476073631	14887	0	13	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1206	29621	347918	I dont think RedOne registered the payment I made for my June's bill	1476075419	14892	0	13	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1206	29623	347922	even though I did pay on 29 / 6 via Internet GIRO payment	1476075502	14892	0	11	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1208	29704	348404	PLEASE ADJUST THE BILL AS YOU KNEW MY EXPLANATION	1476080829	14908	0	9	English	Billing	Billing Charges	Billing	BillingOthers	Request	False	None							
+1210	29765	348275	my bill status	1476079860	14911	0	3	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount							
+1215	29915	349446	hi can u check for me payment j.now successful or not?	1476104046	14952	0	11	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1220	30068	350124	technical failed..so is my transaction done?	1476161035	14979	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1225	30151	351055	i WOULD LIKE TO CHECK MY PAYMENT IS IT SUCCESSFULLY?	1476175298	15020	0	10	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1228	30240	351963	hv u recieved my payment for this no. 011 - 1082 1925 	1476238298	15055	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1228	30241	351964	i pay by maybank 2 u yesterday at 9. ++ pm	1476238327	15055	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1235	30410	352415	Hi. I've made payment for October and September but my bill is still not cleared. Can u check? For October I made payment on 28 th September 20 : 38 : 38 PM<NL>Ref # 83815854 from account 7035980892 to T 111389838400 for the amount RM 51 	1476245017	15072	0	39	English	Billing	Payment Status	Billing	PaymentStatus	Reason	True	WhyNotUpdated							
+1254	30757	353164	PAYMENT	1476260196	15110	0	1	English	Billing	Deposit Refund	None	None	None	False	None							
+1254	30763	353174	"due to unscuessful pay,emt"	1476260327	15110	0	4	English	Billing	Deposit Refund	None	None	None	False	None							
+1254	30767	353179	i have open a ticket for my 1 st payment. where it is successfull but not receive by redONE	1476260429	15110	0	18	English	Billing	Deposit Refund	Wrong	Wrong	None	False	None							
+1254	30768	353183	then the customer care said i should contact ipay 88 support	1476260469	15110	0	10	English	Billing	Deposit Refund	Billing	PaymentChannel	None	False	PaymentChannelOthers							
+1254	30769	353186	i have contact them and they said that the paymnet is sucessful	1476260485	15110	0	12	English	Billing	Deposit Refund	Billing	PaymentStatus	None	False	ConfirmPaymentReceived							
+1254	30773	353202	138.80 at 5 october	1476260626	15110	0	4	English	Billing	Deposit Refund	None	None	None	False	None							
+1254	30774	353204	i made 2 payment. with the same amount	1476260641	15110	0	8	English	Billing	Deposit Refund	Billing	PaymentStatus	None	False	LastPayment							
+1254	30775	353207	during 5 october redONE said dont recieve my payment trhough bank islam internet banking fpx	1476260670	15110	0	15	English	Billing	Deposit Refund	Billing	PaymentStatus	None	False	WhyNotUpdated							
+1254	30776	353208	so i made another paymnet through proper bank islam internet banking	1476260689	15110	0	11	English	Billing	Deposit Refund	Billing	PaymentChannel	None	False	PaymentChannelOthers							
+1254	30779	353224	i payment 8.48 for other number	1476260894	15110	0	6	English	Billing	Deposit Refund	Billing	PaymentStatus	None	False	LastPayment							
+1254	30784	353244	so redone recieve the payment	1476261154	15110	0	5	English	Billing	Deposit Refund	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1255	30801	353178	"I paid already bill ,but here display me haven paid yet? why?"	1476260385	15111	0	12	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1255	30814	353227	but here showed I haven paid	1476261001	15111	0	6	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1258	30857	353258	i already made payment	1476261465	15114	0	4	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1258	30858	353259	it already deducted from my saving acc..	1476261481	15114	0	7	English	Billing	Payment Status	None	None	None	False	None							
+1258	30868	353293	just check if the payment already clear	1476261825	15114	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+1264	30990	353611	Please check my last payment been made	1476272615	15128	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	LastPayment							
+1264	30998	353628	I have paid my bill payment at redone kg gajah on 10 / 10 / 16. but i didnt recieved any sms regarding the payment	1476273175	15128	0	20	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+1265	31012	353815	I already pay 200 earlier this month	1476318394	15141	0	7	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1266	31052	353896	so i pay rm 25 	1476320019	15143	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1266	31064	353938	already make my payment	1476320719	15143	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1278	31356	354534	"I tried to pay my bill 01110589636 vide your payment channel,<NL>I had tried 2 cards with 2 different banks - AMMB & Hong Leong. still unsuccessful.<NL>Can you plse verify your system is normal?<NL>tq<NL><NL>tq"	1476326947	15175	0	33	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Request	TRUE	CannotPayBill							
+1278	31371	354566	This is the error msg: --- Transaction Failed.<NL>Fail(Card issuing bank does not honor the transaction)	1476327314	15175	0	15	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	 Procedure	False	CannotPayBill							
+1278	31373	354572	I had used the same Hong Leong card to pay Aug bill preciously no problem	1476327373	15175	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	PaymentChannelOthers							
+1281	31434	354700	I JUST MAKE A PAYMENT ONLINE OF RM 145 WITH CREDIT CARD...HOWEVER I NOT RECEIVED ANY SMS FROM YOU CONFIRMING THIS TRANSACTIOM	1476329322	15181	0	21	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+1285	31518	354811	Can you help me to confirm my payment is succesful or not just now?no sms received from your company. 0172465016 is my number	1476331772	15188	0	23	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+1286	31560	354900	Not yet to deduct	1476332986	15191	0	4	English	Billing	Payment Status	None	None	None	False	None							
+1293	31761	355591	Hi can you help me on my latest bill payment? Check if it has already go through in the system. I have received the confirmation email and send to the redone staff that contacted me but he / she say that's not the receipt	1476343743	15224	0	44	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+1293	31769	355620	Order no. 1035210 <NL>Transaction ID: T 111911678800 	1476344094	15224	0	5	English	Billing	Payment Status	None	None	None	False	None							
+1298	31889	355771	i already paid my bill	1476345546	15231	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1299	31922	355840	i was paid my bill RM 194.00 just now<NL>But when i check the amaount still no diducct	1476346587	15232	0	16	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1315	32269	356636	this is chuah. is ok. i have paid. thanks	1476361218	15275	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+1319	32384	356781	Kindly update my payment on maybank 2 u	1476363128	15280	0	6	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	ObjectName	False	WantUpdate							
+1319	32394	356818	I paid through maybank 2 u a few minutes ago	1476363691	15280	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	None	False	InformPayment							
+1323	32475	356990	"i just want inform, i already make payment for sept 16 via maybank 2 u yesterday."	1476405203	15288	0	14	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1323	32489	357006	ref no 3607190903 maybank 2 u time 13 oct 2016 19.47.41 	1476405551	15288	0	9	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1328	32623	357994	i want to paid with the 18.87 from the line 011 10520048 	1476422238	15328	0	12	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay							
+1336	32843	358590	I paid RM 24.90 on sept 16 	1476433710	15352	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1337	32870	358638	Transaction Status : Success<NL> Account ID : 201147546 <NL> Invoice Id : 1610 - 201147546 <NL> Date : 14 / 10 / 2016 16 : 26 : 21 PM<NL> FPX Txn ID : T 111947430700 <NL> Auth Code : 1610141624170089 <NL> Transaction Amount : MYR 25.16 	1476434172	15355	0	30	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1339	32909	358768	thank you. Done with my payment	1476436587	15362	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+1345	33048	359962	can u help me check my payment??	1476497122	15411	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1345	33049	359963	i just pay the payment	1476497131	15411	0	5	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1347	33113	360153	Payment done.	1476500567	15418	0	2	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+1349	33163	360359	payment has been performed and successful. Thank you for your checking.	1476502909	15427	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+1351	33195	360509	i have made payment through JOMPAY RM 149.33 this moring	1476504255	15436	0	9	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1351	33196	360510	just now already pay another RM 80 using FPX	1476504271	15436	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1354	33326	361204	how long does it take to process	1476511520	15464	0	7	English	Billing	Make Payment - Selfcare	None	None	ObjectTime	False	None							
+1367	33656	362485	can u check my for my payment?	1476528888	15518	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1367	33657	362496	"never mind, thank you for your reply. I already got the sms of success payment"	1476528987	15518	0	15	English	Billing	Payment Status	Billing	PaymentStatus	None	False	PaymentStatusOthers							
+1368	33685	362777	i make payment online just now. 0169771590 	1476533005	15530	0	7	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1381	34138	364455	payment make via maybank 2 u.	1476589901	15594	0	4	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1384	34216	364698	I have made CIMB clicks transaction just now	1476594773	15604	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	None	False	InformPayment							
+1384	34217	364699	I paid rm 50 	1476594779	15604	0	4	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	None	False	InformPayment							
+1384	34224	364721	that is the reason i made payment via cimb clicks	1476595209	15604	0	10	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	None	False	InformPayment							
+1386	34269	364893	i had pay rm 30 to my account via maybank 2 u	1476596885	15613	0	9	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1389	34361	364974	hi..please check bil payment for acc. 200847900 	1476597739	15621	0	7	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+1391	34402	365108	HAI<NL>I WANT TO KNOW WHY MY BILL NO UPDATE?	1476598518	15627	0	9	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1391	34410	365180	i was found my bill not update from Aug to Oct 2016 	1476599300	15627	0	12	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1397	34604	365571	because i already made payment online	1476602791	15640	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1397	34605	365572	but i didnt get any verification	1476602799	15640	0	6	English	Billing	Un-bar lines - Overdue Payment	None	None	Reason	False	None							
+1397	34606	365575	no message no email and nothing	1476602810	15640	0	6	English	Billing	Un-bar lines - Overdue Payment	None	None	Reason	False	None							
+1397	34623	365606	okay i made the first payment last night around 12 	1476603105	15640	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1397	34624	365608	and the second payment at 2 pm just now	1476603114	15640	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1399	34673	365697	I pay the september bill	1476605472	15644	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	None	False	InformPayment							
+1399	34681	365707	and I already pay RM 40.87 last night	1476605611	15644	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1399	34694	365737	I already pay	1476606028	15644	0	3	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1399	34696	365740	can u help me to check?	1476606041	15644	0	6	English	Billing	Un-bar lines - Overdue Payment	None	None	ObjectName	True	None							
+1400	34716	365717	Just now I have done another rm 200 at maybank ATM	1476605724	15645	0	10	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1407	34855	365955	But ive made payment last month	1476610732	15657	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1413	35097	366801	i ve made the payment on friday 14 / 10 / 2016 	1476666662	15694	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1415	35139	366804	i've made payment of rm 250 yesterday morning via maybank 2 u	1476666707	15696	0	9	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1415	35142	366816	"ok, i will made the payment of rm 2.62 and emailed it to careline."	1476666866	15696	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1415	35145	366831	payment have been made and email have been sent to careline. please check.	1476667057	15696	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1418	35214	367177	i'll already pay for this month .r u receive my payment?	1476671102	15711	0	11	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1422	35281	367963	i just made a payment	1476678393	15751	0	5	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1426	35383	368802	and today i alredy clear the outstanding for previous bill	1476687041	15785	0	10	English	Billing	Billing Details	Billing	BillOutstanding	None	False	InformPayment							
+1426	35394	368876	AUG BILL RM 50.08 RIGHT? I already made PAYMENT	1476687644	15785	0	8	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1426	35395	368880	I have the payment transaction from my bank	1476687678	15785	0	8	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1426	35398	368887	I pay RM 50.08 for aug	1476687724	15785	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1426	35401	368898	and for aug bill i already paid on 3 - 09 - 16 rm 50.08 	1476687796	15785	0	11	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1433	35549	369608	hi...my account had deduct the amount...but i check now the bill of redone haven tpay	1476698203	15824	0	15	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1433	35562	369664	but i checking my bill	1476698676	15824	0	5	English	Billing	Payment Status	None	None	None	False	None							
+1433	35563	369671	it look like i havent pay	1476698683	15824	0	6	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1433	35564	369673	and i dint receive any receipt from redone yet	1476698692	15824	0	9	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+1435	35597	370536	"yes, I am going to make the payment on this oct bill, may i know it is my already pay the bill this October."	1476759480	15868	0	24	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+1438	35691	370804	Payment done successfully. Thanks for help! Have a nice day	1476764202	15878	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+1442	35784	370980	my mobile number 0129188268 i want to check a transaction which i made payment on 14 - 10 - 2016 	1476767364	15889	0	16	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	LastPayment							
+1451	36006	371549	"Hi<NL>Can u please check my payment. I just made payment for my bill, not sure it go through or not"	1476778476	15918	0	20	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1451	36016	371564	I see. Didn't update in my self care database	1476778601	15918	0	9	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1464	36328	372699	"hi, just now i have online pay my bill. can you help me to check whether have pass the payment or not?"	1476844165	15972	0	22	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1464	36331	372702	can you help me do check my payment?	1476844206	15972	0	8	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1464	36341	372747	pay RM 150 	1476844658	15972	0	2	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1467	36374	373154	I made a credit payment online thru your website but not sure if transaction went through. Can u check? Tel No is 012 2102178 	1476852620	15990	0	24	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+1475	36602	373695	i already pay the money ..	1476860458	16014	0	6	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1480	36703	373999	I have make payment on 5 Oct	1476869218	16025	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1486	36841	374449	ic... i pay using maybank 2 u tis eveing	1476881179	16043	0	7	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1492	36975	374758	I have just made the payment	1476927004	16058	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+1497	37088	374904	I ALREDY SUBMIT MY PAYMENT FOR NOVEMBER BILL	1476928969	16065	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1497	37089	374906	IF U ALREADY RECEIVED OR NOT	1476928993	16065	0	6	English	Billing	Payment Status	None	None	None	True	None							
+1499	37193	375086	Why my last month payment cannot pay auto debit since I had been register.	1476932615	16068	0	14	English	Billing	Billing Details	Billing	BillingTroubleShooting	Reason	False	WhyCannotPayBill							
+1531	37902	378650	can you check if this is success?	1477095257	16223	0	7	English	Billing	Payment Status	None	None	Request	True	None							
+1533	37979	378736	i hv made payment payment for 0194232508 bill	1477098014	16226	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1533	37980	378737	could u check it for me?	1477098032	16226	0	6	English	Billing	Payment Status	None	None	Request	True	None							
+1584	39439	383489	"Hi, I already paid my sept bill RM 81.38 on 4.10.16 why still no update on download & pay bill?"	1477296568	16403	0	20	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1585	39458	383747	HI HOW TO CHECK I HAVE OWE THE PAYMENT OR NOT?	1477302086	16413	0	11	English	Billing	Billing Charges	Billing	Document	Procedure	False	HowViewBill							
+1638	40887	391236	RECEIVED EMAIL SAYING THAT PAYMENT FAILED. now i just make another 1 can u check if this is ok	1477571951	16712	0	19	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1639	40927	391354	plz remake a new bill. I already paid RM 40.96 at 04 Oct 2016 19 : 47 : 10 <NL>My refference num : 3580008965 <NL>TQ	1477609951	16714	0	18	English	Billing	Payment Status	Billing	PaymentStatus	Request	False	PaymentStatusOthers							
+1643	41068	391962	"Hello, I am norashikin and my number is + 60 11 - 1085 6929 <NL>Pymnt been md 3 days ago via jom paymcan u assist to check on yr siystem if it isis reflected? I need my line to be reconnect.tq"	1477623659	16738	0	36	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1658	41504	393913	april got payment received or not?	1477652752	16816	0	6	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1684	42235	396546	"Hi.. i have paid my bills on 5 oct but in the system it still shows that i need to ""pay now"""	1477814209	16926	0	22	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1805	45186	408464	I have pay for the last 3 month 70 rgt monthly	1478046562	17480	0	9	English	Billing	Billing Charges	Billing	PaymentStatus	None	False	InformPayment							
+1805	45191	408476	Last payment on 2 / 9 	1478046846	17480	0	4	English	Billing	Billing Charges	Billing	PaymentStatus	None	True	LastPayment							
+1819	45565	409578	my last payment is RM 22.00 	1478056253	17529	0	5	English	Billing	Billing Details	Billing	PaymentStatus	None	False	LastPayment							
+1819	45568	409587	can u check for me my last payment date ?	1478056308	17529	0	10	English	Billing	Billing Details	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+1819	45569	409589	i remember last payment is RM 22.00 	1478056321	17529	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	LastPayment							
+1831	45972	411536	"yes, I want to know about the bill i paid RM 51.29 yesterday it is already clear October bill"	1478070421	17609	0	18	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1841	46223	412480	Hi! This morning I have make payment online for 0102780810. But why my bill still no change?	1478077696	17643	0	17	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1848	46527	413448	hello...my number just now just pay rm 90 bill thru my smartphone. the moment to proceed the payment thru existing card account....the next page is going to blanco....could you pls recheck whether the payment recieved on fail<NL><NL> 0162324539 	1478128074	17681	0	36	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1858	46765	414336	When is my last payment	1478138995	17724	0	5	English	Billing	Billing Details	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+1864	46875	414799	yesterday i have make payment for my bill	1478142872	17746	0	8	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1864	46876	414801	"however, today still receive message to ask me make payment for previous month"	1478142895	17746	0	13	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1867	46937	415194	Ysterday i have made payment of rm 34 by cimbclicks	1478146178	17762	0	9	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+1872	47050	415391	js now i have pay the amt rm 54.39 	1478148059	17771	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1875	47128	415745	i alrd clear the bill	1478152461	17789	0	5	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+1878	47201	416080	how can I check the last payment I made ?	1478156451	17806	0	10	English	Billing	Billing Details	Billing	PaymentStatus	Procedure	False	LastPayment							
+1880	47264	416502	I paid for bill already	1478160607	17827	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+1881	47273	416569	Could you please check for me the payment of 1 nov	1478161358	17830	0	10	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1881	47281	416582	"It mean I settled all payments, right?"	1478161509	17830	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+1908	47936	419204	i have paid the latest payment on 31 Oct 2016 RM 48.76 	1478233419	17948	0	11	English	Billing	Deposit Refund	Billing	PaymentStatus	None	False	InformPayment							
+1915	48120	420259	"I click on download & pay bill tab and it shows download for the month of September, October and Novemeber...does that mean I have not paid for september?"	1478246909	18004	0	28	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	True	BillAmount							
+1929	48448	421651	"i had made my payment( nov bill ) yesterday( 4 / 11 / 2016 ),but when i view my statement online, redone havent make adjustment on my bill."	1478312376	18073	0	22	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+1930	48478	421664	I JUST PAID MY BIL L VIA MAYNBANK 2 U.. HOW COULD I KNOW IF MY TRANSACTION WAS SUCCESSFULL?	1478312867	18074	0	17	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	Procedure	False	HowConfirmPaymentReceived							
+1940	48713	423447	ask about my payment	1478393586	18149	0	4	English	Billing	Billing Charges	Billing	PaymentStatus	ObjectName	False	PaymentStatusOthers							
+1944	48785	423999	"Yes, I do....And the automatic payment done for last months. Maybe technical error....can u check it?"	1478412916	18175	0	16	English	Billing	Auto Debit Application	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1957	49046	426012	Hi.. Can you help me check either I already paid the bill for October or not? Because I already paid it yesterday through online banking.	1478498656	18279	0	25	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+1957	49056	426073	Yesterday I had paid RM 140.00 for October because the bill on October is RM 133.95 But it didn't send any message to my number.	1478499643	18279	0	23	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+1960	49122	426265	Hi...i've just received today message through my hp : thank you from redone regarding payment RM 50.00. may i know the payment is for what hp number...forgot already…	1478504053	18294	0	26	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	LastPayment							
+1980	49562	430409	"hi, can you check my payment process? I already did the payment through Public Bank online banking just now, but still pending on ipay 88. "	1478650633	18465	0	24	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2020	50626	437212	OH SURE. <NL>I WANT TO DOUBLE CONFIRM THAT. HAVE I MADE MY PAYMENT FOR THIS MONTH ?<NL>CAN U CHECK FOR ME ?	1478927767	18736	0	22	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+2023	50729	437512	i have make payment to redone before	1478938823	18749	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	LastPayment							
+2034	51128	438574	Could you please check whether I have paid?	1479001182	18788	0	8	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+2049	51640	441150	"I am try to pay the bill with the credit card.. however, it shows transaction failed.."	1479093171	18910	0	16	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Procedure	False	CannotPayBill							
+2049	51656	441224	dunnot.. when i submit the payment thru credit card.. it shows transaction failed...	1479094018	18910	0	13	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Procedure	False	CannotPayBill							
+2060	51939	441717	"hi, i made a payment yesterday using maybank 2 u<NL>just wanna confirm if the payment is accepted"	1479101780	18935	0	15	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2071	52196	442580	have you received my online payment?	1479111548	18979	0	6	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2071	52206	442624	just wondering if redone side has received the payment	1479111730	18979	0	9	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2107	53143	446823	my last payment is .?	1479196635	19167	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	ObjectName	False	LastPayment							
+2107	53145	446843	how much i paid..?	1479196751	19167	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	ObjectNumeric	False	LastPayment							
+2115	53368	447975	payment done through jompay by CIMB bank	1479206153	19210	0	7	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2123	53631	449174	Status: Successful<NL>Reference number: 3709483964 <NL>Transaction date: 16 Nov 2016 <NL>Transaction time: 09 : 49 : 34 	1479261004	19265	0	10	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2129	53786	449611	Amount: RM 430.21 <NL>Fee Amount: RM 0.00 <NL>GST Amount: RM 0.00 <NL>From account 564276812610 WCA<NL>Buyer name: M NABISAR BINTI MUSTAN<NL>Merchant Name: MOBILE 88. COM SDN BHD 01 <NL>Payment Reference: T 113177987800 <NL>FPX Transaction ID: 1611161055580335 <NL>New account balance: RM 932.35 	1479265118	19287	0	27	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+2129	53787	449614	payment proof just send	1479265127	19287	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+2134	53960	450199	my number 0109856499 and already made payment RM 140 thru SenQ counter on 14 Nov but not update the payment	1479270099	19313	0	18	English	Billing	Payment Channel	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2134	53966	450232	already made payment RM 140 thru SenQ counter on	1479270231	19313	0	8	English	Billing	Payment Channel	Billing	PaymentStatus	None	False	InformPayment							
+2134	53967	450236	on 14 Nov but not update the payment	1479270258	19313	0	7	English	Billing	Payment Channel	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2134	53975	450295	OK .how come they not update my payment	1479270700	19313	0	8	English	Billing	Payment Channel	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2147	54301	451259	I had made an overdue payment	1479281761	19365	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2155	54479	452080	I paid Maybank online just now.	1479298013	19401	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+2162	54624	452337	"Hi, ive paid my bill RM 103.30 on 2 / 11 / 16 but the next day i received a message saying that i need to pay RM 103.24 my ic num ( 5196 - norifah binti md ramli)"	1479342986	19418	0	32	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2170	54834	452675	May 2 u this morning	1479349948	19431	0	3	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+2179	55045	454435	"hi, just want to know why my account didn't update because yesterday i paid my bill but nothing change ain the view vill site. i also didnt receive any message state that i've pay my bill"	1479431315	19510	0	36	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2181	55102	454820	i pay my bill at jompay but im still not received any msg until now	1479438535	19530	0	15	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+2218	56050	461035	i already pay may bill<NL><NL>can u check	1479783333	19802	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2218	56064	461050	i already transfer @ 0.53 	1479783619	19802	0	5	English	Billing	Payment Status	None	None	None	False	None							
+2239	56636	462946	"Checked at the bill page, the amount is still due."	1479862610	19881	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2244	56753	463610	already paid - 122.08 	1479874363	19907	0	3	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2247	56829	463770	if transaction already approved	1479877885	19914	0	4	English	Billing	Payment Status	None	None	None	False	None							
+2276	57575	467953	i thought i paid everything including my late payment	1480039979	20092	0	9	English	Billing	Billing Details	Billing	BillOutstanding	None	False	BillAmount							
+2280	57683	468654	"Dear PAUL LING FONG,<NL><NL>We are pleased to inform you that your online payment via iPay 88 is successful. Your credit card/bank account has been debited with MYR 100.00. <NL><NL>Please note that IPAY 88 *RED 1 NETWORK will be listed in your credit card/bank statement for this transaction.<NL><NL>Transaction Detail<NL>Transaction ID : T 113521689100 <NL>Transaction Date : 25 -Nov- 2016 2 : 34 : 31 PM<NL>Transaction Amount : MYR 100.00 <NL>Payment Type : Credit Card<NL>Product Description : customer id: 200685394 ( 0133860707 )"	1480055809	20132	0	65	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2280	57694	468743	i have just made a payment of rm 100 just now	1480056917	20132	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2281	57718	468719	why already paid by online maybank 2 u 2 day	1480056709	20133	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2281	57734	468810	i already paid last 2 day RM 50 	1480057251	20133	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2285	57841	468989	can you help me to check?	1480059035	20139	0	6	English	Billing	Billing Charges	None	None	None	True	None							
+2295	58087	469984	i did made payment 2 days ago	1480123228	20176	0	7	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2295	58094	469995	can u check whether redone did received the payment or not	1480123320	20176	0	11	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2295	58105	470006	so u did received the payment	1480123507	20176	0	6	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2300	58286	470941	can i know when did i made payment?	1480138117	20216	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+2305	58424	471887	I have paid my bill via maybank 2 u but..i don't get any update about my pay..	1480202155	20254	0	15	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2307	58478	471953	I'VE MADE THE PAYMENT VIA MAYBANK 2 U ONLINE	1480210684	20257	0	7	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2307	58488	471963	"THATS ALL THANK YOU, I THOUGHT AUTAMATIC AFTER PAYMENT RECEIVED THE NOTIFICATION"	1480210938	20257	0	12	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+2311	58563	472108	i already make payment last few day	1480214639	20264	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2312	58598	472175	I just paid 100 rite	1480215680	20265	0	5	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2324	58908	473827	Can you check if your system already received my payment?	1480292131	20338	0	10	English	Billing	Billing Charges	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2324	58914	473847	But I already make the payment on 25 / 11 	1480292560	20338	0	8	English	Billing	Billing Charges	Billing	PaymentStatus	None	False	InformPayment							
+2324	58917	473858	I've checked throught maybank 2 u. The payment is successful	1480292749	20338	0	8	English	Billing	Billing Charges	Billing	PaymentStatus	None	False	InformPayment							
+2324	58924	473894	I told you few times that I already make payment on 25 / 11 / 2016 @ 2026 hr	1480293449	20338	0	13	English	Billing	Billing Charges	Billing	PaymentStatus	None	False	InformPayment							
+2330	59058	474732	Is my November bill paid? I did auto-payment previously. Guess Maybank issues new credit card with PIN number security feature & that's why redONE didn't do auto debit ... Can u update my new credit card for auto debit?	1480305757	20379	0	39	English	Billing	Auto Debit Application	Billing	PaymentStatus	Object	False	ConfirmPaymentReceived							
+2331	59102	474883	JUST PAID	1480306994	20381	0	2	English	Billing	Increase credit limit	Billing	PaymentStatus	None	False	InformPayment							
+2348	59595	476417	"i have just made a payment, which was about 70 ringgit"	1480329502	20445	0	11	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2352	59714	476604	how do i check if i had pay the bill?	1480332861	20456	0	10	English	Billing	Billing Details	Billing	BillOutstanding	Procedure	False	BillAmount							
+2352	59719	476609	how about the current update of the payment coz i first time use maybank to pay for redOne bill now but i havent receive the message about it receive my payment	1480333008	20456	0	31	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	NoNotification							
+2353	59741	476888	yesterday I make a payment and received msg from red 1 that payment is done	1480378652	20469	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+2353	59742	476889	but this morning.. why still stated the bill is pay now	1480378670	20469	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2354	59772	476952	MAKE PAYMENT ALREADY RM 80 + 260 	1480380936	20472	0	4	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	PaymentStatus	None	False	InformPayment							
+2355	59805	477052	Jompay thru Maybank 2 u RM 100 	1480381965	20475	0	4	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2355	59806	477054	thru kiosk RM 116 	1480381979	20475	0	3	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2355	59807	477055	why the payment channel too slow??	1480382002	20475	0	6	English	Billing	Payment Status	Billing	PaymentChannel	Reason	False	PaymentChannelOthers							
+2355	59810	477059	Maybank 2 u set to monthly SI	1480382059	20475	0	5	English	Billing	Payment Status	Billing	PaymentChannel	None	False	PaymentChannelOthers							
+2355	59811	477061	"Redone kiosk at IOI Mall, Bandar Putra Kulai at 7 pm"	1480382085	20475	0	10	English	Billing	Payment Status	None	None	None	False	None							
+2355	59822	477112	"then, today u said did't update regarding the payment was done?"	1480382815	20475	0	11	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2355	59824	477125	"if i send the evidence to careline, what will they can do since still no update on my account?"	1480382898	20475	0	19	English	Billing	Payment Status	None	None	ObjectName	False	None							
+2355	59825	477143	"which 1 is correct?<NL>if i send the evidence to careline, what will they can do since still no update on my account?"	1480383171	20475	0	22	English	Billing	Payment Status	None	None	ObjectName	False	None							
+2362	59962	477552	i already paid yesterday	1480389740	20498	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2373	60242	478358	im already paid the bill	1480398152	20534	0	5	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	PaymentStatus	None	False	InformPayment							
+2375	60291	478537	i just paid through cimb not m 2 u . i paid at 29 Nov 2016 10 : 43 am cimbclick. Paid to mobile 88 /T 113686360000 	1480400086	20542	0	20	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2378	60346	478629	last month i pay 2 times RM 16.96 	1480400994	20548	0	7	English	Billing	Billing Details	Billing	BillingOthers	None	False	DoublePayment							
+2381	60397	478759	i already paid	1480404395	20554	0	3	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2382	60431	478845	Okay i ady made the payment	1480405598	20557	0	6	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	PaymentStatus	None	False	InformPayment							
+2390	60637	480250	Yesterday through Jompay...	1480469346	20615	0	3	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2392	60686	480344	and i make payment by yesterday by m 2 u 50.32 	1480469963	20619	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2395	60842	480876	whether i have pay my payment just now?	1480474966	20637	0	8	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2395	60843	480879	i still havent received ur receipt	1480474983	20637	0	6	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+2407	61148	482210	I HAVE PAID RM 50 SINCE THIS MORNING	1480492003	20699	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2411	61299	482424	i know that but i want to see my payment that i ve paid .	1480494321	20706	0	15	English	Billing	Billing Details	Billing	PaymentStatus	Procedure	False	LastPayment							
+2414	61347	482675	",may l have a look of my payment ?"	1480496037	20719	0	9	English	Billing	Billing Details	Billing	PaymentStatus	Procedure	True	LastPayment							
+2418	61437	482944	I JUZ PAID RM 50 THIS MORNING	1480499133	20730	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	None	False	InformPayment							
+2419	61463	483639	make payment	1480509405	20759	0	2	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentChannel	Procedure	False	HowPay							
+2433	61810	485231	"Hi, i want to update my payment, since this morning I already live chat with your operator"	1480557162	20831	0	17	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	Request	False	WantUpdate							
+2433	61820	485305	Then last night I already paid for RM 60. And already email to redone this morning	1480557477	20831	0	15	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2437	61900	486765	JUST WANNA DOUBLE CHECK BCOZ I ALREADY MAKE A PAYMENT RM 307.00 	1480563012	20913	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2448	62209	489683	"after i successfully pay my bill, do i have to do anything?"	1480581680	21058	0	12	English	Billing	Payment Status	Billing	BillingOthers	Procedure	False	None							
+2459	62474	491142	"hi, payment has been made recently for this account 200238716 pls check the status. tq"	1480636795	21120	0	15	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2462	62552	491299	i want pay my bill	1480639946	21129	0	5	English	Billing	Billing Charges	Billing	PaymentChannel	Procedure	False	HowPay							
+2472	62815	492034	i paid rm 188 yesterday	1480646125	21157	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+2474	62923	492647	but i aldy paid 17 .. 	1480650587	21191	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2474	62925	492650	check when is my last payyment..?	1480650604	21191	0	6	English	Billing	Billing Details	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+2474	62928	492655	now u side say no payment..?	1480650636	21191	0	6	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2474	62962	492748	then i paid 17 for which month bill?	1480651571	21191	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth							
+2479	63092	493678	later i check back my payment history ...	1480659480	21257	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	LastPayment							
+2479	63093	493681	payment rm 19.79 had been done..	1480659488	21257	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2482	63224	495985	May I know what happen to the payment I made today for this account no. if the number has been terminated?	1480691706	21371	0	21	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectName	True	PaymentStatusOthers							
+2483	63239	496062	Hi...need redone confirmation on my online payment just now using maybank 2 u...pls help…	1480692581	21376	0	12	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2486	63344	496500	i want to make payment rm 175 in order for to get my line back	1480725033	21393	0	14	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay							
+2486	63347	496503	so i want to make payment thru calling merchant verification.	1480725098	21393	0	10	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	PaymentChannelOthers							
+2490	63448	497476	Hi i want to check my payment	1480738183	21438	0	7	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2490	63465	497521	Actually i have pay those bill on 1 st dec 2016 	1480738650	21438	0	10	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2490	63468	497530	But i paid for 01110761160 is rm 290.00 	1480738746	21438	0	7	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2490	63469	497531	And for 01110861160 rm 180.00 	1480738775	21438	0	4	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2495	63589	498072	i have paid some amount 2 days ago	1480747060	21461	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+2495	63590	498073	100 rm	1480747065	21461	0	2	English	Billing	Un-bar lines - Overdue Payment	None	None	None	False	None							
+2495	63591	498075	and today 50 rm	1480747071	21461	0	4	English	Billing	Un-bar lines - Overdue Payment	None	None	None	False	None							
+2508	63910	500260	I already<NL> pay bill 100 rm	1480812971	21556	0	6	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2508	63911	500262	I already transfer pay money to maybank account	1480813017	21556	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2508	63916	500278	I already pay bill	1480813387	21556	0	4	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2508	63944	500360	Where money go?	1480814256	21556	0	3	English	Billing	Payment Status	None	None	ObjectName	False	None							
+2509	63969	500407	overpaid my dec bill	1480814767	21562	0	4	English	Billing	Payment Status	Billing	Refund	Procedure	False	HowRefund							
+2509	63978	500432	I just made payment about 5 minutes ago	1480814994	21562	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2512	64075	500788	my credit card already charge rm 9.01 	1480818767	21577	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2517	64215	501556	But I already paid	1480832637	21607	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2521	64301	502218	HELLO PLS HELP ME TO CHRECK MY LAST PAYMENT??	1480846700	21634	0	9	English	Billing	Billing Charges	Billing	PaymentStatus	ObjectName	False	LastPayment							
+2522	64333	502412	bill paid online	1480854337	21644	0	3	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+2524	64378	502526	"I had made payment just now. May i inrease my credit limit, tq"	1480857609	21650	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit							
+2526	64412	502654	"Hello, this afternoon I just made my RM 50 payment at Plentong Giant and the sales person told me I will receive the receipt via SMS but until now I still haven't get any message and my bill status still remain the same.... can you please help me to check what happen with this? Thanks."	1480860554	21656	0	54	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2529	64501	503300	i saved the payment advise	1480898563	21682	0	5	English	Billing	Payment Status	None	None	None	False	None							
+2534	64664	503851	paid bill for november	1480904347	21705	0	4	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2534	64674	503913	today only i paid november bill	1480904755	21705	0	6	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2543	64921	505312	I made payment yesterday	1480917201	21775	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2552	65225	506665	"Hi, I was wondering that I just finished payment via cimbclicks, how come under the option Download & Pay Bill there still show option Pay Now?"	1480929986	21829	0	26	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2554	65271	507170	I have paid the bill	1480937770	21845	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2555	65308	507496	may i ask whether i have paid any month beofre	1480946990	21858	0	10	English	Billing	Billing Charges	Billing	PaymentStatus	ObjectName	True	LastPayment							
+2571	65814	510083	hi how can i know i paid for my plans?	1481007252	21953	0	10	English	Billing	Payment Status	Billing	BillOutstanding	Procedure	False	BillAmount							
+2571	65817	510112	i had already paid	1481007420	21953	0	4	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2574	65949	510440	Hai.. My name is Mohd Rosli bin Sajidon<NL>I have already paid my phone bill ( 01110603143 ):<NL>Transaction Status : Success<NL>Account ID : 200089100 <NL>Invoice Id : 1612 - 200089100 <NL>Date : 06 / 12 / 2016 15 : 37 : 32 PM<NL>FPX Txn ID : T 113997470800 <NL>Auth Code : 1612061536320829 <NL>Transaction Amount : MYR 152.36 	1481010084	21960	0	38	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2576	66008	510666	I HAVE PAYMENT ADY	1481014608	21969	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2576	66023	510691	"i know,i have payment on 05 dec 2016 13 : 36 is M 2 u pay bill"	1481014880	21969	0	13	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2584	66213	512376	"i pay already ,but until now ca't use"	1481080212	22038	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyStillBar							
+2592	66509	514913	can you heip to check? i pay rm 107.06 by pbb visa card just now	1481110959	22121	0	14	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2595	66592	515036	can i check if i have successfully debited money into my account?	1481113552	22126	0	12	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2595	66595	515040	i paid rm 300 yesterday but did not receive SMS	1481113576	22126	0	10	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+2597	66635	515119	Regarding about my payment	1481115890	22133	0	4	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	PaymentStatusOthers							
+2597	66637	515123	kindly assit to check my payment	1481115897	22133	0	6	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2597	66646	515139	just need your assist to confirm my payment is sucessful or not	1481115965	22133	0	12	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2597	66655	515153	so my payment on nov and dec is done right >	1481116084	22133	0	11	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	ConfirmPaymentReceived							
+2599	66693	515671	"I have made payment few days ago, but I think my line was blocked"	1481120719	22156	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	WhyStillBar							
+2599	66728	515809	i have paid 73.86 was for which month fees?	1481121548	22156	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectTime	False	LastPayment							
+2600	66766	516030	i already paid my bill but still not shown when i checked	1481123867	22163	0	12	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2611	67081	518183	"hi, i have paid the bill for 2 months today, but there is no confirmation paid notice from redone, so how can i check the confirmation of the paid bills?"	1481182681	22241	0	30	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	Procedure	False	HowConfirmPaymentReceived							
+2611	67100	518211	"if i still didn't get the sms payment success, what should i do?"	1481183092	22241	0	13	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentStatus	Procedure	False	HowConfirmPaymentReceived							
+2616	67220	519727	I've already made a payment RM 83.77 for the number 013 - 9263149. But until now i did nit receive any sms regarding the payment.	1481207933	22300	0	22	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2616	67233	519762	The trancsaction is success	1481208188	22300	0	4	English	Billing	Payment Status	None	None	None	False	None							
+2622	67394	520838	done make a payment	1481259227	22344	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentStatus	None	False	InformPayment							
+2627	67550	522736	Hi I already paid my bill but still unable connect to internet need your help thanks	1481335534	22414	0	16	English	Billing	Payment Status	Billing	Barring	Reason	False	WhyStillBar							
+2639	67837	523740	our payment done	1481353580	22457	0	3	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2640	67872	523775	which month i dint pay n can check?	1481354173	22458	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	BillAmount							
+2640	67879	523789	"same question, which month i forgot to pay?"	1481354740	22458	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	BillAmount							
+2641	67941	523855	PAY 50 % ALSO CANNOT	1481357644	22460	0	4	English	Billing	Billing Details	Billing	BillOutstanding	None	False	PartialPayment							
+2642	67990	524126	O...I only can pay on next week	1481366125	22468	0	7	English	Billing	Billing Details	Billing	PaymentChannel	None	False	PaymentChannelOthers							
+2647	68101	525204	yes pls...because i settled the bill quite sometimes ....	1481423518	22508	0	9	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+2649	68145	526636	I already pay you bill 100 RM but when ask you say not receipt	1481500975	22576	0	14	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+2649	68148	526643	I pay you already 2 week but now I don't know how	1481501034	22576	0	11	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2649	68163	526661	I use my online transfer to your account	1481501253	22576	0	8	English	Billing	Payment Status	Billing	PaymentChannel	None	False	PaymentChannelOthers							
+2650	68236	526788	First i pay rm 150 first...Can next month I pay full payment..agree	1481505909	22580	0	11	English	Billing	Billing Details	Billing	BillOutstanding	None	False	PartialPayment							
+2652	68288	527230	i already payment but no any notice said im already payment	1481517784	22599	0	11	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+2652	68304	527259	ya.. but already transfer success..but normally if i transfer success must have 1 notice message to me... but this time not yet	1481518373	22599	0	22	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	NoNotification							
+2659	68504	528374	my payment is made	1481551814	22646	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	InformPayment							
+2663	68594	528880	Kindly check my payment	1481589914	22669	0	4	English	Billing	Billing Charges	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2663	68603	528919	Payment is already made on Dec 10 	1481590420	22669	0	7	English	Billing	Billing Charges	Billing	PaymentStatus	None	False	InformPayment							
+2679	68928	530484	"Hi. i wanna ask. how come i already make payment, but still havent update on outstanding list?"	1481619193	22750	0	17	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2684	69051	530922	i make a payment on maybank 2 u amount is RM 100. yesterday i already ask your staff .her say need wait 1 more day..so im waiting..but now still no any notice to me is im ady payment	1481624975	22767	0	34	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2684	69057	530944	last month i forget to payment..but on this month i payment on 09 / 12 but no settle	1481625136	22767	0	15	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2684	69067	530972	i payment on 9 / 12 how many day ago?	1481625567	22767	0	8	English	Billing	Payment Status	Billing	PaymentStatus	Object	False	InformPayment							
+2684	69073	530991	so i make a payment	1481625870	22767	0	5	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2686	69170	531398	i just would like to know about my payment status	1481633380	22783	0	10	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2686	69171	531400	i just paid for RM 90 for my bill	1481633388	22783	0	8	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2688	69208	531544	i have payment but still receive msg on outstanding balance	1481635222	22790	0	10	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2688	69223	531645	i have just made a payment last few days	1481636140	22790	0	9	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2688	69231	531668	i have made full payment.	1481636280	22790	0	5	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2689	69275	532055	i have just paid my redone bill but i am confused with your bill statement.	1481639958	22807	0	15	English	Billing	Billing Details	Billing	PaymentStatus	None	False	PaymentStatusOthers							
+2689	69277	532059	i was initially charged RM 50.88. but this month i am paying RM 101.76 	1481639998	22807	0	13	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount							
+2689	69294	532146	yes. in the month of July 2017 i paid 101.76 	1481641282	22807	0	10	English	Billing	Billing Details	Billing	PaymentStatus	None	False	InformPayment							
+2689	69295	532149	may i know this payment is for which month bill?	1481641303	22807	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth							
+2689	69297	532159	the march bill is paying for which month?	1481641490	22807	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth							
+2689	69299	532164	the payment on March 22 2016 is payment of which month bill?	1481641634	22807	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth							
+2690	69309	532261	"hi admin can check for my bil, because I have already pay half of a amount with maybank 2 u but i still dont get sms from redone info about a payment."	1481643203	22821	0	30	English	Billing	Payment Status	Billing	PaymentStatus	Object	False	ConfirmPaymentReceived							
+2690	69324	532295	Ooo like that mayby the payment that I made through maybank 2 u last night not yet in process	1481643588	22821	0	17	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2696	69445	534197	hello sir pls check my payment today	1481701971	22911	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2696	69459	534269	i need too check my payment roday	1481702546	22911	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2702	69605	534551	may i ask the payment status for my friends who r using redone ?	1481706517	22925	0	14	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2719	70085	536794	"I JUST PAY ONLINE ,WANT TO CHECK"	1481765397	23028	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2719	70091	536812	"CHECK MY PHONE NO. STATUS ,TQ"	1481765571	23028	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectName	False	LineStatus							
+2732	70453	537877	I HAVE MADE PAYMENT VIA JOMPAY TODAY	1481772308	23069	0	7	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2732	70464	537927	is thay payment via jompay take time	1481772574	23069	0	7	English	Billing	Payment Status	Billing	PaymentChannel	ObjectTime	True	WhenProcess							
+2740	70678	539529	kind you check my status	1481786464	23134	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectName	False	LineStatus							
+2740	70686	539540	i already made a payment this morning	1481786792	23134	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+2740	70689	539544	i got the email say that i have to pay RM 77 ++ to avoid the barred	1481786916	23134	0	16	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	CheckUnbarAmount							
+2740	70698	539615	i hve done the payment now	1481787582	23134	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+2743	70763	539809	then wat you need ?	1481788235	23143	0	5	English	Billing	Payment Status	None	None	None	False	None							
+2746	70907	539901	"pls assist to check my status <NL>previously it was barred , i did pay just now with maybank 2 u<NL> RM 45.15 "	1481789020	23149	0	19	English	Billing	Payment Status	Billing	Barring	ObjectName	False	LineStatus							
+2748	70941	539982	Hi..I Mansor.<NL>I have send slip payment for account No. 200182506 	1481789797	23152	0	10	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2750	71007	540078	this is the Transaction ID : T 113946588100 	1481790444	23156	0	7	English	Billing	Unsuspend lines - (Within 50 days)	None	None	None	False	None							
+2763	71334	541724	Hi i just paid another rm 170 	1481812200	23240	0	6	English	Billing	Payment Status	Billing	PaymentStatus	None	False	InformPayment							
+2773	71622	543918	"ok , payment done"	1481854634	23332	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	InformPayment							
+2786	71950	546013	can you check if it is there or nit////	1481875943	23420	0	9	English	Billing	Payment Status	None	None	None	True	None							
+2804	72481	549490	may i know when my bar status will be released	1481970488	23572	0	10	English	Billing	Make Payment - Selfcare	Billing	Barring	ObjectTime	False	CheckUnbarTime							
+2816	72795	551651	my payment already paid or not ?	1482045132	23667	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2831	73223	553883	SO THIS MONTH BILL IS CLEARED ?	1482123124	23764	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount							
+2840	73459	554586	can you please check if the payment is not made? until now have not been able to	1482134311	23794	0	17	English	Billing	Deposit Refund	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2854	73855	555471	Any overdue payment?	1482150351	23828	0	3	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount							
+2857	73933	555807	Can u check for me regarding the payment that I've just made?TQ	1482155203	23841	0	12	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2875	74509	558625	Would like to check with my current line status. I made payment already but the line still being block.	1482229781	23955	0	19	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectName	False	LineStatus							
+2887	74993	560704	"Why when i paid on 2 nd december , is writen paid"	1482291696	24042	0	11	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2887	75007	560721	Y when i already paid on 2 nd is not written paid	1482291996	24042	0	11	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							
+2894	75220	561515	may i check when is my last payment?<NL>handphone no 0196681437 	1482304862	24075	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentStatus	ObjectName	False	LastPayment							
+2895	75285	561609	last payment how much	1482305533	24076	0	4	English	Billing	Billing Details	Billing	PaymentStatus	ObjectNumeric	False	LastPayment							
+2921	76162	565118	"hI, MY ACCOUNT ID IS 201283367 , please help me check whether my line status had been barred?"	1482390510	24224	0	18	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	True	LineStatus							
+2921	76172	565130	have you check?	1482390742	24224	0	3	English	Billing	Unsuspend lines - (Within 50 days)	None	None	None	True	None							
+2940	76668	567435	"Hi , i pay my my bill at dealer but i didnt receive any sms that i pay my bill, can you help me to check now my bill clear or not ?thank you."	1482464191	24334	0	34	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	True	ConfirmPaymentReceived							
+2944	76750	568014	"Hi, I've just made a payment and would like to check the status of it. Payment reference number is T 114747412900 "	1482480311	24361	0	20	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+2974	77506	572261	i want to make sure my bill payment december i pay or not ?	1482715563	24546	0	14	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	False	ConfirmPaymentReceived							
+3000	78199	574805	then may i know why account still showing outstanding?	1482805991	24649	0	9	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated							

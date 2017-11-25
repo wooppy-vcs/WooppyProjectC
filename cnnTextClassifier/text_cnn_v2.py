@@ -2,14 +2,14 @@ import tensorflow as tf
 import numpy as np
 
 
-class TextCNN(object):
+class TextCNNv2(object):
     """
     A CNN for text classification.
     Uses an embedding layer, followed by a convolutional, max-pooling and softmax layer.
     """
     def __init__(
       self, sequence_length, num_classes, vocab_size,
-      embedding_size, filter_sizes, num_filters, l2_reg_lambda=0.0, weights_array=1.0):
+      embedding_size, filter_sizes, num_filters_layer1, num_filters_layer2, l2_reg_lambda=0.0, weights_array=1.0):
         # Placeholders for input, output and dropout
         self.input_x = tf.placeholder(tf.int32, [None, sequence_length], name="input_x")
         self.input_y = tf.placeholder(tf.float32, [None, num_classes], name="input_y")
@@ -24,47 +24,72 @@ class TextCNN(object):
                 tf.random_uniform([vocab_size, embedding_size], -1.0, 1.0),
                 name="W")
             self.embedded_chars = tf.nn.embedding_lookup(self.W, self.input_x)
-            self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars, -1)
+            # self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars, -1)
 
         # Create a convolution + maxpool layer for each filter size
+        h_combined = []
         pooled_outputs = []
         for i, filter_size in enumerate(filter_sizes):
             with tf.name_scope("conv-maxpool-%s" % filter_size):
                 # Convolution Layer
-                filter_shape = [filter_size, embedding_size, 1, num_filters]
+                filter_shape = [filter_size, embedding_size, num_filters_layer1]
                 W = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name="W")
-                b = tf.Variable(tf.constant(0.1, shape=[num_filters]), name="b")
-                conv = tf.nn.conv2d(
-                    self.embedded_chars_expanded,
+                b = tf.Variable(tf.constant(0.1, shape=[num_filters_layer1]), name="b")
+                conv = tf.nn.conv1d(
+                    self.embedded_chars,
                     W,
-                    strides=[1, 1, 1, 1],
-                    padding="VALID",
+                    stride=1,
+                    padding="SAME",
                     name="conv")
                 # Apply nonlinearity
                 h = tf.nn.relu(tf.nn.bias_add(conv, b), name="relu")
-                # Maxpooling over the outputs
-                pooled = tf.nn.max_pool(
-                    h,
-                    ksize=[1, sequence_length - filter_size + 1, 1, 1],
-                    strides=[1, 1, 1, 1],
-                    padding='VALID',
-                    name="pool")
-                pooled_outputs.append(pooled)
+
+                # Convolution Layer
+                filter_shape = [filter_size, num_filters_layer1, num_filters_layer2]
+                W1 = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name="W")
+                b1 = tf.Variable(tf.constant(0.1, shape=[num_filters_layer2]), name="b")
+                conv1 = tf.nn.conv1d(
+                    conv,
+                    W1,
+                    stride=1,
+                    padding="SAME",
+                    name="conv1")
+                # Apply nonlinearity
+                h1 = tf.nn.relu(tf.nn.bias_add(conv1, b1), name="relu1")
+
+                final_h = tf.expand_dims(h1, -1)
+                h_combined.append(final_h)
+
+        final_combined_h = tf.concat(h_combined, 2)
+
+        # Maxpooling over the outputs
+        self.h_pool = tf.nn.max_pool(
+            final_combined_h,
+            ksize=[1, 4, 1, 1],
+            strides=[1, 2, 1, 1],
+            padding='VALID',
+            name="pool")
+        # pooled_outputs.append(pooled)
 
         # Combine all the pooled features
-        num_filters_total = num_filters * len(filter_sizes)
-        self.h_pool = tf.concat(pooled_outputs, 3)
+        num_filters_total = num_filters_layer2 * len(filter_sizes) * int((((sequence_length-4)/2)+1))
+        # self.h_pool = tf.concat(pooled_outputs, 2)
         self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
+
+        # Add Fully connected Layer
+        with tf.name_scope("FC"):
+            self.dense = tf.layers.dense(self.h_pool_flat, units=(num_filters_total/2), activation=tf.nn.relu)
+            self.dense1 = tf.layers.dense(self.dense, units=(num_filters_total/4), activation=tf.nn.relu)
 
         # Add dropout
         with tf.name_scope("dropout"):
-            self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
+            self.h_drop = tf.nn.dropout(self.dense1, self.dropout_keep_prob)
 
         # Final (unnormalized) scores and predictions
         with tf.name_scope("output"):
             W = tf.get_variable(
                 "W",
-                shape=[num_filters_total, num_classes],
+                shape=[num_filters_total/4, num_classes],
                 initializer=tf.contrib.layers.xavier_initializer())
             b = tf.Variable(tf.constant(0.1, shape=[num_classes]), name="b")
             l2_loss += tf.nn.l2_loss(W)

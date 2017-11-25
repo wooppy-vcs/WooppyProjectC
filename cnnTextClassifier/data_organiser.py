@@ -34,7 +34,7 @@ with open("config.yml", 'r') as ymlfile:
 datasets = data_helpers.get_datasets_multiple_files(container_path=cfg["datasets"]["datalocalfile"]["data_folder"]["path"],
                                                     vocab_tags_path=cfg["datasets"]["localfile"]["vocab_write_path"]["path"],
                                                     class_weights_path=cfg["datasets"]["localfile"]["class_weights_path"]["path"],
-                                                    sentences=sentences_column, tags=tags_column)
+                                                    sentences=sentences_column, tags=tags_column, remove_none=True)
 
 x_text, y = [datasets["data"], datasets["target"]]
 print("Total data size : {}".format(len(x_text)))

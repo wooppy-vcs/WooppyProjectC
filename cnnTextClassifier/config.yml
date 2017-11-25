@@ -143,9 +143,9 @@ datasets:
 # path should be directed to the raw data folder.
   datalocalfile:
     data_folder:
-      path: "data/Project-A-R-Tagged-Data"
+      path: "data/Project-A-R-Tagged-Data-Truncated-Enriched"
       info: "Data source for data"
-    container_path: data/Project-A-R-Tagged-Data
+    container_path: data/Project-A-R-Tagged-Data-Truncated-Enriched
     shuffle: True
     random_status: 42
 
@@ -155,16 +155,16 @@ datasets:
 # vocab_write_path: path of writing and loading tags vocab of the data.
   localfile:
     data_file:
-      path: "data/Project-A-R-Scenario/Training_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched/Training_data.txt"
       info: "Data source for data"
     test_data_file:
-      path: "data/Project-A-R-Scenario/Test_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched/Test_data.txt"
       info: "Data source for data"
     vocab_write_path:
-      path: "data/Project-A-R-Scenario/tags_vocab.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched/tags_vocab.txt"
     class_weights_path:
-      path: "data/Project-A-R-Scenario/class_weights.txt"
-    container_path: data/Project-A-R-Scenario
+      path: "data/Project-A-R-Scenario-Truncated-Enriched/class_weights.txt"
+    container_path: data/Project-A-R-Scenario-Truncated-Enriched
     shuffle: True
     random_status: 42
 

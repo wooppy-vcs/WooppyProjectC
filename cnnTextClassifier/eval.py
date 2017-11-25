@@ -43,7 +43,10 @@ tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1510820356/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1510889604/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1510910997-Level-2/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1510924069-Scenario/checkpoints", "Checkpoint directory from training run") #penalised(10epochs)Binary(different weight)
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1511176830-Scenario-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1511240087-AnswerType-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
+# tf.flags.DEFINE_string("checkpoint_dir", "runs/1511260117-Scenario-len20-correctedweightedaccuracy-filtersize345-remove-none/checkpoints", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", "runs/1511599364-Scenario-len90-2layersConv-CNNv1-featuresmap32_64-11epcohs/checkpoints", "Checkpoint directory from training run")
 
 
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
@@ -204,7 +207,12 @@ if y_test is not None:
             y_test_forconf = np.append(y_test_forconf, [idx])
             all_predictions_forconf = np.append(all_predictions_forconf, [idx])
 
+    out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results.txt")
+    with open(out_path_report, 'w', newline='') as f:
+        f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
+
     print(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
+
     # print(metrics.classification_report(y_test_forconf, all_predictions_forconf))
     # print(metrics.classification_report(y_test, all_predictions))
     # print(metrics.confusion_matrix(y_test, all_predictions))
@@ -257,7 +265,8 @@ if y_test is not None:
     # print(y_test)
     # print(shape(y_test))
 
-    conf_arr = metrics.confusion_matrix(y_test, all_predictions)
+    # conf_arr = metrics.confusion_matrix(y_test, all_predictions)
+    conf_arr = metrics.confusion_matrix(y_test_forconf, all_predictions_forconf)
 
     norm_conf = []
     # for idx, i in enumerate(available_target_names):

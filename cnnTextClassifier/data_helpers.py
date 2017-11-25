@@ -374,7 +374,7 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_path, sentences = 0, tags = 1):
+def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_path, sentences = 0, tags = 1, remove_none=False):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -397,11 +397,20 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_p
         for s in examples:
             if s[6] == "0":
                 if s[8] == "English":
-                    data.extend([s[sentences].strip()])
-                    if s[tags].strip() == "":
-                        target_names.extend(["None"])
+                    # Remove None from data
+                    if remove_none:
+                        if s[tags].strip() != "None" and s[tags].strip() != "":  # If not none and not empty
+                            data.extend([s[sentences].strip()])
+                            if s[tags].strip() == "":
+                                target_names.extend(["None"])
+                            else:
+                                target_names.extend([s[tags].strip()])
                     else:
-                        target_names.extend([s[tags].strip()])
+                        data.extend([s[sentences].strip()])
+                        if s[tags].strip() == "":
+                            target_names.extend(["None"])
+                        else:
+                            target_names.extend([s[tags].strip()])
 
     datasets = dict()
     datasets['data'] = data
