@@ -200,8 +200,8 @@ if y_test is not None:
     print("=======================================================")
     # print(datasets['target_names'])
     # print(y_test)
-    # print(all_predictions)
     available_target_names = list(datasets['target_names'])
+    # print(all_predictions)
     # available_target_names.remove('Others')
     # available_target_names.remove('Cool Gadgets')
 
@@ -218,7 +218,6 @@ if y_test is not None:
     out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results.txt")
     with open(out_path_report, 'w', newline='') as f:
         f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names, sample_weight=weightsArray))
-        f.write("\nWeighted Score\t{}\t{}\t{}".format(p, r, f1))
     f.close()
 
     print(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names, sample_weight=weightsArray))
