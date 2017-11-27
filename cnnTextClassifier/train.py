@@ -15,7 +15,7 @@ from cnnTextClassifier.text_cnn_v1 import TextCNNv1
 from cnnTextClassifier.text_cnn_v2 import TextCNNv2
 
 tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
-tf.flags.DEFINE_string("setting", "new-len90-CNNv1-featuresmap32_64-filtersize345-oneFC", "classifier setting")
+tf.flags.DEFINE_string("setting", "len90-CNNv1-2conv-1dense", "classifier setting")
 
 # Parameters
 # ==================================================
@@ -49,8 +49,8 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("num_epochs", 50, "Number of training epochs (default: 200)")
-tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
-tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
+tf.flags.DEFINE_integer("evaluate_every", 95, "Evaluate model on dev set after this many steps (default: 100)")
+tf.flags.DEFINE_integer("checkpoint_every", 95, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 
 # tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
@@ -206,7 +206,7 @@ with tf.Graph().as_default():
 
         # Output directory for models and summaries
         timestamp = str(int(time.time()))+FLAGS.classifier_type
-        out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp + "-" + FLAGS.setting))
+        out_dir = os.path.abspath(os.path.join(os.path.curdir, "new_runs", timestamp + "-" + FLAGS.setting))
         print("=======================================================")
         print("Writing to {}\n".format(out_dir))
         print("=======================================================")
