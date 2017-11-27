@@ -4,10 +4,12 @@ import numpy as np
 import re
 import collections
 import math
+import os
 
-from os import listdir
+
 # from sklearn.datasets import fetch_20newsgroups
 # from sklearn.datasets import load_files
+from os import listdir
 
 
 def clean_str(string):
@@ -347,7 +349,7 @@ def write_vocab_tags(vocab, filename):
         write a word per line
     """
     print("Writing vocab...")
-    with open(filename, "w") as f:
+    with open(filename, 'w') as f:
         for i, word in enumerate(vocab):
             if i != len(vocab) - 1:
                 f.write("{}\n".format(word))
@@ -374,7 +376,7 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_path, sentences = 0, tags = 1, remove_none=False):
+def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_path, system_path, sentences = 0, tags = 1, remove_none=False):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -418,6 +420,9 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_p
     target = []
 
     vocab_tags = get_vocab_tags(target_names)
+    if not os.path.exists(system_path):
+        os.makedirs(system_path)
+
     write_vocab_tags(vocab_tags, vocab_tags_path)
     target_names_dict = load_vocab(vocab_tags_path)
     for s in target_names:
