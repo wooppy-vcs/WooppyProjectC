@@ -46,7 +46,7 @@ tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511176830-Scenario-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511240087-AnswerType-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511260117-Scenario-len20-correctedweightedaccuracy-filtersize345-remove-none/checkpoints", "Checkpoint directory from training run")
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1511776110-Scenario-new-len90-CNNv1-featuresmap32_64-filtersize345-oneFC/checkpoints", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", "runs/1511775318-Scenario-new-len90-CNNv1-featuresmap32_64-filtersize345-oneFC/checkpoints", "Checkpoint directory from training run")
 
 
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
@@ -218,15 +218,21 @@ if y_test is not None:
     out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results.txt")
     with open(out_path_report, 'w', newline='') as f:
         f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
-        f.write("OVERALL\t"+metrics.precision_score(y_test_forconf, all_predictions_forconf, average="weighted")+"\t" +
-                metrics.recall_score(y_test_forconf, all_predictions_forconf, average="weighted")+"\t" +
-                metrics.f1_score(y_test_forconf, all_predictions_forconf, average="weighted"))
+        f.write("\tOVERALL\t")
+        f.write(str(metrics.precision_score(y_test_forconf, all_predictions_forconf, average="weighted")))
+        f.write("\t")
+        f.write(str(metrics.recall_score(y_test_forconf, all_predictions_forconf, average="weighted")))
+        f.write("\t")
+        f.write(str(metrics.f1_score(y_test_forconf, all_predictions_forconf, average="weighted")))
     f.close()
 
     print(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
-    print("OVERALL\t"+metrics.precision_score(y_test_forconf, all_predictions_forconf, average="weighted")+"\t" +
-                metrics.recall_score(y_test_forconf, all_predictions_forconf, average="weighted")+"\t" +
-                metrics.f1_score(y_test_forconf, all_predictions_forconf, average="weighted"))
+    print("Weighted Precision:")
+    print(metrics.precision_score(y_test_forconf, all_predictions_forconf, average="weighted"))
+    print("Weighted Recall:")
+    print(metrics.recall_score(y_test_forconf, all_predictions_forconf, average="weighted"))
+    print("Weighted f1 Score:")
+    print(metrics.f1_score(y_test_forconf, all_predictions_forconf, average="weighted"))
 
     # print(metrics.classification_report(y_test_forconf, all_predictions_forconf))
     # print(metrics.classification_report(y_test, all_predictions))
