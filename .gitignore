@@ -141,4 +141,9 @@ fabric.properties
 data/GoogleNews-vectors-negative300.bin/
 data/Test/
 data/tags_vocab.txt
-/cnnTextClassifier/data/GoogleNews-vectors-negative300.bin/GoogleNews-vectors-negative300.bin
+#/cnnTextClassifier/data/GoogleNews-vectors-negative300.bin/GoogleNews-vectors-negative300.bin
+#/cnnTextClassifier/data/Project-A-R-Tagged-Data-Truncated-Enriched/
+#/cnnTextClassifier/data/Project-A-R-Tagged-Data/
+#/cnnTextClassifier/data/Project-A-R-Tagged-Data-Truncated/
+#/cnnTextClassifier/data/Project-A-R-Scenario-Truncated-Enriched-v2/
+/cnnTextClassifier/data/

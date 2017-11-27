@@ -394,11 +394,14 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_p
     for label, file in enumerate(files):
         # print(file)
         examples = list(open(container_path + "/" + file, 'r', encoding="utf8").readlines()[1:])
+        print("Data size : {}".format(len(examples)))
         examples = [s.split("\t") for s in examples]
+        operator_reply_counter = 0
+        not_english_counter = 0
         # a = [s[tags].strip() for s in examples]
         for s in examples:
-            if s[6] == "0":
-                if s[8] == "English":
+            if s[8] == "English":
+                if s[6] == "0":
                     # Remove None from data
                     if remove_none:
                         if s[tags].strip() != "None" and s[tags].strip() != "":  # If not none and not empty
@@ -413,6 +416,12 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_p
                             target_names.extend(["None"])
                         else:
                             target_names.extend([s[tags].strip()])
+                else:
+                    operator_reply_counter += 1
+            else:
+                not_english_counter += 1
+        print("Operator's Replies Number: {}".format(operator_reply_counter))
+        print("Malay Data Number: {}".format(not_english_counter))
 
     datasets = dict()
     datasets['data'] = data
