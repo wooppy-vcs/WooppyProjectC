@@ -409,11 +409,16 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_p
                             if s[tags].strip() == "":
                                 target_names.extend(["None"])
                             else:
-                                target_names.extend([s[tags].strip()])
+                                if s[tags].strip() == "Other":
+                                    target_names.extend(["Others"])
+                                else:
+                                    target_names.extend([s[tags].strip()])
                     else:
                         data.extend([s[sentences].strip()])
                         if s[tags].strip() == "":
                             target_names.extend(["None"])
+                        elif s[tags].strip() == "Other":
+                            target_names.extend(["Others"])
                         else:
                             target_names.extend([s[tags].strip()])
                 else:

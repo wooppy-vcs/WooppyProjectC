@@ -37,7 +37,7 @@ def analyse_data(data_path, test_path, vocab_path):
             i += 1
         f.close()
 
-path = "data/Project-A-R-Scenario-Truncated-Enriched/"
+path = "data/Project-A-R-Scenario-Truncated-Enriched-v2/"
 analyse_data(path+"Training_data.txt", path+"Test_data.txt", path+"tags_vocab.txt")
 
 
