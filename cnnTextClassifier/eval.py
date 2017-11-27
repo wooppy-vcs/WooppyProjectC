@@ -97,6 +97,7 @@ if FLAGS.eval_train:
         datasets = data_helpers.get_datasets(
             data_path=cfg["datasets"][dataset_name]["test_data_file"]["path"],
             vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+            class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
             sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
     x_raw, y_test = data_helpers.load_data_labels(datasets)
@@ -127,6 +128,9 @@ else:
 vocab_path = os.path.join(FLAGS.checkpoint_dir, "..", "vocab")
 vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
 x_test = np.array(list(vocab_processor.transform(x_raw)))
+
+weightsArray = datasets['class_weights']
+
 # print(x_test)
 # print("\nEvaluating...\n")
 
@@ -156,6 +160,7 @@ with graph.as_default():
 
         # Tensors we want to evaluate
         predictions = graph.get_operation_by_name("output/predictions").outputs[0]
+
 
         # Generate batches for one epoch
         print("=======================================================")
@@ -207,11 +212,16 @@ if y_test is not None:
             y_test_forconf = np.append(y_test_forconf, [idx])
             all_predictions_forconf = np.append(all_predictions_forconf, [idx])
 
+
+
+
     out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results.txt")
     with open(out_path_report, 'w', newline='') as f:
-        f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
+        f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names, sample_weight=weightsArray))
+        f.write("\nWeighted Score\t{}\t{}\t{}".format(p, r, f1))
+    f.close()
 
-    print(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
+    print(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names, sample_weight=weightsArray))
 
     # print(metrics.classification_report(y_test_forconf, all_predictions_forconf))
     # print(metrics.classification_report(y_test, all_predictions))

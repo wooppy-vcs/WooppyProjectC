@@ -215,9 +215,11 @@ with tf.Graph().as_default():
         loss_summary = tf.summary.scalar("loss", cnn.loss)
         acc_summary = tf.summary.scalar("accuracy", cnn.accuracy)
         weighted_acc_summary = tf.summary.scalar("weighted_accuracy", cnn.weighted_accuracy)
+        weighted_prec_summary = tf.summary.scalar("weighted_precision", cnn.weighted_precision)
+        weighted_f1_summary = tf.summary.scalar("weighted_f1", cnn.weighted_f1)
 
         # Train Summaries
-        train_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary, grad_summaries_merged])
+        train_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary, weighted_prec_summary, weighted_f1_summary, grad_summaries_merged])
         train_summary_dir = os.path.join(out_dir, "summaries", "train")
         train_summary_writer = tf.summary.FileWriter(train_summary_dir, sess.graph)
 
