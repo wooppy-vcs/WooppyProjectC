@@ -96,8 +96,16 @@ class TextCNN(object):
             # weighted_correct_predictions = tf.multiply(weighted_correct_predictions_temp, tf.cast(correct_predictions, "float"))
             weighted_correct_labels = tf.multiply(weighted_correct_label_temp, transformed_correct_predictions)
             # self.weighted_accuracy = tf.reduce_mean(weighted_correct_predictions, name="weighted_accuracy")
-            self.weighted_accuracy = tf.divide(tf.reduce_sum(weighted_correct_labels), tf.reduce_sum(weighted_correct_label_temp), name="weighted_accuracy")
+            self.weighted_accuracy = tf.divide(tf.reduce_sum(weighted_correct_labels),
+                                               tf.reduce_sum(weighted_correct_label_temp), name="weighted_accuracy")
+
+        with tf.name_scope("weighted_precision"):
             prediction_one_hot = tf.one_hot(self.predictions, num_classes)
             weighted_correct_predictions_temp = tf.matmul(prediction_one_hot, class_weight)
-            self.weighted_precision = tf.divide(tf.reduce_sum(weighted_correct_labels), tf.reduce_sum(weighted_correct_predictions_temp), name="weighted_precision")
-            self.weighted_f1 = tf.divide(tf.multiply(2, tf.multiply(self.weighted_accuracy, self.weighted_precision)), tf.add(self.weighted_precision, self.weighted_accuracy), name="weighted_f1")
+            self.weighted_precision = tf.divide(tf.reduce_sum(weighted_correct_labels),
+                                                tf.reduce_sum(weighted_correct_predictions_temp),
+                                                name="weighted_precision")
+
+        with tf.name_scope("weighted_f1"):
+            self.weighted_f1 = tf.divide(tf.multiply(2.0, tf.multiply(self.weighted_accuracy, self.weighted_precision)),
+                                         tf.add(self.weighted_precision, self.weighted_accuracy), name="weighted_f1")

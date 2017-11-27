@@ -282,7 +282,7 @@ with tf.Graph().as_default():
             # print("fdsfdsfsdf")
             time_str = datetime.datetime.now().isoformat()
             print(
-                "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g},wf1 {:g}\n".format(time_str, step, loss, accuracy,
+                "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g}, wf1 {:g}\n".format(time_str, step, loss, accuracy,
                                                                                          weighted_accuracy,
                                                                                          weighted_precision,
                                                                                          weighted_f1))
@@ -306,7 +306,7 @@ with tf.Graph().as_default():
                 feed_dict)
             time_str = datetime.datetime.now().isoformat()
             print(
-                "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g},wf1 {:g}\n".format(time_str, step, loss, accuracy,
+                "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g}, wf1 {:g}\n".format(time_str, step, loss, accuracy,
                                                                                          weighted_accuracy,
                                                                                          weighted_precision,
                                                                                          weighted_f1))
