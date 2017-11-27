@@ -102,6 +102,7 @@ def predict_words(words):
     idx_new_list = sorted(range(len(probabilities)), key=lambda k: probabilities[k])
 
     inv_categories = {v: k for k, v in categories.items()}
+    predicted_category = None
     for idx_new in idx_new_list:
         print(inv_categories[idx_new].ljust(25) + str("%.4f" % probabilities[idx_new]))
         if idx_new == prediction:

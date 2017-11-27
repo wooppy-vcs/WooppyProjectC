@@ -171,7 +171,7 @@ with tf.Graph().as_default():
     )
     sess = tf.Session(config=session_conf)
     with sess.as_default():
-        cnn = TextCNNv1(
+        cnn = TextCNNv2(
             sequence_length=x_train.shape[1],
             num_classes=y_train.shape[1],
             vocab_size=len(vocab_processor.vocabulary_),
@@ -224,7 +224,7 @@ with tf.Graph().as_default():
         train_summary_writer = tf.summary.FileWriter(train_summary_dir, sess.graph)
 
         # Dev summaries
-        dev_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary])
+        dev_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary, weighted_prec_summary, weighted_f1_summary])
         dev_summary_dir = os.path.join(out_dir, "summaries", "dev")
         dev_summary_writer = tf.summary.FileWriter(dev_summary_dir, sess.graph)
 
