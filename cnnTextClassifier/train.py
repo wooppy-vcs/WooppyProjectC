@@ -15,7 +15,7 @@ from cnnTextClassifier.text_cnn_v1 import TextCNNv1
 from cnnTextClassifier.text_cnn_v2 import TextCNNv2
 
 tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
-tf.flags.DEFINE_string("setting", "len90-2layersConv-CNNv1-featuresmap32_64-12epcohs", "classifier setting")
+tf.flags.DEFINE_string("setting", "new-len90-CNNv1-featuresmap32_64-filtersize345-oneFC", "classifier setting")
 
 # Parameters
 # ==================================================
@@ -48,7 +48,7 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 11, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 50, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
@@ -276,12 +276,16 @@ with tf.Graph().as_default():
               cnn.dropout_keep_prob: FLAGS.dropout_keep_prob
             }
             # print("fdsfdsfsdf")
-            _, step, summaries, loss, accuracy, weighted_accuracy = sess.run(
-                [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
+            _, step, summaries, loss, accuracy, weighted_accuracy, weighted_f1, weighted_precision = sess.run(
+                [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy, cnn.weighted_f1, cnn.weighted_precision],
                 feed_dict)
             # print("fdsfdsfsdf")
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}, wacc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
+            print(
+                "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g},wf1 {:g}\n".format(time_str, step, loss, accuracy,
+                                                                                         weighted_accuracy,
+                                                                                         weighted_precision,
+                                                                                         weighted_f1))
             train_summary_writer.add_summary(summaries, step)
 
         def dev_step(x_batch, y_batch, writer=None):
@@ -297,11 +301,15 @@ with tf.Graph().as_default():
             # step, summaries, loss, accuracy, weighted_accuracy = sess.run(
             #     [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
             #     feed_dict)
-            step, summaries, loss, accuracy, weighted_accuracy = sess.run(
-                [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
+            step, summaries, loss, accuracy, weighted_accuracy, weighted_f1, weighted_precision = sess.run(
+                [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy, cnn.weighted_f1, cnn.weighted_precision],
                 feed_dict)
             time_str = datetime.datetime.now().isoformat()
-            print("{}: step {}, loss {:g}, acc {:g}, wacc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
+            print(
+                "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g},wf1 {:g}\n".format(time_str, step, loss, accuracy,
+                                                                                         weighted_accuracy,
+                                                                                         weighted_precision,
+                                                                                         weighted_f1))
             if writer:
                 writer.add_summary(summaries, step)
         # print(x_train)

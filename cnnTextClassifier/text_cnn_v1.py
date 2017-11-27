@@ -152,5 +152,5 @@ class TextCNNv1(object):
             self.weighted_precision = tf.divide(tf.reduce_sum(weighted_correct_labels),
                                                 tf.reduce_sum(weighted_correct_predictions_temp),
                                                 name="weighted_precision")
-            self.weighted_f1 = tf.divide(tf.multiply(2, tf.multiply(self.weighted_accuracy, self.weighted_precision)),
+            self.weighted_f1 = tf.divide(tf.multiply(2.0, tf.multiply(self.weighted_accuracy, self.weighted_precision)),
                                          tf.add(self.weighted_precision, self.weighted_accuracy), name="weighted_f1")

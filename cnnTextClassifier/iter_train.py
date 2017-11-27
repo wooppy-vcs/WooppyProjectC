@@ -125,11 +125,11 @@ x_text, y = data_helpers.load_data_labels(datasets)
 # print("max_document_length: " + str(max_document_length))
 
 # LOOP THROUGH DIFFERENT DOCUMENT LIST
-document_length_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+document_length_list = [20, 30, 40, 50, 60, 70, 80, 90, 100]
 for max_document_length in document_length_list:
 
     # Redefining Folder name
-    folder_name = "len{}-CNNv2-featuresmap32_64-filtersize345-truncated".format(max_document_length)
+    folder_name = "new-len{}-CNNv1-featuresmap32_64-filtersize345-truncated".format(max_document_length)
 
     # Reset Default Graph
     tf.reset_default_graph()
