@@ -88,9 +88,6 @@ def predict(x_raw, checkpoint_dir):
 
     # datasets = {"target_names": cfg["datasets"]["localdatasingledata"]["categories"]}
     # categories = datasets["target_names"]
-
-
-
     return prediction, probabilities
 
 def predict_words(words):
@@ -121,7 +118,6 @@ def predict_words(words):
 
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
-
     dataset_name = cfg["datasets"]["default"]
     categories = load_vocab(cfg["datasets"][dataset_name]["vocab_write_path"]["path"])
 

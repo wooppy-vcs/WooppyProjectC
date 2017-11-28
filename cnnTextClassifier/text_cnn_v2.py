@@ -79,17 +79,17 @@ class TextCNNv2(object):
         # Add Fully connected Layer
         with tf.name_scope("FC"):
             self.dense = tf.layers.dense(self.h_pool_flat, units=(num_filters_total/2), activation=tf.nn.relu)
-            self.dense1 = tf.layers.dense(self.dense, units=(num_filters_total/4), activation=tf.nn.relu)
+            # self.dense1 = tf.layers.dense(self.dense, units=(num_filters_total/4), activation=tf.nn.relu)
 
         # Add dropout
         with tf.name_scope("dropout"):
-            self.h_drop = tf.nn.dropout(self.dense1, self.dropout_keep_prob)
+            self.h_drop = tf.nn.dropout(self.dense, self.dropout_keep_prob)
 
         # Final (unnormalized) scores and predictions
         with tf.name_scope("output"):
             W = tf.get_variable(
                 "W",
-                shape=[num_filters_total/4, num_classes],
+                shape=[num_filters_total/2, num_classes],
                 initializer=tf.contrib.layers.xavier_initializer())
             b = tf.Variable(tf.constant(0.1, shape=[num_classes]), name="b")
             l2_loss += tf.nn.l2_loss(W)

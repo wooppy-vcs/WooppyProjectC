@@ -14,6 +14,7 @@ import yaml
 from cnnTextClassifier.text_cnn_v1 import TextCNNv1
 from cnnTextClassifier.text_cnn_v2 import TextCNNv2
 
+# def main():
 tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
 # tf.flags.DEFINE_string("setting", "len20--filtersize345-truncated", "classifier setting")
 
@@ -32,7 +33,9 @@ tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt fil
 tf.flags.DEFINE_boolean("enable_word_embeddings", True, "Enable/disable the word embedding (default: True)")
 tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
-tf.flags.DEFINE_integer("num_filters", 32, "Number of filters per filter size (default: 128)")
+tf.flags.DEFINE_integer("num_filters_layer1", 32, "Number of filters per filter size (default: 128)")
+tf.flags.DEFINE_integer("num_filters_layer2", 64, "Number of filters per filter size (default: 128)")
+tf.flags.DEFINE_integer("num_filters_layer3", 128, "Number of filters per filter size (default: 128)")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.0)")
 
@@ -128,8 +131,8 @@ x_text, y = data_helpers.load_data_labels(datasets)
 document_length_list = [20, 30, 40, 50, 60, 70, 80, 90, 100]
 for max_document_length in document_length_list:
 
-    # Redefining Folder name
-    folder_name = "new-len{}-CNNv1-featuresmap32_64-filtersize345-truncated".format(max_document_length)
+    # Redefining Folder namelen90-CNNv1-2conv-1dense
+    folder_name = "len{}-CNNv2-2conv-1dense".format(max_document_length)
 
     # Reset Default Graph
     tf.reset_default_graph()
@@ -172,8 +175,8 @@ for max_document_length in document_length_list:
     checkpoint_file = tf.train.latest_checkpoint(FLAGS.checkpoint_dir)
     with tf.Graph().as_default():
         session_conf = tf.ConfigProto(
-          allow_soft_placement=FLAGS.allow_soft_placement,
-          log_device_placement=FLAGS.log_device_placement,
+            allow_soft_placement=FLAGS.allow_soft_placement,
+            log_device_placement=FLAGS.log_device_placement,
         )
         sess = tf.Session(config=session_conf)
         with sess.as_default():
@@ -183,11 +186,10 @@ for max_document_length in document_length_list:
                 vocab_size=len(vocab_processor.vocabulary_),
                 embedding_size=embedding_dimension,
                 filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
-                # num_filters=FLAGS.num_filters,
-                num_filters_layer1=32,
-                num_filters_layer2=64,
-                l2_reg_lambda=FLAGS.l2_reg_lambda
-                ,
+                num_filters_layer1=FLAGS.num_filters_layer1,
+                num_filters_layer2=FLAGS.num_filters_layer2,
+                # num_filters_layer3=FLAGS.num_filters_layer3,
+                l2_reg_lambda=FLAGS.l2_reg_lambda,
                 weights_array=weightsArray)
 
             # # restoring from the checkpoint file
@@ -211,8 +213,8 @@ for max_document_length in document_length_list:
             grad_summaries_merged = tf.summary.merge(grad_summaries)
 
             # Output directory for models and summaries
-            timestamp = str(int(time.time()))+FLAGS.classifier_type
-            out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp + "-" + folder_name))
+            timestamp = str(int(time.time())) + FLAGS.classifier_type
+            out_dir = os.path.abspath(os.path.join(os.path.curdir, "new_runs", timestamp + "-" + folder_name))
             print("=======================================================")
             print("Writing to {}\n".format(out_dir))
             print("=======================================================")
@@ -221,14 +223,19 @@ for max_document_length in document_length_list:
             loss_summary = tf.summary.scalar("loss", cnn.loss)
             acc_summary = tf.summary.scalar("accuracy", cnn.accuracy)
             weighted_acc_summary = tf.summary.scalar("weighted_accuracy", cnn.weighted_accuracy)
+            weighted_prec_summary = tf.summary.scalar("weighted_precision", cnn.weighted_precision)
+            weighted_f1_summary = tf.summary.scalar("weighted_f1", cnn.weighted_f1)
 
             # Train Summaries
-            train_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary, grad_summaries_merged])
+            train_summary_op = tf.summary.merge(
+                [loss_summary, acc_summary, weighted_acc_summary, weighted_prec_summary, weighted_f1_summary,
+                 grad_summaries_merged])
             train_summary_dir = os.path.join(out_dir, "summaries", "train")
             train_summary_writer = tf.summary.FileWriter(train_summary_dir, sess.graph)
 
             # Dev summaries
-            dev_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary])
+            dev_summary_op = tf.summary.merge(
+                [loss_summary, acc_summary, weighted_acc_summary, weighted_prec_summary, weighted_f1_summary])
             dev_summary_dir = os.path.join(out_dir, "summaries", "dev")
             dev_summary_writer = tf.summary.FileWriter(dev_summary_dir, sess.graph)
 
@@ -252,7 +259,8 @@ for max_document_length in document_length_list:
                     print("Load word2vec file {}".format(cfg['word_embeddings']['word2vec']['path']))
                     initW = data_helpers.load_embedding_vectors_word2vec(vocabulary,
                                                                          cfg['word_embeddings']['word2vec']['path'],
-                                                                         cfg['word_embeddings']['word2vec']['binary'])
+                                                                         cfg['word_embeddings']['word2vec'][
+                                                                             'binary'])
                     # print(len(initW))
                     print("word2vec file has been loaded...")
                     print("=======================================================")
@@ -275,17 +283,23 @@ for max_document_length in document_length_list:
                 A single training step
                 """
                 feed_dict = {
-                  cnn.input_x: x_batch,
-                  cnn.input_y: y_batch,
-                  cnn.dropout_keep_prob: FLAGS.dropout_keep_prob
+                    cnn.input_x: x_batch,
+                    cnn.input_y: y_batch,
+                    cnn.dropout_keep_prob: FLAGS.dropout_keep_prob
                 }
                 # print("fdsfdsfsdf")
-                _, step, summaries, loss, accuracy, weighted_accuracy = sess.run(
-                    [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
+                _, step, summaries, loss, accuracy, weighted_accuracy, weighted_f1, weighted_precision = sess.run(
+                    [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy,
+                     cnn.weighted_f1, cnn.weighted_precision],
                     feed_dict)
                 # print("fdsfdsfsdf")
                 time_str = datetime.datetime.now().isoformat()
-                print("{}: step {}, loss {:g}, acc {:g}, wacc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
+                print(
+                    "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g}, wf1 {:g}\n".format(time_str, step, loss,
+                                                                                              accuracy,
+                                                                                              weighted_accuracy,
+                                                                                              weighted_precision,
+                                                                                              weighted_f1))
                 train_summary_writer.add_summary(summaries, step)
 
             def dev_step(x_batch, y_batch, writer=None):
@@ -293,21 +307,28 @@ for max_document_length in document_length_list:
                 Evaluates model on a dev set
                 """
                 feed_dict = {
-                  cnn.input_x: x_batch,
-                  cnn.input_y: y_batch,
-                  cnn.dropout_keep_prob: 1.0
+                    cnn.input_x: x_batch,
+                    cnn.input_y: y_batch,
+                    cnn.dropout_keep_prob: 1.0
                 }
                 # JIALER MOD COMMENTED
                 # step, summaries, loss, accuracy, weighted_accuracy = sess.run(
                 #     [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
                 #     feed_dict)
-                step, summaries, loss, accuracy, weighted_accuracy = sess.run(
-                    [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
+                step, summaries, loss, accuracy, weighted_accuracy, weighted_f1, weighted_precision = sess.run(
+                    [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy, cnn.weighted_f1,
+                     cnn.weighted_precision],
                     feed_dict)
                 time_str = datetime.datetime.now().isoformat()
-                print("{}: step {}, loss {:g}, acc {:g}, wacc {:g}\n".format(time_str, step, loss, accuracy, weighted_accuracy))
+                print(
+                    "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g}, wf1 {:g}\n".format(time_str, step, loss,
+                                                                                              accuracy,
+                                                                                              weighted_accuracy,
+                                                                                              weighted_precision,
+                                                                                              weighted_f1))
                 if writer:
                     writer.add_summary(summaries, step)
+
             # print(x_train)
             # Generate batches
             batches = data_helpers.batch_iter(
@@ -315,7 +336,7 @@ for max_document_length in document_length_list:
 
             print("Training Starting.......")
             # Training loop. For each batch...
-            i=0
+            i = 0
             for batch in batches:
                 x_batch, y_batch = zip(*batch)
                 train_step(x_batch, y_batch)

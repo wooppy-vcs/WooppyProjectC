@@ -46,7 +46,7 @@ tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511176830-Scenario-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511240087-AnswerType-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511260117-Scenario-len20-correctedweightedaccuracy-filtersize345-remove-none/checkpoints", "Checkpoint directory from training run")
-tf.flags.DEFINE_string("checkpoint_dir", "runs/1511775318-Scenario-new-len90-CNNv1-featuresmap32_64-filtersize345-oneFC/checkpoints", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", "new_runs/1511841592-Scenario-len30-CNNv1-2conv-1dense/checkpoints", "Checkpoint directory from training run")
 
 
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
@@ -206,35 +206,55 @@ if y_test is not None:
     # available_target_names.remove('Cool Gadgets')
 
     y_test_forconf = y_test
-    all_predictions_forconf = all_predictions
+    all_predictions_forconf = all_predictions.astype(int)
     for idx, i in enumerate(available_target_names):
         if idx not in y_test:
             y_test_forconf = np.append(y_test_forconf, [idx])
             all_predictions_forconf = np.append(all_predictions_forconf, [idx])
 
+    correct_preds_tags, total_correct_tags, total_preds_tags = np.zeros(len(available_target_names)), np.zeros(len(available_target_names)), np.zeros(len(available_target_names))
+
+    for y_test_check, y_pred in zip(y_test_forconf, all_predictions_forconf):
+        correct_preds_tags[y_test_check] += (int(y_test_check == y_pred))
+        total_correct_tags[y_test_check] += 1
+        total_preds_tags[y_pred] += 1
+
+    correct_preds_tags = [x * y for x, y in zip(correct_preds_tags, weightsArray)]
+    total_correct_tags = [x * y for x, y in zip(total_correct_tags, weightsArray)]
+    total_preds_tags = [x * y for x, y in zip(total_preds_tags, weightsArray)]
+
+    p_tags = []
+    r_tags = []
+    f1_tags = []
+
+    for i in range(len(available_target_names)):
+        p_temp = correct_preds_tags[i] / total_preds_tags[i] if correct_preds_tags[i] > 0 else 0
+        r_temp = correct_preds_tags[i] / total_correct_tags[i] if correct_preds_tags[i] > 0 else 0
+        f1_temp = 2 * p_temp * r_temp / (p_temp + r_temp) if correct_preds_tags[i] > 0 else 0
+        p_tags += [p_temp]
+        r_tags += [r_temp]
+        f1_tags += [f1_temp]
 
 
+    overall_p = sum(correct_preds_tags)/sum(total_preds_tags)
+    overall_r = sum(correct_preds_tags)/sum(total_correct_tags)
+    overall_f1 = 2 * overall_p * overall_r/ (overall_p + overall_r)
 
     out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results.txt")
     with open(out_path_report, 'w', newline='') as f:
+        f.write("tags\tp\tr\tf1\n")
+        for idx, name in enumerate(available_target_names):
+            f.write("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_tags[idx], r_tags[idx], f1_tags[idx]))
+        f.write("overall\t{:04.2f}\t{:04.2f}\t{:04.2f}\n\n".format(overall_p, overall_r, overall_f1))
         f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
-        f.write("\tOVERALL\t")
-        f.write(str(metrics.precision_score(y_test_forconf, all_predictions_forconf, average="weighted")))
-        f.write("\t")
-        f.write(str(metrics.recall_score(y_test_forconf, all_predictions_forconf, average="weighted")))
-        f.write("\t")
-        f.write(str(metrics.f1_score(y_test_forconf, all_predictions_forconf, average="weighted")))
+
     f.close()
 
+    print("tags\tp\tr\tf1\n")
+    for idx, name in enumerate(available_target_names):
+        print("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_tags[idx], r_tags[idx], f1_tags[idx]))
+    print("overall\t{:04.2f}\t{:04.2f}\t{:04.2f}\n\n".format(overall_p, overall_r, overall_f1))
     print(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
-    print("Weighted Precision:")
-    print(metrics.precision_score(y_test_forconf, all_predictions_forconf, average="weighted"))
-    print("Weighted Recall:")
-    print(metrics.recall_score(y_test_forconf, all_predictions_forconf, average="weighted"))
-    print("Weighted f1 Score:")
-    print(metrics.f1_score(y_test_forconf, all_predictions_forconf, average="weighted"))
-
-    # print(metrics.classification_report(y_test_forconf, all_predictions_forconf))
     # print(metrics.classification_report(y_test, all_predictions))
     # print(metrics.confusion_matrix(y_test, all_predictions))
 
