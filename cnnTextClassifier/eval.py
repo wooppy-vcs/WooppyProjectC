@@ -46,7 +46,7 @@ tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511176830-Scenario-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511240087-AnswerType-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511260117-Scenario-len20-correctedweightedaccuracy-filtersize345-remove-none/checkpoints", "Checkpoint directory from training run")
-tf.flags.DEFINE_string("checkpoint_dir", "new_runs/1511841592-Scenario-len30-CNNv1-2conv-1dense/checkpoints", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", "new_runs/1511868883-Scenario-len100-CNNv2-2conv-1dense/checkpoints", "Checkpoint directory from training run")
 
 
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")

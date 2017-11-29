@@ -8,6 +8,7 @@ from cnnTextClassifier import data_helpers
 from cnnTextClassifier.data_helpers import calculate_weight
 
 test_sample_percentage = 0.2
+val_sample_percentage = 0.2 # 20% of training data
 sentences_column = 3
 
 # for Level-1
@@ -52,7 +53,15 @@ x_train, x_test = x_shuffled[:test_sample_index], x_shuffled[test_sample_index:]
 y_train, y_test = y_shuffled[:test_sample_index], y_shuffled[test_sample_index:]
 
 
+data1 = list(zip(x_train, y_train))
+random.shuffle(data1)
+x_shuffled_1, y_shuffled_1 = zip(*data1)
+val_sample_index = -1 * int(val_sample_percentage * float(len(x_train)))
+x_train, x_val = x_shuffled_1[:val_sample_index], x_shuffled_1[val_sample_index:]
+y_train, y_val = y_shuffled_1[:val_sample_index], y_shuffled_1[val_sample_index:]
+
 data_helpers.write_data_to_file(x_train, y_train, cfg["datasets"]["localfile"]["data_file"]["path"])
+data_helpers.write_data_to_file(x_val, y_val, cfg["datasets"]["localfile"]["validation_data_file"]["path"])
 data_helpers.write_data_to_file(x_test, y_test, cfg["datasets"]["localfile"]["test_data_file"]["path"])
 
 

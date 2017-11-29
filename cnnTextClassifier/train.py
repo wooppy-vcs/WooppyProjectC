@@ -15,7 +15,8 @@ from cnnTextClassifier.text_cnn_v1 import TextCNNv1
 from cnnTextClassifier.text_cnn_v2 import TextCNNv2
 
 tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
-tf.flags.DEFINE_string("setting", "len90-CNNv1-2conv-1dense", "classifier setting")
+tf.flags.DEFINE_string("setting", "len90-CNNv1-2conv-1dense-test", "classifier setting")
+tf.flags.DEFINE_string("runs_folder", "new_runs_early-stopping", "folder to store all the runs")
 
 # Parameters
 # ==================================================
@@ -96,6 +97,7 @@ print("=======================================================")
 # Load data
 print("Loading data...")
 datasets = None
+datasets_val = None
 print("dataset_name : " + dataset_name)
 
 if dataset_name == "mrpolarity":
@@ -123,8 +125,13 @@ elif dataset_name == "localfile":
                                        vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
                                        class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
                                        sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
+    datasets_val = data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["validation_data_file"]["path"],
+                                             vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+                                             class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
+                                             sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
 x_text, y = data_helpers.load_data_labels(datasets)
+x_dev_raw, y_dev_raw = data_helpers.load_data_labels(datasets_val)
 
 # Build vocabulary
 ### max_document_length = max([len(x.split(" ")) for x in x_text])
@@ -134,20 +141,24 @@ x_text, y = data_helpers.load_data_labels(datasets)
 max_document_length = 90
 vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
 x = np.array(list(vocab_processor.fit_transform(x_text)))
+x_dev_temp = np.array(list(vocab_processor.fit_transform(x_dev_raw)))
 
 # Randomly shuffle data
 np.random.seed(10)
 shuffle_indices = np.random.permutation(np.arange(len(y)))
-x_shuffled = x[shuffle_indices]
-y_shuffled = y[shuffle_indices]
+x_train, y_train = x[shuffle_indices], y[shuffle_indices]
+shuffle_indices_1 = np.random.permutation(np.arange(len(y_dev_raw)))
+x_dev, y_dev = x_dev_temp[shuffle_indices_1], y_dev_raw[shuffle_indices_1]
+# x_shuffled = x[shuffle_indices]
+# y_shuffled = y[shuffle_indices]
 # print(y_shuffled.shape)
 # ==================================================
 
 # Split train/test set
 # TODO: This is very crude, should use cross-validation
-dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
-x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
-y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
+# dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
+# x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
+# y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
 # print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))
 # print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
 # print(x_train)
@@ -175,7 +186,7 @@ with tf.Graph().as_default():
     )
     sess = tf.Session(config=session_conf)
     with sess.as_default():
-        cnn = TextCNNv2(
+        cnn = TextCNNv1(
             sequence_length=x_train.shape[1],
             num_classes=y_train.shape[1],
             vocab_size=len(vocab_processor.vocabulary_),
@@ -210,7 +221,7 @@ with tf.Graph().as_default():
 
         # Output directory for models and summaries
         timestamp = str(int(time.time()))+FLAGS.classifier_type
-        out_dir = os.path.abspath(os.path.join(os.path.curdir, "new_runs", timestamp + "-" + FLAGS.setting))
+        out_dir = os.path.abspath(os.path.join(os.path.curdir, FLAGS.runs_folder, timestamp + "-" + FLAGS.setting))
         print("=======================================================")
         print("Writing to {}\n".format(out_dir))
         print("=======================================================")
@@ -328,6 +339,7 @@ with tf.Graph().as_default():
         print("Training Starting.......")
         # Training loop. For each batch...
         i = 0
+        min_loss = 10000
         hist_loss = []
         patience_cnt = 0
         for batch in batches:
@@ -341,13 +353,15 @@ with tf.Graph().as_default():
                 print("\nEvaluation:")
                 hist_loss.append(dev_step(x_dev, y_dev, writer=dev_summary_writer))
                 print("=======================================================")
-                i += 1
+
                 if i > 0 and hist_loss[i - 1] - hist_loss[i] > FLAGS.min_delta:
-                    path = saver.save(sess, checkpoint_prefix, global_step=current_step)
-                    print("----new BEST min loss----")
-                    print("Saved model checkpoint to {}\n".format(path))
-                    print("Checkpoint Number = {}".format(i))
-                    print("=======================================================")
+                    if hist_loss[i] < min_loss:
+                        min_loss = hist_loss[i]
+                        path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+                        print("----new BEST min loss----")
+                        print("Saved model checkpoint to {}\n".format(path))
+                        print("Checkpoint Number = {}".format(i))
+                        print("=======================================================")
                     patience_cnt = 0
                 else:
                     patience_cnt += 1
@@ -358,3 +372,4 @@ with tf.Graph().as_default():
                     print("Checkpoint Number = {}".format(i))
                     print("=======================================================")
                     break
+                i += 1

@@ -16,10 +16,13 @@ from cnnTextClassifier.text_cnn_v2 import TextCNNv2
 
 # def main():
 tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
+tf.flags.DEFINE_string("runs_folder", "new_runs_early-stopping", "folder to store all the runs")
+tf.flags.DEFINE_string("settings", "-CNNv2-2conv-1dense")
+
 # tf.flags.DEFINE_string("setting", "len20--filtersize345-truncated", "classifier setting")
 
+
 # Parameters
-# ==================================================
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1499936835/checkpoints", "")
 tf.flags.DEFINE_string("checkpoint_dir", "", "")
 # Data loading params
@@ -96,6 +99,7 @@ print("=======================================================")
 # Load data
 print("Loading data...")
 datasets = None
+datasets_val = None
 print("dataset_name : " + dataset_name)
 
 if dataset_name == "mrpolarity":
@@ -124,7 +128,13 @@ elif dataset_name == "localfile":
                                        class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
                                        sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
+    datasets_val = data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["validation_data_file"]["path"],
+                                             vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+                                             class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
+                                             sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
+
 x_text, y = data_helpers.load_data_labels(datasets)
+x_dev_raw, y_dev_raw = data_helpers.load_data_labels(datasets_val)
 
 # Build vocabulary
 ### max_document_length = max([len(x.split(" ")) for x in x_text])
@@ -136,27 +146,29 @@ document_length_list = [20, 30, 40, 50, 60, 70, 80, 90, 100]
 for max_document_length in document_length_list:
 
     # Redefining Folder namelen90-CNNv1-2conv-1dense
-    folder_name = "len{}-CNNv2-2conv-1dense".format(max_document_length)
+    folder_name = "len{}".format(max_document_length) + FLAGS.settings
 
     # Reset Default Graph
     tf.reset_default_graph()
 
     vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
     x = np.array(list(vocab_processor.fit_transform(x_text)))
+    x_dev_temp = np.array(list(vocab_processor.fit_transform(x_dev_raw)))
 
     # Randomly shuffle data
     np.random.seed(10)
     shuffle_indices = np.random.permutation(np.arange(len(y)))
-    x_shuffled = x[shuffle_indices]
-    y_shuffled = y[shuffle_indices]
+    x_train, y_train = x[shuffle_indices], y[shuffle_indices]
+    shuffle_indices_1 = np.random.permutation(np.arange(len(y_dev_raw)))
+    x_dev, y_dev = x_dev_temp[shuffle_indices_1], y_dev_raw[shuffle_indices_1]
     # print(y_shuffled.shape)
     # ==================================================
 
     # Split train/test set
     # TODO: This is very crude, should use cross-validation
-    dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
-    x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
-    y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
+    # dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
+    # x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
+    # y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
     # print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))
     # print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
     # print(x_train)
@@ -218,7 +230,7 @@ for max_document_length in document_length_list:
 
             # Output directory for models and summaries
             timestamp = str(int(time.time())) + FLAGS.classifier_type
-            out_dir = os.path.abspath(os.path.join(os.path.curdir, "new_runs", timestamp + "-" + folder_name))
+            out_dir = os.path.abspath(os.path.join(os.path.curdir, FLAGS.runs_folder, timestamp + "-" + folder_name))
             print("=======================================================")
             print("Writing to {}\n".format(out_dir))
             print("=======================================================")
