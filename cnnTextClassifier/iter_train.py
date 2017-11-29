@@ -39,6 +39,10 @@ tf.flags.DEFINE_integer("num_filters_layer3", 128, "Number of filters per filter
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.0)")
 
+# Early Stopping Criteria
+tf.flags.DEFINE_integer("patience", 16, "patience count to stop the training earlier")
+tf.flags.DEFINE_integer("min_delta", 0.01, "minimum decrease in loss to restart patience count")
+
 # tf.flags.DEFINE_boolean("enable_word_embeddings", False, "Enable/disable the word embedding (default: True)")
 # tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
 # tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
@@ -49,8 +53,8 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("num_epochs", 50, "Number of training epochs (default: 200)")
-tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
-tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
+# tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
+# tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 
 # tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
@@ -328,28 +332,48 @@ for max_document_length in document_length_list:
                                                                                               weighted_f1))
                 if writer:
                     writer.add_summary(summaries, step)
+                return loss
+
 
             # print(x_train)
             # Generate batches
             batches = data_helpers.batch_iter(
                 list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)
 
+            num_batches_per_epoch = int((len(x_train) - 1) / FLAGS.batch_size) + 1
+
             print("Training Starting.......")
             # Training loop. For each batch...
             i = 0
+            hist_loss = []
+            patience_cnt = 0
             for batch in batches:
                 x_batch, y_batch = zip(*batch)
                 train_step(x_batch, y_batch)
                 current_step = tf.train.global_step(sess, global_step)
-                if current_step % FLAGS.evaluate_every == 0:
+
+                if current_step % num_batches_per_epoch == 0:
                     print("=======================================================")
+                    print("Epoch number: {}".format(i+1))
                     print("\nEvaluation:")
-                    dev_step(x_dev, y_dev, writer=dev_summary_writer)
-                    print("=======================================================")
-                if current_step % FLAGS.checkpoint_every == 0:
-                    path = saver.save(sess, checkpoint_prefix, global_step=current_step)
-                    print("Saved model checkpoint to {}\n".format(path))
-                    print("Checkpoint Number = {}".format(i))
+                    hist_loss.append(dev_step(x_dev, y_dev, writer=dev_summary_writer))
                     print("=======================================================")
                     i += 1
+                    if i > 0 and hist_loss[i-1] - hist_loss[i] > FLAGS.min_delta:
+                        path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+                        print("----new BEST min loss----")
+                        print("Saved model checkpoint to {}\n".format(path))
+                        print("Checkpoint Number = {}".format(i))
+                        print("=======================================================")
+                        patience_cnt = 0
+                    else:
+                        patience_cnt += 1
+                    if patience_cnt > FLAGS.patience:
+                        print("Early stopping without at Epoch {} improvement.....".format(i))
+                        path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+                        print("Saved model checkpoint to {}\n".format(path))
+                        print("Checkpoint Number = {}".format(i))
+                        print("=======================================================")
+                        break
+
 
