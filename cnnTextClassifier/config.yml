@@ -135,7 +135,7 @@ datasets:
     shuffle: True
     random_state: 42
 
-##############################################################################
+#############################################################################
 # FOR PROJECT A-R
 
 
@@ -155,20 +155,56 @@ datasets:
 # vocab_write_path: path of writing and loading tags vocab of the data.
   localfile:
     data_file:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v3/Training_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/Training_data.txt"
       info: "Data source for data"
     test_data_file:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v3/Test_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/Test_data.txt"
       info: "Data source for data"
     validation_data_file:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v3/Validation_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/Validation_data.txt"
       info: "Data source for data"
     vocab_write_path:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v3/tags_vocab.txt"
-    class_weights_path:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v3/class_weights.txt"
-    container_path: data/Project-A-R-Scenario-Truncated-Enriched-v2
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/tags_vocab.txt"
+#    class_weights_path:
+#      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/class_weights.txt"
+    container_path: data/Project-A-R-Scenario-Truncated-Enriched-v4
     shuffle: True
     random_status: 42
 
-#################################################################################
+###################################################################################
+### FOR PROJECT A-R
+##
+##
+## this is for data_organiser, for splitting training and test data.
+## path should be directed to the raw data folder.
+#  datalocalfile:
+#    data_folder:
+#      path: "data/Project-A-R-Tagged-Data-Truncated-Enriched"
+#      info: "Data source for data"
+#    container_path: data/Project-A-R-Tagged-Data-Truncated-Enriched
+#    shuffle: True
+#    random_status: 42
+#
+#
+## data_file path: training data path (created from data_organiser)
+## test_data_file path: test data path (created from data_organiser)
+## vocab_write_path: path of writing and loading tags vocab of the data.
+#  localfile:
+#    data_file:
+#      path: "data/Project-A-R-AnswerType/Training_data.txt"
+#      info: "Data source for data"
+#    test_data_file:
+#      path: "data/Project-A-R-AnswerType/Test_data.txt"
+#      info: "Data source for data"
+#    validation_data_file:
+#      path: "data/Project-A-R-AnswerType/Validation_data.txt"
+#      info: "Data source for data"
+#    vocab_write_path:
+#      path: "data/Project-A-R-AnswerType/tags_vocab.txt"
+##    class_weights_path:
+##      path: "data/Project-A-R-AnswerType/class_weights.txt"
+#    container_path: data/Project-A-R-Scenario-Truncated-Enriched-v2
+#    shuffle: True
+#    random_status: 42
+#
+###################################################################################

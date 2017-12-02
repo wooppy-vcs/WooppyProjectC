@@ -9,7 +9,8 @@ class TextCNN(object):
     """
     def __init__(
       self, sequence_length, num_classes, vocab_size,
-      embedding_size, filter_sizes, num_filters, l2_reg_lambda=0.0, weights_array=1.0):
+      embedding_size, filter_sizes, num_filters_layer1, num_filters_layer2=None, num_filters_layer3=None,
+      l2_reg_lambda=0.0, weights_array=1.0):
         # Placeholders for input, output and dropout
         self.input_x = tf.placeholder(tf.int32, [None, sequence_length], name="input_x")
         self.input_y = tf.placeholder(tf.float32, [None, num_classes], name="input_y")
@@ -31,9 +32,9 @@ class TextCNN(object):
         for i, filter_size in enumerate(filter_sizes):
             with tf.name_scope("conv-maxpool-%s" % filter_size):
                 # Convolution Layer
-                filter_shape = [filter_size, embedding_size, 1, num_filters]
+                filter_shape = [filter_size, embedding_size, 1, num_filters_layer1]
                 W = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name="W")
-                b = tf.Variable(tf.constant(0.1, shape=[num_filters]), name="b")
+                b = tf.Variable(tf.constant(0.1, shape=[num_filters_layer1]), name="b")
                 conv = tf.nn.conv2d(
                     self.embedded_chars_expanded,
                     W,
@@ -52,7 +53,7 @@ class TextCNN(object):
                 pooled_outputs.append(pooled)
 
         # Combine all the pooled features
-        num_filters_total = num_filters * len(filter_sizes)
+        num_filters_total = num_filters_layer1 * len(filter_sizes)
         self.h_pool = tf.concat(pooled_outputs, 3)
         self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
 
@@ -98,14 +99,3 @@ class TextCNN(object):
             # self.weighted_accuracy = tf.reduce_mean(weighted_correct_predictions, name="weighted_accuracy")
             self.weighted_accuracy = tf.divide(tf.reduce_sum(weighted_correct_labels),
                                                tf.reduce_sum(weighted_correct_label_temp), name="weighted_accuracy")
-
-        with tf.name_scope("weighted_precision"):
-            prediction_one_hot = tf.one_hot(self.predictions, num_classes)
-            weighted_correct_predictions_temp = tf.matmul(prediction_one_hot, class_weight)
-            self.weighted_precision = tf.divide(tf.reduce_sum(weighted_correct_labels),
-                                                tf.reduce_sum(weighted_correct_predictions_temp),
-                                                name="weighted_precision")
-
-        with tf.name_scope("weighted_f1"):
-            self.weighted_f1 = tf.divide(tf.multiply(2.0, tf.multiply(self.weighted_accuracy, self.weighted_precision)),
-                                         tf.add(self.weighted_precision, self.weighted_accuracy), name="weighted_f1")

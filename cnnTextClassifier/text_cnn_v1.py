@@ -9,7 +9,8 @@ class TextCNNv1(object):
     """
     def __init__(
       self, sequence_length, num_classes, vocab_size,
-      embedding_size, filter_sizes, num_filters_layer1, num_filters_layer2, l2_reg_lambda=0.0, weights_array=1.0):
+      embedding_size, filter_sizes, num_filters_layer1, num_filters_layer2=64, num_filters_layer3=None,
+      l2_reg_lambda=0.0, weights_array=1.0):
         # Placeholders for input, output and dropout
         self.input_x = tf.placeholder(tf.int32, [None, sequence_length], name="input_x")
         self.input_y = tf.placeholder(tf.float32, [None, num_classes], name="input_y")
@@ -141,6 +142,7 @@ class TextCNNv1(object):
             transformed_correct_predictions = tf.expand_dims(tf.cast(correct_predictions, "float"), 1)
             # predictions_onehot = tf.one_hot(tf.argmax(self.input_y, 1), num_classes)
             weighted_correct_label_temp = tf.matmul(self.input_y, class_weight)
+            # self.input_y_transformed = tf.argmax(self.input_y, 1)
             # weighted_correct_predictions_temp = tf.matmul(self.input_y, tf.constant(weights_array))
             # weighted_correct_predictions = tf.multiply(weighted_correct_predictions_temp, tf.cast(correct_predictions, "float"))
             weighted_correct_labels = tf.multiply(weighted_correct_label_temp, transformed_correct_predictions)
@@ -148,13 +150,21 @@ class TextCNNv1(object):
             self.weighted_accuracy = tf.divide(tf.reduce_sum(weighted_correct_labels),
                                                tf.reduce_sum(weighted_correct_label_temp), name="weighted_accuracy")
 
-        with tf.name_scope("weighted_precision"):
-            prediction_one_hot = tf.one_hot(self.predictions, num_classes)
-            weighted_correct_predictions_temp = tf.matmul(prediction_one_hot, class_weight)
-            self.weighted_precision = tf.divide(tf.reduce_sum(weighted_correct_labels),
-                                                tf.reduce_sum(weighted_correct_predictions_temp),
-                                                name="weighted_precision")
-
-        with tf.name_scope("weighted_f1"):
-            self.weighted_f1 = tf.divide(tf.multiply(2.0, tf.multiply(self.weighted_accuracy, self.weighted_precision)),
-                                         tf.add(self.weighted_precision, self.weighted_accuracy), name="weighted_f1")
+        # with tf.name_scope("precision"):
+        #     # prediction_one_hot = tf.one_hot(self.predictions, num_classes)
+        #     # total_prediction_tags = tf.reduce_sum(prediction_one_hot, 0)
+        #     # correct_pred_tags_temp = tf.matmul(tf.expand_dims(tf.cast(correct_predictions, "float"), 0), prediction_one_hot)
+        #     # correct_pred_tags = tf.reduce_sum(correct_pred_tags_temp, 0)
+        #     self.precision = tf.metrics.precision(self.predictions, tf.argmax(self.input_y, 1))
+        #     # correct_predictions_temp = tf.matmul(prediction_one_hot, class_weight)
+        #     # self.weighted_precision = tf.divide(tf.reduce_sum(weighted_correct_labels),
+        #     #                                     tf.reduce_sum(correct_predictions_temp),
+        #     #                                     name="precision")
+        #
+        # with tf.name_scope("recall"):
+        #     total_label_tags = tf.reduce_sum(self.input_y, 0)
+        #     self.recall = tf.reduce_mean(tf.divide(correct_pred_tags, total_label_tags), name='recall')
+        #
+        # with tf.name_scope("f1"):
+        #     self.fscore = tf.divide(tf.multiply(2.0, tf.multiply(self.recall, self.precision)),
+        #                                  tf.add(self.precision, self.recall), name="fscore")

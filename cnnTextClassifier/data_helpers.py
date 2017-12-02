@@ -17,7 +17,9 @@ def clean_str(string):
     Tokenization/string cleaning for all datasets except for SST.
     Original taken from https://github.com/yoonkim/CNN_sentence/blob/master/process_data.py
     """
-    string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)
+    # to remove the preprocessed word for new line
+    string = re.sub(r"<NL>", "\n", string)
+    string = re.sub(r"[^A-Za-z0-9(),!?\'`@]", " ", string)
     string = re.sub(r"\'s", " \'s", string)
     string = re.sub(r"\'ve", " \'ve", string)
     string = re.sub(r"n\'t", " n\'t", string)
@@ -30,6 +32,7 @@ def clean_str(string):
     string = re.sub(r"\)", " \) ", string)
     string = re.sub(r"\?", " \? ", string)
     string = re.sub(r"\s{2,}", " ", string)
+
     return string.strip().lower()
 
 
@@ -231,16 +234,14 @@ def load_data_labels(datasets):
     """
     Load data and labels
     :param datasets:
-    :return:
+    :return: tuple of data and one-hot labels
     """
     # Split by words
     x_text = datasets['data']
     x_text = [clean_str(sent) for sent in x_text]
     # Generate labels
     labels = []
-    # print(len(x_text))
-    # print(len(datasets['target']))
-
+    # create one-hot vector for labels
     for i in range(len(x_text)):
         label = [0 for j in datasets['target_names']]
         label[datasets['target'][i]] = 1
@@ -376,7 +377,7 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_path, system_path, sentences = 0, tags = 1, remove_none=False):
+def get_datasets_multiple_files(container_path, vocab_tags_path, system_path, sentences = 0, tags = 1, remove_none=False):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -438,16 +439,17 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, class_weights_p
         os.makedirs(system_path)
 
     write_vocab_tags(vocab_tags, vocab_tags_path)
-    target_names_dict = load_vocab(vocab_tags_path)
-    for s in target_names:
-        target.append(int(target_names_dict[str(s)]))
+    # target_names_dict = load_vocab(vocab_tags_path)
+    # for s in target_names:
+    #     target.append(int(target_names_dict[str(s)]))
 
-    class_weight = calculate_weight(target, target_names_dict)
-    write_vocab_tags(class_weight, class_weights_path)
+    datasets['target_names'] = target
+    # class_weight = calculate_weight(target, target_names_dict)
+    # write_vocab_tags(class_weight, class_weights_path)
     return datasets
 
 
-def get_datasets(data_path, vocab_tags_path, class_weights_path=None, sentences = 0, tags = 1):
+def get_datasets(data_path, vocab_tags_path, sentences = 0, tags = 1):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -477,14 +479,14 @@ def get_datasets(data_path, vocab_tags_path, class_weights_path=None, sentences 
     for s in target_names:
         target.append(int(target_names_dict[str(s)]))
 
-    if class_weights_path != None:
-        class_weights_open = list(open(class_weights_path, 'r', encoding="utf8").readlines())
-        class_weights.extend([float(s.strip()) for s in class_weights_open])
+    # if class_weights_path != None:
+    #     class_weights_open = list(open(class_weights_path, 'r', encoding="utf8").readlines())
+    #     class_weights.extend([float(s.strip()) for s in class_weights_open])
     datasets = dict()
     datasets['data'] = data
     datasets['target'] = target
     datasets['target_names'] = target_names_dict
-    datasets['class_weights'] = class_weights
+    # datasets['class_weights'] = class_weights
 
     return datasets
 
@@ -518,19 +520,6 @@ def calculate_weight(target, target_names):
     for s in target:
         counter[int(s)] += 1
 
-    # counter_None = 0
-    # counter_Wrong = 0
-    # counter_Bill = 0
-    #
-    # for s in target:
-    #     if s == 1:
-    #         counter_None += 1
-    #     # if s == 0:
-    #     #     counter_Wrong += 1
-    #     if s == 0:
-    #         counter_Bill += 1
-    # # counter = [counter_Wrong, counter_Bill, counter_None]
-    # counter = [counter_Bill, counter_None]
     total_data = len(target)
 
     weightsArray = []

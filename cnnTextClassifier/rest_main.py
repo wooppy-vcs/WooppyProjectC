@@ -12,16 +12,14 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
     json
 from flask_restful import Resource, Api
 
+from cnnTextClassifier.config import Config
 from cnnTextClassifier.data_helpers import load_vocab
 
 
 class OngoingSession:
-    def __init__(self, checkpoint_dir):
+    def __init__(self, checkpoint_dir, config):
 
-        with open("config.yml", 'r') as ymlfile:
-            self.cfg = yaml.load(ymlfile)
-            self.dataset_name = self.cfg["datasets"]["default"]
-            self.categories = load_vocab(self.cfg["datasets"][self.dataset_name]["vocab_write_path"]["path"])
+        self.categories = load_vocab(config.tags_vocab_path)
 
         # Map data into vocabulary
         self.vocab_path = os.path.join(checkpoint_dir, "..", "vocab")
@@ -80,16 +78,23 @@ class OngoingSession:
 
         inv_categories = {v: k for k, v in self.categories.items()}
         predicted_category = None
+        # tags = [str(inv_categories[x].ljust(25)) for x in idx_new_list]
+        # prob = [str(probabilities[x]) for x in idx_new_list]
+        tags_probabilities_pair = {}
         for idx_new in idx_new_list:
-            # print(inv_categories[idx_new].ljust(25) + str("%.4f" % probabilities[idx_new]))
+            # print(inv_categories[idx_new] + str("%.4f" % probabilities[idx_new]))
+            tags_probabilities_pair[inv_categories[idx_new]] = str("%.4f" % probabilities[idx_new])
             if idx_new == prediction:
                 predicted_category = inv_categories[idx_new]
-        return json.dumps({"words": words, "category": predicted_category})
+
+        return json.dumps({"words": words, "category": predicted_category,
+                           "tags": tags_probabilities_pair})
 
 app = Flask(__name__, static_folder=os.path.join("templates", "assets"))
 app.secret_key = 'rem4lyfe'
-checkpoint_dir = "new_runs/1511850984-Scenario-len100-CNNv1-2conv-1dense/checkpoints"
-ongoing_session = OngoingSession(checkpoint_dir)
+checkpoint_dir = "Enriched-runs/Scenario-len80-CNN/checkpoints"
+config = Config()
+ongoing_session = OngoingSession(checkpoint_dir, config)
 
 
 @app.route('/get_tags', methods=['POST'])

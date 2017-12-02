@@ -16,8 +16,8 @@ from cnnTextClassifier.text_cnn_v2 import TextCNNv2
 
 # def main():
 tf.flags.DEFINE_string("classifier_type", "-Scenario", "classifier type")
-tf.flags.DEFINE_string("runs_folder", "new_runs_early-stopping", "folder to store all the runs")
-tf.flags.DEFINE_string("settings", "-CNNv2-2conv-1dense")
+tf.flags.DEFINE_string("runs_folder", "new_runs_v3", "folder to store all the runs")
+tf.flags.DEFINE_string("settings", "-CNN", "folder to store all the runs")
 
 # tf.flags.DEFINE_string("setting", "len20--filtersize345-truncated", "classifier setting")
 
@@ -34,7 +34,7 @@ tf.flags.DEFINE_integer("tags_column", 1, "Column number of tags in data txt fil
 # Model Hyperparameters
 # tf.flags.DEFINE_boolean("build_tags_vocab", True, "Enable building tags vocab if true")
 tf.flags.DEFINE_boolean("enable_word_embeddings", True, "Enable/disable the word embedding (default: True)")
-tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
+tf.flags.DEFINE_integer("embedding_dim", 300, "Dimensionality of character embedding (default: 128)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
 tf.flags.DEFINE_integer("num_filters_layer1", 32, "Number of filters per filter size (default: 128)")
 tf.flags.DEFINE_integer("num_filters_layer2", 64, "Number of filters per filter size (default: 128)")
@@ -125,12 +125,12 @@ elif dataset_name == "localdatacategorizedbyfilename":
 elif dataset_name == "localfile":
     datasets=data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["data_file"]["path"],
                                        vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
-                                       class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
+                                       # class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
                                        sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
-    datasets_val = data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["validation_data_file"]["path"],
+    datasets_val = data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["test_data_file"]["path"],
                                              vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
-                                             class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
+                                             # class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
                                              sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
 x_text, y = data_helpers.load_data_labels(datasets)
@@ -142,7 +142,7 @@ x_dev_raw, y_dev_raw = data_helpers.load_data_labels(datasets_val)
 # print("max_document_length: " + str(max_document_length))
 
 # LOOP THROUGH DIFFERENT DOCUMENT LIST
-document_length_list = [20, 30, 40, 50, 60, 70, 80, 90, 100]
+document_length_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 for max_document_length in document_length_list:
 
     # Redefining Folder namelen90-CNNv1-2conv-1dense
@@ -182,9 +182,7 @@ for max_document_length in document_length_list:
     print('Sentence max words = ', max_document_length)
     print("=======================================================")
 
-    weightsArray = datasets['class_weights']
-    print("Weights Array:")
-    print(weightsArray)
+    weightsArray = data_helpers.calculate_weight(np.argmax(y, 1), datasets['target_names'])
 
     # Training
 
@@ -196,16 +194,18 @@ for max_document_length in document_length_list:
         )
         sess = tf.Session(config=session_conf)
         with sess.as_default():
-            cnn = TextCNNv2(
+            cnn = TextCNN(
                 sequence_length=x_train.shape[1],
                 num_classes=y_train.shape[1],
                 vocab_size=len(vocab_processor.vocabulary_),
                 embedding_size=embedding_dimension,
                 filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
                 num_filters_layer1=FLAGS.num_filters_layer1,
-                num_filters_layer2=FLAGS.num_filters_layer2,
+                # num_filters_layer1=FLAGS.num_filters_layer1,
+                # num_filters_layer2=FLAGS.num_filters_layer2,
                 # num_filters_layer3=FLAGS.num_filters_layer3,
-                l2_reg_lambda=FLAGS.l2_reg_lambda,
+                l2_reg_lambda=FLAGS.l2_reg_lambda
+                ,
                 weights_array=weightsArray)
 
             # # restoring from the checkpoint file
@@ -239,19 +239,17 @@ for max_document_length in document_length_list:
             loss_summary = tf.summary.scalar("loss", cnn.loss)
             acc_summary = tf.summary.scalar("accuracy", cnn.accuracy)
             weighted_acc_summary = tf.summary.scalar("weighted_accuracy", cnn.weighted_accuracy)
-            weighted_prec_summary = tf.summary.scalar("weighted_precision", cnn.weighted_precision)
-            weighted_f1_summary = tf.summary.scalar("weighted_f1", cnn.weighted_f1)
+            # prec_summary = tf.summary.scalar("precision", cnn.precision)
+            # recall_summary = tf.summary.scalar("recall", cnn.recall)
+            # f1_summary = tf.summary.scalar("fscore", cnn.fscore)
 
             # Train Summaries
-            train_summary_op = tf.summary.merge(
-                [loss_summary, acc_summary, weighted_acc_summary, weighted_prec_summary, weighted_f1_summary,
-                 grad_summaries_merged])
+            train_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary, grad_summaries_merged])
             train_summary_dir = os.path.join(out_dir, "summaries", "train")
             train_summary_writer = tf.summary.FileWriter(train_summary_dir, sess.graph)
 
             # Dev summaries
-            dev_summary_op = tf.summary.merge(
-                [loss_summary, acc_summary, weighted_acc_summary, weighted_prec_summary, weighted_f1_summary])
+            dev_summary_op = tf.summary.merge([loss_summary, acc_summary, weighted_acc_summary])
             dev_summary_dir = os.path.join(out_dir, "summaries", "dev")
             dev_summary_writer = tf.summary.FileWriter(dev_summary_dir, sess.graph)
 
@@ -275,8 +273,7 @@ for max_document_length in document_length_list:
                     print("Load word2vec file {}".format(cfg['word_embeddings']['word2vec']['path']))
                     initW = data_helpers.load_embedding_vectors_word2vec(vocabulary,
                                                                          cfg['word_embeddings']['word2vec']['path'],
-                                                                         cfg['word_embeddings']['word2vec'][
-                                                                             'binary'])
+                                                                         cfg['word_embeddings']['word2vec']['binary'])
                     # print(len(initW))
                     print("word2vec file has been loaded...")
                     print("=======================================================")
@@ -294,6 +291,7 @@ for max_document_length in document_length_list:
                 saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
                 saver.restore(sess, checkpoint_file)
 
+
             def train_step(x_batch, y_batch):
                 """
                 A single training step
@@ -304,19 +302,19 @@ for max_document_length in document_length_list:
                     cnn.dropout_keep_prob: FLAGS.dropout_keep_prob
                 }
                 # print("fdsfdsfsdf")
-                _, step, summaries, loss, accuracy, weighted_accuracy, weighted_f1, weighted_precision = sess.run(
-                    [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy,
-                     cnn.weighted_f1, cnn.weighted_precision],
+                _, step, summaries, loss, accuracy, weighted_accuracy = sess.run(
+                    [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
                     feed_dict)
                 # print("fdsfdsfsdf")
                 time_str = datetime.datetime.now().isoformat()
                 print(
-                    "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g}, wf1 {:g}\n".format(time_str, step, loss,
-                                                                                              accuracy,
-                                                                                              weighted_accuracy,
-                                                                                              weighted_precision,
-                                                                                              weighted_f1))
+                    "{}: step {}, loss {:g}, acc {:g}, wacc {:g}\n".format(time_str, step, loss,
+                                                                           accuracy, weighted_accuracy))
+                # recall,
+                # precision,
+                # fscore))
                 train_summary_writer.add_summary(summaries, step)
+
 
             def dev_step(x_batch, y_batch, writer=None):
                 """
@@ -331,33 +329,57 @@ for max_document_length in document_length_list:
                 # step, summaries, loss, accuracy, weighted_accuracy = sess.run(
                 #     [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
                 #     feed_dict)
-                step, summaries, loss, accuracy, weighted_accuracy, weighted_f1, weighted_precision = sess.run(
-                    [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy, cnn.weighted_f1,
-                     cnn.weighted_precision],
+                step, summaries, loss, accuracy, weighted_accuracy, predictions = sess.run(
+                    [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy, cnn.predictions],
                     feed_dict)
+                y_shape = y_batch.shape[1]
+                confusion_matrix = np.zeros([y_shape, y_shape])
+                for a, b in zip(np.argmax(y_batch, 1), predictions):
+                    confusion_matrix[a][b] += 1
+
+                # print(confusion_matrix)
+                tp_by_tags = np.zeros(y_shape)
+                total_predict_by_tags = np.zeros(y_shape)
+                total_labeled_by_tags = np.zeros(y_shape)
+                precision_by_tags = np.zeros(y_shape)
+                recall_by_tags = np.zeros(y_shape)
+                f1_by_tags = np.zeros(y_shape)
+
+                for idx in range(y_shape):
+                    tp_by_tags[idx] = confusion_matrix[idx][idx]
+                    for n in range(y_shape):
+                        total_labeled_by_tags[idx] += confusion_matrix[idx][n]
+                        total_predict_by_tags[idx] += confusion_matrix[n][idx]
+                    precision_by_tags[idx] = tp_by_tags[idx] / total_predict_by_tags[idx] if tp_by_tags[idx] > 0 else 0
+                    recall_by_tags[idx] = tp_by_tags[idx] / total_labeled_by_tags[idx] if tp_by_tags[idx] > 0 else 0
+                    f1_by_tags[idx] = (2 * precision_by_tags[idx] * recall_by_tags[idx]) / (
+                    precision_by_tags[idx] + recall_by_tags[idx]) if tp_by_tags[idx] > 0 else 0
+
+                average_f1 = np.average(f1_by_tags)
+
                 time_str = datetime.datetime.now().isoformat()
                 print(
-                    "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, wp {:g}, wf1 {:g}\n".format(time_str, step, loss,
-                                                                                              accuracy,
-                                                                                              weighted_accuracy,
-                                                                                              weighted_precision,
-                                                                                              weighted_f1))
+                    "{}: step {}, loss {:g}, acc {:g}, wacc {:g}, fscore {:g}\n".format(time_str, step, loss,
+                                                                                        accuracy, weighted_accuracy,
+                                                                                        average_f1))
+
                 if writer:
                     writer.add_summary(summaries, step)
-                return loss
+                return loss, average_f1
 
 
-            # print(x_train)
             # Generate batches
-            batches = data_helpers.batch_iter(
-                list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)
+            batches = data_helpers.batch_iter(list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)
 
             num_batches_per_epoch = int((len(x_train) - 1) / FLAGS.batch_size) + 1
 
             print("Training Starting.......")
             # Training loop. For each batch...
             i = 0
+            min_loss = 10000
+            max_fscore = 0
             hist_loss = []
+            f_score = []
             patience_cnt = 0
             for batch in batches:
                 x_batch, y_batch = zip(*batch)
@@ -366,12 +388,19 @@ for max_document_length in document_length_list:
 
                 if current_step % num_batches_per_epoch == 0:
                     print("=======================================================")
-                    print("Epoch number: {}".format(i+1))
+                    print("Epoch number: {}".format(i + 1))
                     print("\nEvaluation:")
-                    hist_loss.append(dev_step(x_dev, y_dev, writer=dev_summary_writer))
+                    loss, fscore = dev_step(x_dev, y_dev, writer=dev_summary_writer)
+                    hist_loss.append(loss)
+                    f_score.append(fscore)
                     print("=======================================================")
-                    i += 1
-                    if i > 0 and hist_loss[i-1] - hist_loss[i] > FLAGS.min_delta:
+
+                    # if i > 0 and hist_loss[i - 1] - hist_loss[i] > FLAGS.min_delta:
+                    # if hist_loss[i] < min_loss:
+                    if i > 0 and f_score[i] > max_fscore:
+                        # min_loss = hist_loss[i]
+                        # print(min_loss)
+                        max_fscore = f_score[i]
                         path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                         print("----new BEST min loss----")
                         print("Saved model checkpoint to {}\n".format(path))
@@ -381,11 +410,8 @@ for max_document_length in document_length_list:
                     else:
                         patience_cnt += 1
                     if patience_cnt > FLAGS.patience:
-                        print("Early stopping without at Epoch {} improvement.....".format(i))
-                        path = saver.save(sess, checkpoint_prefix, global_step=current_step)
-                        print("Saved model checkpoint to {}\n".format(path))
-                        print("Checkpoint Number = {}".format(i))
-                        print("=======================================================")
-                        break
-
+                        if hist_loss[i] < min_loss:
+                            print("Early stopping without at Epoch {} improvement.....".format(i))
+                            break
+                    i += 1
 

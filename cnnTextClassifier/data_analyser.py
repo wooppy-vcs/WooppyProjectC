@@ -16,7 +16,7 @@ class Counter:
         return counters
 
 
-def analyse_data(data_path, test_path, val_path, vocab_path):
+def analyse_data(data_path, test_path, vocab_path):
     tags = []
 
     temp = list(open(vocab_path, 'r', encoding="utf8").readlines())
@@ -42,22 +42,22 @@ def analyse_data(data_path, test_path, val_path, vocab_path):
             i += 1
         f.close()
 
-    val = list(open(val_path, 'r', encoding="utf8").readlines())
-    val = [s.split("\t") for s in val]
-    val_tags = [s[1].strip() for s in val]
-    tags.extend(val_tags)
-
-    counters_3 = counter.count(tags, tags_vocab)
-
-    with open(path + "val_data_analysis.txt", "w", encoding="utf8") as f:
-        i = 0
-        for tag, count in zip(tags_vocab, counters_3):
-            if i != len(tags_vocab) - 1:
-                f.write("{}\t{}\n".format(tag, str(int(count))))
-            else:
-                f.write(tag + "\t" + str(int(count)))
-            i += 1
-        f.close()
+    # val = list(open(val_path, 'r', encoding="utf8").readlines())
+    # val = [s.split("\t") for s in val]
+    # val_tags = [s[1].strip() for s in val]
+    # tags.extend(val_tags)
+    #
+    # counters_3 = counter.count(tags, tags_vocab)
+    #
+    # with open(path + "val_data_analysis.txt", "w", encoding="utf8") as f:
+    #     i = 0
+    #     for tag, count in zip(tags_vocab, counters_3):
+    #         if i != len(tags_vocab) - 1:
+    #             f.write("{}\t{}\n".format(tag, str(int(count))))
+    #         else:
+    #             f.write(tag + "\t" + str(int(count)))
+    #         i += 1
+    #     f.close()
 
     test = list(open(test_path, 'r', encoding="utf8").readlines())
     test = [s.split("\t") for s in test]
@@ -88,8 +88,8 @@ def analyse_data(data_path, test_path, val_path, vocab_path):
             i += 1
         f.close()
 
-path = "data/Project-A-R-Scenario-Truncated-Enriched-v3/"
-analyse_data(path+"Training_data.txt", path+"Test_data.txt", path+"Validation_data.txt", path+"tags_vocab.txt")
+path = "data/Project-A-R-Scenario-Truncated-Enriched-v2/"
+analyse_data(path+"Training_data.txt", path+"Test_data.txt", path+"tags_vocab.txt")
 
 
 

@@ -1,17 +1,13 @@
 #! /usr/bin/env python
 
 import tensorflow as tf
-import numpy as np
-import os
 import csv
 import yaml
-import matplotlib.pyplot as plt
-import argparse
 from cnnTextClassifier import data_helpers
-from numpy import *
 from pylab import *
 from tensorflow.contrib import learn
 from sklearn import metrics
+import os
 
 
 def softmax(x):
@@ -46,7 +42,7 @@ tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511176830-Scenario-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511240087-AnswerType-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511260117-Scenario-len20-correctedweightedaccuracy-filtersize345-remove-none/checkpoints", "Checkpoint directory from training run")
-tf.flags.DEFINE_string("checkpoint_dir", "new_runs/1511868883-Scenario-len100-CNNv2-2conv-1dense/checkpoints", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", "Enriched-runs/Scenario-len10-CNN/checkpoints", "Checkpoint directory from training run")
 
 
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
@@ -94,11 +90,9 @@ if FLAGS.eval_train:
         datasets = data_helpers.get_datasets_localdatasinglefile(data_file=cfg["datasets"][dataset_name]["test_data_file"]["path"],
                                                                  categories=cfg["datasets"][dataset_name]["categories"])
     elif dataset_name == "localfile":
-        datasets = data_helpers.get_datasets(
-            data_path=cfg["datasets"][dataset_name]["test_data_file"]["path"],
-            vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
-            class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
-            sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
+        datasets = data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["test_data_file"]["path"],
+                                             vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+                                             sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
     x_raw, y_test = data_helpers.load_data_labels(datasets)
 
@@ -129,7 +123,6 @@ vocab_path = os.path.join(FLAGS.checkpoint_dir, "..", "vocab")
 vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
 x_test = np.array(list(vocab_processor.transform(x_raw)))
 
-weightsArray = datasets['class_weights']
 
 # print(x_test)
 # print("\nEvaluating...\n")
@@ -214,14 +207,14 @@ if y_test is not None:
 
     correct_preds_tags, total_correct_tags, total_preds_tags = np.zeros(len(available_target_names)), np.zeros(len(available_target_names)), np.zeros(len(available_target_names))
 
-    for y_test_check, y_pred in zip(y_test_forconf, all_predictions_forconf):
+    for y_test_check, y_pred in zip(y_test, all_predictions.astype(int)):
         correct_preds_tags[y_test_check] += (int(y_test_check == y_pred))
         total_correct_tags[y_test_check] += 1
         total_preds_tags[y_pred] += 1
 
-    correct_preds_tags = [x * y for x, y in zip(correct_preds_tags, weightsArray)]
-    total_correct_tags = [x * y for x, y in zip(total_correct_tags, weightsArray)]
-    total_preds_tags = [x * y for x, y in zip(total_preds_tags, weightsArray)]
+    # correct_preds_tags = [x * y for x, y in zip(correct_preds_tags, weightsArray)]
+    # total_correct_tags = [x * y for x, y in zip(total_correct_tags, weightsArray)]
+    # total_preds_tags = [x * y for x, y in zip(total_preds_tags, weightsArray)]
 
     p_tags = []
     r_tags = []
@@ -235,10 +228,9 @@ if y_test is not None:
         r_tags += [r_temp]
         f1_tags += [f1_temp]
 
-
     overall_p = sum(correct_preds_tags)/sum(total_preds_tags)
     overall_r = sum(correct_preds_tags)/sum(total_correct_tags)
-    overall_f1 = 2 * overall_p * overall_r/ (overall_p + overall_r)
+    overall_f1 = 2 * overall_p * overall_r / (overall_p + overall_r)
 
     out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results.txt")
     with open(out_path_report, 'w', newline='') as f:

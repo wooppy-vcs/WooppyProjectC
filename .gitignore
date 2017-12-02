@@ -147,3 +147,6 @@ data/tags_vocab.txt
 #/cnnTextClassifier/data/Project-A-R-Tagged-Data-Truncated/
 #/cnnTextClassifier/data/Project-A-R-Scenario-Truncated-Enriched-v2/
 /cnnTextClassifier/data/
+/cnnTextClassifier/results/
+/cnnTextClassifier/new_runs_v2/
+/cnnTextClassifier/new_runs/
