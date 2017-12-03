@@ -11,6 +11,9 @@ import os
 # from sklearn.datasets import load_files
 from os import listdir
 
+# shared global variables to be imported from model also
+UNK = "$UNK$"
+NUM = "$NUM$"
 
 def clean_str(string):
     """
@@ -543,7 +546,47 @@ def get_char_vocab(dataset):
 
     return vocab_char
 
+def get_processing_word(vocab_words=None, vocab_chars=None,
+                    lowercase=False, chars=False, allow_unk=True):
+    """
+    Args:
+        vocab: dict[word] = idx
+    Returns:
+        f("cat") = ([12, 4, 32], 12345)
+                 = (list of char ids, word id)
+    """
+    def f(word):
+        # 0. get chars of words
+        if vocab_chars is not None and chars == True:
+            char_ids = []
+            for char in word:
+                # ignore chars out of vocabulary
+                if char in vocab_chars:
+                    char_ids += [vocab_chars[char]]
 
+        # 1. preprocess word
+        if lowercase:
+            word = word.lower()
+        if word.isdigit():
+            word = NUM
+
+        # 2. get id of word
+        if vocab_words is not None:
+            if word in vocab_words:
+                word = vocab_words[word]
+            else:
+                if allow_unk:
+                    word = vocab_words[UNK]
+                else:
+                    raise Exception("Unknow key is not allowed. Check that your vocab (tags?) is correct")
+
+        # 3. return tuple char ids, word id
+        if vocab_chars is not None and chars == True:
+            return char_ids, word
+        else:
+            return word
+
+    return f
 
 # special error message
 class MyIOError(Exception):
