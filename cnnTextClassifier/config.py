@@ -60,9 +60,10 @@ class Config():
     word2vec = True
     word2vec_path = "data/GoogleNews-vectors-negative300.bin/GoogleNews-vectors-negative300.bin"
 
-
     glove_path = None
     glove_dim = None
 
-
+    # Char Embeddings
+    dim_char = 100
+    char_hidden_size = 100
 
