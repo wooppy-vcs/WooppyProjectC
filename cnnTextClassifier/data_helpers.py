@@ -529,6 +529,20 @@ def calculate_weight(target, target_names):
 
     return weightsArray
 
+def get_char_vocab(dataset):
+    """
+    Args:
+        dataset: a iterator yielding tuples (sentence, tags)
+    Returns:
+        a set of all the characters in the dataset
+    """
+    vocab_char = set()
+    for words in dataset:
+        for word in words:
+            vocab_char.update(word)
+
+    return vocab_char
+
 
 
 # special error message

@@ -5,6 +5,7 @@ from cnnTextClassifier import data_helpers
 # tf.flags.DEFINE_float("test_sample_percentage", .2, "Percentage of the training data to use for test")
 # tf.flags.DEFINE_integer("sentences_column", 3, "Column number of sentence data in data txt file")
 # tf.flags.DEFINE_integer("tags_column", 11, "Column number of tags in data txt file")
+from cnnTextClassifier.config import Config
 from cnnTextClassifier.data_analyser import Counter
 from cnnTextClassifier.data_helpers import calculate_weight
 
@@ -27,12 +28,8 @@ sentences_column = 3
 # for Scenario
 tags_column = 15
 
-# FLAGS = tf.flags.FLAGS
-# FLAGS._parse_flags()
 
-with open("config.yml", 'r') as ymlfile:
-    cfg = yaml.load(ymlfile)
-
+config = Config()
 datasets = data_helpers.get_datasets_multiple_files(container_path=cfg["datasets"]["datalocalfile"]["data_folder"]["path"],
                                                     vocab_tags_path=cfg["datasets"]["localfile"]["vocab_write_path"]["path"],
                                                     # class_weights_path=cfg["datasets"]["localfile"]["class_weights_path"]["path"],
@@ -43,8 +40,10 @@ x_raw, y_raw = datasets["data"], datasets["target"]
 
 print("Total data size : {}".format(len(x_raw)))
 
+vocab_char = data_helpers.get_char_vocab(x_raw)
+
 # Loading tags dictionary and change tag names in y to numbers
-vocab_tags = data_helpers.load_vocab(cfg["datasets"]["localfile"]["vocab_write_path"]["path"])
+vocab_tags = data_helpers.load_vocab(config.tags_vocab_path)
 vocab_tags_list = [b for b, idx in vocab_tags.items()]
 # target = []
 # for s in y_raw:
@@ -73,7 +72,8 @@ while correct_splitting:
             correct_splitting = True
 
 
-data_helpers.write_data_to_file(x_train, y_train, cfg["datasets"]["localfile"]["data_file"]["path"])
-data_helpers.write_data_to_file(x_test, y_test, cfg["datasets"]["localfile"]["test_data_file"]["path"])
+data_helpers.write_data_to_file(x_train, y_train, config.training_path)
+data_helpers.write_data_to_file(x_test, y_test, config.test_path)
+data_helpers.write_vocab_tags(vocab_char, config.char_vocab_path)
 
 

@@ -52,6 +52,7 @@ class Config():
     training_path = default_data_path + "/Training_data.txt"
     test_path = default_data_path + "/Test_data.txt"
     tags_vocab_path = default_data_path + "/tags_vocab.txt"
+    char_vocab_path = default_data_path + "/chars_vocab.txt"
 
     # Word Embeddings
     embedding_name = "word2vec"
