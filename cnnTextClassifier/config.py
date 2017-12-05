@@ -5,7 +5,7 @@ import os
 
 class Config():
 
-    def __init__(self, doc_length=None, model_name="", checkpoint_dir=""):
+    def __init__(self, enable_char, doc_length=None, model_name="", checkpoint_dir=""):
 
         self.runs_folder = "Enriched-runs"
 
@@ -14,14 +14,18 @@ class Config():
         self.model_name = model_name
         self.checkpoint_dir = checkpoint_dir
 
+        self.enable_char = enable_char
+
         # Runs Output directories
         # self.timestamp = str(int(time.time())) + "-" + self.classifier_type
         self.out_dir = os.path.abspath(os.path.join(os.path.curdir, self.runs_folder, self.classifier_type +
-                                                    "-len{}".format(doc_length) + "-" + self.model_name))
+                                                    "-len{}".format(doc_length) + "-" + self.model_name+"-Enriched"))
 
     # Data structure parameters
     data_column = 0
     tags_column = 1
+
+    dev_sample_fraction = 0.2
 
     # Model Hyperparameters
     enable_word_embeddings = True

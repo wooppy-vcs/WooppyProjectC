@@ -155,18 +155,18 @@ datasets:
 # vocab_write_path: path of writing and loading tags vocab of the data.
   localfile:
     data_file:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/Training_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v2/Training_data.txt"
       info: "Data source for data"
     test_data_file:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/Test_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v2/Test_data_test.txt"
       info: "Data source for data"
     validation_data_file:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/Validation_data.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v2/Validation_data.txt"
       info: "Data source for data"
     vocab_write_path:
-      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/tags_vocab.txt"
+      path: "data/Project-A-R-Scenario-Truncated-Enriched-v2/tags_vocab.txt"
 #    class_weights_path:
-#      path: "data/Project-A-R-Scenario-Truncated-Enriched-v4/class_weights.txt"
+#      path: "data/Project-A-R-Scenario-Truncated-Enriched-v2/class_weights.txt"
     container_path: data/Project-A-R-Scenario-Truncated-Enriched-v4
     shuffle: True
     random_status: 42

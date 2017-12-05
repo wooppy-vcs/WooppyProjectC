@@ -380,7 +380,7 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets_multiple_files(container_path, vocab_tags_path, system_path, sentences = 0, tags = 1, remove_none=False):
+def get_datasets_multiple_files(container_path, vocab_tags_path, vocab_char_path, system_path, sentences = 0, tags = 1, remove_none=False):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -437,10 +437,13 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, system_path, se
     datasets['target'] = target_names
     target = []
 
+    vocab_chars = get_char_vocab(data)
+
     vocab_tags = get_vocab_tags(target_names)
     if not os.path.exists(system_path):
         os.makedirs(system_path)
 
+    write_vocab_tags(vocab_chars, vocab_char_path)
     write_vocab_tags(vocab_tags, vocab_tags_path)
     # target_names_dict = load_vocab(vocab_tags_path)
     # for s in target_names:
@@ -452,7 +455,7 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, system_path, se
     return datasets
 
 
-def get_datasets(data_path, vocab_tags_path, sentences = 0, tags = 1):
+def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, sentences = 0, tags = 1):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -478,6 +481,8 @@ def get_datasets(data_path, vocab_tags_path, sentences = 0, tags = 1):
 
     target_names_dict = load_vocab(vocab_tags_path)
 
+
+
 # changing tags' name to numbers
     for s in target_names:
         target.append(int(target_names_dict[str(s)]))
@@ -490,6 +495,9 @@ def get_datasets(data_path, vocab_tags_path, sentences = 0, tags = 1):
     datasets['target'] = target
     datasets['target_names'] = target_names_dict
     # datasets['class_weights'] = class_weights
+    if config.enable_char:
+        char_dict = load_vocab(vocab_char_path)
+        datasets['vocab_chars'] = char_dict
 
     return datasets
 
@@ -546,47 +554,95 @@ def get_char_vocab(dataset):
 
     return vocab_char
 
-def get_processing_word(vocab_words=None, vocab_chars=None,
-                    lowercase=False, chars=False, allow_unk=True):
+
+def get_processing_word(vocab_chars=None):
     """
     Args:
         vocab: dict[word] = idx
     Returns:
-        f("cat") = ([12, 4, 32], 12345)
-                 = (list of char ids, word id)
+        f("cat") = [12, 4, 32]
+                 = (list of char ids)
     """
     def f(word):
-        # 0. get chars of words
-        if vocab_chars is not None and chars == True:
-            char_ids = []
-            for char in word:
-                # ignore chars out of vocabulary
-                if char in vocab_chars:
-                    char_ids += [vocab_chars[char]]
+        # # 0. get chars of words
+        # if vocab_chars is not None and chars == True:
+        char_ids = []
+        for char in word:
+            # ignore chars out of vocabulary
+            if char in vocab_chars:
+                char_ids += [vocab_chars[char]]
 
-        # 1. preprocess word
-        if lowercase:
-            word = word.lower()
-        if word.isdigit():
-            word = NUM
-
-        # 2. get id of word
-        if vocab_words is not None:
-            if word in vocab_words:
-                word = vocab_words[word]
-            else:
-                if allow_unk:
-                    word = vocab_words[UNK]
-                else:
-                    raise Exception("Unknow key is not allowed. Check that your vocab (tags?) is correct")
-
-        # 3. return tuple char ids, word id
-        if vocab_chars is not None and chars == True:
-            return char_ids, word
-        else:
-            return word
+        # # 1. preprocess word
+        # if lowercase:
+        #     word = word.lower()
+        # if word.isdigit():
+        #     word = NUM
+        #
+        # # 2. get id of word
+        # if vocab_words is not None:
+        #     if word in vocab_words:
+        #         word = vocab_words[word]
+        #     else:
+        #         if allow_unk:
+        #             word = vocab_words[UNK]
+        #         else:
+        #             raise Exception("Unknow key is not allowed. Check that your vocab (tags?) is correct")
+        #
+        # # 3. return tuple char ids, word id
+        # if vocab_chars is not None and chars == True:
+        return char_ids
+        # else:
+        #     return word
 
     return f
+
+def _pad_sequences(sequences, pad_tok, max_length):
+    """
+    Args:
+        sequences: a generator of list or tuple
+        pad_tok: the char to pad with
+    Returns:
+        a list of list where each sublist has same length
+    """
+    sequence_padded, sequence_length = [], []
+
+    for seq in sequences:
+        seq = list(seq)
+        seq_ = seq[:max_length] + [pad_tok]*max(max_length - len(seq), 0)
+        sequence_padded +=  [seq_]
+        sequence_length += [min(len(seq), max_length)]
+
+    return sequence_padded, sequence_length
+
+def pad_sequences(sequences, pad_tok, nlevels=1):
+    """
+    Args:
+        sequences: a generator of list or tuple
+        pad_tok: the char to pad with
+    Returns:
+        a list of list where each sublist has same length
+    """
+    if nlevels == 1:
+        max_length = max(map(lambda x : len(x), sequences))
+        sequence_padded, sequence_length = _pad_sequences(sequences,
+                                            pad_tok, max_length)
+
+    elif nlevels == 2:
+        max_length_word = max([max(map(lambda x: len(x), seq)) for seq in sequences])
+        sequence_padded, sequence_length = [], []
+        for seq in sequences:
+            # all words are same length now
+            sp, sl = _pad_sequences(seq, pad_tok, max_length_word)
+            sequence_padded += [sp]
+            sequence_length += [sl]
+
+        max_length_sentence = max(map(lambda x : len(x), sequences))
+        sequence_padded, _ = _pad_sequences(sequence_padded, [pad_tok]*max_length_word,
+                                            max_length_sentence)
+        sequence_length, _ = _pad_sequences(sequence_length, 0, max_length_sentence)
+
+    return sequence_padded, sequence_length
+
 
 # special error message
 class MyIOError(Exception):

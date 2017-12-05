@@ -1,5 +1,7 @@
 #! /usr/bin/env python
+import random
 
+import numpy
 import tensorflow as tf
 import numpy as np
 import os
@@ -14,24 +16,73 @@ def train(config, model=TextCNN):
     # Load data
     print("Loading data...")
     print("dataset_name : " + config.dataset_name)
-    datasets=data_helpers.get_datasets(data_path=config.training_path, vocab_tags_path=config.tags_vocab_path,
-                                       sentences=config.data_column, tags=config.tags_column)
-    datasets_val = data_helpers.get_datasets(data_path=config.test_path, vocab_tags_path=config.tags_vocab_path,
-                                             sentences=config.data_column, tags=config.tags_column)
+
+    # if not config.enable_char:
+    #     datasets=data_helpers.get_datasets(data_path=config.training_path, vocab_tags_path=config.tags_vocab_path,
+    #                                        sentences=config.data_column, tags=config.tags_column)
+    # else:
+
+    datasets = data_helpers.get_datasets(data_path=config.training_path, vocab_tags_path=config.tags_vocab_path,
+                                         vocab_char_path=config.char_vocab_path, config=config,
+                                         sentences=config.data_column, tags=config.tags_column)
+    # datasets_val = data_helpers.get_datasets(data_path=config.test_path, vocab_tags_path=config.tags_vocab_path,
+    #                                          sentences=config.data_column, tags=config.tags_column)
 
     # Transforming labels to one-hot vectors and apply padding or truncate according to max_document_length
     x_text, y = data_helpers.load_data_labels(datasets)
-    x_dev_raw, y_dev_raw = data_helpers.load_data_labels(datasets_val)
+    # x_dev_raw, y_dev_raw = data_helpers.load_data_labels(datasets_val)
     vocab_processor = learn.preprocessing.VocabularyProcessor(config.doc_length)
     x = np.array(list(vocab_processor.fit_transform(x_text)))
-    x_dev_temp = np.array(list(vocab_processor.fit_transform(x_dev_raw)))
+
+    # Char level processing
+    if config.enable_char:
+        processing_word = data_helpers.get_processing_word(vocab_chars=datasets['vocab_chars'])
+        char_ids = []
+        for sentence in x_text:
+            words_raw = sentence.strip().split(" ")
+            words = [processing_word(w) for w in words_raw]
+            char_ids += [words]
+        char_ids, word_lengths = data_helpers.pad_sequences(char_ids, pad_tok=0, nlevels=2)
+        char_ids = numpy.delete(char_ids, numpy.s_[40:], 1)
+        word_lengths = numpy.delete(word_lengths, numpy.s_[40:], 1)
+
+    print((np.asanyarray(char_ids)).shape)
+    print((np.asanyarray(word_lengths)).shape)
+
+    # x_dev_temp = np.array(list(vocab_processor.fit_transform(x_dev_raw)))
 
     # Randomly shuffle data
-    np.random.seed(10)
-    shuffle_indices = np.random.permutation(np.arange(len(y)))
-    x_train, y_train = x[shuffle_indices], y[shuffle_indices]
-    shuffle_indices_1 = np.random.permutation(np.arange(len(y_dev_raw)))
-    x_dev, y_dev = x_dev_temp[shuffle_indices_1], y_dev_raw[shuffle_indices_1]
+    if not config.enable_char:
+        np.random.seed(10)
+        shuffle_indices = np.random.permutation(np.arange(len(y)))
+    # x_train, y_train = x[shuffle_indices], y[shuffle_indices]
+    # shuffle_indices_1 = np.random.permutation(np.arange(len(y_dev_raw)))
+    # x_dev, y_dev = x_dev_temp[shuffle_indices_1], y_dev_raw[shuffle_indices_1]
+        x_shuffled = x[shuffle_indices]
+        y_shuffled = y[shuffle_indices]
+    else:
+        data = list(zip(x, y, char_ids, word_lengths))
+        random.shuffle(data)
+        x_shuffled, y_shuffled, char_ids_shuffled, word_lengths_shuffled = zip(*data)
+        x_shuffled = numpy.asanyarray(x_shuffled)
+        y_shuffled = numpy.asanyarray(y_shuffled)
+        char_ids_shuffled = numpy.asanyarray(char_ids_shuffled)
+        word_lengths_shuffled = numpy.asanyarray(word_lengths_shuffled)
+
+
+
+    # Split train/test set
+    # TODO: This is very crude, should use cross-validation
+    dev_sample_index = -1 * int(config.dev_sample_fraction * float(len(y)))
+    x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
+    y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
+    if config.enable_char:
+        char_ids_train, char_ids_dev = char_ids_shuffled[:dev_sample_index], char_ids_shuffled[dev_sample_index:]
+        word_lengths_train, word_lengths_dev = word_lengths_shuffled[:dev_sample_index], word_lengths_shuffled[dev_sample_index:]
+    # print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))
+    # print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
+    # print(x_train)
+    # print(y_train)
 
     # Printing data details
     print("=======================================================")
@@ -39,6 +90,9 @@ def train(config, model=TextCNN):
     print('Train/Dev split = %d/%d' % (len(y_train), len(y_dev)))
     print('Train shape = ', x_train.shape)
     print('Dev shape = ', x_dev.shape)
+    if config.enable_char:
+        print('Char_ids_shape = ', char_ids_train.shape)
+        print('word_lengths_shape = ', word_lengths_train.shape)
     print('Vocab_size = ', len(vocab_processor.vocabulary_))
     print('Sentence max words = ', config.doc_length)
     print("=======================================================")
@@ -55,15 +109,27 @@ def train(config, model=TextCNN):
         )
         sess = tf.Session(config=session_conf)
         with sess.as_default():
-            cnn = model(
-                sequence_length=x_train.shape[1],
-                num_classes=y_train.shape[1],
-                vocab_size=len(vocab_processor.vocabulary_),
-                embedding_size=config.embedding_dim,
-                filter_sizes=config.filter_sizes,
-                num_filters_layer1=config.num_filters[0],
-                l2_reg_lambda=config.l2_reg_lambda,
-                weights_array=weights_array)
+            if config.enable_char:
+                cnn = model(config=config,
+                            sequence_length=x_train.shape[1],
+                            num_classes=y_train.shape[1],
+                            vocab_size=len(vocab_processor.vocabulary_),
+                            embedding_size=config.embedding_dim,
+                            filter_sizes=config.filter_sizes,
+                            num_filters_layer1=config.num_filters[0],
+                            l2_reg_lambda=config.l2_reg_lambda,
+                            weights_array=weights_array, nchars=len(datasets['vocab_chars'])
+                            )
+            else:
+                cnn = model(
+                    sequence_length=x_train.shape[1],
+                    num_classes=y_train.shape[1],
+                    vocab_size=len(vocab_processor.vocabulary_),
+                    embedding_size=config.embedding_dim,
+                    filter_sizes=config.filter_sizes,
+                    num_filters_layer1=config.num_filters[0],
+                    l2_reg_lambda=config.l2_reg_lambda,
+                    weights_array=weights_array)
 
             # restoring from the checkpoint file
             if config.checkpoint_dir != "":
@@ -72,6 +138,7 @@ def train(config, model=TextCNN):
 
             # Define Training procedure
             global_step = tf.Variable(0, name="global_step", trainable=False)
+            # Learning rate is 1E-3
             optimizer = tf.train.AdamOptimizer(1e-3)
             grads_and_vars = optimizer.compute_gradients(cnn.loss)
             train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
@@ -121,7 +188,7 @@ def train(config, model=TextCNN):
             else:
                 print("{} = {}".format("WORD_EMBEDDINGS", "NONE"))
 
-            print("{} = {}".format("EMBEDDING DIMENSION", str(config.embedding_dim)))
+            print("{} = {}en = [10, 20, 30,".format("EMBEDDING DIMENSION", str(config.embedding_dim)))
             print("=======================================================")
 
             # Initialize all variables
@@ -152,14 +219,20 @@ def train(config, model=TextCNN):
                 saver.restore(sess, checkpoint_file)
 
             # training method
-            def train_step(x_batch, y_batch):
+            def train_step(x_batch, y_batch, char_ids=None, word_lengths=None):
                 """
                 A single training step
                 """
-                feed_dict = {cnn.input_x: x_batch,
-                             cnn.input_y: y_batch,
-                             cnn.dropout_keep_prob: config.dropout_keep_prob}
-
+                if config.enable_char:
+                    feed_dict = {cnn.input_x: x_batch,
+                                 cnn.input_y: y_batch,
+                                 cnn.dropout_keep_prob: config.dropout_keep_prob,
+                                 cnn.word_lengths: word_lengths,
+                                 cnn.char_ids: char_ids}
+                else:
+                    feed_dict = {cnn.input_x: x_batch,
+                                 cnn.input_y: y_batch,
+                                 cnn.dropout_keep_prob: config.dropout_keep_prob}
                 _, step, summaries, loss, accuracy, weighted_accuracy = sess.run(
                     [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
                     feed_dict)
@@ -170,13 +243,20 @@ def train(config, model=TextCNN):
                 train_summary_writer.add_summary(summaries, step)
 
             # Validation method
-            def dev_step(x_batch, y_batch, writer=None):
+            def dev_step(x_batch, y_batch, word_lengths=None, char_ids=None, writer=None):
                 """
                 Evaluates model on a dev set
                 """
-                feed_dict = { cnn.input_x: x_batch,
-                              cnn.input_y: y_batch,
-                              cnn.dropout_keep_prob: 1.0}
+                if config.enable_char:
+                    feed_dict = {cnn.input_x: x_batch,
+                                 cnn.input_y: y_batch,
+                                 cnn.dropout_keep_prob: config.dropout_keep_prob,
+                                 cnn.word_lengths: word_lengths,
+                                 cnn.char_ids: char_ids}
+                else:
+                    feed_dict = {cnn.input_x: x_batch,
+                                 cnn.input_y: y_batch,
+                                 cnn.dropout_keep_prob: config.dropout_keep_prob}
 
                 # JIALER MOD COMMENTED
                 # step, summaries, loss, accuracy, weighted_accuracy = sess.run(
@@ -221,7 +301,10 @@ def train(config, model=TextCNN):
             # Main code for training
 
             # Generating batches
-            batches = data_helpers.batch_iter(list(zip(x_train, y_train)), config.batch_size, config.num_epochs)
+            if not config.enable_char:
+                batches = data_helpers.batch_iter(list(zip(x_train, y_train)), config.batch_size, config.num_epochs)
+            else:
+                batches = data_helpers.batch_iter(list(zip(x_train, y_train, char_ids_train, word_lengths_train)), config.batch_size, config.num_epochs)
             num_batches_per_epoch = int((len(x_train) - 1) / config.batch_size) + 1
 
             print("Training Starting.......")
@@ -235,15 +318,23 @@ def train(config, model=TextCNN):
 
             # Training loop. For each batch...
             for batch in batches:
-                x_batch, y_batch = zip(*batch)
-                train_step(x_batch, y_batch)
+                if not config.enable_char:
+                    x_batch, y_batch = zip(*batch)
+                    train_step(x_batch, y_batch)
+                else:
+                    x_batch, y_batch, char_ids_batch, word_lengths_batch = zip(*batch)
+                    train_step(x_batch, y_batch, char_ids_batch, word_lengths_batch)
+
                 current_step = tf.train.global_step(sess, global_step)
 
                 if current_step % num_batches_per_epoch == 0:
                     print("=======================================================")
                     print("Epoch number: {}".format(i + 1))
                     print("\nEvaluation:")
-                    loss, f_score = dev_step(x_dev, y_dev, writer=dev_summary_writer)
+                    if not config.enable_char:
+                        loss, f_score = dev_step(x_dev, y_dev, writer=dev_summary_writer)
+                    else:
+                        loss, f_score = dev_step(x_dev, y_dev, word_lengths_dev, char_ids_dev, writer=dev_summary_writer)
                     hist_loss.append(loss)
                     hist_f_score.append(f_score)
                     print("=======================================================")

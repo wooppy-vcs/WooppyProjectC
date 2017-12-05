@@ -21,6 +21,7 @@ def softmax(x):
 def evaluation(config):
     # Loading training data
     datasets = data_helpers.get_datasets(data_path=config.test_path, vocab_tags_path=config.tags_vocab_path,
+                                         vocab_char_path=config.char_vocab_path, config=config,
                                          sentences=config.data_column, tags=config.tags_column)
 
     # Converting label to one hot vectors
@@ -36,6 +37,16 @@ def evaluation(config):
     vocab_path = os.path.join(model_path, "..", "vocab")
     vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
     x_test = np.array(list(vocab_processor.transform(x_raw)))
+
+    # Char level processing
+    if config.enable_char:
+        processing_word = data_helpers.get_processing_word(vocab_chars=datasets['vocab_chars'])
+        char_ids = []
+        for sentence in x_raw:
+            words_raw = sentence.strip().split(" ")
+            words = [processing_word(w) for w in words_raw]
+            char_ids += [words]
+        char_ids_fd, words_length_fd = data_helpers.pad_sequences(char_ids, pad_tok=0, nlevels=2)
 
     print("=======================================================")
     print("Loading Checkpoints at {}".format(model_path))
@@ -57,6 +68,12 @@ def evaluation(config):
 
             dropout_keep_prob = graph.get_operation_by_name("dropout_keep_prob").outputs[0]
 
+            if config.enable_char:
+
+                char_ids = graph.get_operation_by_name("char_ids").outputs[0]
+
+                word_lengths = graph.get_operation_by_name("word_lengths").outputs[0]
+
             # Tensors we want to evaluate
             scores = graph.get_operation_by_name("output/scores").outputs[0]
 
@@ -73,8 +90,14 @@ def evaluation(config):
 
             for idx, x_test_batch in enumerate(batches):
                 print("Batch : " + str(idx))
-                batch_predictions_scores = sess.run([predictions, scores], {input_x: x_test_batch,
-                                                                            dropout_keep_prob: 1.0})
+                if config.enable_char:
+                    batch_predictions_scores = sess.run([predictions, scores], {input_x: x_test_batch,
+                                                                                dropout_keep_prob: 1.0,
+                                                                                char_ids: char_ids_fd,
+                                                                                word_lengths: words_length_fd})
+                else:
+                    batch_predictions_scores = sess.run([predictions, scores], {input_x: x_test_batch,
+                                                                                dropout_keep_prob: 1.0})
                 all_predictions = np.concatenate([all_predictions, batch_predictions_scores[0]])
                 # print(batch_predictions_scores[0])
                 probabilities = softmax(batch_predictions_scores[1])
@@ -134,7 +157,7 @@ def evaluation(config):
         overall_f1 = 2 * overall_p * overall_r / (overall_p + overall_r)
 
         # Writing report
-        out_path_report = os.path.join(model_path, "..", "results.txt")
+        out_path_report = os.path.join(config.out_dir, "results-len{}.txt".format(config.doc_length))
         with open(out_path_report, 'w', newline='') as f:
             f.write("tags\tp\tr\tf1\n")
             for idx, name in enumerate(available_target_names):
@@ -171,7 +194,7 @@ def evaluation(config):
                                                       result,
                                                       readable_probabilities_array))
 
-        out_path = os.path.join(model_path, "..", "prediction.csv")
+        out_path = os.path.join(config.out_dir, "prediction-len{}.csv".format(config.doc_length))
 
         print("=======================================================")
         print("Saving evaluation to {0}".format(out_path))

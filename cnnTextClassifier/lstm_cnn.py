@@ -18,7 +18,7 @@ class LSTMCNN(object):
         # Keeping track of l2 regularization loss (optional)
         l2_loss = tf.constant(0.0)
 
-        with tf.device('/gpu:0'), tf.name_scope("embedding"):
+        with tf.name_scope("embedding"):
             self.W = tf.Variable(
                 tf.random_uniform([vocab_size, embedding_size], -1.0, 1.0),
                 name="W")
@@ -34,17 +34,16 @@ class LSTMCNN(object):
             # put the time dimension on axis=1
             s = tf.shape(char_embeddings)
             char_embeddings = tf.reshape(char_embeddings, shape=[-1, s[-2], self.config.dim_char])
+            char_embeddings = tf.Print(char_embeddings, [char_embeddings])
             word_lengths = tf.reshape(self.word_lengths, shape=[-1])
             # bi lstm on chars
             # need 2 instances of cells since tf 1.1
-            cell_fw = tf.contrib.rnn.LSTMCell(self.config.char_hidden_size,
-                                                state_is_tuple=True)
-            cell_bw = tf.contrib.rnn.LSTMCell(self.config.char_hidden_size,
-                                                state_is_tuple=True)
+            cell_fw = tf.contrib.rnn.LSTMCell(self.config.char_hidden_size, state_is_tuple=True)
+            cell_bw = tf.contrib.rnn.LSTMCell(self.config.char_hidden_size, state_is_tuple=True)
 
-            _, ((_, output_fw), (_, output_bw)) = tf.nn.bidirectional_dynamic_rnn(cell_fw,
-                cell_bw, char_embeddings, sequence_length=word_lengths,
-                dtype=tf.float32)
+            _, ((_, output_fw), (_, output_bw)) = tf.nn.bidirectional_dynamic_rnn(cell_fw, cell_bw, char_embeddings,
+                                                                                  sequence_length=word_lengths,
+                                                                                  dtype=tf.float32)
 
             output = tf.concat([output_fw, output_bw], axis=-1)
             # shape = (batch size, max sentence length, char hidden size)
@@ -53,14 +52,15 @@ class LSTMCNN(object):
             word_embeddings = tf.concat([self.embedded_chars, output], axis=-1)
 
         # Add dropout
-        self.word_embeddings = tf.nn.dropout(word_embeddings, self.config.dropout_keep_prob)
+        word_embeddings = tf.nn.dropout(word_embeddings, self.config.dropout_keep_prob)
+        self.word_embeddings = tf.expand_dims(word_embeddings, -1)
 
         # Create a convolution + maxpool layer for each filter size
         pooled_outputs = []
         for i, filter_size in enumerate(filter_sizes):
             with tf.name_scope("conv-maxpool-%s" % filter_size):
                 # Convolution Layer
-                filter_shape = [filter_size, embedding_size, 1, num_filters_layer1]
+                filter_shape = [filter_size, embedding_size+(config.dim_char*2), 1, num_filters_layer1]
                 W = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name="W")
                 b = tf.Variable(tf.constant(0.1, shape=[num_filters_layer1]), name="b")
                 conv = tf.nn.conv2d(
@@ -114,3 +114,16 @@ class LSTMCNN(object):
         with tf.name_scope("accuracy"):
             correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
             self.accuracy = tf.reduce_mean(tf.cast(correct_predictions, "float"), name="accuracy")
+
+        with tf.name_scope("weighted_accuracy"):
+            class_weight = tf.expand_dims(tf.constant(weights_array), 1)
+            correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
+            transformed_correct_predictions = tf.expand_dims(tf.cast(correct_predictions, "float"), 1)
+            # predictions_onehot = tf.one_hot(tf.argmax(self.input_y, 1), num_classes)
+            weighted_correct_label_temp = tf.matmul(self.input_y, class_weight)
+            # weighted_correct_predictions_temp = tf.matmul(self.input_y, tf.constant(weights_array))
+            # weighted_correct_predictions = tf.multiply(weighted_correct_predictions_temp, tf.cast(correct_predictions, "float"))
+            weighted_correct_labels = tf.multiply(weighted_correct_label_temp, transformed_correct_predictions)
+            # self.weighted_accuracy = tf.reduce_mean(weighted_correct_predictions, name="weighted_accuracy")
+            self.weighted_accuracy = tf.divide(tf.reduce_sum(weighted_correct_labels),
+                                               tf.reduce_sum(weighted_correct_label_temp), name="weighted_accuracy")

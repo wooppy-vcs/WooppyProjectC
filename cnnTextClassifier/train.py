@@ -7,6 +7,7 @@ import time
 import datetime
 from cnnTextClassifier import data_helpers
 # from cnnTextClassifier.data_helpers import calculate_weight
+from cnnTextClassifier.config import Config
 from cnnTextClassifier.text_cnn import TextCNN
 from tensorflow.contrib import learn
 import yaml
@@ -99,6 +100,7 @@ print("Loading data...")
 datasets = None
 datasets_val = None
 print("dataset_name : " + dataset_name)
+config = Config()
 
 if dataset_name == "mrpolarity":
     datasets = data_helpers.get_datasets_mrpolarity(cfg["datasets"][dataset_name]["positive_data_file"]["path"],
@@ -123,10 +125,12 @@ elif dataset_name == "localdatacategorizedbyfilename":
 elif dataset_name == "localfile":
     datasets=data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["data_file"]["path"],
                                        vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+                                       config=config,
                                        # class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
                                        sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
     datasets_val = data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["test_data_file"]["path"],
                                              vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+                                             config=config,
                                              # class_weights_path=cfg["datasets"][dataset_name]["class_weights_path"]["path"],
                                              sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
