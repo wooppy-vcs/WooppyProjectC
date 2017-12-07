@@ -9,6 +9,8 @@ from tensorflow.contrib import learn
 from sklearn import metrics
 import os
 
+from cnnTextClassifier.config import Config
+
 
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
@@ -42,7 +44,7 @@ tf.flags.DEFINE_integer("batch_size", 1, "Batch Size (default: 64)")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511176830-Scenario-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511240087-AnswerType-len20-correctedweightedaccuracy-filtersize345-enrich/checkpoints", "Checkpoint directory from training run")
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1511260117-Scenario-len20-correctedweightedaccuracy-filtersize345-remove-none/checkpoints", "Checkpoint directory from training run")
-tf.flags.DEFINE_string("checkpoint_dir", "Enriched-runs/Scenario-len10-CNN/checkpoints", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", "Enriched-runs/Scenario-len70-CNN-Enriched/checkpoints", "Checkpoint directory from training run")
 
 
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
@@ -92,6 +94,7 @@ if FLAGS.eval_train:
     elif dataset_name == "localfile":
         datasets = data_helpers.get_datasets(data_path=cfg["datasets"][dataset_name]["test_data_file"]["path"],
                                              vocab_tags_path=cfg["datasets"][dataset_name]["vocab_write_path"]["path"],
+                                             config=Config(False),
                                              sentences=FLAGS.sentences_column, tags=FLAGS.tags_column)
 
     x_raw, y_test = data_helpers.load_data_labels(datasets)
@@ -232,7 +235,7 @@ if y_test is not None:
     overall_r = sum(correct_preds_tags)/sum(total_correct_tags)
     overall_f1 = 2 * overall_p * overall_r / (overall_p + overall_r)
 
-    out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results.txt")
+    out_path_report = os.path.join(FLAGS.checkpoint_dir, "..", "results-test.txt")
     with open(out_path_report, 'w', newline='') as f:
         f.write("tags\tp\tr\tf1\n")
         for idx, name in enumerate(available_target_names):
@@ -283,7 +286,7 @@ if y_test is not None:
     #                                       result[idx] + "," +
     #                                       readable_probabilities_array[idx])
 
-    out_path = os.path.join(FLAGS.checkpoint_dir, "..", "prediction.csv")
+    out_path = os.path.join(FLAGS.checkpoint_dir, "..", "prediction-test.csv")
     print("=======================================================")
     print("Saving evaluation to {0}".format(out_path))
     print("=======================================================")
@@ -324,7 +327,7 @@ if y_test is not None:
     plt.xticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='vertical')
     plt.yticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='horizontal')
     # plt.yticks(available_target_names)
-    out_path = os.path.join(FLAGS.checkpoint_dir, "..", "confmat.png")
+    out_path = os.path.join(FLAGS.checkpoint_dir, "..", "confmat-test.png")
 
     savefig(out_path, format="png")
     # savefig("confmat.pdf", format="pdf")

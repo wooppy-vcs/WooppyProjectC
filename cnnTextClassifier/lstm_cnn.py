@@ -34,7 +34,7 @@ class LSTMCNN(object):
             # put the time dimension on axis=1
             s = tf.shape(char_embeddings)
             char_embeddings = tf.reshape(char_embeddings, shape=[-1, s[-2], self.config.dim_char])
-            char_embeddings = tf.Print(char_embeddings, [char_embeddings])
+            # char_embeddings = tf.Print(char_embeddings, [char_embeddings])
             word_lengths = tf.reshape(self.word_lengths, shape=[-1])
             # bi lstm on chars
             # need 2 instances of cells since tf 1.1

@@ -7,6 +7,7 @@ import numpy as np
 import os
 import datetime
 from cnnTextClassifier import data_helpers
+from cnnTextClassifier.data_analyser import Counter
 from cnnTextClassifier.text_cnn import TextCNN
 from tensorflow.contrib import learn
 
@@ -30,7 +31,6 @@ def train(config, model=TextCNN):
 
     # Transforming labels to one-hot vectors and apply padding or truncate according to max_document_length
     x_text, y = data_helpers.load_data_labels(datasets)
-    # x_dev_raw, y_dev_raw = data_helpers.load_data_labels(datasets_val)
     vocab_processor = learn.preprocessing.VocabularyProcessor(config.doc_length)
     x = np.array(list(vocab_processor.fit_transform(x_text)))
 
@@ -42,47 +42,52 @@ def train(config, model=TextCNN):
             words_raw = sentence.strip().split(" ")
             words = [processing_word(w) for w in words_raw]
             char_ids += [words]
-        char_ids, word_lengths = data_helpers.pad_sequences(char_ids, pad_tok=0, nlevels=2)
-        char_ids = numpy.delete(char_ids, numpy.s_[40:], 1)
-        word_lengths = numpy.delete(word_lengths, numpy.s_[40:], 1)
+        char_ids, word_lengths = data_helpers.pad_sequences(config.doc_length, char_ids, pad_tok=0, nlevels=2)
+        char_ids = numpy.delete(char_ids, numpy.s_[config.doc_length:], 1)
+        word_lengths = numpy.delete(word_lengths, numpy.s_[config.doc_length:], 1)
 
-    print((np.asanyarray(char_ids)).shape)
-    print((np.asanyarray(word_lengths)).shape)
-
-    # x_dev_temp = np.array(list(vocab_processor.fit_transform(x_dev_raw)))
-
-    # Randomly shuffle data
-    if not config.enable_char:
-        np.random.seed(10)
-        shuffle_indices = np.random.permutation(np.arange(len(y)))
-    # x_train, y_train = x[shuffle_indices], y[shuffle_indices]
-    # shuffle_indices_1 = np.random.permutation(np.arange(len(y_dev_raw)))
-    # x_dev, y_dev = x_dev_temp[shuffle_indices_1], y_dev_raw[shuffle_indices_1]
-        x_shuffled = x[shuffle_indices]
-        y_shuffled = y[shuffle_indices]
-    else:
-        data = list(zip(x, y, char_ids, word_lengths))
-        random.shuffle(data)
-        x_shuffled, y_shuffled, char_ids_shuffled, word_lengths_shuffled = zip(*data)
-        x_shuffled = numpy.asanyarray(x_shuffled)
-        y_shuffled = numpy.asanyarray(y_shuffled)
-        char_ids_shuffled = numpy.asanyarray(char_ids_shuffled)
-        word_lengths_shuffled = numpy.asanyarray(word_lengths_shuffled)
-
-
-
-    # Split train/test set
-    # TODO: This is very crude, should use cross-validation
-    dev_sample_index = -1 * int(config.dev_sample_fraction * float(len(y)))
-    x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
-    y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
     if config.enable_char:
-        char_ids_train, char_ids_dev = char_ids_shuffled[:dev_sample_index], char_ids_shuffled[dev_sample_index:]
-        word_lengths_train, word_lengths_dev = word_lengths_shuffled[:dev_sample_index], word_lengths_shuffled[dev_sample_index:]
-    # print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))
-    # print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
-    # print(x_train)
-    # print(y_train)
+        data = list(zip(x, y, char_ids, word_lengths))
+    else:
+        data = list(zip(x, y))
+
+    counter = Counter()
+    vocab_tags_list = [idx for b, idx in datasets['target_names'].items()]
+
+    # Randomise and Split train/val set
+    dev_sample_index = -1 * int(config.dev_sample_fraction * float(len(y)))
+    correct_splitting = True
+    while correct_splitting:
+        random.shuffle(data)
+        if config.enable_char:
+            x_shuffled, y_shuffled, char_ids_shuffled, word_lengths_shuffled = zip(*data)
+            char_ids_shuffled = np.asanyarray(char_ids_shuffled)
+            word_lengths_shuffled = np.asanyarray(word_lengths_shuffled)
+        else:
+            x_shuffled, y_shuffled = zip(*data)
+
+        x_shuffled = np.asanyarray(x_shuffled)
+        y_shuffled = np.asanyarray(y_shuffled)
+
+        # Split train/test set
+        x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
+        y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
+        if config.enable_char:
+            char_ids_train, char_ids_dev = char_ids_shuffled[:dev_sample_index], char_ids_shuffled[dev_sample_index:]
+            word_lengths_train, word_lengths_dev = word_lengths_shuffled[:dev_sample_index], word_lengths_shuffled[
+                                                                                             dev_sample_index:]
+        # Comparing the tags using idx of tags in vocab_tags in the training data
+        y_train_temp = np.argmax(y_train, 1)
+        tags_counter = counter.count(y_train_temp, vocab_tags_list)
+        correct_splitting = False
+
+        # To cross check that no data will be missed out for training set when only have one data in the class
+        for x in tags_counter:
+            if x == 0.0:
+                correct_splitting = True
+
+    # x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
+    # y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
 
     # Printing data details
     print("=======================================================")
@@ -301,10 +306,12 @@ def train(config, model=TextCNN):
             # Main code for training
 
             # Generating batches
-            if not config.enable_char:
-                batches = data_helpers.batch_iter(list(zip(x_train, y_train)), config.batch_size, config.num_epochs)
+            if config.enable_char:
+                batches = data_helpers.batch_iter_lstm(x_train, y_train, char_ids_train, word_lengths_train,
+                                                  config.batch_size, config.num_epochs)
             else:
-                batches = data_helpers.batch_iter(list(zip(x_train, y_train, char_ids_train, word_lengths_train)), config.batch_size, config.num_epochs)
+                batches = data_helpers.batch_iter(list(zip(x_train, y_train)), config.batch_size, config.num_epochs)
+
             num_batches_per_epoch = int((len(x_train) - 1) / config.batch_size) + 1
 
             print("Training Starting.......")
@@ -317,43 +324,70 @@ def train(config, model=TextCNN):
             hist_f_score = []
 
             # Training loop. For each batch...
-            for batch in batches:
-                if not config.enable_char:
+            if config.enable_char:
+                for (x_batch, y_batch, char_ids_batch, word_lengths_batch) in batches:
+                    train_step(x_batch, y_batch, char_ids_batch, word_lengths_batch)
+                    current_step = tf.train.global_step(sess, global_step)
+
+                    if current_step % num_batches_per_epoch == 0:
+                        print("=======================================================")
+                        print("Epoch number: {}".format(i + 1))
+                        print("\nEvaluation:")
+                        loss, f_score = dev_step(x_dev, y_dev, word_lengths_dev, char_ids_dev, writer=dev_summary_writer)
+                        hist_loss.append(loss)
+                        hist_f_score.append(f_score)
+                        print("=======================================================")
+
+                        # if i > 0 and hist_loss[i - 1] - hist_loss[i] > config.min_delta:
+                        #     if hist_loss[i] < min_loss:
+                        if i > 0 and hist_f_score[i] > max_f_score:
+                            # min_loss = hist_loss[i]
+                            max_f_score = hist_f_score[i]
+                            path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+                            print("----new BEST f1 score----")
+                            print("Saved model checkpoint to {}\n".format(path))
+                            print("Checkpoint Number = {}".format(i + 1))
+                            print("=======================================================")
+                            patience_cnt = 0
+                        else:
+                            patience_cnt += 1
+                        if patience_cnt > config.patience:
+                            # if hist_loss[i] < min_loss:
+                            print("Early stopping without at Epoch {} improvement.....".format(i + 1))
+                            break
+                        i += 1
+
+            else:
+                for batch in batches:
                     x_batch, y_batch = zip(*batch)
                     train_step(x_batch, y_batch)
-                else:
-                    x_batch, y_batch, char_ids_batch, word_lengths_batch = zip(*batch)
-                    train_step(x_batch, y_batch, char_ids_batch, word_lengths_batch)
 
-                current_step = tf.train.global_step(sess, global_step)
+                    current_step = tf.train.global_step(sess, global_step)
 
-                if current_step % num_batches_per_epoch == 0:
-                    print("=======================================================")
-                    print("Epoch number: {}".format(i + 1))
-                    print("\nEvaluation:")
-                    if not config.enable_char:
-                        loss, f_score = dev_step(x_dev, y_dev, writer=dev_summary_writer)
-                    else:
-                        loss, f_score = dev_step(x_dev, y_dev, word_lengths_dev, char_ids_dev, writer=dev_summary_writer)
-                    hist_loss.append(loss)
-                    hist_f_score.append(f_score)
-                    print("=======================================================")
-
-                    # if i > 0 and hist_loss[i - 1] - hist_loss[i] > config.min_delta:
-                    #     if hist_loss[i] < min_loss:
-                    if i > 0 and hist_f_score[i] > max_f_score:
-                            # min_loss = hist_loss[i]
-                        max_f_score = hist_f_score[i]
-                        path = saver.save(sess, checkpoint_prefix, global_step=current_step)
-                        print("----new BEST f1 score----")
-                        print("Saved model checkpoint to {}\n".format(path))
-                        print("Checkpoint Number = {}".format(i+1))
+                    if current_step % num_batches_per_epoch == 0:
                         print("=======================================================")
-                        patience_cnt = 0
-                    else:
-                        patience_cnt += 1
-                    if patience_cnt > config.patience:
-                        # if hist_loss[i] < min_loss:
-                        print("Early stopping without at Epoch {} improvement.....".format(i+1))
-                        break
-                    i += 1
+                        print("Epoch number: {}".format(i + 1))
+                        print("\nEvaluation:")
+                        loss, f_score = dev_step(x_dev, y_dev, writer=dev_summary_writer)
+                        hist_loss.append(loss)
+                        hist_f_score.append(f_score)
+                        print("=======================================================")
+
+                        # if i > 0 and hist_loss[i - 1] - hist_loss[i] > config.min_delta:
+                        #     if hist_loss[i] < min_loss:
+                        if i > 0 and hist_f_score[i] > max_f_score:
+                                # min_loss = hist_loss[i]
+                            max_f_score = hist_f_score[i]
+                            path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+                            print("----new BEST f1 score----")
+                            print("Saved model checkpoint to {}\n".format(path))
+                            print("Checkpoint Number = {}".format(i+1))
+                            print("=======================================================")
+                            patience_cnt = 0
+                        else:
+                            patience_cnt += 1
+                        if patience_cnt > config.patience:
+                            # if hist_loss[i] < min_loss:
+                            print("Early stopping without at Epoch {} improvement.....".format(i+1))
+                            break
+                        i += 1

@@ -5,9 +5,9 @@ import os
 
 class Config():
 
-    def __init__(self, enable_char, doc_length=None, model_name="", checkpoint_dir=""):
+    def __init__(self, enable_char, run_number, doc_length=None, model_name="", checkpoint_dir="", ):
 
-        self.runs_folder = "Enriched-runs"
+        self.runs_folder = "Enriched-x10-runs(LSTM&CNNv0)"
 
         self.classifier_type = "Scenario"
         self.doc_length = doc_length
@@ -18,8 +18,9 @@ class Config():
 
         # Runs Output directories
         # self.timestamp = str(int(time.time())) + "-" + self.classifier_type
-        self.out_dir = os.path.abspath(os.path.join(os.path.curdir, self.runs_folder, self.classifier_type +
-                                                    "-len{}".format(doc_length) + "-" + self.model_name+"-Enriched"))
+        self.out_dir = os.path.abspath(os.path.join(os.path.curdir, self.runs_folder, "runs-{}-".format(run_number) +
+                                                    self.classifier_type + "-len{}".format(doc_length) + "-" +
+                                                    self.model_name+"-Enriched"))
 
     # Data structure parameters
     data_column = 0

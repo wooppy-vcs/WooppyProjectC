@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-
+import numpy
 import tensorflow as tf
 import csv
 from cnnTextClassifier import data_helpers
@@ -41,12 +41,14 @@ def evaluation(config):
     # Char level processing
     if config.enable_char:
         processing_word = data_helpers.get_processing_word(vocab_chars=datasets['vocab_chars'])
-        char_ids = []
+        char_ids_feed = []
         for sentence in x_raw:
             words_raw = sentence.strip().split(" ")
             words = [processing_word(w) for w in words_raw]
-            char_ids += [words]
-        char_ids_fd, words_length_fd = data_helpers.pad_sequences(char_ids, pad_tok=0, nlevels=2)
+            char_ids_feed += [words]
+        char_ids_fd, word_lengths_fd = data_helpers.pad_sequences(config.doc_length, char_ids_feed, pad_tok=0, nlevels=2)
+        char_ids_fd = numpy.delete(char_ids_fd, numpy.s_[config.doc_length:], 1)
+        word_lengths_fd = numpy.delete(word_lengths_fd, numpy.s_[config.doc_length:], 1)
 
     print("=======================================================")
     print("Loading Checkpoints at {}".format(model_path))
@@ -82,30 +84,46 @@ def evaluation(config):
 
             # Generate batches for one epoch
             print("=======================================================")
-            batches = data_helpers.batch_iter(list(x_test), 1, 1, shuffle=False)
+            if config.enable_char:
+                batches = data_helpers.batch_iter_lstm(x_test, np.zeros((1686, 80)), char_ids_fd, word_lengths_fd, 1, 1,
+                                                       shuffle=False)
+            else:
+                batches = data_helpers.batch_iter(list(x_test), 1, 1, shuffle=False)
 
             # Collect the predictions here
             all_predictions = []
             all_probabilities = None
-
-            for idx, x_test_batch in enumerate(batches):
-                print("Batch : " + str(idx))
-                if config.enable_char:
+            if config.enable_char:
+                for idx, (x_test_batch, _, char_ids_batch, word_lengths_batch) in enumerate(batches):
+                    print("Batch : " + str(idx))
+                    # char_ids_batch = np.expand_dims(char_ids_batch, 0)
+                    # word_lengths_batch = np.expand_dims(word_lengths_batch, 0)
                     batch_predictions_scores = sess.run([predictions, scores], {input_x: x_test_batch,
                                                                                 dropout_keep_prob: 1.0,
-                                                                                char_ids: char_ids_fd,
-                                                                                word_lengths: words_length_fd})
-                else:
-                    batch_predictions_scores = sess.run([predictions, scores], {input_x: x_test_batch,
+                                                                                char_ids: char_ids_batch,
+                                                                                word_lengths: word_lengths_batch})
+                    all_predictions = np.concatenate([all_predictions, batch_predictions_scores[0]])
+                    # print(batch_predictions_scores[0])
+                    probabilities = softmax(batch_predictions_scores[1])
+                    # print(batch_predictions_scores[1])
+                    if all_probabilities is not None:
+                        all_probabilities = np.concatenate([all_probabilities, probabilities])
+                    else:
+                        all_probabilities = probabilities
+            else:
+                for idx, batch in enumerate(batches):
+                    print("Batch : " + str(idx))
+                    batch_predictions_scores = sess.run([predictions, scores], {input_x: batch,
                                                                                 dropout_keep_prob: 1.0})
-                all_predictions = np.concatenate([all_predictions, batch_predictions_scores[0]])
-                # print(batch_predictions_scores[0])
-                probabilities = softmax(batch_predictions_scores[1])
-                # print(batch_predictions_scores[1])
-                if all_probabilities is not None:
-                    all_probabilities = np.concatenate([all_probabilities, probabilities])
-                else:
-                    all_probabilities = probabilities
+                    all_predictions = np.concatenate([all_predictions, batch_predictions_scores[0]])
+                    # print(batch_predictions_scores[0])
+                    probabilities = softmax(batch_predictions_scores[1])
+                    # print(batch_predictions_scores[1])
+                    if all_probabilities is not None:
+                        all_probabilities = np.concatenate([all_probabilities, probabilities])
+                    else:
+                        all_probabilities = probabilities
+
     print("=======================================================")
     idx_to_tag = {idx: tag for tag, idx in datasets['target_names'].items()}
 

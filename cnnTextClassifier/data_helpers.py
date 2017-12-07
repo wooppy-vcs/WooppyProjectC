@@ -1,4 +1,5 @@
 import json
+import random
 
 import numpy as np
 import re
@@ -37,6 +38,25 @@ def clean_str(string):
     string = re.sub(r"\s{2,}", " ", string)
 
     return string.strip().lower()
+
+def batch_iter_lstm(x, y, char_ids, word_lengths, batch_size, num_epochs, shuffle=True):
+
+    data = list(zip(x, y, char_ids, word_lengths))
+    # num_batches_per_epoch = int((len(data) - 1) / batch_size) + 1
+    for epoch in range(num_epochs):
+        if shuffle:
+            random.shuffle(data)
+        x_batch, y_batch, char_batch, word_lengths_batch = [], [], [], []
+        for (x_in, y_in, char_ids_in, word_lengths_in) in data:
+            if len(x_batch) == batch_size:
+                yield x_batch, y_batch, char_batch, word_lengths_batch
+                x_batch, y_batch, char_batch, word_lengths_batch = [], [], [], []
+            x_batch += [x_in]
+            y_batch += [y_in]
+            char_batch += [char_ids_in]
+            word_lengths_batch += [word_lengths_in]
+        if len(x_batch) != 0:
+            yield x_batch, y_batch, char_batch, word_lengths_batch
 
 
 def batch_iter(data, batch_size, num_epochs, shuffle=True):
@@ -481,8 +501,6 @@ def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, 
 
     target_names_dict = load_vocab(vocab_tags_path)
 
-
-
 # changing tags' name to numbers
     for s in target_names:
         target.append(int(target_names_dict[str(s)]))
@@ -614,7 +632,7 @@ def _pad_sequences(sequences, pad_tok, max_length):
 
     return sequence_padded, sequence_length
 
-def pad_sequences(sequences, pad_tok, nlevels=1):
+def pad_sequences(doc_length, sequences, pad_tok, nlevels=1):
     """
     Args:
         sequences: a generator of list or tuple
@@ -636,7 +654,7 @@ def pad_sequences(sequences, pad_tok, nlevels=1):
             sequence_padded += [sp]
             sequence_length += [sl]
 
-        max_length_sentence = max(map(lambda x : len(x), sequences))
+        max_length_sentence = doc_length
         sequence_padded, _ = _pad_sequences(sequence_padded, [pad_tok]*max_length_word,
                                             max_length_sentence)
         sequence_length, _ = _pad_sequences(sequence_length, 0, max_length_sentence)

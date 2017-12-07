@@ -92,8 +92,8 @@ class OngoingSession:
 
 app = Flask(__name__, static_folder=os.path.join("templates", "assets"))
 app.secret_key = 'rem4lyfe'
-checkpoint_dir = "Enriched-runs/Scenario-len40-CNN/checkpoints"
-config = Config()
+checkpoint_dir = "Enriched-runs/Scenario-len70-CNN-Enriched/checkpoints"
+config = Config(enable_char=False)
 ongoing_session = OngoingSession(checkpoint_dir, config)
 
 

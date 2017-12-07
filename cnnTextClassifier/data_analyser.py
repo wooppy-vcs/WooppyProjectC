@@ -32,7 +32,7 @@ def analyse_data(data_path, test_path, vocab_path):
 
     counters_1 = counter.count(train_tags, tags_vocab)
 
-    with open(path + "Training_data_analysis.txt", "w", encoding="utf8") as f:
+    with open(path + "Training_data_analysis-Enriched.txt", "w", encoding="utf8") as f:
         i = 0
         for tag, count in zip(tags_vocab, counters_1):
             if i != len(tags_vocab) - 1:
@@ -66,7 +66,7 @@ def analyse_data(data_path, test_path, vocab_path):
 
     counters_2 = counter.count(test_tags, tags_vocab)
 
-    with open(path + "test_data_analysis.txt", "w", encoding="utf8") as f:
+    with open(path + "test_data_analysis-Enriched.txt", "w", encoding="utf8") as f:
         i = 0
         for tag, count in zip(tags_vocab, counters_2):
             if i != len(tags_vocab) - 1:
@@ -78,7 +78,7 @@ def analyse_data(data_path, test_path, vocab_path):
 
     counters = counter.count(tags, tags_vocab)
 
-    with open(path + "data_analysis.txt", "w", encoding="utf8") as f:
+    with open(path + "data_analysis-Enriched.txt", "w", encoding="utf8") as f:
         i = 0
         for tag, count in zip(tags_vocab, counters):
             if i != len(tags_vocab) - 1:

@@ -40,14 +40,13 @@ x_raw, y_raw = datasets["data"], datasets["target"]
 
 print("Total data size : {}".format(len(x_raw)))
 
+# Generating chars vocabulary
 vocab_char = data_helpers.get_char_vocab(x_raw)
 
 # Loading tags dictionary and change tag names in y to numbers
 vocab_tags = data_helpers.load_vocab(config.tags_vocab_path)
 vocab_tags_list = [b for b, idx in vocab_tags.items()]
-# target = []
-# for s in y_raw:
-#         target.append(int(vocab_tags[str(s)]))
+
 counter = Counter()
 
 correct_splitting = True
@@ -67,6 +66,8 @@ while correct_splitting:
 
     tags_counter = counter.count(y_train, vocab_tags_list)
     correct_splitting = False
+
+    # To cross check that no data will be missed out for training set when only have one data in the class
     for x in tags_counter:
         if x == 0.0:
             correct_splitting = True
