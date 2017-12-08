@@ -23,7 +23,7 @@ if __name__ == "__main__":
                     config = Config(run_number=y, enable_char=True, doc_length=x, model_name=model[a], checkpoint_dir="")
                 else:
                     config = Config(run_number=y, enable_char=False, doc_length=x, model_name=model[a], checkpoint_dir="")
-                train_op.train(config=config, model=a)
+                # train_op.train(config=config, model=a)
                 eval_op.evaluation(config=config)
 
 

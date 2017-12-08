@@ -400,7 +400,8 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets_multiple_files(container_path, vocab_tags_path, vocab_char_path, system_path, sentences = 0, tags = 1, remove_none=False):
+def get_datasets_multiple_files(container_path, vocab_tags_path, vocab_char_path, system_path, sentences = 0, tags = 1,
+                                remove_none=False):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container

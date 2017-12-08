@@ -30,10 +30,8 @@ tags_column = 15
 
 
 config = Config()
-datasets = data_helpers.get_datasets_multiple_files(container_path=cfg["datasets"]["datalocalfile"]["data_folder"]["path"],
-                                                    vocab_tags_path=cfg["datasets"]["localfile"]["vocab_write_path"]["path"],
-                                                    # class_weights_path=cfg["datasets"]["localfile"]["class_weights_path"]["path"],
-                                                    system_path=cfg["datasets"]["localfile"]["container_path"],
+datasets = data_helpers.get_datasets_multiple_files(container_path=config.default_raw_data_path,
+                                                    vocab_tags_path=config.tags_vocab_path, system_path=config.out_dir,
                                                     sentences=sentences_column, tags=tags_column, remove_none=False)
 
 x_raw, y_raw = datasets["data"], datasets["target"]
@@ -71,7 +69,6 @@ while correct_splitting:
     for x in tags_counter:
         if x == 0.0:
             correct_splitting = True
-
 
 data_helpers.write_data_to_file(x_train, y_train, config.training_path)
 data_helpers.write_data_to_file(x_test, y_test, config.test_path)

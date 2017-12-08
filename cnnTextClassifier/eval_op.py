@@ -85,7 +85,8 @@ def evaluation(config):
             # Generate batches for one epoch
             print("=======================================================")
             if config.enable_char:
-                batches = data_helpers.batch_iter_lstm(x_test, np.zeros((1686, 80)), char_ids_fd, word_lengths_fd, 1, 1,
+                batches = data_helpers.batch_iter_lstm(x_test, np.zeros((x_test.shape[0], len(datasets['vocab_chars'])))
+                                                       , char_ids_fd, word_lengths_fd, 1, 1,
                                                        shuffle=False)
             else:
                 batches = data_helpers.batch_iter(list(x_test), 1, 1, shuffle=False)
@@ -170,18 +171,26 @@ def evaluation(config):
             r_tags += [r_temp]
             f1_tags += [f1_temp]
 
-        overall_p = sum(correct_preds_tags)/sum(total_preds_tags)
-        overall_r = sum(correct_preds_tags)/sum(total_correct_tags)
-        overall_f1 = 2 * overall_p * overall_r / (overall_p + overall_r)
+        f1_score_group = []
+        is_more_than_zero = 0
+
+        for idx, x in enumerate(total_correct_tags):
+            if x > 0:
+                f1_score_group += [f1_tags[idx]]
+                is_more_than_zero += 1
+
+        overall_f1 = (np.sum(f1_score_group))/is_more_than_zero
+
 
         # Writing report
         out_path_report = os.path.join(config.out_dir, "results-len{}.txt".format(config.doc_length))
         with open(out_path_report, 'w', newline='') as f:
-            f.write("tags\tp\tr\tf1\n")
+            f.write("tags\tp\tr\tf1\tCount\n")
             for idx, name in enumerate(available_target_names):
-                f.write("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_tags[idx], r_tags[idx], f1_tags[idx]))
-            f.write("overall\t{:04.2f}\t{:04.2f}\t{:04.2f}\n\n".format(overall_p, overall_r, overall_f1))
-            f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
+                f.write("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_tags[idx], r_tags[idx],
+                                                                              f1_tags[idx], total_correct_tags[idx]))
+            f.write("\nNo of class present\t{}\tOverall f1\t{:04.2f}\n".format(is_more_than_zero, overall_f1))
+            # f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
 
         f.close()
 
