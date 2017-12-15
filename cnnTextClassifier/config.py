@@ -5,7 +5,7 @@ import os
 
 class Config():
 
-    def __init__(self, enable_char, run_number, doc_length=None, model_name="", checkpoint_dir="", ):
+    def __init__(self, enable_char, run_number, doc_length=None, model_name="", checkpoint_dir="", transfer_learning=False):
 
         self.runs_folder = "Enriched-x10-runs(LSTM&CNNv0)"
 
@@ -15,6 +15,7 @@ class Config():
         self.checkpoint_dir = checkpoint_dir
 
         self.enable_char = enable_char
+        self.transfer_learning = transfer_learning
 
         # Runs Output directories
         # self.timestamp = str(int(time.time())) + "-" + self.classifier_type
@@ -55,7 +56,7 @@ class Config():
     default_data_path = "data/"+dataset_name
 
     training_path = default_data_path + "/Training_data.txt"
-    test_path = default_data_path + "/Test_data.txt"
+    test_path = default_data_path + "/Test_data_Enriched.txt"
     tags_vocab_path = default_data_path + "/tags_vocab.txt"
     char_vocab_path = default_data_path + "/chars_vocab.txt"
 
@@ -72,4 +73,10 @@ class Config():
     # Char Embeddings
     dim_char = 100
     char_hidden_size = 100
+
+    # Transfer Learning
+    # pretrained_model_path = 'transfer_learning_models/1112/saved_model.pb'
+    pretrained_model_path = os.path.abspath(os.path.join(os.path.curdir, 'transfer_learning_models/1412/model.weights'))
+    # pretrained_weights = 'transfer_learning_models/1412/model.weights/.data-00000-of-00001'
+
 

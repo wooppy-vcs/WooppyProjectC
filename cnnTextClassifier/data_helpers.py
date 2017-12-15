@@ -476,7 +476,8 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, vocab_char_path
     return datasets
 
 
-def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, sentences = 0, tags = 1):
+def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, sentences=0, tags=1, tags_2=None,
+                 tags_3=None, scores=None):
     """
     # Load single tab delimited text file.
     :param container_path: The path of the container
@@ -488,13 +489,25 @@ def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, 
     data = []
     target_names = []
     target = []
-    class_weights =[]
+    target_2_names = []
+    target_3_names =[]
+    target_2 = []
+    target_3 = []
+    score = []
+    # class_weights =[]
 
     # Load data from files
     examples = list(open(data_path, 'r', encoding="utf8").readlines())
     examples = [s.split("\t") for s in examples]
     data.extend([s[sentences].strip() for s in examples])
     target_names.extend([s[tags].strip() for s in examples])
+    if tags_2 is not None and tags_3 is not None:
+        target_2_names.extend([s[tags_2].strip() for s in examples])
+        target_3_names.extend([s[tags_3].strip() for s in examples])
+    if scores is not None:
+        score.extend(s[scores].strip() for s in examples)
+
+
 
     # if build_vocab:
     #     vocab_tags = get_vocab_tags(target_names)
@@ -505,6 +518,18 @@ def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, 
 # changing tags' name to numbers
     for s in target_names:
         target.append(int(target_names_dict[str(s)]))
+    if tags_2 is not None and tags_3 is not None:
+        for s in target_2_names:
+            if s == "":
+                target_2.append("")
+            else:
+                target_2.append(int(target_names_dict[str(s)]))
+
+        for s in target_3_names:
+            if s == "":
+                target_3.append("")
+            else:
+                target_3.append(int(target_names_dict[str(s)]))
 
     # if class_weights_path != None:
     #     class_weights_open = list(open(class_weights_path, 'r', encoding="utf8").readlines())
@@ -513,6 +538,10 @@ def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, 
     datasets['data'] = data
     datasets['target'] = target
     datasets['target_names'] = target_names_dict
+    datasets['scores'] = score
+    if tags_2 is not None and tags_3 is not None:
+        datasets['target_2'] = target_2
+        datasets['target_3'] = target_3
     # datasets['class_weights'] = class_weights
     if config.enable_char:
         char_dict = load_vocab(vocab_char_path)

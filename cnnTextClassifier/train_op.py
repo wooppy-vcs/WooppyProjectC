@@ -105,6 +105,25 @@ def train(config, model=TextCNN):
     # Loading class_weights for training
     weights_array = data_helpers.calculate_weight(np.argmax(y, 1), datasets['target_names'])
 
+    if config.transfer_learning:
+        # load checkpoint of the pretrained model
+        print("Loading weights from pre-trained model {}".format(config.pretrained_model_path))
+        with tf.Session() as pre_sess:
+            pre_saver = tf.train.import_meta_graph("{}.meta".format('transfer_learning_models/1412/model.weights/'))
+            pre_saver.restore(pre_sess, 'transfer_learning_models/1412/model.weights/')
+            var_names = [v.name for v in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)]
+            fw_kernel = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
+                                          'chars/bidirectional_rnn/fw/lstm_cell/kernel:0')
+            fw_bias = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
+                                        'chars/bidirectional_rnn/fw/lstm_cell/bias:0')
+            bw_kernel = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
+                                          'chars/bidirectional_rnn/bw/lstm_cell/kernel:0')
+            bw_kernel = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
+                                          'chars/bidirectional_rnn/bw/lstm_cell/bias:0')
+        print('Found variables:')
+        for v in var_names:
+            print(v)
+
     # Loading model
     checkpoint_file = tf.train.latest_checkpoint(config.checkpoint_dir)
     with tf.Graph().as_default():
@@ -217,6 +236,10 @@ def train(config, model=TextCNN):
                     print("glove file has been loaded\n")
                     print("=======================================================")
                 sess.run(cnn.W.assign(init_w))
+
+            if config.transfer_learning:
+                print('Initializing bi-LSTM with pretrained-weights...')
+                sess.run(cnn.fw)
 
             #  Import checkpoint graph if want to continue training from checkpoint
             if config.checkpoint_dir != "":
