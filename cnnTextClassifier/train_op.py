@@ -239,7 +239,7 @@ def train(config, model=TextCNN):
 
             if config.transfer_learning:
                 print('Initializing bi-LSTM with pretrained-weights...')
-                sess.run(cnn.fw)
+                sess.run()
 
             #  Import checkpoint graph if want to continue training from checkpoint
             if config.checkpoint_dir != "":
