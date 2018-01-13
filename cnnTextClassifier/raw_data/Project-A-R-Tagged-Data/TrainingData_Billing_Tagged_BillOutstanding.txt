@@ -1,0 +1,724 @@
+conversation_tagging_id	index_en	id	msg	time	chat_id	user_id	word count	Language	Preassigned Topic	Preassigned Subtopic	Topic_L1	Topic_L2	AnswerType	Confirmation	Scenario
+1	1	27664	I already pay for april bill, how come it still bring forward to May?	1465004875	1317	0	14	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1	11	27698	Let me make it clear, i start using redone on april. My first cycle bill will count as May right? I already pay it through your website 24.49. BUT, it bring forward to my June bill	1465005214	1317	0	36	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+18	431	33028	Hi, I just port out from redone. i saw my total current utilisation for July 2016 bill. the amount is RM 20.22. when is i required to pay this?	1465176926	1563	0	29	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+22	535	33142	Why my bill is RM 214.12 ?	1465178318	1570	0	6	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+22	537	33152	Balance brought forward refer for which month?	1465178492	1570	0	7	English	Billing	Billing Details	Billing	BillBreakdown	ObjectTime	False	ItemDefinition
+22	544	33211	My concern is my bill for every month will start early of the month even the details not finalized yett.	1465178901	1570	0	20	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+43	1100	38006	Hi, I have problem with my June 2016 bill. I have calculated but I have no idea where the amount of bill come from.	1465274243	1783	0	24	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+44	1127	38062	as i mentioned earlier i view my ac bill 201672458 for june the amount is RM 12.82 and there also got July amount RM 15.23 how come there is July bill as now is still in the month of June? Actually how much I need to pay?	1465274661	1784	0	45	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	BillAmount
+54	1314	44980	may i know why this month my bill so expensive?	1465450263	2074	0	10	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	WhyBillAmount
+54	1327	45159	ya... 01110752172 but can i know this number how much?	1465452667	2074	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+57	1384	47824	I would want to check the bill for the other number	1465537151	2184	0	11	English	Billing	Product Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+58	1412	47942	i need to check on march 2016 how much i pay the payment?	1465538407	2188	0	13	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+58	1417	47957	Please help me check Feb 2016 Tq	1465538639	2188	0	7	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+61	1457	48517	total outstanding bill	1465544242	2216	0	3	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+69	1695	52133	200322948 how to check all my bill??	1465773614	2375	0	7	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+74	1808	53693	HAI, HOW TO GET THE PREVIOUS BIL. JAN - APR	1465798317	2437	0	10	English	Billing	Billing Address	Billing	Document	Procedure	False	HowViewBill
+76	1870	54048	hi , I would like to check is there any outstanding for my account	1465802810	2451	0	14	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+82	2032	54576	OK NOTED, BESIDE THAT IS THERE ANY OUTSTANDING AMT	1465810688	2472	0	9	English	Billing	Waiver	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+82	2034	54580	FOR WHAT MONTH YA? WHY I STILL GOT OUTSTANDING CO'S I HAVE MAKE FULL PAYMENT AT COUTER ON 30 / 5 / 2016 	1465810845	2472	0	19	English	Billing	Waiver	Billing	BillOutstanding	Reason	False	WhyBillAmount
+83	2063	54685	the problem is I dont know how much to be pay	1465811924	2476	0	11	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+83	2065	54693	can you double confirm with me the amount due for the 0124291359 	1465811980	2476	0	12	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+83	2067	54695	and what is the unbill amount?	1465811999	2476	0	6	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+85	2133	55072	pls check my acc, 201102654 <NL>i want pay payment	1465818758	2495	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	Request	False	BillAmount
+85	2140	55080	my totl balance is 266.12 right?	1465818848	2495	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+94	2355	57901	whats the amount to pay	1465952752	2646	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+94	2367	57947	what is the outstanding for this number?	1465953074	2646	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+95	2385	58110	when i click download & pay bill the total amount due is RM 33.31 .so i just pay that amount?	1465954349	2654	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+107	2646	60717	i wan know my outstanding amount. tq	1465977687	2765	0	7	English	Billing	Payment Channel	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+119	2960	62919	u check my previous bills	1466040834	2852	0	5	English	Billing	Mobile Content	Billing	Document	Request	False	RequestSendBill
+121	3040	66248	HI I LIKE TO CHECK MY ACCOUNT BALANCE DUE TO I HAVE CLOSED AT MAY	1466120091	2995	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+122	3062	66370	hi, for my 2016 Jun 1 invoice, I made a payment for it on Jun 4 th. Just now, I checked I saw there's still outstanding amount due. And I did not realise it, and make the same payment again. Until I check back my bank transaction, I in fact make the payment twice on the same bill. Why Redone Download & Pay Bill still showing the Pay Now? It just confuse the people even more. And if could. please refund the money that I have just made payment today. Thanks.	1466124272	3002	0	90	English	Billing	Deposit Refund	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+122	3082	66425	can please check the last 3 payments of mine and the dates?	1466125124	3002	0	12	English	Billing	Deposit Refund	Billing	PaymentStatus	ObjectNumeric	True	LastPayment
+143	3581	75264	Hi, may I know what is my current statement bill amount please?	1466500897	3407	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+143	3593	75319	So how is our excess payment here ?	1466501522	3407	0	8	English	Billing	Billing Details	Billing	Refund	Procedure	False	HowRefund
+150	3752	76522	How much is my bill now ?	1466584878	3479	0	7	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+159	3929	81696	helllo, i want to settle my bill, my jun bill is $ 100.91 right	1466916008	3727	0	13	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+162	3980	84771	may i know how much is my bill now? bcoz juz now i already paid my bill thru maybank	1467031334	3860	0	19	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+169	4106	87132	Hello, I want to know my current balance. My phone number is 011 - 10648216 	1467117236	3957	0	13	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+171	4142	87393	I need help to check how much is the exact amount that I'm still owing.	1467167012	3968	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+171	4152	87423	I need to only pay RM 109.25 am I correct?	1467167275	3968	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+175	4251	87884	MAY I KNOW, HOW MUCH MY BILL ?	1467176907	3990	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+176	4264	87948	My phone number is 019 - 3216628 Is regarding outstanding payment and if any contract with this number	1467180715	3994	0	16	English	Billing	Billing Cycle	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+177	4295	88010	may i know my outstanding bill for july?	1467182259	3997	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+177	4305	88042	i want to know bill for next month (july)	1467182606	3997	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+178	4312	92355	Good Morning, May I know the how much is my phone bill today?<NL>I already paid my bill 2 days ago..I want to know the balance. Tq.	1467331564	4199	0	26	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+181	4383	92639	hi, i already make payment bill via maybank 2 u. <NL>now i want to check the bill detail.	1467334337	4219	0	16	English	Billing	Billing Details	Billing	BillOutstanding	Procedure	False	BillAmount
+181	4387	92645	can you assist me how i want to check the bill via your website?	1467334367	4219	0	14	English	Billing	Billing Details	Billing	Document	Procedure	True	HowViewBill
+185	4497	93522	PAYMENT JUNE I NOT PAY YET. SO THIS MONTH HOW MUCH MY OUTSTANDING?	1467339689	4249	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+191	4601	93940	Hi Victoria, are you albe to help check why there's a 1 Kb data used?	1467342462	4271	0	14	English	Billing	Data Bundle / PPU Rate	Billing	BillBreakdown	Reason	True	WhyItemAmount
+193	4637	94245	why my bill always minus?	1467344698	4282	0	5	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+194	4653	94352	is it my account overpaid?	1467345569	4289	0	5	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+194	4664	94446	i just want to request, if overpaid. just simply deduct. so that we no need to make a payment.	1467346312	4289	0	19	English	Billing	Payment Status	Billing	BillOutstanding	Request	False	Others
+205	4963	98172	hi, i would like to check my father's acc as he is deceased. but i dont have his number. what do i need to check his outstanding bills?	1467429133	4434	0	28	English	Billing	Billing Details	Billing	BillOutstanding	Procedure	False	BillAmount
+209	5056	101457	can help me check my bill on june paid aly? my no: 0128095277 	1467522574	4583	0	12	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	BillAmount
+209	5057	101477	coz i dun knw why this mth i need to pay RM 18 +	1467522715	4583	0	12	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+209	5062	101522	can let me knw which month i didn't paid?	1467523160	4583	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+219	5308	108282	can help me check my total call balance for june?	1467698828	4896	0	10	English	Billing	Billing Details	Billing	Wrong	ObjectNumeric	True	None
+222	5397	108462	yesterday i did my full payment . Why the my account statement still shown outstanding amount haven't settla ?	1467700404	4902	0	19	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+225	5470	109090	BUT Y MY BILL NOT DEDUCT?	1467716344	4930	0	6	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+226	5543	109229	balance bring forward is 8.67 <NL>total amount due is 8.48 	1467719824	4934	0	9	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+227	5589	109235	i already made my payment for 2 months why when i check my balance it still havent change to 0 ?	1467719909	4937	0	21	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+233	5730	110857	I want to check the bill for june 16 	1467877846	5003	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+233	5748	110882	now, how much I have to pay?	1467878513	5003	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+241	5911	111518	i thought it is free and no charger for the product?	1467947356	5028	0	11	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+242	5954	111495	i have a question about my the latest bill	1467946988	5029	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	WhyBillAmount
+242	5955	111508	I mean my latest bill. I am confused with my bill. Actually what is the exact amount shall i pay?	1467947142	5029	0	20	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+248	6051	112285	my bill had change to credit card payment....total rm 36.28 but why dint deduct 2 % ?because i saw redone adv is 2 % deduct if i autodeduct from card	1467969048	5061	0	27	English	Billing	Auto Debit Application	Billing	BillOutstanding	Reason	False	Others
+249	6090	112302	Hi,may I check for you my outstanding balance	1467969313	5062	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+249	6105	112334	Mean now I stil own 53.83 ?	1467969707	5062	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+249	6108	112339	i mean, I want clear my bill is total how much?	1467969744	5062	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+257	6341	114667	how come my bill 110.46 ?	1468137822	5157	0	5	English	Billing	Waiver	Billing	BillOutstanding	Reason	False	WhyBillAmount
+264	6493	119265	How about my bill	1468314353	5344	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+266	6526	119991	HI do i have any outstandiing bill?	1468374272	5390	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+268	6571	120274	how much my total bill?	1468377471	5404	0	5	English	Billing	Payment Type	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+271	6687	120527	may you help me to check my bill on this month	1468380802	5414	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+273	6747	120862	this amout for what?	1468383915	5421	0	4	English	Billing	Product Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+276	6809	124254	HOW MUCH MY BIL FOR JUNE	1468475847	5578	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+285	7008	138593	how do i know that the balance will be carried forward	1468818372	6211	0	11	English	Billing	Billing Details	Billing	BillBreakdown	ObjectOthers	False	WhyItemAmount
+286	7045	138778	I WOULD LIKE CHECK MY PHONE BILL	1468821473	6220	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+295	7262	142892	i want check my other no bill 01110937008 how much i want pay ...	1468920244	6361	0	14	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+295	7266	142897	this no simcard i lose i no time to cheng nw card so i want check outstading how much	1468920291	6361	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+299	7353	145315	may i know how the outstanding payment i hv to made?	1469008939	6448	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+320	7821	153383	Check my contract	1469437266	6786	0	3	English	Billing	Billing Details	Billing	Wrong	Request	False	None
+320	7829	153409	can u check my contract ?	1469437414	6786	0	6	English	Billing	Billing Details	Billing	Wrong	Request	True	None
+326	7985	153887	how much do i have to pay for july bill 2016 	1469446479	6804	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+338	8254	178925	HOW MUCH BALANCE I GOT TO PAY	1470210141	7924	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+342	8360	179183	hello, good evening.<NL><NL>ysterday i gt pay my bill rm 70. my bill is actually rm 8.48 only. can the balance payment i bring forward to nx month?	1470213179	7938	0	25	English	Billing	Increase credit limit	Billing	Refund	Request	True	HowRefund
+342	8371	179225	yesterday i pay rm 70 but actually my bill is rm 8.48. can the amount of payment be deducted for my nx month bill?	1470213587	7938	0	22	English	Billing	Increase credit limit	Billing	Refund	Request	True	HowRefund
+347	8461	179511	Tell me the bill amount pls	1470217997	7956	0	6	English	Billing	Billing Details	Billing	BillOutstanding	Request	False	BillAmount
+351	8569	181760	I wanted to ask my current account billing. 0145332139 	1470294775	8058	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+351	8589	181812	Owh there is balance rm 1.05 ? I think i paid according to what my account writes there. Why there was balance?	1470295200	8058	0	20	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+353	8622	182063	regarding bill	1470297054	8071	0	2	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+355	8703	182182	i feel confuse with my bill.	1470298643	8077	0	6	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+355	8709	182212	as from the bill i pay the amount 101.76 on may..then june why need pay another 50.88 	1470298811	8077	0	17	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	PayingMonth
+355	8710	182220	then now only august..i ned to pay another 101.76 ?	1470298845	8077	0	9	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	WhyBillAmount
+355	8712	182232	why? i last month got pay	1470298915	8077	0	6	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	LastPayment
+355	8717	182312	this 101.76 is pay when ?	1470299710	8077	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+355	8720	182339	now 101.76 is pay for?	1470299902	8077	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectOthers	False	WhyBillAmount
+356	8745	182447	so, my balance is?	1470300567	8083	0	4	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+366	8933	184985	i want to ask about my bill detail	1470388846	8196	0	8	English	Billing	Billing Details	Billing	BillOutstanding	Request	False	WhyBillAmount
+381	9266	197189	check phone balance are it's pay done?	1471060466	8774	0	7	English	Billing	Billing Details	Billing	PaymentStatus	ObjectOthers	True	ConfirmPaymentReceived
+381	9271	197211	i just paying RM 20 for jun july and aug now so are the phone payment is not in debt?	1471060615	8774	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+382	9300	197520	billing	1471070540	8786	0	1	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+386	9394	197806	Is there any outstanding balance for that number?	1471077505	8799	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+400	9656	202868	i just pay my telephone bill,	1471250599	9034	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	ObjectOthers	False	ConfirmPaymentReceived
+409	9815	206611	can check for me now I need to pay how much?	1471332246	9190	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+425	10208	210593	check bill	1471426194	9336	0	2	English	Billing	Deposit Refund	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+448	10766	223193	i already paid my bill with mybank 2 u but the same time my husband already paid at redone counter at sibu sarawak,how can i do,coz the payment is already double	1472026594	9820	0	29	English	Billing	Payment Status	Billing	Refund	Procedure	False	HowRefund
+453	10870	228628	Can u help me check my bill?	1472267150	10034	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+457	10974	229017	hello, i would like to know is there any outstanding balance that i havent pay?	1472277779	10051	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+458	11003	229029	can help me check the balance that I should paid until this month? Im going to change plan	1472277865	10052	0	18	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+461	11086	229274	i just made a payment	1472282491	10059	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	ObjectOthers	False	ConfirmPaymentReceived
+463	11123	229352	can u check my pending bill if any	1472284808	10062	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+463	11128	229365	and can u check for my brother also...his num not active already..just want to know his pending bill	1472285011	10062	0	18	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+463	11133	229372	then...how to check his pending status...	1472285137	10062	0	6	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+487	11670	238872	Billing	1472616530	10419	0	1	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+490	11774	238918	Did I still have any unpay bill?	1472617228	10422	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+490	11782	238945	ok thanks but why I recevied sms from redone remaind me to pay jul bill?	1472617587	10422	0	15	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	Others
+493	11829	239083	Hi, may I know how much is my total current bill?	1472619739	10431	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+504	12119	240125	Btw, pls help me check whether the RM 10 that you said will be credited in bill of september or not?	1472640545	10470	0	21	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+514	12323	244716	HI CAN YOU CHECK MY NUMBER <NL> 0182727688 	1472711425	10671	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+514	12330	244769	HOW MUCH IS THE PAYMENT	1472711779	10671	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+521	12506	246133	how much do I hv to pay for this month?	1472720795	10719	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+526	12619	247676	I have accidentally paid twice ( 2 x RM 60.22 ) yesterday, will the amount be brought forward to the next invoive?	1472779012	10788	0	20	English	Billing	Payment Status	Billing	Refund	ObjectOthers	True	HowRefund
+536	12848	249088	my aug and sept bill why so expensive?	1472795142	10854	0	8	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+536	12850	249096	can you check sept why so expensive?	1472795232	10854	0	7	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	WhyBillAmount
+538	12908	260553	HI..PLS TELL ME THE TOTAL BILL	1473062683	11287	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+542	13044	264649	could you send me tis number current usage from 1 st sept til today? cz i wana see why is the usage surge up to such an amount	1473215536	11440	0	27	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	BillBreakdown	ObjectNumeric	True	TotalBreakdown
+546	13144	267007	Why is my bill so high?	1473304892	11533	0	6	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+559	13440	277474	do i have any outstanding payment?	1473813363	11923	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+562	13516	277937	would like to throw my question again I find my bill is getting higher <NL>saraswathy ramiah - ic 5542 	1473824168	11944	0	19	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+568	13635	283699	what minimum amount should be I paid	1473933131	12171	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+576	13791	286761	then how long the process after i submit my transaction payment slip?	1474009723	12291	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectTime	False	ConfirmPaymentReceived
+584	13968	287857	may i know 0132887411 outstanding how much	1474022147	12333	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+587	14035	288173	me izit still have outstanding?	1474028897	12349	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+588	14054	288217	My customer ID : 200385960 , please let me know amount that I have to pay until today.	1474029912	12351	0	18	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+603	14414	294042	where got show the balance 8.07 ?	1474268671	12581	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Document	Procedure	False	HowViewBill
+605	14442	294549	Hello there. i would like to ask<NL>last month i have paid more than i should be ( rm 0.60 extra). and so this month i paid rm 0.60 less, or do i have to pay the exact amount?	1474275456	12601	0	35	English	Billing	Billing Charges	Billing	Refund	ObjectOthers	False	HowRefund
+605	14448	294567	last month bill was rm 17.30 and i paid 18.00. this month bill is 37.60 and i paid 37. 	1474275562	12601	0	18	English	Billing	Billing Charges	Billing	None	None	False	None
+608	14511	294949	PLEASE GIVE ME MY BALANCE ACCOUNT HOW MUCH I WANT PAY TQ	1474285061	12616	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+608	14519	294958	OK SO NOW I JUST PAY BALANCE 68.07 ?	1474285251	12616	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+609	14552	295017	Can I know how much do I owe to date for this account	1474286469	12617	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+609	14558	295034	What is the amount due for this second account?	1474286642	12617	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+610	14573	294980	and can i know the latest bill that i should pay ?	1474285752	12618	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+615	14695	295451	isit still get any outstanding	1474335910	12638	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+621	14803	296040	Hi, I would like to know total outstanding for mobile# 01110691128 	1474350781	12664	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+623	14872	296063	Hello good afternoon .I would like to know if I have any outstanding bills ? Tq	1474351015	12666	0	16	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+623	14878	296081	Alright ... I would like to know whether there is Any outstanding in my bills , bcz I have issued a payment but it has not been updated	1474351214	12666	0	28	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+644	15397	298303	how much my bill 0196008778 	1474425350	12762	0	5	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+649	15513	298679	May I know the payment for all my numbers after port out?	1474431642	12779	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+655	15662	299244	any outstanding of this number 01110703076 	1474445483	12804	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+659	15740	299376	hi..my number is 01110552074. cn i kw how much is my last month bil...	1474448390	12810	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+664	15811	299733	How much left do i need to pay?	1474457404	12827	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+672	15972	300289	Morning... can u check for me the exactly total that i need to pay on 1 st oct 2016 ?	1474510315	12852	0	18	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+672	15981	300319	Means total i need to pay is rm 186.92 right?	1474510529	12852	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+673	16008	300368	THEN HOW MUCH AMOUNT I NED TO PAID NOW?	1474511044	12854	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+673	16013	300375	now i ned to paid how much for outstanding	1474511200	12854	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+673	16016	300381	so how much i need to paid for outstanding	1474511276	12854	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+675	16054	300469	how much my acoount due ?	1474513274	12858	0	6	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+675	16063	300480	so how much i need to pay now ?	1474513424	12858	0	9	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+681	16180	300608	hi dear, could you let me know how much total balance of my account? Thanks	1474517533	12866	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+691	16426	301578	Hi can u check my bill latest	1474537291	12909	0	7	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+693	16481	301634	how much the total bill me the truth?	1474538105	12911	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+700	16584	301873	MY LATEST BILL	1474586173	12923	0	3	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+701	16606	301929	may I know how much my outstanding bill till to date?	1474589713	12925	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+703	16686	302031	I want to pay bik thru here	1474592206	12928	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+710	16815	302416	Hi. <NL>I dont understand about the billing here.<NL>How many month do i have to make payment ? is it for September only right ?	1474601661	12949	0	24	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+711	16867	302493	how to see my latest bill that showed RM 104 ?	1474603012	12950	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Document	Procedure	False	HowViewBill
+712	16885	302546	How to check amount outstanding no ?	1474604071	12952	0	7	English	Billing	Payment Status	Billing	Document	Procedure	False	HowViewBill
+715	16955	302638	I am in France right now. I have never made any calls nor received 1. Why are there so many charges on my account?	1474606055	12957	0	24	English	Billing	Billing Dispute	Billing	BillOutstanding	Reason	False	WhyBillAmount
+717	17041	302909	Hi..what is my current bill?	1474610893	12968	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+724	17206	303889	Hi, I need help. May I know my payment for this month?	1474690920	13006	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+724	17214	303905	ok thank you, may I know where can I check my monthly payment?	1474691283	13006	0	13	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+726	17265	304190	how come it brought forward to this month again and required me to pay?	1474698505	13021	0	14	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+726	17271	304215	already port out from Redone. but there is payment due. i was shocked because i have paid full	1474698726	13021	0	18	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+726	17309	304310	how much outstanding for that?	1474700580	13021	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+730	17422	304415	how much I need to pay	1474704504	13026	0	6	English	Billing	Payment Channel	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+732	17467	304605	OVERDUE AMOUNT	1474713030	13034	0	2	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+732	17470	304608	hey, please help me check my current usage amount	1474713078	13034	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+732	17483	304621	what is my total usage amount right now ?	1474713509	13034	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+742	17724	305022	ACTUALLY HOW MUCH IS THE BILL FOR THIS MONTH	1474765575	13050	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+745	17816	305612	when can i get my bill online	1474787754	13071	0	7	English	Billing	Increase credit limit	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+745	17818	305616	when will my latest bill out	1474788019	13071	0	6	English	Billing	Increase credit limit	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+754	17997	306339	hi.G.morning...can u check for me how much i need to pay for my bill please	1474847482	13104	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+759	18109	306543	Urm. Sorry En. Faizul. I've already check the bill in in selfcare login and i found that my bill for August is RM 115.34. Why is the value is different with what you have stated? Actually I have 3 red 1 number. 2 number is under 1 account and another 1 number is under different account. So i'm quite confused with the bill.	1474854557	13111	0	62	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+759	18122	306596	Okay, next. The payment bill that i need to refet is the Total Current Utilisation ea? So, i need to pay that value?Am I right? Or wrong?	1474856081	13111	0	27	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+762	18197	306581	hello and hye . can i check my balance :)	1474855707	13115	0	10	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+766	18299	306952	i need to pay only total amount due right?	1474867565	13131	0	9	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectName	True	WhichFieldToPay
+771	18411	307337	may i know when is my last payment date	1474875807	13147	0	9	English	Billing	Billing Details	Billing	PaymentStatus	ObjectOthers	True	LastPayment
+773	18457	307458	CAN I KNOW AMT CURRENT USAGE\	1474878358	13152	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillBreakdown	ObjectNumeric	True	ItemAmount
+773	18466	307469	MAY KNOW UNTIL TO CURRENT USAGE	1474878509	13152	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillBreakdown	ObjectNumeric	True	ItemAmount
+777	18547	307643	I dont understand about what mean by subsrcibe Data Internet? And Can I know since when I am subscribing this data Internet?	1474880520	13159	0	22	English	Billing	Product Charges	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+777	18553	307687	Can I know how much of money I still owe to Redone? I	1474880950	13159	0	13	English	Billing	Product Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+785	18756	308172	Thanks.. but how much should I pay?<NL>the bill state 5 ringgit plus for september and october state afew ringgit but the message state RM 16.96 	1474893043	13181	0	25	English	Billing	Payment Channel	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+787	18799	308363	I DON'T SEEM TO UNDERSTAND OUR BILL. HOW MUCH ACTUALLY DO WE HAVE TO PAY DUE BY THIS MONTH END(SEPT 2016 )?	1474931665	13190	0	21	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+787	18807	308384	CAN I KNOW HOW MUCH IS OUTSTANDING AFTER THE RM 105.94 PAYMENT EARLIER THIS MONTH?	1474931989	13190	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+790	18883	308487	how i can know my outstanding bills	1474937231	13194	0	7	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+803	19195	309318	How to check the call summary for my phone no 0168885224 	1474952972	13229	0	11	English	Billing	Billing Details	Billing	BillBreakdown	Procedure	False	HowViewItems
+806	19281	309409	pls check my bill for this month	1474954844	13234	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+813	19423	309802	hai... my name is nadzree.<NL>May i know what is the total amount that i should pay in my bills ??	1474958953	13250	0	20	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+815	19479	310078	can u check how much i need to pay now becoz my line already barred??	1474962489	13261	0	15	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+816	19539	310152	how much should I pay tonight to settle the whole thing?	1474963289	13262	0	11	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+817	19558	310260	When my overdue bill payment?	1474964946	13267	0	5	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+817	19569	310286	Ok..that mean 1 st oct.im just pay rm 17.82. right??	1474965245	13267	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+826	19732	310977	can you check my bills now..	1475021831	13297	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+826	19741	310986	so how much i must pay	1475021969	13297	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+840	20102	312362	but how much my balance to pay as of now?	1475040738	13354	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+841	20125	312355	What is the balance of my current statement	1475040697	13360	0	8	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+861	20554	313894	SO PLEASE SHOW ME WHERE TO BE THE BALANCE FROM WHAT I HAVE PAID	1475064178	13422	0	14	English	Billing	Product Charges	Billing	Document	Procedure	False	HowViewBill
+865	20658	314053	how i can check the bill	1475066993	13432	0	6	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+865	20687	314131	now how much i pay for this month ?	1475068289	13432	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+865	20697	314146	when the due date payment ?	1475068594	13432	0	6	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+865	20704	314153	due date payment every 14 th ?	1475068879	13432	0	6	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	True	WhenPaymentLastDay
+868	20786	314260	I AM QUITE CONFUSED OF MY CURRENT OUTSTANDING	1475108723	13438	0	8	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+868	20787	314262	CAN YOU EXACTLY ADVISE ME ON MY CURRENT OUTSTANDING	1475108737	13438	0	9	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	WhyBillAmount
+870	20862	314475	Just to confirm. the bill update itself in this web site, how frequently it been updated ? Since I just log in first to check my payment status and its seems not up to date.	1475112005	13445	0	35	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+871	20871	314502	what is the amount i should pay..confuse	1475113268	13447	0	7	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+872	20895	314698	Hi good morning.i would like to know how much for my bill should I need to pay.thanks	1475117008	13456	0	17	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+874	20951	314801	hi.. may i know how to see the total amount i need to pay for d bill?	1475118929	13460	0	17	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+874	20954	314806	can u check for me how much i need to pay for this number 016 3044612 	1475118966	13460	0	16	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+874	20959	314813	hi.. may i know how to see the total amount i need to pay for d bill?<NL>balance brought forward?<NL>or total amount due?<NL> 11 : 16 : 06 can u check for me how much i need to pay for this number 016 3044612 	1475119058	13460	0	37	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+885	21254	316056	I DO NOT UNDERSTAND WITH MY CALL BILLS	1475138747	13512	0	8	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+885	21276	316126	1 st can u help me to check the outstanding amount of my bill?	1475139993	13512	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+885	21292	316147	which column show my actual outstanding amount?	1475140461	13512	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+892	21433	316511	Hi, <NL>May i know the amount of this month that i should pay for this account = 200247754 - 0168995840 	1475192641	13529	0	18	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+893	21448	316526	outstanding bill	1475195301	13530	0	2	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+893	21450	316528	I would like to know the outstanding amount for my acc	1475195374	13530	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+894	21475	316557	please check how much I need to pay	1475196375	13532	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+894	21486	316573	oo last month I pay rm 60 , but my bill 53. there is any debit movement??	1475196690	13532	0	17	English	Billing	Billing Charges	Billing	BillBreakdown	ObjectNumeric	True	ItemAmount
+899	21631	317016	hw much i pay extra??	1475203384	13550	0	5	English	Billing	Deposit Refund	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+1208	29674	348247	BILLING	1476079746	14908	0	1	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1208	29678	348261	CHECK MY UNPAID BILL	1476079798	14908	0	4	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1208	29682	348277	MY LAST BILL USAGE ONLY 6 DAYS BUT REDONE CHARGED ME FOR A MONTH USAGE	1476079885	14908	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1208	29691	348325	WHY DO I NEED TO PAY FULL MONTH BILL?	1476080140	14908	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1210	29766	348284	hi. may i know my oct bill why total Rm 56.34 i have set my limit until RM 50 izzit?	1476079944	14911	0	18	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1210	29778	348399	i means last bill at ocktober. there show me total is 56.34 	1476080803	14911	0	12	English	Billing	Billing Details	Billing	None	None	False	None
+1213	29872	348998	i hv total of 25.53 for my all 4 lines charges...	1476088422	14932	0	11	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1233	30387	352345	in self care, i couldnt locate this info, onli i see is the bill statement and no detail of the outstanding balance info,	1476243600	15069	0	23	English	Billing	Auto Debit Application	Billing	Document	Procedure	False	HowViewBill
+1247	30642	352859	My outstanding as at today I want settle and transfer to others package	1476253984	15097	0	13	English	Billing	Billing Details	Billing	PaymentChannel	ObjectNumeric	False	HowPay
+1260	30899	353349	when i open the november bill and it turn out that the bill shows RM 11.44 	1476262313	15119	0	15	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1262	30941	353500	how can i check for others subline call charge? im using the main line	1476266710	15124	0	14	English	Billing	Billing Charges	Billing	Document	Procedure	False	HowViewBill
+1266	31051	353895	i check with the redone agent, he told me that i got outstanding for rm 24. xx	1476320014	15143	0	15	English	Billing	Unsuspend lines - (Within 50 days)	Billing	None	None	False	None
+1267	31077	353921	Hi i would like to double conform my bill. it around rm 95 only?	1476320491	15146	0	14	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1267	31081	353927	im ramesh kumar here. just signed in online to pay my bill. but before that wanted to double confirm the amount due.	1476320569	15146	0	22	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1271	31196	354077	but can i make a payment for the previous bill first?	1476323014	15151	0	11	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1277	31341	354313	Could you please check for me how much i need to pay for my line	1476325377	15168	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1277	31348	354339	I NEED TO KNOW THIS SUB LINE TOTAL CHARGE IS HOW MUCH	1476325475	15168	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1289	31631	355380	The balance brought forward are RM 329.90 	1476340612	15214	0	6	English	Billing	Increase credit limit	Billing	None	None	False	None
+1293	31766	355609	RM30.34	1476343951	15224	0	1	English	Billing	Payment Status	Billing	None	None	False	None
+1300	31959	355893	need to pay 1609 - 200333274 invoice	1476347390	15233	0	5	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1303	32027	355983	I still have due amount to be paid off ?	1476348855	15240	0	10	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1303	32031	355991	Hi.. I am good.I have terminated the line but still have due amount? I thought I have paid all during the termination?	1476348932	15240	0	22	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	WhyBillAmount
+1305	32063	356050	hi, currently my bill is RM 138.06. Combination of 2 months' bill. So, if I pay only the first month, acceptable or not? Or i have to pay for both months now? tq	1476349627	15243	0	32	English	Billing	Billing Charges	Billing	BillOutstanding	Others	True	Others
+1325	32523	357390	HI HOW MUCH MY BILL on sept 2016. my number is 0175932683 	1476411810	15306	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1328	32595	357905	check my acc balance	1476421097	15328	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1328	32609	357941	can i know the bring foward amount	1476421493	15328	0	7	English	Billing	Billing Details	Billing	BillBreakdown	ObjectNumeric	True	ItemAmount
+1333	32770	358385	Can help to check? now i need to pay how much?	1476430427	15344	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1335	32807	358504	how many my bill need pay now	1476432270	15350	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1336	32842	358583	Sept billed 7.94 	1476433659	15352	0	3	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1338	32878	358685	please check account balance for 0198197876 	1476435499	15359	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1338	32884	358692	please check account balance for 0198197876 	1476435678	15359	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1338	32886	358702	how much i pay in oct' 2016 ?	1476435835	15359	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1340	32915	359158	can help me check how much of my balanced i need to paid? :)	1476447379	15378	0	14	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1341	32939	359252	how much my outstanding? pls	1476450009	15381	0	5	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1341	32948	359269	is there any outstanding for previous month usage like october, July etc.?	1476450504	15381	0	12	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1341	32972	359293	just transfer from m 2 u. any outstandig now?	1476452167	15381	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1356	33387	361464	so the bills is zero	1476514819	15476	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1357	33425	361423	Dear RedOne, I'm applying to switch my account to UMobile, but could you please help me to check is there any overdue amount left in RedOne?	1476514463	15478	0	26	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1357	33437	361461	Or i need to pay another RM 71.82 for that?	1476514786	15478	0	9	English	Billing	Billing Details	Billing	None	None	False	None
+1363	33563	361992	how i can know my current bill amount?	1476521256	15498	0	8	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+1369	33707	362859	Can you check my account total outstanding my bill	1476533838	15534	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1369	33716	362881	That is the bill for what month?	1476534072	15534	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+1369	33717	362883	Is that the all total im being using until now	1476534092	15534	0	10	English	Billing	Billing Details	Billing	BillBreakdown	ObjectNumeric	True	ItemAmount
+1369	33719	362893	Ohh ok, so how about this month can you calculate also	1476534143	15534	0	11	English	Billing	Billing Details	Billing	BillBreakdown	ObjectNumeric	True	ItemAmount
+1370	33737	362899	check bill	1476534173	15535	0	2	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1371	33759	362959	my bill amount is 18.08 	1476534821	15537	0	5	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1387	34299	364962	hi i want to make payment, but i dont really understand to what you shown on the bill. what is my exact outstanding actually?	1476597652	15618	0	24	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1387	34306	365021	ok, just check with monthly bill.	1476597967	15618	0	6	English	Billing	Billing Details	Billing	None	None	False	None
+1387	34315	365045	200.86 for which months?	1476598076	15618	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	Others
+1392	34470	365235	Hello, i would like my total outstanding bill	1476600136	15629	0	8	English	Billing	Deposit Refund	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1398	34641	365643	what is my balance bill	1476603654	15642	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1398	34651	365658	how much need to pay now?	1476603874	15642	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1398	34653	365660	even the RM 50 that I paid earlier is not included.	1476603919	15642	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+1399	34688	365718	so now how much I need to pay?	1476605724	15644	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1404	34796	365890	Is this total bill for a month?	1476609789	15654	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	True	PayingMonth
+1407	34854	365954	D total bil is 400 something	1476610723	15657	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1407	34861	365962	So not totall 400 ?	1476610949	15657	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1407	34864	365965	So how much do i need to pay	1476610973	15657	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1407	34867	365970	Did i miss payment for a month?	1476611067	15657	0	7	English	Billing	Billing Details	Billing	PaymentStatus	ObjectOthers	False	LastPayment
+1418	35205	367110	hi..plz check my latest bill	1476670696	15711	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1418	35213	367168	current balance isn't	1476671020	15711	0	3	English	Billing	Billing Details	Billing	None	None	False	None
+1418	35220	367193	how come i hav outstanding balance?	1476671225	15711	0	6	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1426	35389	368839	which payment that due	1476687273	15785	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1443	35838	371110	this payment I just made is for how many months bill ya?	1476770163	15894	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+1454	36077	371778	How do know the correct outstanding amount?	1476781840	15927	0	7	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+1454	36086	371791	is that the outstanding at this moment?	1476781920	15927	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1454	36089	371795	so my outstanding now is 54.56 on the total amount due?	1476781994	15927	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1461	36247	372277	I checked the bill for october.. but I dont understand the total amount for this month.	1476833206	15953	0	16	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1461	36254	372284	how do I know my current balance.?	1476833333	15953	0	7	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+1461	36259	372289	When I enter download & pay. There is only RM 5.98 amount due?	1476833449	15953	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1463	36309	372615	THE OUTSTANDING IS JUST RM 9 +	1476842546	15968	0	5	English	Billing	Auto Debit Application	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1476	36618	373737	Is my monthly bill is paid for 2 caller ID thus amount is RM 16.96 ?	1476860792	16016	0	14	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	Others
+1482	36763	374174	so i need to pay 3 month totally? right?	1476873473	16031	0	9	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectTime	True	PayingMonth
+1482	36765	374183	i just want my line back , so ineed to pay 29.08 (latest bill) or need to pay all of them?	1476873585	16031	0	20	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+1485	36815	374329	May I know current bill I need to pay	1476878160	16040	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1488	36890	374560	i have outstanding bill only 17.07 but we do have RM 50 credit..	1476921290	16047	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1492	36960	374730	Good morning. I want to check how much I actually need to pay. Since the self-check balance is concerned, it is not the updated 1. Thanks	1476926199	16058	0	26	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1494	37016	374806	can i pay the outstanding amount rm 48 which is outstanding on september?	1476927647	16061	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectOthers	True	PartialPayment
+1495	37041	374847	refer to my bill. total amount due should i pay RM 230.09 	1476928298	16063	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1497	37101	374918	NO OUSTANDING RIGHT	1476929086	16065	0	3	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1500	37207	375095	Above my current bill, may I know if I no make any call until end of the month (billing date), I need to pay RM 0.63 with monthly fee RM 8 	1476932694	16073	0	29	English	Billing	Billing Details	Billing	BillOutstanding	ObjectOthers	True	Others
+1505	37357	375804	any outstanding amt?	1476945801	16104	0	3	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1519	37657	377304	Want check bill amount oct	1477016822	16164	0	5	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1525	37785	378116	hi...my latest bill?	1477037023	16198	0	3	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1531	37916	378664	how much is my oustanding now?	1477095610	16223	0	6	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1540	38173	379369	untill today date how much my outstanding balance	1477114980	16250	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1545	38318	380029	Hi Redone... can I know how much is I'm paying for no 0176136037 - for calls and data subscription..	1477132049	16271	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1545	38326	380051	I'd like to know how much am I paying for my primary no.. calls and data subscription	1477132231	16271	0	17	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1549	38480	380442	what is my current outstanding	1477181849	16282	0	5	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1552	38524	380810	hi,can i check my oct bill? why got call utilisation RM 52.48 ?	1477195060	16297	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	True	WhyBillAmount
+1554	38561	380866	may i know the latest bil amount?	1477196976	16300	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1561	38766	381232	Please check for me the status regarding waived for the data charges for the month September to this account. This case is handling by Miss Farina. Till now haven't get any news from her.	1477204084	16313	0	34	English	Billing	Waiver	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+1577	39269	382522	how much is my outstanding@current bill@unbill	1477275994	16362	0	6	English	Billing	Payment Channel	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1580	39334	382818	Hi, please check my outstanding payment for invoice date 01 / 10 / 2016 	1477281531	16375	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1588	39511	384237	HI. wanna check my bill status	1477357245	16431	0	6	English	Billing	Waiver	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1593	39664	385186	can you pls help to check what is my next bill amount?	1477369414	16464	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1594	39682	385282	hello and hi my name is hakimi.. can I check my balance for this month	1477370883	16468	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1597	39763	385533	can check outstanding bil and current	1477378913	16479	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1600	39845	386538	how much my bill for oct & nov?	1477443140	16518	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1603	39906	386780	USSD how to check balance?	1477448314	16529	0	5	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+1772	44368	404594	How much i have to pay for this account?	1477978808	17311	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1779	44510	406154	How much do I owe you?	1477985368	17369	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1799	45065	408072	bill outstanding	1478003344	17464	0	2	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1799	45067	408155	Hi, I would like to check the current bill amount for 0127587078 ? Is it rm 29.85. 	1478005018	17464	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1805	45175	408451	Can u pls check my bill i need to pay for no 01111003115 	1478046321	17480	0	13	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1805	45190	408473	May i know 144.61 is for what month?	1478046796	17480	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectTime	False	Others
+1811	45323	408849	hello, i wanna ask if i still have the outstanding payment or not?	1478050310	17500	0	13	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1812	45375	408896	i just wan to check my bill on thaht number	1478050637	17502	0	10	English	Billing	Payment Channel	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1813	45385	408887	last month i just paid my bill rm 235 nearly month end.then i go for travelling oversea. come back on 25 october. until today, my bill reach rm 125 already? how come?	1478050566	17503	0	30	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1813	45387	408893	please kindly explain the bill or else i will cut off the line this month.	1478050594	17503	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1813	45398	408956	how can i call for rm 58.27 in just a few days??	1478051363	17503	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1814	45409	408977	Can you let me know my outstanding bill amount ?	1478051573	17506	0	10	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1814	45418	409011	I saw that on the bill but I don;t think it is correct. I have paid for July and AUg	1478051784	17506	0	20	English	Billing	Increase credit limit	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1814	45422	409041	so the outstanding amiunt should not be 72.71 	1478051948	17506	0	8	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1814	45425	409088	so can you pls confirm the outstanding amoutn for me to pay ?	1478052218	17506	0	13	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1818	45536	409526	Double confirming bill amount	1478055679	17526	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1818	45544	409543	I just want to double confirm my total amount im due as i received an sms a week ago saying it's rm 41.94 and now i see on the website, it's rm 85.40 	1478055906	17526	0	31	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1818	45547	409563	besides, i pay every month. my last payment is rm 45 on 10 Oct. so why is there extra to pay again	1478056144	17526	0	21	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1819	45559	409565	how much i hv to pay for my bill ?	1478056185	17529	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1819	45589	409709	how much for 011 5508 7447 ?	1478057101	17529	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1824	45754	410052	HI, I CAN'T UNDERSTAND WHY MY CALL ON 31 OCT RM 5.22 YOU KEY IN DEC INVOICE INSTEAD NOV INVOICE	1478059205	17547	0	20	English	Billing	Billing Dispute	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1824	45764	410089	THE CALL MADE ON 31 OCT 2016 21.19.49 DURATION 00 : 43 : 15 WHY RED 1 BIIL IT ON DEC NOT NOV	1478059615	17547	0	19	English	Billing	Billing Dispute	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1824	45766	410097	THIS OCTOBER USAGE WHY BILL IN DEC INVOICE?????	1478059737	17547	0	8	English	Billing	Billing Dispute	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1826	45804	410381	If my balance is negative, is that indicates the negative amount is what i have in my account? Means if the total amount due is negative amount, then i still dont have to pay bill?	1478062669	17559	0	35	English	Billing	Billing Details	Billing	BillOutstanding	ObjectDefinition	True	WhichFieldToPay
+1831	45961	411507	hi, i had misunderstand for my bill, can you check details for me, thanks. my phone number is 0166147226 	1478070133	17609	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1834	46052	411736	CAN I CHECK MY BILL	1478072176	17616	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1834	46056	411745	why this month i need pay 245.46 ?	1478072272	17616	0	7	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1834	46066	411816	there record is this month 120.09 	1478072672	17616	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1836	46128	411875	RM 40 and RM 30 will be charged in my next bill	1478073101	17620	0	10	English	Billing	Billing Dispute	Billing	None	None	True	None
+1842	46245	412602	I received the sms that says I have to pay RM 67.03 by 1 st dec	1478078976	17646	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1842	46250	412614	may I know what is the RM 67.03 for?	1478079056	17646	0	9	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1842	46256	412622	last month's was Rm 16 +	1478079107	17646	0	5	English	Billing	Billing Details	Billing	None	None	False	None
+1844	46342	413032	may i know why my total bill is more than 100 this month?	1478085558	17666	0	13	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1844	46369	413102	so how much is my total bill this month?	1478086463	17666	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1844	46371	413105	i dont understand why it costs me soo much?	1478086486	17666	0	9	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1844	46372	413107	it should be around 70 - 80 only as i know my usage	1478086517	17666	0	13	English	Billing	Billing Details	Billing	None	None	False	None
+1846	46436	413331	its a bit confusing in your billing. what is my total usage for the month October and November without carry forward ?	1478091960	17675	0	22	English	Billing	Data Bundle / PPU Rate	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1846	46438	413335	thank you. i want to know the amount that I have to pay ?	1478092167	17675	0	14	English	Billing	Data Bundle / PPU Rate	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1846	46440	413349	I know that. I wanted to know what was the total monthly charges that I incurred for Oct and Nov? Please let me the actual 1 without carry forward amount ?	1478092339	17675	0	31	English	Billing	Data Bundle / PPU Rate	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1855	46694	414026	I already pay for my bill rm 50 	1478136960	17709	0	7	English	Billing	Billing Details	Billing	PaymentStatus	ObjectOthers	False	ConfirmPaymentReceived
+1855	46695	414030	Supposed to be my bill is 133.00 	1478136979	17709	0	7	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1857	46740	414237	hye, may I know the outstanding bill of phone number 0123354985 	1478138368	17723	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1870	47010	415532	I click "download & pay bill" for the November bill, I need to pay RM 19.08 	1478149475	17768	0	16	English	Billing	Billing Dispute	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1872	47049	415378	help to check this no 0148742525 still got outstanding?	1478147989	17771	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1878	47200	416077	I want to ask about the amount I have to pay	1478156438	17806	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1878	47202	416082	because Im sure I already paid for September bill. So I have to pay only for October am i right ?	1478156488	17806	0	21	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1878	47218	416153	I check the statement, my October bill is rm 139 	1478157483	17806	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1883	47349	416651	Now i recceive statement 01.11.16 	1478162287	17834	0	5	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1898	47755	418478	Balance Brought Forward, RM 13 is Sep bills?	1478226181	17916	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1901	47814	418767	my question is what is my latest bill for nov? for verification, my name is Arfah, last 4 digit IC 6708 	1478229057	17930	0	21	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1903	47839	418806	Can I Ask regaradidingmy bill	1478229410	17933	0	5	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1909	47957	419197	PLEASE check my bill after less	1478233401	17950	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1909	47959	419207	total current bill including outstanding	1478233436	17950	0	5	English	Billing	Billing Details	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+1911	48001	419666	no. 3 total for 4 lines including my 013 8396226 and 019 8896239 is how much the bills please?	1478240363	17974	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1914	48097	420215	can i know the balance i have now?	1478246551	17998	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1915	48105	420205	how much do I need to pay for October?	1478246473	18004	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1915	48106	420208	What is the meaning of balance brought forward?	1478246515	18004	0	8	English	Billing	Billing Details	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+1915	48112	420230	Total current utilisation refers to?	1478246679	18004	0	5	English	Billing	Billing Details	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+1916	48151	420315	ACTUALLY NOW I NEED TO HOW MUCH OF MY BILL?	1478247671	18006	0	10	English	Billing	Reprint / Resend Bill	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1923	48304	421001	but my bill is rm 29.68 	1478257820	18040	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1924	48361	421154	So can u help check this line have outstading	1478259718	18044	0	9	English	Billing	Auto Debit Application	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1924	48366	421159	So now my outstading amount is ?	1478259837	18044	0	7	English	Billing	Auto Debit Application	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1924	48369	421162	OK please help check amount outstading	1478259894	18044	0	6	English	Billing	Auto Debit Application	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1924	48372	421165	This is total bill for October and November ?	1478259994	18044	0	9	English	Billing	Auto Debit Application	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1927	48401	421534	I am Ms Hii Chieu Eng, 0198940405. Can you help me to check what is my overpaid amount that I have pay?	1478309640	18066	0	22	English	Billing	Billing Details	Billing	BillBreakdown	ObjectNumeric	True	ItemAmount
+1927	48402	421538	Bsed on my record I have paid Rm 12.82 RM 29.90 RM 37.00 RM 50.00 and RM 30. So how much actually I have amount overpaid for my ac 201672458 ?	1478309735	18066	0	25	English	Billing	Billing Details	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+1927	48404	421556	am Ms Hii Chieu Eng, 0198940405. Can you help me to check what is my overpaid amount that I have pay?<NL>Bsed on my record I have paid Rm 12.82 RM 29.90 RM 37.00 RM 50.00 and RM 30. So how much actually I have amount overpaid for my ac 201672458 ?<NL>anyone can assist?	1478310118	18066	0	47	English	Billing	Billing Details	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+1934	48551	422453	can u check my latest bill? i already paid on 1 nov. then i got massage my bill is rm 80 something	1478330363	18104	0	22	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1934	48574	422489	so balance i hae to pay is 58.72 ?	1478331114	18104	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1939	48694	423216	I would like to check which amount I should pay in the E-Bill.	1478347617	18138	0	13	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+1942	48745	423535	may i know my outstanding bill?	1478395844	18153	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1943	48755	423576	can u help me check do i owe redone money?	1478397480	18155	0	10	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1943	48760	423595	can u check for me how much do i owe redone? because I don't really understand the bill	1478397871	18155	0	18	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1943	48769	423610	so if the "total amount due" shows negative or zero means i don't have to pay any money is it?	1478398099	18155	0	20	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectDefinition	True	WhichFieldToPay
+1957	49052	426055	I see. That RM 33.54 is in November or October 1? I mean the bill..	1478499348	18279	0	14	English	Billing	Payment Status	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+1972	49414	429121	may i know my account total outstanding balance need to pay?	1478588080	18414	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1978	49535	430377	ANY OTHER OUTSTANDING .MY LAST BILL PLS .TQ :)	1478649422	18462	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1986	49692	430651	good morning, how much i need to pay for the bill 01110756257 and its sub line 01110792162 ?	1478654918	18477	0	17	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1986	49720	430707	my november bill doesnt show rm 1.45. 	1478655450	18477	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1986	49721	430708	my november showed ... Balance Brought Forward 17.26 	1478655474	18477	0	8	English	Billing	Billing Details	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+1986	49724	430712	how to know, how much i need to pay? please. sorry for the confusing.	1478655593	18477	0	14	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+1989	49797	431031	Why the total charge becomes RM 10.16 	1478661376	18492	0	6	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1992	49867	432055	Overdue my account, ada berepa lagi?	1478676164	18532	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1994	49883	432089	HOW MUCH I NEED TO PAY MY BALANCE	1478677926	18534	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1994	49889	432096	CAN U TELL ME THE AMOUNT THAT I HAVE TO SETTLE	1478678449	18534	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+1999	50027	433119	i want to check whether any outstanding balance that i need to pay for 0128727496 ?	1478743908	18576	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+1999	50042	433141	so after pay the 73.78 . no more outstanding for my account	1478744369	18576	0	12	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2000	50049	433637	with regards with account monthly commitment, i only has 7 line, 7 x rm 8 is rm 56 per mth<NL>but why is my bill always stated rm 72 per mth?	1478752242	18597	0	26	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2001	50109	434000	but i only have to pay for 1 month outstanding right?	1478759459	18616	0	11	English	Billing	Payment Status	Billing	BillOutstanding	ObjectTime	True	PayingMonth
+2006	50239	434950	im hisham....just want to know my bill is RM 194.06 and status is barred	1478819481	18647	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2023	50717	437492	bill outstanding	1478938569	18749	0	2	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2023	50722	437497	how is the outstanding balance of 0123029876 ?	1478938611	18749	0	7	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2024	50764	437584	how much i have to pay	1478940522	18751	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2025	50821	437616	evening, which 1 do i need to pay? total amount due or balance brought forward?	1478941089	18754	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+2025	50831	437638	but how is the balance brought forward is calculated	1478941327	18754	0	9	English	Billing	Billing Charges	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+2025	50832	437642	why is the balance brought forward is 94.54 while the amount due is 33.09 	1478941372	18754	0	14	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2026	50850	437900	is my outstanding RM 60.21 for both?	1478948181	18762	0	6	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2027	50862	438036	HI.MY NUMBER 0168096773 MORE CHARGE FROMSEP.OCT.	1478954327	18769	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2053	51730	441320	Hi there. please tell my bill amount payable.<NL>my number is 010 - 8866142 	1479095274	18918	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2053	51735	441326	from the total of rm 183.06 there must be a minimum amount	1479095386	18918	0	11	English	Billing	Billing Details	Billing	None	None	False	None
+2053	51743	441341	can tell me the 1 month amount'	1479095594	18918	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2054	51766	441356	Can I know how the sum of RM 6.89 come about?	1479095852	18919	0	10	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2061	51966	441755	i want to ask y my november bill is 29.96 ?	1479102472	18936	0	10	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2061	51971	441760	how about the SEP bill?	1479102609	18936	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2061	51972	441761	29.96 is OCT or include SEP AND OCT BILL?	1479102665	18936	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2063	52015	441888	What is my bill ?	1479104552	18944	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2063	52022	441910	How much is my bill ?	1479104781	18944	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2085	52482	443869	morning <NL>just tu ask about the bill	1479171586	19038	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2085	52484	443874	now I need to pay november or fecember bills?	1479171610	19038	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2099	52841	446113	why need to make full payment ?	1479189639	19136	0	7	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	PartialPayment
+2102	52894	446506	Balance Brought Forward is RM 20 and Total Amount Due is RM 0. How much shall I pay. Actually the bill TM 20 has been paid last month.	1479194318	19155	0	26	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2103	52908	446524	hi..can u check my number..is there any unpaid bill.. 0172989974 	1479194507	19157	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2107	53139	446807	and how much is my outstanding..?	1479196523	19167	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2117	53434	448318	can i know the balance that i need to pay for november?	1479212028	19231	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2117	53440	448340	because i went to pay my bill today and was told that my bill 120 ++ but form the message that i got i just need to pay 70 ++. so im a bit confuse here	1479212288	19231	0	34	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2126	53691	449345	can i check for my bill??<NL>account id :: 200659171 	1479263009	19278	0	9	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2149	54361	451579	HI, may i know my latest bill statement	1479286240	19378	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2151	54403	451693	so how about my outstanding bill	1479288081	19382	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2166	54731	452552	Hi <NL>can you check my outstanding balance ?	1479347225	19427	0	8	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2182	55143	455483	Can help to check the balance?	1479452811	19555	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2184	55170	456345	HOW MANY DUE PAYMENT UNTIL FOR NOVEMBER	1479524269	19596	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2193	55410	457191	May i know my nov bill	1479551585	19634	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2197	55517	457598	HI , MAY I KNOW MY TOTAL BILL PAYMENT HOW MUCH IS IT?	1479608223	19651	0	13	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2198	55530	457712	How much I have to pay as of this day?	1479610913	19656	0	10	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2201	55588	457927	Curent nov bil RM 10.73 	1479618229	19669	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2201	55597	457939	already check online bill... 10.73. 	1479618495	19669	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2210	55812	459706	Can you tell me what is my current outstanding?	1479706953	19748	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2216	55999	460752	Can u pls check how much total outstanding amount have to pay.tq	1479732777	19787	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2230	56411	462484	why RM 60.30 	1479807175	19860	0	2	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2238	56608	462893	HELLO, IM ALWAYS CONFUSE WITH THE BILL. CAN YOU CHECK FOR ME HOW MUCH DO I HAVE TO PAY?	1479859094	19879	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2238	56619	462904	so confirm that i dont have to pay anything for october til now?	1479859454	19879	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2247	56840	463789	which mean all the payment already done for 2016 Nov 1 ?	1479878118	19914	0	12	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2249	56879	463952	my bill for 2016 Nov 01 already paid?	1479881733	19924	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2263	57172	466243	can u check my current bill for ths mth	1479963845	20027	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2267	57313	466889	My statement is negative value.	1479972959	20054	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2272	57466	467426	Can check for me now I need to pay how much?is need to pay RM 14.50 ?	1479984399	20071	0	15	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2276	57559	467902	hi. Im a bit confused on my bill for December. <NL>How much i must pay for my current bill.	1480039243	20092	0	19	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2276	57583	467964	how much is the latest bill	1480040125	20092	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2277	57608	468472	sorry, can check for me now I need to pay how much?	1480050551	20118	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2277	57619	468487	but I don't know I need pay how much	1480050753	20118	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2281	57733	468804	now i need to paid how much ?	1480057227	20133	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2283	57782	468797	Outstanding balance for account number 200086004 	1480057200	20136	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2283	57794	468868	Ok. Thanks. This charge is date this month or next month?	1480057606	20136	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2285	57824	468957	how much i need to pay this month?<NL><NL>im confuse	1480058650	20139	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2285	57829	468967	how much i need to pay this month?	1480058738	20139	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2285	57835	468976	TOTAL AMOUNT DUE IS - 2.02 	1480058867	20139	0	5	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2291	57980	469838	thanks, can i know currently how much my phone bill?	1480117926	20168	0	10	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2295	58115	470016	how much is my current outstanding bill?	1480123683	20176	0	7	English	Billing	Payment Status	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+2295	58123	470024	the 148 need to be pay at the end of the month right?	1480123756	20176	0	13	English	Billing	Payment Status	Billing	PaymentCycle	ObjectTime	True	WhenPaymentLastDay
+2298	58209	470394	can you assist me to check if i have pending amount to pay for my last bill?	1480130865	20191	0	17	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2303	58390	471292	you mean if it happen in the same month? its already end of the month should be ok. you increase to 100 how much have i used?	1480146548	20230	0	27	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+2304	58402	471541	is my bill due for payment?	1480153694	20240	0	6	English	Billing	Billing Charges	Billing	PaymentCycle	ObjectTime	True	WhenPaymentLastDay
+2309	58521	472029	Miss, can i know the exact amount of how much should I pay? This is because the my 1 year contract already ended on 14 november 2016 	1480212330	20260	0	27	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2312	58588	472148	how much is my current bills	1480215362	20265	0	6	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2312	58599	472176	my bills should done...	1480215691	20265	0	4	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2324	58921	473880	Which month i've missed payment? What is the date for latest payment that you mentionef?	1480293144	20338	0	15	English	Billing	Billing Charges	Billing	PaymentStatus	ObjectTime	False	LastPayment
+2329	59014	474341	How much do I need to pay clear my bill?	1480301535	20361	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2329	59029	474360	is the amount of money i need to pay for this month is it	1480301875	20361	0	14	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2329	59037	474374	all i saw the total amount due is rm 2.60 	1480302029	20361	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2336	59206	475204	pls check on my last payment n what is te outstanding	1480311196	20395	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2338	59244	475272	pls check my outstanding balance. thanks	1480311902	20399	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2339	59280	475593	oke, can check my latest bill until today?	1480316473	20411	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2340	59323	475910	1 last thing..can ucheck my outstanding	1480323023	20416	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2340	59326	475942	current bill is dec right?	1480323218	20416	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	True	PayingMonth
+2341	59343	475844	Hi. last month i paid rm 29 for nov bill rm 25.76. now dec bill is rm 60.92. so the balance of rm 3.24 from nov payment is minus rm 60.92 right?	1480322390	20421	0	27	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2342	59362	475857	PLEASE CHECK MY A/C - 167.82 IS MEANS OVER PAID	1480322550	20422	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2345	59453	476061	can u help me to check how much i need to pay?	1480324408	20431	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2345	59465	476100	this 1 is for nov bill right?	1480324801	20431	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	True	PayingMonth
+2348	59596	476421	do i have an outstanding for the month of november?	1480329517	20445	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2348	59599	476433	and thats the only amount i have to settle for the month of november right?	1480329682	20445	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2349	59610	476304	Latest Bill	1480328085	20446	0	2	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2349	59612	476307	Hi, can I get mt latest amount to pay & what is the last date before my account is suspende	1480328119	20446	0	20	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2349	59618	476323	I want to get the amount to pay & what is the last date before it is suspended	1480328266	20446	0	18	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2353	59747	476894	that mean no outstanding right?	1480379136	20469	0	5	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2356	59846	477129	amount 72.92 is the final figure or not?	1480382956	20479	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2358	59887	477425	what is my outstanding balance?	1480387556	20492	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2361	59945	477578	the amount RM 101.49 is for which month?	1480390154	20497	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2361	59948	477648	I think i paid every month. why there still outstanding bill?	1480390640	20497	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2362	59976	477588	my bill is clear right	1480390207	20498	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2366	60063	477799	hi..i paid all my bill, rm 25.18 on 5 / 11 / 2016 <NL>and i called your hotline no and told him to cut off my no. but why in here still stated the due amount?	1480392092	20512	0	31	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2371	60179	478135	Bill inquiry	1480396524	20527	0	2	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2374	60257	478486	Good afternoon, can i check my current bill?<NL>Im getting a call said that im incurring a bill more than RM 205 and need to made the payment before December.	1480399609	20540	0	28	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2378	60343	478607	HI<NL>Check for me hw much i hv to pay<NL> current bill	1480400776	20548	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2378	60355	478674	The current is hw much	1480401410	20548	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2400	60965	481626	Why still charge me for October and November? You can check my statement details, no call and no sms and no data were made in between this period.	1480486205	20670	0	28	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2405	61096	482154	Where to check my oustanding?<NL>Where to view my payment history?	1480491734	20697	0	10	English	Billing	Make Payment - Selfcare	Billing	Document	Procedure	False	HowViewBill
+2409	61215	482309	My data 8 plan started on 26 Oct 2016. Why is there an invoice dated 1 Nov 2016 ?	1480492883	20703	0	17	English	Billing	Product Charges	Billing	PaymentCycle	Reason	False	WhenPaymentFirstDay
+2409	61216	482312	In view bill, there is an invoice for Dec 2016. It states I made a call for RM 0.15. How do you know I will make a call, now is only Nov 2016. 	1480492954	20703	0	32	English	Billing	Product Charges	Billing	BillOutstanding	Reason	False	Others
+2409	61229	482384	That is the Nov 2016 bill? For what period?	1480493938	20703	0	9	English	Billing	Product Charges	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2409	61231	482392	You mean 26 Oct to 30 Oct, I have to pay RM 8 ?	1480494001	20703	0	12	English	Billing	Product Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2409	61245	482522	Why is there a Dec bill? It show my data used 425 MB	1480495113	20703	0	13	English	Billing	Product Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2409	61250	482554	Note that today is only 30 Nov 2016. How can there be a Dec bill?	1480495375	20703	0	15	English	Billing	Product Charges	Billing	BillOutstanding	Reason	False	Others
+2411	61285	482390	how to check my master account bill	1480493990	20706	0	7	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+2412	61317	482579	I already clear the outstanding balance just now.	1480495507	20713	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	ObjectNumeric	True	ConfirmPaymentReceived
+2413	61330	482629	Hi... please check outstanding amount owe to you... thanks	1480495804	20718	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	Object	False	BillAmount
+2414	61348	482677	i need to see e-statement	1480496056	20719	0	5	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+2423	61544	484192	good morning.<NL>can you please help me to check the last bill for 0149940585 ?	1480551647	20782	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2424	61574	484400	OCT 16 BILL	1480552961	20789	0	3	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2426	61652	484739	but why is my billed charged rm 8 ?	1480554814	20799	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2428	61690	484887	meaning credit exceed when over there. so can u tell me exactly how mush is my bill for me to pay now. thanks	1480555574	20804	0	23	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2429	61699	484767	I have paid the november bill. However, there is balance brought forward this month.	1480554917	20808	0	14	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2429	61705	484890	Why there is a balance brought forward this month since i have paid the bill on 26 Nov?	1480555578	20808	0	18	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2432	61756	485083	My bill on 1 Nov is RM 20.05. I have already paid on 26 Nov, why there is a balance brought forward in 1 Dec bill?	1480556452	20823	0	25	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2432	61763	485183	My bill on 1 Nov is RM 20.05. I have already paid on 26 Nov, why there is a balance brought forward in 1 Dec bill?	1480556859	20823	0	25	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2432	61765	485226	My bill on 1 Nov is RM 20.05. I have already paid on 26 Nov, why there is a balance brought forward in 1 Dec bill?	1480557134	20823	0	25	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2432	61781	485277	balance brought forward is 20.05 which is include in 70.49. can u pls check properly?	1480557366	20823	0	15	English	Billing	Billing Details	Billing	BillBreakdown	Request	False	WhyItemAmount
+2432	61797	485365	what i want to clarify is why balance brought forward not 0 but 20.05 	1480557712	20823	0	14	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2433	61819	485295	Last 2 days, when i am live chat, I had been told that my outstanding is rm 56.71 	1480557436	20831	0	17	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2440	61987	487613	hi, how much i need to pay for my november usage?	1480567916	20964	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2440	61994	487643	how much is my bill for last month usage	1480568087	20964	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2440	62005	487701	i need to know how much i need to pay this time	1480568412	20964	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2442	62051	487914	HI, what is the minimum i have to pay <NL>number is 0 <NL> 1128717377 	1480569719	20978	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2442	62057	487981	need to know my minimum charges	1480570109	20978	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2447	62199	489653	Can u justify, why the amount to pay sent by sms is much lower than stated in the bill.	1480581394	21055	0	19	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2453	62313	490311	about bill	1480587574	21086	0	2	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2453	62314	490316	i pay every month but it says here on the self login page balance brought foward	1480587643	21086	0	16	English	Billing	Billing Charges	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2453	62321	490329	why say balance brought forward when i have paid every month for my bills?	1480588011	21086	0	14	English	Billing	Billing Charges	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2453	62325	490339	the bill is also not updated i think	1480588201	21086	0	8	English	Billing	Billing Charges	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+2461	62516	491217	I done payment for november bill RM 13.78. why u still didn't knock off the statement? It appears again in December bill	1480638512	21126	0	21	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+2462	62551	491297	please check my bill	1480639925	21129	0	4	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2472	62803	491982	the girl told me i need to pay rm 8.56 	1480645811	21157	0	9	English	Billing	Make Payment - Selfcare	Billing	None	None	False	None
+2472	62808	492004	if i pay the 8.56 can u give me confirmation that redone would mess around and hold my request porting out from redONE	1480645937	21157	0	22	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	Request	True	Others
+2472	62817	492038	now they ask me for rm 8.56 	1480646147	21157	0	6	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	Reason	False	Others
+2473	62879	492047	is there any pending payment?	1480646202	21165	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2474	62924	492649	how come now another 19.79 ?	1480650595	21191	0	5	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2474	62936	492664	how come still got another rm 19 ++	1480650726	21191	0	6	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2474	62940	492670	2 month outstdg for .?	1480650796	21191	0	5	English	Billing	Billing Details	Billing	None	None	False	None
+2474	62942	492672	ya..i know for my outstanding .now this 19 ++ for ?	1480650817	21191	0	10	English	Billing	Billing Details	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2474	62945	492679	so u mean my RM 17 if for my Sept bill...	1480650941	21191	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectOthers	True	Others
+2474	62949	492703	how come be 19 ++	1480651146	21191	0	5	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	Others
+2474	62960	492730	i know .so the 19 ++ is for oct only or 2 month..?	1480651493	21191	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	True	Others
+2477	63020	493311	Why my november bill carried forward to december as I have standing instruction on auto debit through my cr card	1480655882	21239	0	20	English	Billing	Auto Debit Application	Billing	BillingTroubleShooting	Reason	False	WhyBillAmount
+2490	63447	497475	Outstanding bill	1480738151	21438	0	2	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2490	63452	497480	Do i have any outstanding payment?	1480738232	21438	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2501	63716	498977	i need to ask about my bill balance	1480763559	21503	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2501	63728	499036	ya but in the website they shows rm 98.07. y	1480764718	21503	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2502	63739	499102	I want 2 know my current bill<NL>How much i've 2 pay	1480767154	21507	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2505	63805	499878	checking on bill	1480779807	21540	0	3	English	Billing	Waiver	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2505	63807	499881	Hi, can u pls help me to check on my phone bill?	1480779821	21540	0	12	English	Billing	Waiver	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2505	63813	499894	there is a data charges with the amount of RM 162.06. May i know is chargable to which phone line?	1480779907	21540	0	19	English	Billing	Waiver	Billing	BillBreakdown	ObjectName	False	BillBreakdownOthers
+2507	63879	500181	Why my total amount due is 600 plus?	1480809661	21552	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2507	63889	500203	December isnt finish yet,how come can be as much like that?	1480809975	21552	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2507	63893	500208	How much my monthly commitment?	1480810062	21552	0	5	English	Billing	Billing Charges	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+2511	64030	500539	Dec bill should be Rm 8 ++ instead of rm 17.16. Why?	1480816172	21566	0	10	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2511	64047	500615	Ok! I understand now. How much to top up as I need to send a message on 1 day?	1480816788	21566	0	19	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	Others
+2512	64072	500782	the total amount due i see now is still rm 9.01 	1480818738	21577	0	10	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2515	64147	501266	Need ur help to check my bill outstanding	1480827145	21596	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2515	64157	501282	88.98 for 1 month	1480827427	21596	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2516	64166	501337	Hello. I want to know how can I check my balance that need to pay?	1480829673	21601	0	15	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+2516	64180	501380	can I know my current bbi	1480830053	21601	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2516	64181	501381	bill	1480830060	21601	0	1	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2516	64189	501418	Is this the amount I have not pay yet?	1480830339	21601	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2521	64303	502221	HOW COME MY OVERDUE WILL REACH TILL 456.41 	1480846738	21634	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2521	64312	502246	BCOZ UNTILL NOW WHY CHARGES WILL UNTILL 456 	1480846961	21634	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2528	64446	503239	I would like to know billing status of my account. My phone number is 0134988238 	1480897969	21681	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2529	64482	503264	i have made the payment last Friday, but there is still outstanding. please advise	1480898180	21682	0	14	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+2538	64723	504461	Hi Redone, I hav a prob regarding my bills ... <NL>As las month I had terminated my data plan .... bt sadly it appear in my November bill tat the data plan is incurred inside...kindly help me check de status..	1480908737	21738	0	40	English	Billing	Waiver	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2542	64833	505222	Hi, I had been terminated 1 of my number on November 1 st. and the day before, on 31 st October 2016 around 10 pm I had take out the simcard. but on the bill this month. there is another RM 50 charged on my bill.	1480916194	21774	0	42	English	Billing	Waiver	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2542	64854	505333	but why still need to pay	1480917359	21774	0	6	English	Billing	Waiver	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2550	65136	506310	hello, my billing is not right	1480926708	21815	0	6	English	Billing	Data Bundle / PPU Rate	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2555	65289	507468	hi <NL>my bill in Dec 01 is RM 54.28 while it was RM 23.20 in Nov 1 <NL>i cannot understand this, because it just few days in Dec<NL>thank you	1480946704	21858	0	26	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2556	65331	507789	WHY MY BILL IS SO HIGH...	1480950542	21871	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2568	65705	509583	Hi, I just want to confirm how much is my bill	1480999495	21935	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2568	65709	509598	hi, i'd like to check my current bill and outstanding	1480999551	21935	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2568	65725	509658	the 2 months outstanding is how much all together?	1481000053	21935	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2568	65726	509659	How much I need to pay before 15 th Dec?	1481000062	21935	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2577	66060	511004	how much my outstanding?	1481021975	21983	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2583	66194	512202	If I were to pay my bill today, how much do I need to pay	1481077207	22030	0	15	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2591	66444	514713	I am confused by your sms asking me to pay that amount this amount	1481106673	22117	0	14	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2591	66453	514737	then another came in asking me to pay 92.83 	1481106882	22117	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2591	66471	514761	alright, I thought the SMS are to inform me "alright, sir, here's your last month's bill amount to kindly pay" as soon as the bill it out.........and not wait till end of the month baru ask me pay...	1481107164	22117	0	38	English	Billing	Billing Charges	Billing	None	None	False	None
+2597	66663	515170	i would like to bookmark it , so i will not miss the payment next timee .	1481116203	22133	0	17	English	Billing	Payment Status	Billing	BillOutstanding	Request	False	Other
+2599	66725	515792	mean how much my month bill from now on?	1481121414	22156	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2601	66792	516169	How much am I need to pay?	1481125238	22167	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2605	66930	517448	then i change to other network, then i keep received the month bill.	1481173264	22214	0	13	English	Billing	Billing Address	Billing	None	None	False	None
+2605	66937	517455	but why i still received the monthly bill ?	1481173402	22214	0	9	English	Billing	Billing Address	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2613	67163	518583	sir..i want to know amount to outstanding for the above master account.	1481188790	22252	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2620	67318	520666	Can I view the bill of 0167783667 ?	1481255793	22339	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2626	67521	522404	U all didn't send me the bill. That's wht payment was late. Should appeal to the Manager. There's outstanding less than 20 and reconnection is 50 %	1481327715	22403	0	26	English	Billing	Unsuspend lines - (Within 50 days)	Billing	None	None	False	None
+2631	67649	522962	i want pay my outstanding payment on 20 dec 16 	1481337471	22421	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2633	67710	523079	How about the bill for Oct?	1481339733	22425	0	6	English	Billing	Auto Debit Application	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2639	67840	523744	any balance our mobile	1481353649	22457	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2640	67862	523765	i paid my bill every months, around rm 40 , how come its every time ask me pay rm 80 + ?	1481353969	22458	0	19	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2640	67870	523773	my bill now total due rm 80.56 	1481354087	22458	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2641	67903	523816	MY BILL IS RM 176.00 	1481356421	22460	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2642	67994	524144	I dun no got this payment i want to pay	1481366451	22468	0	10	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+2642	67999	524174	sure want to make all full payment only can transfer ma...but why after got payment again	1481367035	22468	0	16	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2645	68043	524353	I need to ask about my bill	1481371180	22475	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2645	68058	524377	But i have closed my data plan for long but y i have charged RM 44 	1481371991	22475	0	16	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2645	68060	524382	ya. then y i have charged that amount	1481372088	22475	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2648	68112	525247	Hi..i want to know my current bill	1481424159	22511	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2648	68120	525264	Want to know current bill after all payment	1481424317	22511	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2650	68227	526779	Can u tel me abt my full payment..how much I want pay..	1481505647	22580	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2658	68457	528173	I mean last bill. because I switch to digi last 2 day	1481548021	22638	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2658	68458	528174	when is my last bill to paid.	1481548031	22638	0	7	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2658	68460	528177	ok. so I wait red 1 sent me my bill for final payment lar. Thanks	1481548195	22638	0	15	English	Billing	Billing Details	Billing	Document	ObjectOthers	False	RequestSendBill
+2659	68487	528353	WHY 853 ?	1481551198	22646	0	2	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2665	68653	529026	IM CLERK OF GLT AUTO PARTS<NL>IM WANT TO KNOW THE AMOUNT BILL NOVEMBER FOR MR LOW BOON HUA	1481592712	22674	0	18	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2679	68946	530524	if confirm no outstanding., then ok.	1481619642	22750	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2688	69205	531540	please help to assist what is my outstanding balance	1481635188	22790	0	9	English	Billing	Payment Status	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2731	70419	537752	i have make payment via celcom kiosk at 01 / 12 / 2016 but it still show that i have amount due. Could you please check for me??	1481771668	23067	0	24	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	Reason	True	WhyNotUpdated
+2731	70427	537809	then please check for all the number below	1481771952	23067	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	None	Request	True	None
+2735	70522	538232	but why now I receive another stated that I still need to clear Dec bill as well? Dec bill due should be on 1 st Jan 2017 	1481775089	23085	0	26	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2735	70529	538252	but y included Dec bill as well as the bill is not pass the due date yet?	1481775266	23085	0	17	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	Reason	False	Other
+2739	70659	539491	rm 384.9 is how many month	1481785814	23133	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2739	70663	539499	than i pay 1 month first can a	1481785970	23133	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectOthers	True	PartialPayment
+2740	70690	539548	so, now, i should pay the balance by today or any other date to avoid barring	1481786956	23134	0	16	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2743	70814	540022	payment will be make before 14 next month	1481790084	23143	0	8	English	Billing	Payment Status	Billing	None	None	False	None
+2743	70822	540039	which month for the out standing for?	1481790230	23143	0	7	English	Billing	Payment Status	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2743	70824	540042	which month was the out standing for?	1481790261	23143	0	7	English	Billing	Payment Status	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2743	70830	540124	for which month bill?	1481790740	23143	0	4	English	Billing	Payment Status	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2743	70835	540184	so my 1 st dec bill i only got 14 days time to clear it?	1481790978	23143	0	14	English	Billing	Payment Status	Billing	PaymentCycle	ObjectTime	True	WhenPaymentLastDay
+2743	70836	540189	then if not clear line bar?	1481790988	23143	0	6	English	Billing	Payment Status	Billing	PaymentCycle	ObjectTime	True	WhenPaymentLastDay
+2754	71125	540511	so i still have to pay RM 50.86 ?	1481792876	23173	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2757	71194	540770	i can make payment lates by 31 dec 2016 	1481797342	23188	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2759	71233	541150	CURRENT BALANCE OF MY ACCOUNT	1481806715	23208	0	5	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2759	71237	541155	may i know d current balance for my account??	1481806759	23208	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2765	71404	542370	so how much should be minimum outstanding	1481816407	23265	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2767	71471	542592	my balance?	1481843905	23273	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2770	71541	542827	Maybe i am using Iphone i cant do setting about pop up block, i use pc later... could you check for me how much i need to pay to reuse my line? My line is being barred	1481847664	23282	0	37	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2776	71704	544158	may i know latest unbilled	1481856649	23339	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2777	71727	544483	Hi, i need some clarifications, my number 01110956718 is a house phone. Why the charges for this number is very high. I understand this number is main for calls only and not for data. Why the bill was stated RM 260.98 ? Pls clarify.tq	1481861040	23359	0	42	English	Billing	Billing Charges	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2777	71741	544668	Correct if i'm wrong. This number 0183725178 and 01110938969 is under 1 package and it is not suppose to park under 01110632838 	1481862266	23359	0	22	English	Billing	Billing Charges	Billing	Wrong	None	True	None
+2777	71749	544710	And why redone mix up the number	1481862510	23359	0	7	English	Billing	Billing Charges	Billing	None	Reason	False	None
+2787	71971	546118	can you help me to check bill??	1481877736	23424	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2787	71979	546127	this amount is dec??	1481877895	23424	0	4	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	False	PayingMonth
+2787	71980	546135	when is the bare date??	1481877934	23424	0	5	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2788	71996	546597	I want to check if my account have any contract bounded or any overdue payment to be clear?	1481892833	23443	0	18	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2793	72134	547292	AND HOW MUCH IS THE CURRENT BALANCE NOW	1481899556	23478	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2793	72137	547297	OUTSTANDING	1481899598	23478	0	1	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2796	72275	547820	HI MORNING<NL>I WOULD LIKE TO PAY THE BILL<NL>WHICH 1 I NEED TO PAY FOR IT?<NL>BALANCE BROUGHT FORWARD OR TOTAL AMOUNT DUE?	1481934728	23498	0	21	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+2796	72276	547823	how much i need to pay for 0163044612 	1481934756	23498	0	8	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2810	72629	550370	Hello.. i want to know how much i need to pay for my account?	1481987954	23612	0	14	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2813	72711	550722	how much is my outstanding this month?	1482020518	23625	0	7	English	Billing	Increase credit limit	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2814	72724	551237	Hi,May I know what is my current outstanding	1482036360	23648	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2827	73102	553321	MR AFIQ..i want know why i still have bil RM 66.26. 	1482114062	23740	0	10	English	Billing	Reprint / Resend Bill	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2829	73161	553650	can u show me my bill sep oct nov	1482120552	23755	0	9	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2831	73216	553869	hi, can you help me check this number 0135099511 have any outstanding bill?	1482122994	23764	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2832	73233	553927	HI, can check for me, total how much i need to pay?	1482124269	23767	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2836	73342	554190	whats the prob as i also dont know from where the outstanding??	1482128840	23777	0	12	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2836	73346	554196	i tot i need to settle all the payment before yours allow to pull out line???	1482128952	23777	0	16	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	Other
+2836	73349	554207	but i pull out this bill more than 3 m ady right???	1482129208	23777	0	11	English	Billing	Billing Details	Billing	BillOutstanding	Reason	True	Other
+2839	73423	554396	How can i get 3 month bill statement ?	1482131237	23785	0	9	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+2843	73552	555001	what is the my outstanding bill now?	1482139676	23809	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2843	73560	555012	DUE WHEN? I DONT HOW TO READ THE BILL ONLINE. A BIT CONFUSING.	1482139864	23809	0	13	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	False	WhichFieldToPay
+2843	73562	555014	WHEN IS DUE?	1482139919	23809	0	3	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2849	73690	555253	fine...can you pls check my outstanding bills	1482145419	23821	0	7	English	Billing	Data Bundle / PPU Rate	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2854	73851	555467	may i know How much is my current bill ?	1482150265	23828	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2863	74067	556017	I should pay 4.50 right ?	1482160062	23851	0	6	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2867	74139	557255	Kindly re-check my Dec bill.	1482207617	23903	0	5	English	Billing	Product Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2873	74428	558469	how much is my bill up till today	1482226635	23948	0	8	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2873	74443	558499	why do i have outstanding I've been paying up to date	1482226946	23948	0	11	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+2883	74909	559504	HI<NL>i want check my outstanding bill?	1482244141	23994	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2883	74918	559571	including this month?	1482245006	23994	0	3	English	Billing	Billing Details	Billing	None	None	True	None
+2887	75028	560758	Does my balance wil be bring forward	1482292462	24042	0	7	English	Billing	Billing Details	Billing	BillOutstanding	ObjectOthers	True	Other
+2887	75031	560764	So how much balance i have	1482292533	24042	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2895	75259	561529	i received call from redone they mention that i have pending payment	1482304957	24076	0	12	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2897	75393	561734	for November bill, i had paid quite late, but in the statement could you dont put on outstanding amount ? since i already paid	1482307041	24080	0	24	English	Billing	Reprint / Resend Bill	Billing	BillOutstanding	Request	True	Other
+2897	75400	561770	how do i have to pay the RM 5 ?	1482307403	24080	0	9	English	Billing	Reprint / Resend Bill	Billing	PaymentChannel	Procedure	False	HowPay
+2898	75443	561962	so the last bill i pay is 70 ya right?	1482309200	24086	0	10	English	Billing	Billing Details	Billing	PaymentStatus	ObjectNumeric	False	LastPayment
+2898	75445	561965	it will not be any extra charge after this amount right?	1482309230	24086	0	11	English	Billing	Billing Details	Billing	BillingOthers	ObjectNumeric	False	BillingOthers
+2900	75528	562143	how much the balance i need to pay now?	1482311484	24093	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2900	75540	562180	now i want do payment for RM 22 how?	1482311816	24093	0	8	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+2908	75787	563070	hello..i want to ask for my current month payment is how much?	1482326526	24133	0	12	English	Billing	Product Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2921	76182	565143	since already barred, does the bill will carry on next month?	1482390999	24224	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillOutstanding	ObjectOthers	True	Other
+2923	76269	565424	can you pls let me know that the amount rm 64.47 for which month?this year or last year?	1482393836	24232	0	17	English	Billing	Billing Details	Billing	BillOutstanding	ObjectOthers	True	Other
+2923	76272	565429	i need to make the payment first for this balance?	1482393996	24232	0	10	English	Billing	Billing Details	Billing	BillingOthers	ObjectOthers	True	BillingOthers
+2926	76334	565612	Hi, may i know until today i need pay how much ?	1482396361	24247	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2926	76341	565628	please check for me what is the amount i need to pay	1482396553	24247	0	12	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2926	76349	565656	Means this end of december 2016 i just need pay 166.64 ?	1482396833	24247	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2931	76415	566165	Hi.. what is my total debt now?	1482413316	24272	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2931	76427	566190	I Just pay 57.34 but is it include the current 1?	1482413981	24272	0	11	English	Billing	Billing Charges	Billing	BillingOthers	ObjectOthers	False	BillingOthers
+2934	76504	566541	hello<NL>please check bill for botj of this number <NL> 0129158140 <NL> 01110744361 	1482420409	24295	0	9	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2935	76532	566859	hello<NL>plse tell me my credit amount as per today. tq	1482454961	24309	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2935	76541	566879	but the credit amount in my account	1482455090	24309	0	7	English	Billing	Billing Details	Billing	None	None	False	None
+2938	76603	567058	any balance outstanding	1482459171	24317	0	3	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2939	76655	567343	how about this month?	1482462705	24329	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	None	None	False	None
+2955	76963	569795	May i know how much is my total current outstanding amount?	1482554716	24440	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+2961	77152	570742	RM 150 is the minimum ?	1482586960	24478	0	6	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	None	ObjectNumeric	True	None
+2961	77156	570746	Ok so RM 150 only for 012 - 5881768 ?	1482587045	24478	0	7	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	None	ObjectNumeric	True	None
+2965	77242	570830	Would like to check my bill	1482588993	24483	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2966	77268	570920	Hello, I want to ask. If we accidently pay more than it should be, can the amount of money can be brought to the following month?	1482591931	24487	0	26	English	Billing	Billing Details	Billing	Refund	Procedure	False	HowRefund
+2966	77292	570973	Then, how I can know that money has been revert to my account?	1482593129	24487	0	13	English	Billing	Billing Details	Billing	Refund	Procedure	False	HowRefund
+2969	77400	571161	clear the outstanding means clear the exceed limit amount?	1482630394	24495	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectDefinition	False	WhichFieldToPay
+2972	77447	571532	How much I need to pay?	1482648773	24512	0	6	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2973	77469	572169	I just want to find how much I really owe?	1482712732	24543	0	10	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2976	77543	572403	Just now got a guy that calling from RedOne HQ. He told me that I still got total amount Rm 360 + haven't paid. Need to pay by this afternoon 2 pm. May I know what's going on?	1482725811	24553	0	35	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	Other
+2976	77555	572450	Ok. Understand. 2 day is the due date of the payment? Because now I'm at Singapore. Might need sometime to do it. After I paying this Rm 365.46 the number 0178784981 will be continue barred right?	1482726393	24553	0	34	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2985	77829	573597	What about the RM 4.21 in Dec?	1482756006	24594	0	7	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+2994	78054	574490	How much is my outstanding todate?	1482803246	24634	0	6	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2996	78085	574511	may i know how much i outstanding	1482803377	24637	0	7	English	Billing	Billing Charges	Billing	BillOutstanding	ObjectNumeric	True	BillAmount
+3000	78183	574765	hi, my account show status outstanding amount but i already made payment. May I know how do I able to verify?	1482805542	24649	0	21	English	Billing	Billing Details	Billing	PaymentStatus	Procedure	True	ConfirmPaymentReceived
+3000	78203	574816	Credit movement? which you refer too?	1482806033	24649	0	6	English	Billing	Billing Details	Billing	None	ObjectName	False	None

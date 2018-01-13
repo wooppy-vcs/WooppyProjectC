@@ -5,11 +5,11 @@ import os
 
 class Config():
 
-    def __init__(self, enable_char, run_number, doc_length=None, model_name="", checkpoint_dir="", transfer_learning=False):
+    def __init__(self, dataset_name, classifier_type="", run_number=None, doc_length=None, model_name="",
+                 checkpoint_dir="", transfer_learning=False, enable_char=False):
 
-        self.runs_folder = "Enriched-x10-runs(LSTM&CNNv0)"
-
-        self.classifier_type = "Scenario"
+        self.runs_folder = "Runs/Account_Billing_v2"
+        self.classifier_type = classifier_type
         self.doc_length = doc_length
         self.model_name = model_name
         self.checkpoint_dir = checkpoint_dir
@@ -19,9 +19,21 @@ class Config():
 
         # Runs Output directories
         # self.timestamp = str(int(time.time())) + "-" + self.classifier_type
-        self.out_dir = os.path.abspath(os.path.join(os.path.curdir, self.runs_folder, "runs-{}-".format(run_number) +
-                                                    self.classifier_type + "-len{}".format(doc_length) + "-" +
-                                                    self.model_name+"-Enriched"))
+        # self.out_dir = os.path.abspath(os.path.join(os.path.curdir, self.runs_folder, "runs-{}-".format(run_number) +
+        #                                             self.classifier_type + "-len{}".format(doc_length) + "-" +
+        #                                             self.model_name))
+        self.out_dir = os.path.abspath(os.path.join(os.path.curdir, self.runs_folder, self.classifier_type +
+                                                    "-len{}".format(doc_length) + "-" +
+                                                    self.model_name))
+
+        self.dataset_name = dataset_name
+        default_data_path = "data/" + self.dataset_name
+
+        self.training_path = default_data_path + "/Training_data.txt"
+        self.test_path = default_data_path + "/Test_data.txt"
+        self.development_path = default_data_path + "/Development_data.txt"
+        self.tags_vocab_path = default_data_path + "/tags_vocab.txt"
+        self.char_vocab_path = default_data_path + "/chars_vocab.txt"
 
     # Data structure parameters
     data_column = 0
@@ -51,14 +63,11 @@ class Config():
     log_device_placement = False
 
     # Documents Directories
-    default_raw_data_path = "data/Project-A-R-Tagged-Data-Truncated-Enriched"
-    dataset_name = "Project-A-R-Scenario-Truncated-Enriched-v2"
-    default_data_path = "data/"+dataset_name
+    default_raw_data_path = "raw_data/Project-A-R-v2.0_Billing_Account"
+    # dataset_name = "Project-A-R-Scenario_Billing_Account-v2"
 
-    training_path = default_data_path + "/Training_data.txt"
-    test_path = default_data_path + "/Test_data_Enriched.txt"
-    tags_vocab_path = default_data_path + "/tags_vocab.txt"
-    char_vocab_path = default_data_path + "/chars_vocab.txt"
+    # dataset_name = "Project-A-R-Scenario-Truncated-Enriched-v2"
+
 
     # Word Embeddings
     embedding_name = "word2vec"

@@ -20,17 +20,21 @@ def softmax(x):
 
 def evaluation(config):
     # Loading training data
+    # datasets = data_helpers.get_datasets(data_path=config.test_path, vocab_tags_path=config.tags_vocab_path,
+    #                                      vocab_char_path=config.char_vocab_path, config=config,
+    #                                      sentences=config.data_column, tags=3, tags_2=4, tags_3=5, scores=1)
+
     datasets = data_helpers.get_datasets(data_path=config.test_path, vocab_tags_path=config.tags_vocab_path,
-                                         vocab_char_path=config.char_vocab_path, config=config,
-                                         sentences=config.data_column, tags=3, tags_2=4, tags_3=5, scores=1)
+                                         vocab_char_path=config.char_vocab_path, enable_char=config.enable_char,
+                                         sentences=config.data_column, tags=config.tags_column)
 
     # Converting label to one hot vectors
     x_raw, y_test = data_helpers.load_data_labels(datasets)
     # Converting one hot vectors to indexes
     y_test = datasets['target']
-    y_test_2 = datasets['target_2']
-    y_test_3 = datasets['target_3']
-    assigned_scores = datasets['scores']
+    # y_test_2 = datasets['target_2']
+    # y_test_3 = datasets['target_3']
+    # assigned_scores = datasets['scores']
     print("=======================================================")
     print("Total number of test examples: {}".format(len(y_test)))
 
@@ -138,9 +142,9 @@ def evaluation(config):
     # Print accuracy if y_test is defined
     if y_test is not None:
         correct_predictions = float(sum(all_predictions == y_test))
-        if y_test_2 is not None or y_test_3 is not None:
-            correct_predictions = correct_predictions + float(sum(all_predictions == y_test_2))
-            correct_predictions = correct_predictions + float(sum(all_predictions == y_test_3))
+        # if y_test_2 or y_test_3:
+        #     correct_predictions = correct_predictions + float(sum(all_predictions == y_test_2))
+        #     correct_predictions = correct_predictions + float(sum(all_predictions == y_test_3))
         print("=======================================================")
         print("Total number of test examples: {}".format(len(y_test)))
         print("Accuracy: {:g}".format(correct_predictions / float(len(y_test))))
@@ -158,34 +162,43 @@ def evaluation(config):
         correct_preds_tags = np.zeros(len(available_target_names))
         total_correct_tags = np.zeros(len(available_target_names))
         total_preds_tags = np.zeros(len(available_target_names))
-        corrected_scores = np.zeros(len(assigned_scores))
+        # corrected_scores = np.zeros(len(assigned_scores))
         k = 0
-        for y_test_check, y_test_2_check, y_test_3_check, y_pred, score in zip(y_test, y_test_2, y_test_3,
-                                                                               all_predictions.astype(int), assigned_scores):
-            if y_test_2_check != "" and y_test_3_check != "":
-                correct_preds_tags[y_test_2_check] += (int(y_test_2_check == y_pred))
-                correct_preds_tags[y_test_3_check] += (int(y_test_3_check == y_pred))
-                if score != 2:
-                    corrected_scores[k] = 1
-                else:
-                    corrected_scores = score
-            else:
+
+        # if y_test_2 or y_test_3:
+        #     for y_test_check, y_test_2_check, y_test_3_check, y_pred, score in zip(y_test, y_test_2, y_test_3,
+        #                                                                            all_predictions.astype(int), assigned_scores):
+        #         if y_test_2_check and y_test_3_check:
+        #             correct_preds_tags[y_test_2_check] += (int(y_test_2_check == y_pred))
+        #             correct_preds_tags[y_test_3_check] += (int(y_test_3_check == y_pred))
+        #             if score != 2:
+        #                 corrected_scores[k] = 1
+        #             else:
+        #                 corrected_scores = score
+        #         else:
+        #             correct_preds_tags[y_test_check] += (int(y_test_check == y_pred))
+        #             if y_test_2_check and y_test_3_check:
+        #                 if score != 2:
+        #                     corrected_scores[k] = 0
+        #                 else:
+        #                     corrected_scores = score
+        #
+        #         if y_test_2_check and y_test_3_check:
+        #             total_correct_tags[y_test_2_check] += 1
+        #             total_correct_tags[y_test_3_check] += 1
+        #         else:
+        #             total_correct_tags[y_test_check] += 1
+        #
+        #         total_preds_tags[y_pred] += 1
+        #
+        #         k += 1
+        #
+        # else:
+
+        for y_test_check, y_pred in zip(y_test, all_predictions.astype(int)):
                 correct_preds_tags[y_test_check] += (int(y_test_check == y_pred))
-                if score != 2:
-                    corrected_scores[k] = 0
-                else:
-                    corrected_scores = score
-
-            if y_test_2_check != "" and y_test_3_check != "":
-                total_correct_tags[y_test_2_check] += 1
-                total_correct_tags[y_test_3_check] += 1
-            else:
                 total_correct_tags[y_test_check] += 1
-
-            total_preds_tags[y_pred] += 1
-
-            k += 1
-
+                total_preds_tags[y_pred] += 1
 
         p_tags = []
         r_tags = []
@@ -222,8 +235,11 @@ def evaluation(config):
 
 
         for idx, prediction in enumerate(all_predictions):
-            result.append("CORRECT" if y_test[idx] == prediction or y_test_2[idx] == prediction
-                          or y_test_3 == prediction else "WRONG")
+            # if y_test_3 or y_test_2:
+            #     result.append("CORRECT" if y_test[idx] == prediction or y_test_2[idx] == prediction
+            #                   or y_test_3 == prediction else "WRONG")
+            # else:
+            result.append("CORRECT" if y_test[idx] == prediction else "WRONG")
 
         readable_probabilities_array = []
 
@@ -234,39 +250,50 @@ def evaluation(config):
         tags_2 = []
         tags_3 = []
 
-        for expected_label in y_test_2:
-            if expected_label != "":
-                tags_2.append(idx_to_tag[int(expected_label)])
-            else:
-                tags_2.append("")
+        # for expected_label in y_test_2:
+        #     if expected_label != "":
+        #         tags_2.append(idx_to_tag[int(expected_label)])
+        #     else:
+        #         tags_2.append("")
+        #
+        # for expected_label in y_test_3:
+        #     if expected_label != "":
+        #         tags_3.append(idx_to_tag[int(expected_label)])
+        #     else:
+        #         tags_3.append("")
 
-        for expected_label in y_test_3:
-            if expected_label != "":
-                tags_3.append(idx_to_tag[int(expected_label)])
-            else:
-                tags_3.append("")
+        # predictions_human_readable = np.column_stack((np.array(x_raw),
+        #                                               corrected_scores,
+        #                                               [idx_to_tag[int(prediction)] for prediction in
+        #                                                all_predictions],
+        #                                               [idx_to_tag[int(expected_label)] for expected_label in
+        #                                                y_test],
+        #                                               tags_2,
+        #                                               tags_3,
+        #                                               result,
+        #                                               readable_probabilities_array))
 
         predictions_human_readable = np.column_stack((np.array(x_raw),
-                                                      corrected_scores,
                                                       [idx_to_tag[int(prediction)] for prediction in
                                                        all_predictions],
                                                       [idx_to_tag[int(expected_label)] for expected_label in
                                                        y_test],
-                                                      tags_2,
-                                                      tags_3,
                                                       result,
                                                       readable_probabilities_array))
 
         out_path = os.path.join(config.out_dir, "prediction-len{}.csv".format(config.doc_length))
 
         # Writing report
-        out_path_report = os.path.join(config.out_dir, "results-len{}.txt".format(config.doc_length))
+        out_path_report = os.path.join(config.out_dir, "results-len{}-confmatrix.txt".format(config.doc_length))
         with open(out_path_report, 'w', newline='') as f:
-            f.write("tags\tp\tr\tf1\tCount\n")
+            # f.write("tags\tp\tr\tf1\tCount\n")
+            f.write("tags\tTP\tFP\tFN\n")
             for idx, name in enumerate(available_target_names):
-                f.write("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_tags[idx], r_tags[idx],
-                                                                              f1_tags[idx], total_correct_tags[idx]))
-            f.write("\nNo of class present\t{}\t\tOverall f1\t{:04.2f}\n".format(is_more_than_zero, overall_f1))
+                # f.write("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_tags[idx], r_tags[idx],
+                #                                                               f1_tags[idx], total_correct_tags[idx]))
+                tp = correct_preds_tags[idx]
+                f.write("{}\t{}\t{}\t{}\n".format(name, tp, (total_preds_tags[idx]-tp), (total_correct_tags[idx]-tp)))
+            # f.write("\nNo of class present\t{}\t\tOverall f1\t{:04.2f}\n".format(is_more_than_zero, overall_f1))
             # f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
 
         f.close()
@@ -275,7 +302,8 @@ def evaluation(config):
         print("Saving evaluation to {0}".format(out_path))
         print("=======================================================")
 
-        headers1 = ["Input", "Predicted", "Expected", "Expected2", "Expected3", "Accuracy"]
+        # headers1 = ["Input", "Predicted", "Expected", "Expected2", "Expected3", "Accuracy"]
+        headers1 = ["Input", "Predicted", "Expected", "Accuracy"]
         headers = headers1 + [tags for tags, idx in datasets['target_names'].items()]
         with open(out_path, 'w', newline='') as f:
             csv.writer(f).writerow(headers)

@@ -1,10 +1,13 @@
 import numpy as np
 from pip.commands.list import tabulate
 
+from cnnTextClassifier import data_helpers
+from cnnTextClassifier.config import Config
+
 
 class Counter:
     def count(self, tags, tags_vocab):
-
+        # tags and tags_vocab can be in digits form or words form
         counters = np.zeros(len(tags_vocab))
 
         for x in tags:
@@ -16,13 +19,7 @@ class Counter:
         return counters
 
 
-def analyse_data(data_path, test_path, vocab_path):
-    tags = []
-
-    temp = list(open(vocab_path, 'r', encoding="utf8").readlines())
-    tags_vocab = [s.strip() for s in temp]
-
-    # Load data from files
+def count_and_write(data_path, outpath, tags, tags_vocab):
     examples = list(open(data_path, 'r', encoding="utf8").readlines())
     examples = [s.split("\t") for s in examples]
     train_tags = [s[1].strip() for s in examples]
@@ -32,7 +29,7 @@ def analyse_data(data_path, test_path, vocab_path):
 
     counters_1 = counter.count(train_tags, tags_vocab)
 
-    with open(path + "Training_data_analysis-Enriched.txt", "w", encoding="utf8") as f:
+    with open(outpath, "w", encoding="utf8") as f:
         i = 0
         for tag, count in zip(tags_vocab, counters_1):
             if i != len(tags_vocab) - 1:
@@ -41,6 +38,17 @@ def analyse_data(data_path, test_path, vocab_path):
                 f.write(tag + "\t" + str(int(count)))
             i += 1
         f.close()
+    return tags
+
+
+def analyse_data(data_path, test_path, vocab_path, outpath):
+    tags = []
+
+    temp = list(open(vocab_path, 'r', encoding="utf8").readlines())
+    tags_vocab = [s.strip() for s in temp]
+
+    # Load data from files
+    tags = count_and_write(data_path, outpath+"/Training_data_analysis.txt", tags, tags_vocab)
 
     # val = list(open(val_path, 'r', encoding="utf8").readlines())
     # val = [s.split("\t") for s in val]
@@ -59,26 +67,12 @@ def analyse_data(data_path, test_path, vocab_path):
     #         i += 1
     #     f.close()
 
-    test = list(open(test_path, 'r', encoding="utf8").readlines())
-    test = [s.split("\t") for s in test]
-    test_tags = [s[1].strip() for s in test]
-    tags.extend(test_tags)
+    tags = count_and_write(test_path, outpath + "/Test_data_analysis.txt", tags, tags_vocab)
 
-    counters_2 = counter.count(test_tags, tags_vocab)
-
-    with open(path + "test_data_analysis-Enriched.txt", "w", encoding="utf8") as f:
-        i = 0
-        for tag, count in zip(tags_vocab, counters_2):
-            if i != len(tags_vocab) - 1:
-                f.write("{}\t{}\n".format(tag, str(int(count))))
-            else:
-                f.write(tag + "\t" + str(int(count)))
-            i += 1
-        f.close()
-
+    counter = Counter()
     counters = counter.count(tags, tags_vocab)
 
-    with open(path + "data_analysis-Enriched.txt", "w", encoding="utf8") as f:
+    with open(outpath + "/Whole_data_analysis.txt", "w", encoding="utf8") as f:
         i = 0
         for tag, count in zip(tags_vocab, counters):
             if i != len(tags_vocab) - 1:
@@ -88,8 +82,22 @@ def analyse_data(data_path, test_path, vocab_path):
             i += 1
         f.close()
 
-path = "data/Project-A-R-Scenario-Truncated-Enriched-v2/"
-analyse_data(path+"Training_data.txt", path+"Test_data.txt", path+"tags_vocab.txt")
+# config = Config(dataset_name="Project-A-R-Scenario_Billing_Account-v2")
+# ===================================Purely for data analysing===============================================
+# outpath = config.default_data_path
+# analyse_data(config.training_path, config.test_path, config.tags_vocab_path, outpath)
+
+
+# outpath = "data/Project-A-R-Level-1_Billing_Account-v2"
+# analyse_data(outpath+"/Training_data.txt", outpath+"/Test_data.txt", outpath+"/tags_vocab.txt", outpath)]
+
+tags = []
+
+temp = list(open("data/Project-A-R-Scenario_Billing_Account-v2/tags_vocab.txt", 'r', encoding="utf8").readlines())
+tags_vocab = [s.strip() for s in temp]
+
+count_and_write("Runs/Account_Billing_v2/Level-1-v2-len40-CNNv0/Layer-1-Account_FN_Distribution.txt",
+                "Runs/Account_Billing_v2/Level-1-v2-len40-CNNv0/False-Negative-Account-distribution.txt", tags, tags_vocab)
 
 
 

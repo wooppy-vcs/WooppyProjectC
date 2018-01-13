@@ -1,0 +1,140 @@
+conversation_tagging_id	index_en	id	msg	time	chat_id	user_id	word count	Language	Preassigned Topic	Preassigned Subtopic	Topic_L1	Topic_L2	AnswerType	Confirmation	Scenario
+			What is the meaning of product charges?			0		English							ItemDefinition
+			What means product charges?			0		English							ItemDefinition
+			product charges			0		English							ItemDefinition
+			Explain to me product charges			0		English							ItemDefinition
+			Can i know what means product charges?			0		English							ItemDefinition
+			what is product charges			0		English							ItemDefinition
+			product charges meaning			0		English							ItemDefinition
+			What is product charges refer to?			0		English							ItemDefinition
+			What is definition of product charges?			0		English							ItemDefinition
+			product charges definition?			0		English							ItemDefinition
+			What is the meaning of balance brought forward?			0		English							ItemDefinition
+			What means balance brought forward?			0		English							ItemDefinition
+			balance brought forward			0		English							ItemDefinition
+			Explain to me balance brought forward			0		English							ItemDefinition
+			Can i know what means balance brought forward?			0		English							ItemDefinition
+			what is balance brought forward			0		English							ItemDefinition
+			balance brought forward meaning			0		English							ItemDefinition
+			What is balance brought forward refer to?			0		English							ItemDefinition
+			What is definition of balance brought forward?			0		English							ItemDefinition
+			balance brought forward definition?			0		English							ItemDefinition
+			What is the meaning of total current utilization?			0		English							ItemDefinition
+			What means total current utilization?			0		English							ItemDefinition
+			total current utilization			0		English							ItemDefinition
+			Explain to me total current utilization			0		English							ItemDefinition
+			Can i know what means total current utilization?			0		English							ItemDefinition
+			what is total current utilization			0		English							ItemDefinition
+			total current utilization meaning			0		English							ItemDefinition
+			What is total current utilization refer to?			0		English							ItemDefinition
+			What is definition of total current utilization?			0		English							ItemDefinition
+			total current utilization definition?			0		English							ItemDefinition
+			What is the meaning of pay per view?			0		English							ItemDefinition
+			What means pay per view?			0		English							ItemDefinition
+			pay per view			0		English							ItemDefinition
+			Explain to me pay per view			0		English							ItemDefinition
+			Can i know what means pay per view?			0		English							ItemDefinition
+			what is pay per view			0		English							ItemDefinition
+			pay per view meaning			0		English							ItemDefinition
+			What is pay per view refer to?			0		English							ItemDefinition
+			What is definition of pay per view?			0		English							ItemDefinition
+			pay per view definition?			0		English							ItemDefinition
+			What is the meaning of PPU?			0		English							ItemDefinition
+			What means PPU?			0		English							ItemDefinition
+			PPU			0		English							ItemDefinition
+			Explain to me PPU			0		English							ItemDefinition
+			Can i know what means PPU?			0		English							ItemDefinition
+			what is PPU			0		English							ItemDefinition
+			PPU meaning			0		English							ItemDefinition
+			What is PPU refer to?			0		English							ItemDefinition
+			What is definition of PPU?			0		English							ItemDefinition
+			PPU definition?			0		English							ItemDefinition
+			What is the meaning of offnet MOB?			0		English							ItemDefinition
+			What means offnet MOB?			0		English							ItemDefinition
+			offnet MOB			0		English							ItemDefinition
+			Explain to me offnet MOB			0		English							ItemDefinition
+			Can i know what means offnet MOB?			0		English							ItemDefinition
+			what is offnet MOB			0		English							ItemDefinition
+			offnet MOB meaning			0		English							ItemDefinition
+			What is offnet MOB refer to?			0		English							ItemDefinition
+			What is definition of offnet MOB?			0		English							ItemDefinition
+			offnet MOB definition?			0		English							ItemDefinition
+			What is the meaning of unused sharing commitment fee?			0		English							ItemDefinition
+			What means unused sharing commitment fee?			0		English							ItemDefinition
+			unused sharing commitment fee			0		English							ItemDefinition
+			Explain to me unused sharing commitment fee			0		English							ItemDefinition
+			Can i know what means unused sharing commitment fee?			0		English							ItemDefinition
+			what is unused sharing commitment fee			0		English							ItemDefinition
+			unused sharing commitment fee meaning			0		English							ItemDefinition
+			What is unused sharing commitment fee refer to?			0		English							ItemDefinition
+			What is definition of unused sharing commitment fee?			0		English							ItemDefinition
+			unused sharing commitment fee definition?			0		English							ItemDefinition
+			What is the meaning of unused commitment fee?			0		English							ItemDefinition
+			What means unused commitment fee?			0		English							ItemDefinition
+			unused commitment fee			0		English							ItemDefinition
+			Explain to me unused commitment fee			0		English							ItemDefinition
+			Can i know what means unused commitment fee?			0		English							ItemDefinition
+			what is unused commitment fee			0		English							ItemDefinition
+			unused commitment fee meaning			0		English							ItemDefinition
+			What is unused commitment fee refer to?			0		English							ItemDefinition
+			What is definition of unused commitment fee?			0		English							ItemDefinition
+			unused commitment fee definition?			0		English							ItemDefinition
+			What is the meaning of G voice?			0		English							ItemDefinition
+			What means G voice?			0		English							ItemDefinition
+			G voice			0		English							ItemDefinition
+			Explain to me G voice			0		English							ItemDefinition
+			Can i know what means G voice?			0		English							ItemDefinition
+			what is G voice			0		English							ItemDefinition
+			G voice meaning			0		English							ItemDefinition
+			What is G voice refer to?			0		English							ItemDefinition
+			What is definition of G voice?			0		English							ItemDefinition
+			G voice definition?			0		English							ItemDefinition
+			i have made my payment why is it not updated?												WhyNotUpdated
+			i just paid but not shown in the system												WhyNotUpdated
+			why still unbill?												WhyNotUpdated
+			i have paid the bill but why showing not pay?												WhyNotUpdated
+			amount not deducted after i made the payment												WhyNotUpdated
+			there is no record of my payment												WhyNotUpdated
+			the system didn't update my payment												WhyNotUpdated
+			i paid via bank already but no record 												WhyNotUpdated
+			why still got amount shown in my aacount?												WhyNotUpdated
+			i already paid yesterday but why amount still appear in my acc?												WhyNotUpdated
+			why amount still shown in my acct?												WhyNotUpdated
+			when i checked the bill it says unpaid bill												WhyNotUpdated
+			i ahve paid right? why it is still shown i havent paid?												WhyNotUpdated
+			looks like redone didn't update my payment												WhyNotUpdated
+			seems that my payment for July is not registered												WhyNotUpdated
+			i have paid for last two months but not update why												WhyNotUpdated
+			it still shows i havent paid												WhyNotUpdated
+			looks like i havent paid												WhyNotUpdated
+			why my bill still no change?												WhyNotUpdated
+			i have received a message saying my payment was successful. but still got unpaid bill												WhyNotUpdated
+			payment not updated pls help												WhyNotUpdated
+			how come they no update my payment												WhyNotUpdated
+			how come i still have unpaid bill												WhyNotUpdated
+			i don't get update about my pay												WhyNotUpdated
+			why the bill still shows pay now?												WhyNotUpdated
+			your system say no payment?												WhyNotUpdated
+			i just finished pyment using m2u but still not shown in the bill												WhyNotUpdated
+			i paid already but still receiving message on unpaid bill												WhyNotUpdated
+			why my account still show unpaid bill?												WhyNotUpdated
+			how come they not update my payment?												WhyNotUpdated
+			hy my bill still no change althought i have paid?												WhyNotUpdated
+			why bill no change?												WhyNotUpdated
+			i received message to ask me to pay but i have paid												WhyNotUpdated
+			the amount still due												WhyNotUpdated
+			i have paid the bill why display i havent paid yet?												WhyNotUpdated
+			your system did not register my payment												WhyNotUpdated
+			i want to know why my bill still not paid												WhyNotUpdated
+			redone says i havent paid												WhyNotUpdated
+			please update your payment												WhyNotUpdated
+			please update your bill												WhyNotUpdated
+			why the bill still state pay now												WhyNotUpdated
+			i have already paid the bill please check												WhyNotUpdated
+			i received a message says i have outstanding												WhyNotUpdated
+			the bill havent updated												WhyNotUpdated
+			your bill is not updated												WhyNotUpdated
+			i already made payment last week, but i the bill still says i have outstanding												WhyNotUpdated
+			here shows i not paid												WhyNotUpdated
+			selfcare not updated the bill												WhyNotUpdated
+			my bill still no changes i made payment already												WhyNotUpdated

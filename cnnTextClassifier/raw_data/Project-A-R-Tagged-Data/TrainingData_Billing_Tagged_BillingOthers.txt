@@ -1,0 +1,263 @@
+conversation_tagging_id	index_en	id	msg	time	chat_id	user_id	word count	Language	Preassigned Topic	Preassigned Subtopic	Topic_L1	Topic_L2	AnswerType	Confirmation	Scenario
+164	4014	86702	How long will received sms that we were paid a bill?	1467100407	3934	0	11	English	Billing	Payment Status	Billing	PaymentStatus	ObjectTime	False	WantUpdate
+230	5644	110048	HI <NL>Can i combine by bills since i have 2 number ?	1467786120	4971	0	12	English	Billing	Billing Details	Billing	BillingOthers	Request	False	None
+257	6311	114630	ic... how abt if go to your agent?	1468136677	5157	0	8	English	Billing	Waiver	Billing	BillingOthers	Procedure	False	None
+270	6672	120530	but i don't see any rebate in my previous bill	1468380836	5410	0	10	English	Billing	Billing Details	Billing	BillingOthers	Reason	False	None
+280	6890	125046	ur co charge me reconnection fee of rm 10 . would like to seek for waiver	1468484921	5610	0	15	English	Billing	Waiver	Billing	BillingOthers	Request	False	None
+288	7121	140342	i mean.. could you check that your system have my email so that i can receive my bill next month	1468835698	6270	0	20	English	Billing	Un-bar lines - Overdue Payment	Billing	BillingOthers	Request	False	None
+303	7480	147641	Can you correct my name in the system too	1469148989	6543	0	9	English	Billing	Un-bar lines - Overdue Payment	Billing	BillingOthers	Request	False	None
+426	10243	213640	Hi, what is SC request ?	1471566984	9446	0	6	English	Billing	Billing Details	Billing	BillingOthers	ObjectDefinition	False	None
+431	10355	215217	Can you help me understand where the Credit movement in my account comes from?	1471654933	9507	0	14	English	Billing	Billing Details	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+431	10366	215259	In my account, it records a credit movement of 200. I paid 100 at the retail outlet. Did RedOne transfer credit from my other phone lines to the main line?	1471655310	9507	0	30	English	Billing	Billing Details	Billing	BillingOthers	ObjectDefinition	False	None
+701	16622	301945	how can I separate the bill...is that possible	1474590090	12925	0	8	English	Billing	Billing Details	Billing	BillingOthers	Procedure	False	None
+809	19344	309504	Regarding I owned 52 minutes free call each month, may I know how to check how many minutes I have used for current month? I have called 1909 before, the customer service operator told me can check in at online self care service. However, I am not able to check it.	1474955845	13237	0	51	English	Billing	Billing Charges	Billing	BillBreakdown	Procedure	False	ItemDefinition
+817	19571	310297	How about my internet balance? Did bring forward the next month??	1474965401	13267	0	11	English	Billing	Billing Details	Billing	BillBreakdown	Procedure	False	ItemDefinition
+899	21630	317015	ok..So can i refund ?	1475203375	13550	0	5	English	Billing	Deposit Refund	Billing	Refund	Procedure	False	HowRefundDeposit
+1226	30175	351297	how to increase my credit limit permenantly	1476178492	15028	0	7	English	Billing	Billing Details	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+1226	30183	351305	once i pay rm 25. how much will my credit limit be	1476178698	15028	0	11	English	Billing	Billing Details	Billing	CreditLimit	ObjectNumeric	False	CheckCreditLimitAmount
+1226	30187	351312	what will my new credit limit be	1476178782	15028	0	7	English	Billing	Billing Details	Billing	CreditLimit	ObjectNumeric	False	CheckCreditLimitAmount
+1253	30733	353102	hi.I am redone user.just now I went to Maybank to pay bill.it was my first time using ATM to pay the bill.but I think I have wrongly choose the section.and finally I been choose reload.is it work for redone user?	1476259184	15108	0	40	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	False	PaymentChannelOthers
+1261	30927	353477	actually I am redone user and just now I went to Maybank ATM to made a payment of it,but unfortunately I choose it wrongly to celcom	1476265788	15122	0	26	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	BillingOthers	Procedure	False	None
+1261	30928	353480	the bill is talking about the reload code	1476265854	15122	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	BillingOthers	None	False	None
+1274	31262	354236	Where can I find the 2 other mobile number?	1476324867	15155	0	9	English	Billing	Billing Details	Billing	BillingOthers	Procedure	False	None
+1274	31274	354335	Where to find this 0162325446 - 201306100 ?	1476325455	15155	0	7	English	Billing	Billing Details	Billing	BillingOthers	Others	True	None
+1300	31957	355891	afraid that our payment is for Oct inv, not Sept inv	1476347331	15233	0	11	English	Billing	Make Payment - Selfcare	Billing	BillOutstanding	None	False	PayingMonth
+1328	32621	357982	if client can paid in advance then can i withdraw those extra	1476421973	15328	0	12	English	Billing	Billing Details	Billing	Refund	None	False	HowRefund
+1329	32660	358261	i have negative balance on my account, I would like to retrieve the balance	1476428832	15338	0	14	English	Billing	Deposit Refund	Billing	Refund	Procedure	False	HowRefund
+1329	32668	358277	Yes, and I would like to retrieve this balance	1476429066	15338	0	9	English	Billing	Deposit Refund	Billing	Refund	Procedure	False	HowRefund
+1360	33499	361639	IC... because in my bill still stated amout RM 355.53 and i pay half for that RM 150.00 on 9 th	1476516011	15485	0	18	English	Billing	Un-bar lines - Overdue Payment	Billing	BillingOthers	None	False	None
+1375	33918	363773	Just now I log in my UOB , I cannot check the credit card summary as service temporary unavailable. So I cannot check weather the payment is successfully or not. If I register auto debit payment now and found that the payment r double charged..wil my money be refund ? Or credit back to my next bill?	1476579939	15568	0	57	English	Billing	Payment Status	Billing	BillingOthers	None	False	None
+1375	33941	363831	Usually I wil receive the msg..but din find it or I deleted it . That y I check my credit card account . And try to check weather success to deduct or not. But unfortunately the checking problem got problem, their service temporary unreachable . So I cannot see my credit card summary. That y I need ur help.	1476581092	15568	0	59	English	Billing	Payment Status	Billing	PaymentStatus	None	False	ConfirmPaymentReceived
+1375	33977	363984	i make twice payment already..if all get through	1476582974	15568	0	8	English	Billing	Payment Status	Billing	BillingOthers	None	False	None
+1384	34220	364717	Even I paid also you will do this ? I can send the proof here now itself. If you open after 3 days, what is the use I made a payment today ?	1476595057	15604	0	33	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	Barring	Others	True	RequestUnbar
+1384	34225	364722	I know CIMB clicks will take 1 to 3 days but it is possible for you to reactivate it if i produce reference number which is an evidence that I paid	1476595246	15604	0	31	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	Barring	None	False	RequestUnbar
+1385	34236	364804	when should we upgrade credit limit?	1476596076	15611	0	6	English	Billing	Data Bundle / PPU Rate	Billing	CreditLimit	Procedure	False	CreditLimitOthers
+1385	34247	364831	oic..means that is the time to upgrade credit limit right?	1476596288	15611	0	10	English	Billing	Data Bundle / PPU Rate	Billing	BillingOthers	Procedure	False	None
+1392	34478	365262	Do i have any deposits?	1476600274	15629	0	5	English	Billing	Deposit Refund	Billing	Refund	ObjectNumeric	False	HowRefundDeposit
+1397	34615	365593	i made 2 payments from 2 different accounts	1476602967	15640	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	ConfirmPaymentReceived
+1397	34617	365596	it was half and half payments made from 2 different bank accounts	1476602999	15640	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	None	False	ConfirmPaymentReceived
+1397	34630	365617	with my id number name and ic or how do i proceed	1476603195	15640	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentStatus	Procedure	False	ConfirmPaymentReceived
+1399	34683	365710	yeah,I just pay 1 month first	1476605632	15644	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	None	False	PayingMonth
+1409	34905	366165	I saw there have written we will receive additional 2 % discount on our total redone bill	1476618038	15667	0	16	English	Billing	Auto Debit Application	Billing	BillingOthers	None	False	None
+1420	35242	367798	i do my bill payment , 1 st time the result is fail, so i do second time, but later sms me is 2 time success? i call to bank said is 2 time...so how now?	1476676851	15745	0	34	English	Billing	Payment Status	Billing	BillingOthers	Others	True	None
+1426	35400	368894	yes that 1 is for bill sept that i mistake made underpayment	1476687780	15785	0	12	English	Billing	Billing Details	Billing	BillOutstanding	None	False	PayingMonth
+1426	35403	368931	2 OCT 2016 payment is for SEPT BILL thai i mistake made underpayment	1476688115	15785	0	13	English	Billing	Billing Details	Billing	BillOutstanding	None	False	PayingMonth
+1439	35711	370816	no. please what for i want to increase credit limit	1476764518	15880	0	10	English	Billing	Increase credit limit	Billing	CreditLimit	Reason	False	IncreaseCreditLimit
+1451	36029	371584	Ok. Any minimum payment to reconnect my phoneline?	1476778769	15918	0	8	English	Billing	Billing Details	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+1467	36389	373171	Pop up works fine, cos a page from RedOne pops up as another Tab. Not sure why it didn't work. Now I receive 2 sms says payment made.	1476853379	15990	0	28	English	Billing	Payment Status	Billing	BillingOthers	None	False	None
+1469	36426	373244	just wanna ask some quetion<NL>my credit limit only RM 50 right<NL>why now can till RM 1 xx	1476854591	15996	0	14	English	Billing	Data Bundle / PPU Rate	Billing	CreditLimit	Reason	False	CheckCreditLimitAmount
+1469	36428	373255	ust wanna ask some quetion<NL>my credit limit only RM 50 right<NL>why now can till RM 1 xx	1476854798	15996	0	14	English	Billing	Data Bundle / PPU Rate	Billing	CreditLimit	Reason	False	CheckCreditLimitAmount
+1470	36451	373374	double payment	1476856958	16001	0	2	English	Billing	Payment Status	Billing	BillingOthers	None	False	None
+1474	36576	373552	Increase credit limit	1476859602	16011	0	3	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+1474	36579	373560	Hi, i need to increase my credit limit to rm 100 	1476859623	16011	0	10	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+1482	36761	374163	but i didnt pay the previous bills	1476873403	16031	0	7	English	Billing	Make Payment - Selfcare	Billing	BillingOthers	None	False	None
+1484	36789	374305	Hi, I am going overseas later and I need to increase my credit limit to RM 500. 	1476877595	16038	0	16	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+1484	36792	374309	Hi, I am going overseas later and I need to increase my credit limit to RM 500. 	1476877650	16038	0	16	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+1487	36858	374529	amount due is 0.30. could not pay online	1476919957	16046	0	8	English	Billing	Payment Channel	Billing	BillingTroubleShooting	Procedure	False	CannotPayBill
+1497	37143	374960	CAN U UPDATE MY BILL RECORD	1476929638	16065	0	6	English	Billing	Payment Status	Billing	PaymentCycle	Request	False	WhenBillUpdate
+1497	37147	374964	BALANCE BROUGHT FORWARD STILL UNCHNE	1476929707	16065	0	5	English	Billing	Payment Status	Billing	PaymentCycle	None	False	WhenBillUpdate
+1704	42734	398264	Is about waiving data charges to my accout.	1477884084	16994	0	8	English	Billing	Waiver	Billing	BillingOthers	Procedure	False	None
+1727	43314	400109	bills	1477903860	17085	0	1	English	Billing	Billing Charges	Billing	BillingOthers	ObjectOthers	False	None
+1739	43519	401270	HI good morning,<NL>Is there any way for you guys to change my mailing address to current 1 instead of old address?<NL>I need the information for PayPal usage.<NL>Thank you	1477959122	17142	0	28	English	Billing	Billing Address	Billing	Document	Procedure	False	ChangeDetails
+1819	45596	409735	how to make it under 1 bill ?	1478057244	17529	0	8	English	Billing	Billing Details	Billing	BillingOthers	Procedure	False	None
+1822	45713	409872	ok...nevermind. cause the line is attached to alarm system. and its difficult to take it out from the device. im asking that just to easy myself on the bill payment. cause right now i didnt received any alerts or sms or email from master line. so i dunno how much i own to red 1	1478058112	17535	0	55	English	Billing	Make Payment - Selfcare	Billing	BillingOthers	Request	False	None
+1822	45714	409882	Can u set at the system to prompt me on the payment? either sms or email shd do	1478058189	17535	0	18	English	Billing	Make Payment - Selfcare	Billing	Document	Request	False	RequestSendEveryMonth
+1891	47598	418010	I noticed my december billing...calling items, is billed wrongly! Pls see date and time of calling.	1478219255	17893	0	16	English	Billing	Late bills	Billing	Document	Reason	False	DocumentOthers
+1891	47606	418041	Mydecember billing...calling items,wrong shown. Pls see date and time of calling	1478219641	17893	0	11	English	Billing	Late bills	Billing	Document	Reason	False	DocumentOthers
+1897	47718	418427	Hi i just starting to use redone on 27 th october but why now have to pay bill ?	1478225459	17913	0	18	English	Billing	Billing Cycle	Billing	PaymentCycle	Reason	False	WhenBillUpdate
+1897	47742	418541	yea..that is my question..i just changed to redone on 27 th october but why i have to pay for 1 month ?	1478226648	17913	0	21	English	Billing	Billing Cycle	Billing	PaymentCycle	Reason	False	
+1914	48075	420101	Hi,<NL>When we make payment , it is never reflected in the amount due?	1478245549	17998	0	13	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+1914	48089	420169	I wouild like to knw the selflog in .when i view the download and pay bill it didnt reflect the payment i make on 2 / 11 	1478246203	17998	0	25	English	Billing	Billing Details	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+1958	49101	426163	Sorry sir, the email is not updated.	1478501053	18283	17	7	English	Billing	Make Payment - Selfcare	Billing	BillingOthers	Procedure	False	None
+1963	49163	427758	hi...i would like to change my mailing address	1478567715	18352	0	8	English	Billing	Billing Address	Billing	Document	Request	False	ChangeDetails
+1988	49756	430762	There is a change of new credit card, whereby I have updated Redone at Bukit Tinggi Klang. on the new card.	1478658089	18482	0	21	English	Billing	Auto Debit Application	Billing	Document	None	False	ChangeDetails
+1990	49834	431826	i dun want the bill send to my house. how to stop that?	1478671969	18522	0	13	English	Billing	Change of Billing Details	Billing	Document	Procedure	False	DocumentOthers
+2003	50155	434597	How to refund the overpaid amount?	1478769437	18635	0	6	English	Billing	Deposit Refund	Billing	Refund	Procedure	False	HowRefund
+2003	50171	434617	how soon I can get the refund after email the duly completed form	1478769917	18635	0	13	English	Billing	Deposit Refund	Billing	Refund	ObjectTime	False	HowRefund
+2035	51151	438579	How do I remove my saved credit card details and replace with a a new credit card?	1479001276	18789	0	17	English	Billing	Payment Type	Billing	Document	Procedure	False	ChangeDetails
+2035	51170	438631	I pay online through REDONE. I have saved my usual credit card details in it. Now I just need to change the expiry date	1479002090	18789	0	24	English	Billing	Payment Type	Billing	Document	Procedure	False	DocumentOthers
+2048	51590	440799	double payment in Oct 016 	1479088678	18896	0	5	English	Billing	Billing Details	Billing	BillingOthers	None	False	None
+2054	51755	441325	Cust ID: 200250229 wanted to check if 01110789104 this number's deposit of RM 25 been knocked off	1479095369	18919	0	16	English	Billing	Billing Details	Billing	Refund	ObjectOthers	False	CheckRefundStatus
+2064	52034	442003	Why i can't login to my ewallet account?	1479105895	18951	0	8	English	Billing	Other billing errors	Billing	BillingOthers	None	False	None
+2069	52146	442398	Can you please add on my credit limit to RM 200 	1479110368	18972	0	10	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2069	52163	442509	Can you increase the credit limit to RM 200 every month	1479111079	18972	0	10	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2073	52241	442627	request to change the mailing address	1479111752	18981	0	6	English	Billing	Billing Address	Billing	Document	Request	False	ChangeDetails
+2084	52464	443830	i reached my talk time credit limit pls topup it	1479171241	19036	0	10	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2084	52465	443833	i have reached my talk time credit limit RM 50. <NL>please help me to top-up my talk time credit limit to RM 100 	1479171295	19036	0	20	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2091	52652	444226	I.M IN PUTRAJAYA<NL>WHERE TO PAY BILL	1479174300	19056	0	6	English	Billing	Billing Details	Billing	PaymentChannel	ObjectLocation	False	HowPay
+2094	52718	444826	can u increase permanently to RM 100 . 	1479178206	19082	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2108	53164	447354	may i know data top up date	1479199576	19184	0	7	English	Billing	Billing Charges	Wrong	Wrong	ObjectTime	False	None
+2108	53172	447392	sorry, can you help me check this number 01110816094 , is it got top up data?	1479199766	19184	0	16	English	Billing	Billing Charges	Wrong	Wrong	ObjectOthers	False	None
+2108	53182	447453	is it system got problem, why the top up time just difference 1 min	1479200491	19184	0	13	English	Billing	Billing Charges	Wrong	Wrong	Reason	False	None
+2119	53495	448638	then the agent did the wrong thing. She told me that when I returned from overseas, I can claim back the deposit. That is what I am going to do now. How can I do that.	1479255168	19246	0	36	English	Billing	Billing Details	Billing	Refund	Procedure	False	HowRefund
+2119	53497	448644	supposed to claim back all RM 300 so now how much?	1479255215	19246	0	10	English	Billing	Billing Details	Billing	Refund	ObjectNumeric	False	RefundAmount
+2162	54633	452355	cos when i check online still it write pay now	1479343611	19418	0	10	English	Billing	Billing Details	Billing	PaymentStatus	None	False	WhyNotUpdated
+2223	56206	461539	YES...FIRST TIME WE MADE EXTRA 1 SIM CARD ALREADY PAID TO AGENT RM 10. THEN THE SIM CARD IS DAMADED CAN'T USE...SHE CHANGE 1 MORE TO ME ,IS THIS WANT 1 MORE TIME CHARGES FOR SIM CARD RM 15 ?	1479794180	19820	0	36	English	Billing	Waiver	Billing	BillingOthers	Reason	False	None
+2223	56211	461544	FIRST TIME WE NEED TO PAY TO AGENT .THE WHY SECOND TIME YOU CHARGES ON ME BILL??	1479794259	19820	0	17	English	Billing	Waiver	Billing	BillBreakdown	Reason	False	WhyItemAmount
+2223	56225	461574	WHY I USE THE NEW SIM CARD NEED TO PAY RM 10 + RM 15 ?	1479794996	19820	0	11	English	Billing	Waiver	Billing	BillingOthers	Reason	False	None
+2223	56227	461577	I SEE MY BII DEC HAVE PRODUCTS CHARGES RM 15. 	1479795069	19820	0	9	English	Billing	Waiver	Billing	BillBreakdown	None	False	ItemDefinition
+2229	56377	462403	how to get deposit refund	1479806031	19858	0	5	English	Billing	Deposit Refund	Billing	Refund	Procedure	False	HowRefundDeposit
+2250	56910	464001	WHEN CAN REFUND RM 50 	1479883255	19926	0	4	English	Billing	Increase credit limit	Billing	Refund	ObjectTime	False	HowRefund
+2252	56948	464146	increase credit limit	1479886289	19936	0	3	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2252	56960	464173	i want to increase credit limit to RM 150 	1479886843	19936	0	8	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2255	57018	464580	helo Ms .. please do not continue the bill emailing	1479894696	19956	0	10	English	Billing	Billing Address	Billing	Document	Request	False	DocumentOthers
+2259	57090	465285	hi morning<NL>i just make payment 50.00 kindly help to increase my credit limit. <NL>my Name LIM LEE YING ; IC last 4 digit 5524 	1479951045	19988	0	24	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2261	57119	466139	HI<NL>MY NAME; GAN YAO HAO<NL>I.C: 950327 - 04 - 5091 <NL>PHONE NUMBER: 0166925897 <NL><NL>I have yet to receive my deposit since the officer say before 21 / 11 / 16 	1479962357	20022	0	20	English	Billing	Deposit Refund	Billing	Refund	Reason	False	HowRefund
+2261	57127	466164	i haven receive my deposit	1479962626	20022	0	5	English	Billing	Deposit Refund	Billing	Refund	Reason	False	HowRefund
+2261	57135	466194	are you sure, you refund the deposit to a correct bank account?	1479962991	20022	0	12	English	Billing	Deposit Refund	Billing	Refund	Reason	False	CheckRefundStatus
+2261	57137	466200	excuse me, tat day 1 of the redone staff say will refund on November	1479963083	20022	0	14	English	Billing	Deposit Refund	Billing	Refund	Reason	False	HowRefund
+2266	57242	466739	can you please check the status or direct me to the refund department	1479971009	20044	0	13	English	Billing	Deposit Refund	Billing	Refund	ObjectOthers	False	CheckRefundStatus
+2266	57244	466742	yet still no refund in my accounts	1479971033	20044	0	7	English	Billing	Deposit Refund	Billing	Refund	ObjectOthers	False	CheckRefundStatus
+2266	57278	467313	But its being too long.....can it be done by tomorrow? I've fulfilled my obligation by paying RM 50 penalty IMMEDIATELY then I do not see any reason for the refund to be done IMMEDIATELY after 1 month plus	1479980054	20044	0	37	English	Billing	Deposit Refund	Billing	Refund	Request	False	
+2267	57320	466915	if not mistaken, last time i was request change to RM 100.00 	1479973143	20054	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	None	False	IncreaseCreditLimit
+2267	57328	466958	how to increase permanently RM 100.00 per month	1479973527	20054	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2268	57345	467006	I had called earlier to change my credit limit from 50 to 100 	1479973858	20056	0	13	English	Billing	Increase credit limit	Billing	CreditLimit	None	False	IncreaseCreditLimit
+2269	57380	467082	Hi... may i know why no 011 - 1097 8068 still appear at this bill bcoz last month i already request for separate bill with 011 - 1881 8068. but now no of 011 - 1881 8068 has been barred.. the thing is tat amount is belong to no 011 - 1097 8017 bcoz tat no has data plan.. 011 1881 8068 no data plan..why tat amount bring forward to no 011 - 1881 8068 after separate bill.? please explain	1479975350	20060	0	68	English	Billing	Billing Details	Billing	BillingOthers	Reason	False	None
+2269	57392	467117	Dear RedONE,<NL><NL>I want to separate my bill will my son due to he want to pay separately..<NL><NL>My No : 011 - 1881 8068 (Acc No : 200340588 ) MOHD ISA BIN ABD KADIR (NRIC No : 651118 - 01 - 6227 )<NL>My Son No : 011 - 1097 8017 (Acc No : 200665626 ) ALI HASHIMIE BIN MOHD ISA (NRIC No : 970303 - 26 - 5127 )<NL><NL>Thank you.<NL><NL>Regards,<NL>Mohd Isa	1479975649	20060	0	54	English	Billing	Billing Details	Billing	BillingOthers	Request	False	None
+2269	57399	467141	why master no have to bare the cost of supplementary no>.?	1479975971	20060	0	11	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyBar
+2273	57487	467598	WHAT ABOUT THOSE CHARGES ACCUMULATED ON PER USE?	1479987679	20079	0	8	English	Billing	Data Bundle / PPU Rate	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+2279	57641	468641	i got pay RM 50 deposit, why no show in my system	1480055364	20131	0	11	English	Billing	Deposit Refund	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+2279	57663	468749	deposit?	1480056956	20131	0	1	English	Billing	Deposit Refund	Billing	BillingOthers	None	False	None
+2279	57666	468757	so how to get back it?>	1480056980	20131	0	6	English	Billing	Deposit Refund	Billing	Refund	Procedure	False	HowRefundDeposit
+2280	57697	468766	how can i increase my credit limit permenantly?	1480057044	20132	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2281	57732	468801	actually ur bill i dun understand to read it	1480057212	20133	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillBreakdown	Procedure	False	ItemDefinition
+2286	57865	469143	now i will using my son's credit card, so the the authorized letter is from him, right?	1480061459	20143	0	17	English	Billing	Auto Debit Application	Billing	AutoDebit	Procedure	False	HowApply
+2286	57867	469155	how about you mentioned just now on letter of authorized company	1480061648	20143	0	11	English	Billing	Auto Debit Application	Billing	AutoDebit	Procedure	False	HowApply
+2289	57916	469691	May I know why view bill no same with statement that every month redone send to us ?	1480077663	20164	0	18	English	Billing	Billing Details	Billing	Document	Reason	False	DocumentOthers
+2291	57971	469829	can i extend credit call limit?	1480117818	20168	0	6	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2295	58106	470007	but why there is no official receipt?	1480123520	20176	0	7	English	Billing	Payment Status	Billing	BillingOthers	Reason	False	None
+2299	58252	470484	how to increase credit lime permanently..	1480131738	20194	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2299	58262	470544	now can you do for me for temporary increase the credit limit	1480132274	20194	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2306	58446	471921	i want to upgrade my call limit from RM 50 to RM 100 	1480209361	20256	0	12	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2309	58530	472038	I do not understand the billing	1480212499	20260	0	6	English	Billing	Billing Details	Billing	BillBreakdown	Others	True	ItemDefinition
+2319	58778	473522	so this month i need to increase the limit for her	1480247185	20322	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2319	58787	473531	also for my main line 0126138712 may you increase the limit to RM 100 permanent	1480247347	20322	0	14	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2319	58789	473533	my line already have deposit of RM 300 	1480247422	20322	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillingOthers	ObjectOthers	False	None
+2319	58799	473543	oh by when is possible to be refunded?	1480247656	20322	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Refund	ObjectTime	False	HowRefund
+2319	58802	473546	and where may i get a refund from the agent that i sign up with?	1480247774	20322	0	15	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Refund	ObjectLocation	False	HowRefund
+2322	58871	473776	Can I increase my credit limit for my number ?	1480290512	20335	0	10	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2322	58876	473781	How can I increase my credit limit for long time not temporary.	1480290768	20335	0	12	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2322	58881	473786	So for the increasing credit limit Permanent i need to fill the form first and how can I attach at live chat here.	1480291079	20335	0	23	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2324	58926	473900	The payment that i made for 25 / 11 is for November statement	1480293629	20338	0	11	English	Billing	Billing Charges	Billing	BillOutstanding	None	False	PayingMonth
+2339	59270	475574	MAY I KNOW WHEN WAS MY LAST PAYMENT?	1480316218	20411	0	8	English	Billing	Billing Charges	Billing	PaymentStatus	ObjectTime	False	LastPayment
+2342	59374	475928	HOW CAN I INCREASE MY CREADIT LIMIT	1480323103	20422	0	7	English	Billing	Billing Details	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2342	59380	475983	THAT IS TEMPERATELY I MEANS INCREASE 4 EVER	1480323526	20422	0	8	English	Billing	Billing Details	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2343	59403	475898	increase credit limit for this month	1480322964	20427	0	6	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2354	59780	476967	300 FOR THIS MONTH AND 200 FOR NEXT MONTH. K ,TQ	1480381074	20472	0	11	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2362	59978	477607	ic...how to increase the credit limit	1480390331	20498	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2362	59979	477622	btw i have 2 sub line under me...its that effect my credit limit	1480390431	20498	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	ObjectDefinition	False	CheckCreditLimitAmount
+2368	60115	477848	i want to change my credit limit from 100.00 to 50.00 	1480392840	20515	0	11	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	DecreaseCreditLimit
+2374	60259	478489	Can you help me check whether is it a scam	1480399622	20540	0	10	English	Billing	Billing Details	None	None	ObjectOthers	False	
+2374	60269	478506	055417614 this is the scammer phone number for your reference	1480399795	20540	0	10	English	Billing	Billing Details	None	None	Others	True	
+2382	60439	478856	But this a very bad service in redone need customer to pay in advance for credit limit	1480405949	20557	0	17	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	CreditLimit	Reason	True	CreditLimitSOP
+2383	60447	479666	Increase credit limit	1480423782	20593	0	3	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2383	60451	479670	Sir. Can you help me to increase the credit limit ?	1480423824	20593	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2384	60487	479864	nonthing . remember to increase credit limit	1480462673	20597	0	7	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2385	60497	479919	Why i cannot add credit limit	1480465394	20603	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Reason	False	IncreaseCreditLimit
+2385	60503	479926	then they tell me to dial * 123 # for add credit limit	1480465456	20603	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2385	60513	479941	how to i know my credit limit already increase?	1480465671	20603	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	CheckCreditLimitAmount
+2385	60514	479942	so should i off my mobile phone now?	1480465692	20603	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2407	61177	482289	meaning that next time if above the credit limit	1480492660	20699	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	None	False	IncreaseCreditLimit
+2407	61178	482291	i also can use the phone to temporary increase limit right?	1480492673	20699	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2409	61239	482444	Can I request waiver for Nov 2016 ( 4 days) bill? If you cannot decide, please ask your boss to email me. OK?	1480494452	20703	0	22	English	Billing	Product Charges	Billing	BillingOthers	Request	False	None
+2420	61484	483666	Please increase credit limit for my red 1 postpaid Acc. Cause me line was block	1480509966	20760	0	15	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2430	61714	484954	Hi,<NL><NL>Can you upgrade my data plan to 3 GB and increase my credit limit to RM 100 ?	1480555895	20814	0	15	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2449	62234	489890	i remember to request for waive on last month	1480583318	21062	0	9	English	Billing	Waiver	Billing	BillingOthers	None	False	None
+2468	62698	491495	deposit refund	1480641716	21143	0	2	English	Billing	Deposit Refund	Billing	Refund	None	False	HowRefundDeposit
+2478	63049	493487	why after upgraded to data 8 + credit limit to rm 100 	1480657535	21246	0	9	English	Billing	Increase credit limit	Billing	CreditLimit	Reason	False	CreditLimitSOP
+2479	63147	493837	i mean ask ur boss to waive the suspened fee...	1480661144	21257	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillingOthers	Request	False	None
+2505	63831	499939	how to appeal on this issue?	1480780327	21540	0	6	English	Billing	Waiver	Billing	BillingOthers	Procedure	False	None
+2510	63991	500405	data usage do not rebate till now	1480814754	21563	0	7	English	Billing	Waiver	Wrong	Wrong	None	False	None
+2510	64010	500513	when will rebate? can i have a date?	1480815856	21563	0	8	English	Billing	Waiver	Wrong	Wrong	ObjectTime	False	None
+2531	64547	503370	I want to increase my credit limit	1480899886	21688	0	7	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2531	64551	503397	can I increase my credit limit for 0138181288 	1480900195	21688	0	8	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2531	64561	503428	or Can it increase to Rm 200 ?	1480900463	21688	0	6	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2534	64657	503764	need ur help to change my limit from 100 to 50 	1480903837	21705	0	11	English	Billing	Billing Details	Billing	CreditLimit	Request	False	DecreaseCreditLimit
+2538	64749	504572	I would like to request a waiver charge on the data plan las month	1480909959	21738	0	14	English	Billing	Waiver	Billing	BillingOthers	Request	False	None
+2538	64754	504582	I would lik to request a waiver for November data plan charge	1480910081	21738	0	12	English	Billing	Waiver	Billing	BillingOthers	Request	False	None
+2538	64760	504613	kindly check my nov usage	1480910385	21738	0	5	English	Billing	Waiver	None	None	ObjectOthers	False	
+2542	64888	505555	so for you you can waive RM 49.90 for me right?	1480918721	21774	0	10	English	Billing	Waiver	Billing	BillingOthers	Request	False	None
+2543	64951	505430	U can help by writing to your top for waiver	1480917874	21775	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillingOthers	Request	False	None
+2543	64954	505438	Even credit card charges can be waived.	1480917926	21775	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillingOthers	None	False	None
+2543	64960	505451	Saying no to customer is definitely easier than to go seek higher management for waiver approval	1480918019	21775	0	16	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillingOthers	None	False	None
+2561	65442	508208	Hi... I wont like an update for my request on waiver data plan charge on November. <NL>reference number : R 09682607 	1480982727	21889	0	20	English	Billing	Waiver	Billing	BillingOthers	ObjectOthers	False	None
+2582	66179	511904	Request to cancel itemized bill but send to my new Email. Kindly proceed.Kindly refer below details<NL> <NL>MSISDN : 0173846737 <NL>Name : HAZIZUL BIN SARMAN<NL>IC Number : 881203565523 <NL>Email : hazlin 8891 @yahoo.com<NL>New Email : hazizulsarman@gmail.com	1481072680	22017	0	31	English	Billing	Billing Address	Billing	Document	Request	False	ChangeDetails
+2603	66860	516907	my 01110886522 credit limit i want to set to RM 50 	1481166126	22197	0	10	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	DecreaseCreditLimit
+2603	66867	516933	01110886522 credit limit i want to set to RM 50 	1481166442	22197	0	9	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	DecreaseCreditLimit
+2605	66910	517425	i want subscribe every month the bill sending to my email address	1481172723	22214	0	12	English	Billing	Billing Address	Billing	Document	Request	False	RequestSendEveryMonth
+2605	66911	517427	and i want chnage the address in bill	1481172758	22214	0	8	English	Billing	Billing Address	Billing	Document	Request	False	ChangeDetails
+2612	67111	518484	change email address	1481187049	22251	0	3	English	Billing	Change of Billing Details	Billing	Document	None	False	ChangeDetails
+2612	67117	518503	i like to change my email address	1481187277	22251	0	7	English	Billing	Change of Billing Details	Billing	Document	Request	False	ChangeDetails
+2612	67123	518513	it says "please reply with your valid email"	1481187427	22251	0	8	English	Billing	Change of Billing Details	None	None	None	False	
+2612	67130	518523	that was done by live chat. i need to change again as my email was compromised	1481187632	22251	0	16	English	Billing	Change of Billing Details	Billing	Document	None	False	ChangeDetails
+2612	67131	518526	please change to smsb.redone@hotmail.com	1481187669	22251	0	4	English	Billing	Change of Billing Details	Billing	Document	Request	False	ChangeDetails
+2612	67137	518542	is my new email address changed to	1481187844	22251	0	7	English	Billing	Change of Billing Details	Billing	Document	None	False	ChangeDetails
+2613	67151	518561	Good Day Sir/Madam can i know my redone master acc number?	1481188383	22252	0	11	English	Billing	Billing Details	Wrong	Wrong	ObjectNumeric	False	None
+2613	67156	518572	once i want made payment it will wrote please refer to ur master bill...can u help me	1481188518	22252	0	17	English	Billing	Billing Details	Billing	BillingTroubleShooting	None	False	CannotPayBill
+2613	67159	518578	okay..then can i know under which name and number please..	1481188632	22252	0	10	English	Billing	Billing Details	None	None	ObjectName	False	
+2617	67255	519930	how long it will take to activate after i bought the data	1481210268	22305	0	12	English	Billing	Data Bundle / PPU Rate	Wrong	Wrong	ObjectTime	False	None
+2618	67269	520474	Morning, how to change my email address in my redone online account?	1481252524	22330	0	12	English	Billing	Billing Details	Billing	Document	Procedure	False	ChangeDetails
+2618	67289	520571	so how to i change my register email address?	1481253707	22330	0	9	English	Billing	Billing Details	Billing	Document	Procedure	False	ChangeDetails
+2618	67294	520612	yes, i was dial * 123 # request to verify email and edit, but it show "please reply your valid email" so next step what should i do?	1481254344	22330	0	26	English	Billing	Billing Details	Billing	Document	Procedure	False	ChangeDetails
+2618	67297	520616	yes, this email is register email, but now i want to change it to new email address	1481254448	22330	0	17	English	Billing	Billing Details	Billing	Document	None	False	ChangeDetails
+2619	67309	520483	what is the rate of data for my plan?	1481252602	22332	0	9	English	Billing	Data Bundle / PPU Rate	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+2621	67346	520698	Hi, how i can check my plan or data status	1481256420	22340	0	10	English	Billing	Data Bundle / PPU Rate	Billing	CreditLimit	Procedure	False	CheckCreditLimitAmount
+2626	67519	522402	Can waive?	1481327614	22403	0	2	English	Billing	Unsuspend lines - (Within 50 days)	Billing	BillingOthers	Request	False	None
+2626	67524	522407	Should send the bill via email. Your reply is as good as U can collect the payment from my bank yourself	1481327795	22403	0	21	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Document	None	False	RequestSendBill
+2626	67526	522409	I hv registered the line and given my email address. Put more efforts in updating such info and not waiting to suspend lines and earn from there	1481327870	22403	0	27	English	Billing	Unsuspend lines - (Within 50 days)	None	None	None	False	
+2631	67642	522927	can i know status my account?	1481337269	22421	0	6	English	Billing	Billing Details	Wrong	Wrong	ObjectOthers	False	None
+2635	67753	523237	may i know the charges usage?	1481342171	22434	0	6	English	Billing	Billing Charges	Billing	BillBreakdown	ObjectNumeric	False	ItemDefinition
+2645	68054	524371	Can i know what is mean by PPU which shown in my bill statement?	1481371670	22475	0	14	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+2645	68066	524390	Then pls increase my credit limit	1481372491	22475	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2646	68077	524704	Pls increase credit limit for this number now	1481380591	22487	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2651	68252	526900	I use to receive my phone bills at my gmail but now no more!	1481509062	22586	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Document	None	False	RequestSendEveryMonth
+2651	68263	526924	why am I didn't receive my bills??	1481509380	22586	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Document	Reason	False	RequestSendEveryMonth
+2651	68265	526927	how come my monthly bills won;t directly send to my email?	1481509414	22586	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Document	Reason	False	RequestSendEveryMonth
+2651	68266	526933	can you pls help to re-register my email into your database so that I will receive my monthly bills? thanks.	1481509514	22586	0	20	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Document	Request	False	ChangeDetails
+2651	68270	526963	I have done that but in the end I still didnt receive my bills	1481509710	22586	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Document	None	False	RequestSendEveryMonth
+2657	68430	527951	May I know the credit limit is just for if I have make the call more than that right and it doesn't incur cost at this moment	1481538468	22626	0	27	English	Billing	Increase credit limit	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+2657	68432	527972	Alright. Can u please help me to make it to rm 400 ? I can change it back anytime I want right	1481538811	22626	0	21	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2664	68621	528905	My data is 500 mb/month, if over what is the rate?	1481590267	22670	0	10	English	Billing	Data Bundle / PPU Rate	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+2664	68629	528926	What is the rate for ppu charged?	1481590492	22670	0	7	English	Billing	Data Bundle / PPU Rate	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+2664	68630	528928	I mean how to charge the ppu and ppu stand for?	1481590522	22670	0	11	English	Billing	Data Bundle / PPU Rate	Billing	BillBreakdown	ObjectDefinition	False	ItemAmount
+2664	68644	528998	Any cheaper top up facilities if over data?	1481592338	22670	0	8	English	Billing	Data Bundle / PPU Rate	Billing	BillBreakdown	ObjectNumeric	False	ItemAmount
+2675	68859	530128	If I increase credit limit, how much i want to pay on next month?	1481612485	22736	0	14	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	ObjectNumeric	False	CreditLimitSOP
+2692	69360	532732	I received message my credit for 0193818546 left 20 %	1481679414	22843	0	9	English	Billing	Increase credit limit	Billing	CreditLimit	None	False	CheckCreditLimitAmount
+2692	69367	532741	every month I'm having same issue, can you permanently increase my credit limit to RM 200 	1481679566	22843	0	15	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2697	69466	534213	Please explain the meaning of share commitment? For example if I have 5 lines of each RM 8 per month its mean I got a pool of RM 40 right? Just say that month my total call is RM 45 so i just need to pay RM 5 right?	1481702089	22912	0	45	English	Billing	Billing Details	Billing	BillBreakdown	ObjectDefinition	False	BillBreakdownOthers
+2697	69467	534261	In short i just need to know the benefit of commitment sharing please give example... Tq	1481702517	22912	0	16	English	Billing	Billing Details	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+2697	69490	534342	What is the benefit of share commitment??	1481703314	22912	0	7	English	Billing	Billing Details	Billing	BillBreakdown	ObjectDefinition	False	ItemDefinition
+2710	69784	535181	how about my ewallet..?	1481722730	22956	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentChannel	Procedure	False	HowPay
+2788	71998	546620	And I have requested to separate my account at kuala Krai Kelantan Redone center last week, may I know if it's done?	1481893021	23443	0	22	English	Billing	Billing Details	Billing	BillingOthers	Request	False	None
+2857	73942	555816	*Next time will I receive sms regarding the payment dat I've made?	1482155414	23841	0	12	English	Billing	Payment Status	Billing	PaymentStatus	ObjectOthers	False	ConfirmPaymentReceived
+2862	74027	555962	Hi pls increase credit limit for 1 of tel no under my ac	1482159203	23850	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2862	74036	555976	Pls increase credit limit for tel no 012 3228937 	1482159399	23850	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2868	74197	557800	mean that SMS from redone my bill was payed?	1482215305	23923	0	9	English	Billing	Payment Status	Billing	PaymentStatus	ObjectOthers	False	ConfirmPaymentReceived
+2872	74403	558410	and pay my bills at the end of every month without any network interruption ?	1482225581	23944	0	15	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	BillingOthers	ObjectOthers	False	None
+2873	74448	558505	that means how much do i need to pay every month	1482227129	23948	0	11	English	Billing	Billing Details	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2882	74880	559564	then if i now increase my credit limit, can i call out now?	1482244940	23993	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Procedure	False	HowUnbar
+2885	74949	559792	How to upgared call limut	1482277404	24009	0	5	English	Billing	Increase credit limit	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2885	74956	559802	Help me how to upgrade my credit call limit?	1482277527	24009	0	9	English	Billing	Increase credit limit	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2892	75169	561198	i want to increase my credit limit.	1482299509	24061	0	7	English	Billing	Increase credit limit	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2901	75555	562333	need to upgrade my call to rm 100. tq	1482313385	24098	0	9	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2906	75716	562932	hi,i wan to upgreat my credit to 150 	1482325101	24127	0	8	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2912	75922	563541	i want to increase credit limit	1482335150	24151	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2916	76021	564556	Excuse me, I want to increase my credit limit to RM 100. Tq.	1482380139	24199	0	11	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2916	76035	564606	What if I want to increase the limit permanently?	1482380739	24199	0	9	English	Billing	Increase credit limit	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2929	76394	565924	i'm thinking if it's possible if my credit limit could be increase temporarily to rm 200 before the latest bill comes out?	1482407038	24258	0	21	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2932	76457	566506	Ok pls increase to 100. tq	1482419227	24291	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2933	76495	566634	Any charge?	1482422015	24294	0	2	English	Billing	Data Bundle / PPU Rate	Billing	BillingOthers	ObjectOthers	False	None
+2937	76574	567011	HELLO, HOW TO ADD MY CREDIT LIMIT?	1482458693	24315	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2941	76696	567685	I would like to increase my credit limit	1482468192	24345	0	8	English	Billing	Increase credit limit	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2964	77230	570828	i want to increase my credit for 0199645162 	1482588968	24482	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2965	77252	570852	How am I suppose to reactive back?	1482589405	24483	0	7	English	Billing	Billing Details	Billing	Barring	Procedure	False	HowUnbar
+2969	77379	571132	but how come once my limit is out of 50 and my 3 G still been bar?dont it's become slow only?	1482629685	24495	0	19	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2969	77381	571134	so temporary up to 100 means i still have i gb data?	1482629798	24495	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	ObjectDefinition	False	CreditLimitSOP
+2969	77389	571142	so in the new month data is back to normal?	1482629977	24495	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	ObjectDefinition	False	CreditLimitSOP
+2969	77396	571149	alright ,if increase limit need to pay how much?	1482630246	24495	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	ObjectNumeric	False	IncreaseCreditLimit
+2986	77855	573665	how long will his new credit limit last	1482757165	24597	0	8	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	CreditLimit	ObjectTime	False	IncreaseCreditLimit
+2986	77862	573677	afiq, can i increase my limit to rm 150 ?	1482757370	24597	0	9	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	CreditLimit	ObjectOthers	False	IncreaseCreditLimit
+2990	77977	573959	AND PLEASE ALSO INCREASE MY LIMIT TO 150 FOR NEXT TIME USING	1482763441	24610	0	12	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2993	78028	574356	Good Morning <NL>My name is Abdul Jamal Abdullah NRIC 680818115181. I wish to check the status of my refund of deposit which is too long overdue. <NL>My Account Name : ABDUL JAMAL BIN ABDULLAH<NL><NL>My Account Id : 201145694 <NL><NL>My Mobile Number : 01110751147 	1482799506	24627	0	42	English	Billing	Deposit Refund	Billing	Refund	ObjectOthers	False	CheckRefundStatus
+2993	78035	574376	any specific date please?	1482800029	24627	0	4	English	Billing	Deposit Refund	Billing	Refund	ObjectTime	False	CheckRefundStatus
+2997	78110	574612	i hv an oustanding bill.. but noiw want to reregsiter back.... can i get back the number	1482804024	24642	0	17	English	Billing	Billing Details	Billing	Barring	Procedure	False	HowUnbar

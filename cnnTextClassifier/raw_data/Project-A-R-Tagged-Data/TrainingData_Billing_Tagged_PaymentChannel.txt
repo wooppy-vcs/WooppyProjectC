@@ -1,0 +1,571 @@
+conversation_tagging_id	index_en	id	msg	time	chat_id	user_id	word count	Language	Preassigned Topic	Preassigned Subtopic	Topic_L1	Topic_L2	AnswerType	Confirmation	Scenario
+17	418	32984	Good morning..<NL>If bill payment thru maybank 2 u, under what company to register	1465176523	1560	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	PayWho
+19	459	33102	But as I can read from this page under Direct Debit http://www.redone.com.my/support/payment-channel/ , it states clearly that preferred banks are also accepted. Could you please clarify that?	1465177749	1566	0	27	English	Billing	Payment Type	Billing	PaymentChannel	Reason	False	PaymentChannelOthers
+19	464	33120	Ok then. Can I request to register to enroll for direct debit via this chat?	1465178073	1566	0	15	English	Billing	Payment Type	Billing	AutoDebit	Request	True	HowApply
+19	467	33125	Then what should I do if I wish to enroll for the service?	1465178138	1566	0	13	English	Billing	Payment Type	Billing	AutoDebit	Procedure	False	HowApply
+33	828	34546	how to pay outstanding bill. acc already terminated	1465193301	1640	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+33	849	34686	so i need to email the receipt to??	1465194030	1640	0	8	English	Billing	Payment Channel	None	None	None	False	None
+37	971	37372	how do i make the payment for that?	1465267912	1753	0	8	English	Billing	Billing Address	Billing	PaymentChannel	Procedure	False	HowPay
+46	1160	38439	Hi. What is the other payment alternative beside direct payment and pay at kiosk?	1465280252	1798	0	14	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	MethodExcept
+50	1229	40456	i want to pay my bill	1465352341	1876	0	6	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	RequestPay
+63	1538	51074	is there any other payment option?	1465698056	2323	0	6	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	MethodExcept
+63	1542	51110	my line has been barred..i prefer to make pymt either via Maybank 2 u.com or JomPay...	1465698348	2323	0	14	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	MethodExcept
+65	1581	51124	hi, how to pay online?	1465698478	2325	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+68	1682	51544	Other than credit card auto debit, is there any other method for me to pay online?	1465711097	2342	0	16	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	MethodExcept
+72	1779	52593	possible i pay via transfer online?i cannot pay online	1465784203	2385	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+80	1994	54528	How i want to pay bill with credit card?	1465809892	2470	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+81	2010	54539	i would like to make payment thru my credit card. pls advise	1465810077	2471	0	12	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+83	2051	54609	can i pay online for this number 0124291359 	1465811235	2476	0	8	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	True	RequestPay
+83	2070	54703	and how can i log in to pay it?	1465812072	2476	0	9	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	False	PaymentChannelOthers
+83	2071	54708	what id and password can for me log in to pay?	1465812211	2476	0	11	English	Billing	Payment Status	Billing	PaymentChannel	ObjectName	False	PaymentChannelOthers
+83	2075	54731	cannot log in	1465812348	2476	0	3	English	Billing	Payment Status	None	None	None	False	None
+83	2092	54785	now i try to pay another bill	1465812749	2476	0	7	English	Billing	Payment Status	None	None	None	False	None
+86	2167	55271	HOW TO PAY MY BILL USNG MAYBANK TO YOU ACC	1465821907	2505	0	10	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+104	2566	59712	Hello, my line was barred and I would like to pay my bill online via Visa card.	1465969760	2731	0	17	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+107	2654	60753	can i pay on ibg internet banking ? please teach the way. tq	1465977941	2765	0	13	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+107	2661	60789	ya, i try but can't.. can i go to my banker & pay on this ?	1465978311	2765	0	16	English	Billing	Payment Channel	None	None	None	True	None
+112	2767	62289	HOW I WANT TOPAY ONLINE	1466034123	2826	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+112	2774	62305	IS IT POSSIBLE IF DIRECT BY MAYBANK 2 U THAN BY PAYBILL????	1466034553	2826	0	10	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+133	3378	69732	Hi I would like to pay my bills via online how can I do that.?	1466244469	3154	0	15	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+133	3383	69745	I'm using Maybank 2 u to pay bills. how can i do that to pay redone?	1466244619	3154	0	14	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+152	3792	76701	If i want to pay through cimb click, what is the provider name?	1466592620	3489	0	13	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+152	3800	76711	If i dont want to download it n just want to pay through my banking internet.. how	1466592901	3489	0	17	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+173	4201	87783	hello<NL>how can i pay my bill online	1467175749	3987	0	7	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+174	4218	87797	huw to pay using maybank 2 u.	1467175843	3988	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+179	4346	92436	I want to know, for the bill payment, is it possible to pay online using cimb clicks	1467332719	4205	0	17	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+190	4585	93863	how can i pay bill online	1467342106	4270	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+190	4592	93887	i just want to know how can i pay onlie bill	1467342182	4270	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+201	4852	97587	Hi..how i want to pay via online?	1467421713	4414	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+214	5186	102548	I'm paying by maybank 2 u.	1467537968	4631	0	4	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	False	HowPay
+228	5612	109442	How to pay online	1467760772	4944	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+228	5614	109445	May I know how to pay online	1467760791	4944	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+232	5717	110661	Can I pay the payment via online?	1467864208	4994	0	7	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	PaymentChannel	Procedure	True	HowPay
+235	5773	110950	Hi. I would like to know my jom bay biller's code... i want to pay my bills with cimb click.	1467883502	5008	0	20	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	PayWho
+236	5800	110993	HW I PAY THROUGH MAYBANK 2 U?payee to Celcom?	1467884051	5009	0	7	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	False	HowPay
+236	5805	111001	hw I pay my bill?i intend to pay through maybank 2 u.	1467884134	5009	0	10	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+237	5820	111225	why cannot online make payment?	1467895062	5015	0	5	English	Billing	Payment Channel	Billing	BillingTroubleShooting	Procedure	False	CannotPayBill
+237	5844	111258	where to pay selfcare?	1467895861	5015	0	4	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+240	5882	111437	hi I need to make my bill payment. Is there any other option to pay other than auto debit?	1467945970	5024	0	19	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	MethodExcept
+244	5985	111694	I just want to pay my payment online without auto debit	1467950144	5037	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+247	6040	112253	Hi, id like to know, how do i pay my postpaid bill. Tq.	1467968510	5060	0	13	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+257	6298	114617	hi, dzulhafizh here. I want to pay my last mth's bill tru online. fyi, I already terminated my lines last 2 weeks	1468136441	5157	0	22	English	Billing	Waiver	Billing	PaymentChannel	Procedure	False	HowPay
+257	6316	114635	pay tru maybank?	1468136775	5157	0	3	English	Billing	Waiver	Billing	PaymentChannel	Procedure	True	HowPay
+257	6324	114643	I dun hv maybank, cimb only	1468136895	5157	0	6	English	Billing	Waiver	Billing	PaymentChannel	Procedure	False	HowPay
+265	6513	119246	im using muamalat online bngking'	1468314098	5349	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	PaymentChannelOthers
+267	6545	120101	Good morning.. How to pay bil redone	1468375524	5396	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+269	6595	120394	i would like to make payment through online credit card. pls advise	1468378715	5409	0	12	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+275	6790	124037	Can I know online banking how long will processes	1468470814	5568	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectTime	True	WhenProcess
+284	6957	138425	I WANT ON LINE BANKING	1468815633	6206	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+286	7053	138787	IF I PAID FOR PHONE NO 0167914704 CAN OR NT	1468821584	6220	0	10	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	RequestPay
+288	7101	140275	online cimbclicks	1468835065	6270	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	ObjectName	False	HowPay
+289	7136	140287	hello,may i know is it possible for me to pay my acc thro offline?	1468835228	6271	0	14	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	True	HowPay
+294	7240	142386	hi.. im rafidah<NL>why i can not pay my bil	1468914480	6344	0	9	English	Billing	Payment Channel	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+302	7446	145485	how to made payment?	1469012878	6454	0	4	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+302	7453	145499	btw i done the payment ad..may i know can i pay by online banking (through the bill payment in our own online banking since your website will be down for now until August)	1469013215	6454	0	33	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+305	7534	147717	ok... can i make online payment right now	1469151622	6547	0	8	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	RequestPay
+309	7616	148200	ok on, will pay rm 100 via internet banking	1469161775	6575	0	8	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	PaymentChannel	None	False	RequestPay
+314	7728	148503	How to pay on line from selfcare page. I try but can't get thru like before.	1469171190	6590	0	16	English	Billing	Payment Channel	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+318	7786	153216	How to pay bill on line	1469433931	6777	0	6	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+344	8407	179392	Pay bill	1470216475	7947	0	2	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	RequestPay
+347	8467	179546	How to make a payment through your website	1470218531	7956	0	8	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+348	8488	179595	ouh sorry...online payment	1470219203	7958	0	3	English	Billing	Payment Status	None	None	None	False	None
+358	8774	182823	hi...already made payment via cimbclick	1470305728	8099	0	5	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPayment
+385	9373	197735	HOW I CAN MAKE A PAYMENT THROUGH MY VISA CARD IN ONLINE??	1471075388	8797	0	12	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+390	9477	199678	How to pay via credit card	1471174410	8883	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+392	9504	199720	HOW TO PAY ONLINE	1471177677	8887	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+399	9632	202638	hello, redone is not accepting bsn online banking ?	1471248741	9023	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+401	9665	202937	hi how to pay my bill using american express credit card?	1471251126	9036	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+401	9669	202943	hi how to pay my bill using american express credit card?	1471251153	9036	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+403	9691	203151	HOW TO PAY BILL	1471254214	9044	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+404	9710	203441	If i want to pay bill online by rhb App...which biller should choose? REDtone Mobile or REDtone telecommunications?	1471261251	9060	0	18	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	PayWho
+413	9919	207223	may I know can pay bill online?	1471338199	9216	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+416	10003	207666	Could you check for me the bill payment could be made via hongleong bank?	1471341321	9229	0	14	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+416	10014	207750	Jompay hv biller code?	1471341839	9229	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	True	PayWho
+419	10063	208268	how can i pay bills online ?	1471349594	9251	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+419	10067	208277	how can i pay bills online	1471349614	9251	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+429	10315	214242	how to pay now	1471583524	9472	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+443	10641	222491	i wan pay my bill through credit card	1472012151	9794	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+454	10892	228659	hi, i have a question. i suppose to pay RM 55.33 but just now i just paid for rm 50. how can i pay for the rest?	1472269536	10035	0	25	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+469	11281	230518	I would like to make payment thru on line. How ?	1472368217	10114	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+469	11288	230539	Beside this method any other way to make payment ?	1472368475	10114	0	10	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	MethodExcept
+472	11346	231030	i want payment on online	1472377490	10131	0	5	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	RequestPay
+479	11503	235662	ok. i would like to make payment via Maybank 2 u.	1472531514	10303	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentChannel	Procedure	False	RequestPay
+480	11513	235785	HOW CAN I PAY BY ONLINE	1472533176	10307	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+483	11591	236168	how to make payment by debit card	1472537666	10321	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+486	11661	236433	how do i want to pay my bill online?	1472539523	10331	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+499	11995	239670	can I pay my bill online	1472634010	10455	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+499	12006	239731	got the bill, where to pay	1472634519	10455	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+503	12084	240076	May I know how to pay the bill if it only costs 8 sen	1472639939	10469	0	14	English	Billing	Billing Charges	Billing	PaymentChannel	Procedure	False	HowPay
+503	12089	240083	My bill is RM 16.08 RM 16.00 will pay by the company and how to pay the remaining 8 sen?	1472640081	10469	0	18	English	Billing	Billing Charges	Billing	PaymentChannel	Procedure	False	HowPay
+515	12360	244792	Hi there<NL>I want to pay my bill for moth of Aug	1472711961	10672	0	11	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	RequestPay
+517	12418	244974	PAY BILL	1472712869	10679	0	2	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	RequestPay
+517	12420	244985	HELLO..I NEED TO PAY MY BILL BY COUNTER..WHERE I MUST GO?	1472712897	10679	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectLocation	False	HowPay
+533	12773	248963	Y i cant pay my bill online?	1472793650	10849	0	7	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+548	13205	267234	I WOULD LIKE TO PAY THE BILL BY MAYBANK 2 U<NL>HOW?	1473308689	11538	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+555	13351	269312	Can't make payment online.	1473396307	11620	0	4	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+585	13996	287903	how to pay bill online ?	1474023161	12335	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+586	14012	288101	Hi, I can't made payment	1474026830	12343	0	5	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+587	14038	288178	but i have make an online payment thru my bank account	1474028945	12349	0	11	English	Billing	Billing Details	Billing	PaymentStatus	ObjectName	False	ConfirmPayment
+597	14245	293269	i want to pay my bill online..how can i do it?	1474255718	12555	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+597	14248	293286	i want to pay my bill online..how can i do it?	1474255890	12555	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+597	14253	293319	I LOGIN ALREADY, THE PAGE ASK ME TO SIGN UP FOR AUTO DEBIT, I DONT WANT AUTO DEBIT, I WAN TO PAY ONLINE EVERY MONTH, WHAT SHUD I DO?	1474256220	12555	0	29	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+621	14814	296106	I would like to pay the bill using online banking, is it okay?	1474351439	12664	0	13	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	HowPay
+624	14892	296082	i try to pay my bill bu online banking, but cant. why??.	1474351220	12667	0	12	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+624	14901	296117	yeah. i often pay by online banking but dont know why today cant.	1474351717	12667	0	13	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+635	15143	297477	hi, how can i pay my bill online?	1474371331	12725	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+635	15148	297488	what is the account number that i should transfer to?	1474371527	12725	0	10	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	PayWho
+636	15163	297774	Hi, seems i can't pay through online	1474413114	12737	0	7	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+643	15379	298032	how to pay bill by master card	1474421744	12750	0	7	English	Billing	Auto Debit Application	Billing	PaymentChannel	Procedure	False	HowPay
+665	15833	299776	If my redone number only used RM 2.47 how to pay online?	1474458405	12828	0	12	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+667	15876	299926	how to pay bill	1474461870	12834	0	4	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+675	16050	300463	HOW CAN I MAKE PAYMENT ?	1474513234	12858	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+675	16074	300495	but how to pay	1474513559	12858	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+686	16306	301155	Hi, Good afternoon, can i pay online ?	1474527012	12891	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+686	16310	301167	esther here.. actually i want to pay the bill by credit card	1474527140	12891	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+694	16503	301671	HOW TO PAY BILL USING MYBANK 2 U	1474538666	12912	0	6	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+696	16521	301727	Can l pay my bill through maybank 2 u	1474542497	12916	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+704	16706	302168	Can i pay my bill online?	1474595482	12936	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+706	16742	302269	Hi, may i know how could i pay bills through maybank 2 u except from paying through redone website? What's the corporation payee name in the maybank 2 u website?	1474598954	12941	0	26	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	MethodExcept
+707	16758	302339	hi...im suraya,i would like to pay my bill..can i use internet banking	1474600178	12944	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+713	16907	302568	HOW TO PAY BILL ONLINE?	1474604637	12953	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+726	17324	304328	so how can i pay for it?	1474700840	13021	0	7	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+726	17328	304334	ok how to pay?	1474701007	13021	0	4	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+726	17333	304341	ok how can i pay for 016 - 2280728 now?	1474701129	13021	0	8	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+730	17425	304419	Can I pay online?	1474704616	13026	0	4	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+736	17584	304852	hi can i know my jompay code pls	1474762347	13043	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	False	PayWho
+736	17594	304872	can i pay at jompay with my cimb?	1474762837	13043	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	True	HowPay
+736	17596	304880	if i pay at atm maybank how long it takes	1474763008	13043	0	10	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectTime	False	WhenProcess
+738	17622	304884	how to pay online	1474763075	13046	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+741	17701	304980	hi my code for jompay is 8607 then they as the ref no. can i know what is ref no pls	1474764064	13049	0	21	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	False	PayWho
+743	17738	305220	I just want to know any kiosk open on Sunday?	1474772462	13059	0	10	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	ObjectLocation	True	WherePay
+743	17749	305231	Any In kl area that I able to settle my bill?	1474772697	13059	0	11	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	ObjectLocation	True	WherePay
+743	17753	305235	HQ also not open on Sunday?	1474772880	13059	0	6	English	Billing	Make Payment - Dealers	Wrong	Wrong	None	True	None
+749	17905	305953	hi i want to make payment..and this my first time pay by online.. i need your favour	1474798523	13086	0	17	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+749	17909	305957	beside fullfill outodebit form.. do u have onother way to make pyment	1474798648	13086	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	MethodExcept
+752	17982	306209	can pay online?	1474806465	13099	0	3	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	True	HowPay
+753	17989	306247	How can i pay the bill but there is no massage about bill from redONE to inform my bill?	1474807164	13102	0	19	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+759	18093	306497	Hi, can i know which value i should refer to pay my red 1 bill for this month?	1474852925	13111	0	18	English	Billing	Billing Details	Billing	BillOutstanding	ObjectName	True	WhichFieldToPay
+759	18097	306503	Yes sure.Thank you. Its my first time use this online pay for red 1 bill. Can you assist me on this? How can i know my bill for this month?	1474853075	13111	0	30	English	Billing	Billing Details	Billing	Document	Procedure	False	HowViewBill
+766	18285	306930	want to make a payment	1474866978	13131	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+766	18288	306933	want to make a payment via maybank 2 u	1474867066	13131	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+785	18733	308133	Hi.. How can I pay my red 1 bill?	1474892220	13181	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+785	18748	308158	Can I pay using Public Bank online transaction?	1474892611	13181	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+785	18750	308162	May I know what is Selfcare and Jompay?	1474892701	13181	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectDefinition	False	PaymentChannelOthers
+785	18751	308163	owh... okay..<NL>by using Jompay... how do I pay?	1474892758	13181	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+791	18896	308492	why I want pay use maybank credit card online through RedOne Web site, it ask me to login maybank account?	1474937370	13195	0	20	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Reason	False	HowPay
+793	18943	308804	Hi , i need to make payment	1474944563	13210	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+805	19255	309398	can i know where can pay payment in melaka?<NL>aeon bandaraya cannot pay payment alrdy ... why ?	1474954738	13233	0	17	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectLocation	True	WherePay
+807	19300	309423	How to pay on line	1474955052	13235	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+824	19679	310806	I have an outstanding bill of RM 3.83 on a subline which has already been separated and terminated. How can I pay online?	1474978808	13290	0	22	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+830	19830	311352	OR U CAN GIVE DIRECTION HOW TO PAY WITH CIMBCLICK	1475027429	13317	0	10	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	True	HowPay
+830	19859	311509	got extra when using online payment????	1475028737	13317	0	6	English	Billing	Payment Status	None	None	None	True	None
+855	20419	313494	how to pay online	1475051905	13407	0	4	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+862	20578	313947	now I need to know a very near center where I could pay my bills	1475065485	13425	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectLocation	False	WherePay
+864	20640	313963	how i pay the bill?	1475065739	13429	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+898	21589	316708	is redone stops accepting online credit card payment?	1475200171	13544	0	8	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	True	CannotPayBill
+1218	29990	349735	How to pay my bills ?	1476151731	14963	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1220	30050	350065	I WOULD LIKE TO DO ONLINE PAYMENT ,WHAT IS THE ACCOUNT NUMBER SHOULD I KEY IN	1476160352	14979	0	16	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	UseWhatAccountID
+1220	30053	350068	IS IT EASY TO DO THORUGH SELF CARE	1476160433	14979	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1220	30054	350069	OR I DI MAYBANK 2 U	1476160440	14979	0	4	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1224	30135	350990	Hello may i know the payment online only for Maybank 2 u? How about the using the credit card payment?	1476174319	15017	0	18	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	MethodExcept
+1240	30517	352620	where can i pay the remaining fees?	1476249793	15083	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentChannel	Procedure	False	HowPay
+1256	30825	353192	hi..instead of paying the bill by auto-debit, can i pay the bill via maybank 2 u?	1476260561	15112	0	14	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	MethodExcept
+1256	30841	353235	i can pay the bill at home now..	1476261103	15112	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1266	31054	353903	then how can i pay the remaining balance now	1476320184	15143	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentChannel	Procedure	False	HowPay
+1266	31062	353929	i try to pay my bill now	1476320585	15143	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentChannel	Procedure	False	RequestPay
+1267	31089	353941	ok, so ill just continue pay now.	1476320756	15146	0	7	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	RequestPay
+1269	31123	353973	why can't I pay my bill without sign up the auto debiy form?	1476321257	15148	0	13	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Reason	False	PaymentChannelOthers
+1269	31125	353976	I need to pay the bill befor 14 th October and I don't have time to go to redone 1 centre for paying it.	1476321350	15148	0	23	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	HowPay
+1270	31153	354044	i want to pay my bill but it say i must to sign up the auto debit form.	1476322534	15150	0	18	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1270	31154	354047	i should pay the bill before 15 october and i dont't have time to go redONE centre nearby	1476322574	15150	0	18	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1271	31184	354042	how i can pay online for my bill?	1476322519	15151	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1279	31381	354606	How to online make payment?	1476327853	15177	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1279	31386	354617	i didn't apply GIRO form. Means that it unable to make payment via online??	1476328000	15177	0	14	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1279	31393	354638	which "menu" button ?	1476328367	15177	0	4	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1282	31457	354732	i am red 1 agent if i have e-wallet balance and want pay through massage phone what number i need send this payment example EPP RM 120 0167759634 	1476330003	15183	0	27	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	None	None	None	False	None
+1282	31467	354749	which number i need send via sms this payment	1476330354	15183	0	9	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	None	None	None	False	None
+1283	31477	354747	HI..how do i make payment?	1476330332	15184	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1286	31575	354936	But, I never register ipad 88 ,also can make payment?	1476333873	15191	0	9	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	True	HowPay
+1291	31717	355583	so now can make online payment?	1476343646	15221	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1294	31789	355614	How to use E-Wallet ?	1476344027	15225	0	5	English	Billing	Make Payment - Dealers	None	None	Procedure	False	None
+1296	31824	355720	HI, i pay the bill using jompay? may i know when i will receive a sms notification by redone?thanks	1476344983	15229	0	19	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	False	None
+1297	31865	355727	Good evening, How can i pay my bills online?	1476345050	15230	0	9	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1297	31868	355743	Good, how about you? can we go straight to the point. What is the step to pay my bills online?	1476345198	15230	0	20	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1297	31874	355780	Online Banking	1476345576	15230	0	2	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	None	None	None	False	None
+1297	31876	355785	Is there any way that i could pay it online	1476345607	15230	0	10	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	True	HowPay
+1297	31877	355788	i have the cimb click as well as maybank 2 u	1476345620	15230	0	9	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1300	31942	355851	how to pay September billing online?	1476346864	15233	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1302	32004	355948	Helo , i personal bank Debit card can allow payments from on my bill. ?	1476348124	15239	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1302	32013	355978	first time at system ?PAY NOW?proceed ,After that, every month can automatic deduct my bill ?	1476348661	15239	0	16	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1307	32106	356186	why there is no muamalat bank on fpx payment? been searchin for it for hours	1476352532	15251	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Reason	False	PaymentChannelOthers
+1307	32112	356199	There is no muamalat on fpx payment	1476352826	15251	0	7	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1307	32115	356205	but ive been using it to pay for the previous bill	1476352909	15251	0	11	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1312	32213	356520	how do i go make payment?	1476358324	15269	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1317	32332	356686	Hello, can i know how to pay redone bill by online banking ?	1476361777	15278	0	13	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1332	32740	358322	NEED MAYBANK ACC NO FOR PAYMENT	1476429579	15342	0	6	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	False	PayWho
+1332	32749	358349	i 1 red 1 maybank acc no for payment	1476429870	15342	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	PayWho
+1332	32751	358351	prefer maybank 2 u	1476429895	15342	0	2	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1332	32760	358371	i need red 1 maybank acc to pay online	1476430084	15342	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	PayWho
+1332	32763	358378	says i pay now thru maybank 2 u then what should i do	1476430388	15342	0	11	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1342	32983	359528	MAY I KNW HW TO PAY THE BILL ONLINE?	1476489648	15393	0	9	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+1353	33257	360949	HOW ONLINE PAY BILLS RED 1	1476508713	15460	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1353	33285	361059	IF I USE OCBC online payment, a	1476509724	15460	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1353	33287	361061	or credit card got charge?	1476509759	15460	0	5	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1354	33296	361128	hello, how to pay bill through online?	1476510623	15464	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1354	33302	361152	may i know how to pay bill through online?	1476510965	15464	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1354	33311	361182	online banking	1476511248	15464	0	2	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1354	33314	361188	public bank	1476511342	15464	0	2	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1354	33318	361193	through public bank	1476511394	15464	0	3	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1354	33319	361194	but they're asking for biller code	1476511405	15464	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+1354	33321	361196	what's the biller code?	1476511432	15464	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+1354	33323	361201	what should i put as the reference?	1476511492	15464	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+1364	33587	362037	Hai, how to pay my Redone bill online right now?	1476521727	15503	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1364	33590	362044	How to pay my bill online?	1476521806	15503	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1364	33595	362063	Online bank ing	1476521943	15503	0	3	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1368	33688	362782	internet banking	1476533120	15530	0	2	English	Billing	Payment Status	None	None	None	False	None
+1371	33762	362963	izzit hv to key in amount or left in blank ?	1476534904	15537	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1372	33781	363381	maybank website	1476574621	15553	0	2	English	Billing	Payment Status	None	None	None	False	None
+1373	33805	363360	pls help, how to pay bill online? urgent	1476574384	15555	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1373	33834	363459	why cant pay by Public Bank or Maybank 2 u?	1476575812	15555	0	8	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+1373	33836	363463	Public bank pls	1476575901	15555	0	3	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1373	33838	363467	what is Biller Code?	1476576052	15555	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectDefinition	False	PaymentChannelOthers
+1373	33839	363469	what is Payment Alias	1476576090	15555	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectDefinition	False	PaymentChannelOthers
+1373	33840	363478	Ref- 1 ?	1476576120	15555	0	2	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1373	33841	363480	Ref- 2 (If available)?	1476576124	15555	0	3	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+1373	33845	363488	what is Payment Alias?	1476576162	15555	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectDefinition	False	PaymentChannelOthers
+1373	33848	363497	Payment alias cannot be null	1476576335	15555	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+1374	33868	363658	i want to pay my bill online	1476578251	15566	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1375	33914	363744	Online bnking	1476579474	15568	0	2	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+1375	33915	363746	Through my UOB credit card	1476579494	15568	0	5	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+1375	33978	363988	just now I Oso use the self care to make payment	1476583015	15568	0	11	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+1375	33984	364018	I pay again using maybank to u	1476583367	15568	0	7	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+1380	34097	364399	CAN U ASSIST ME HOW TO PAY OMLINE?	1476587680	15591	0	8	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	Procedure	False	HowPay
+1380	34105	364407	ONLINE BANKING	1476587874	15591	0	2	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	None	False	None
+1380	34107	364409	CIMB CLICKS	1476587928	15591	0	2	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	None	False	None
+1380	34110	364420	KINDLY ASSIST ME HOW TO PAY TRU SELF CARELOGIN	1476588487	15591	0	9	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	Procedure	False	HowPay
+1386	34260	364871	HI... how do i pay my bill through online?	1476596679	15613	0	9	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	False	HowPay
+1386	34263	364884	HI... how do i pay my bill through online?	1476596743	15613	0	9	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	False	HowPay
+1386	34268	364891	through online maybank 2 u	1476596855	15613	0	5	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+1386	34284	364948	i wish to pay my payment online next time. so is there any ways ? cause if online pay will cause you 2 to 3 days to clear the bill.	1476597474	15613	0	30	English	Billing	Payment Status	Billing	PaymentChannel	Procedure	False	HowPay
+1386	34285	364950	meaning that i pay it and i can it on the spot	1476597523	15613	0	12	English	Billing	Payment Status	None	None	None	False	None
+1386	34287	364975	self care login redone is ?	1476597739	15613	0	6	English	Billing	Payment Status	Billing	PaymentChannel	ObjectName	False	PaymentChannelOthers
+1388	34325	364972	hi i would like to pay my bill . i usually pay my bill at redone bandar sri damansara. but today the shop is close. so how or where should i pay my bill. btw my line already been bared	1476597722	15620	0	40	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	Procedure	False	WherePay
+1388	34335	365011	i already go to the petronas. but they said they cant pay bills on sunday	1476597910	15620	0	15	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	Reason	False	PaymentChannelOthers
+1388	34341	365055	where can i pay my bills in putra height or puchong?	1476598141	15620	0	11	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	ObjectLocation	False	WherePay
+1390	34384	365098	DEAR ALL<NL>HOW TO I PAT RED 1 BILL BY ONLINE??	1476598472	15626	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1395	34543	365287	how to pay bill online	1476600389	15632	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1395	34565	365425	i want to pay cimb clik	1476601331	15632	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1397	34610	365583	maybank 2 u	1476602877	15640	0	1	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	None	False	None
+1397	34633	365621	i normally pay at the red 1 center itself but i hadnt had time to do that	1476603245	15640	0	17	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	None	False	None
+1398	34655	365662	can I pay by credit card?	1476604056	15642	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	Procedure	True	RequestPay
+1399	34676	365700	online payment	1476605486	15644	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	None	False	None
+1401	34730	365720	Can i online pay bill?	1476605767	15646	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	RequestPay
+1403	34773	365858	I will try to pay at outlets	1476609444	15652	0	7	English	Billing	Un-bar lines - Overdue Payment	None	None	None	False	None
+1406	34827	365929	I want to pay my bill via website.	1476610400	15656	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1418	35218	367184	maybank 2 u...jom pay	1476671150	15711	0	2	English	Billing	Billing Details	Billing	PaymentChannel	None	False	None
+1422	35282	367967	using credit card	1476678403	15751	0	3	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+1424	35324	368440	Hi..<NL>I want to pay the bill online.	1476683331	15774	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1427	35413	368696	hi there i want to pay 1 of the barred account. But in payment details cannot change the account no. <NL>What should i do?	1476686520	15786	0	24	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1428	35436	368764	can i make payment via call center to use my credit card?	1476686837	15787	0	12	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	RequestPay
+1428	35445	368805	i wish the redone can do payment via call center like the other telco	1476687054	15787	0	14	English	Billing	Billing Details	Billing	PaymentChannel	None	False	None
+1430	35478	369150	Hai...how can i pay my bills using e wallet?	1476690372	15803	0	9	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1430	35493	369175	So i need to walk in to an agent just to use e wallet?	1476690792	15803	0	14	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	None	None	None	True	None
+1438	35673	370727	how could i make on line payment via redOne web?	1476763008	15878	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1438	35675	370735	how/ could i make on line payment via redOne web	1476763062	15878	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1438	35679	370743	how could I make on line payment via redOne web?	1476763124	15878	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1446	35923	371213	how to pay bill online?	1476771487	15900	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1447	35935	371263	Good afternoon, I have received a text from redone this morning and I want to know How to pay with FPX	1476772062	15903	0	21	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1448	35953	371391	why cant use public bank ebanking to pay the bill?	1476775895	15908	0	10	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+1453	36060	371657	how to pay bill via maybank 2 u	1476780203	15923	0	6	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1453	36064	371663	how to pay bill throw maybank 2 u	1476780301	15923	0	6	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+1455	36099	371847	I want to make payment here can I?	1476784056	15930	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	RequestPay
+1460	36206	372221	i pay via FPX!	1476797120	15951	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	None
+1460	36213	372238	how to pay via selfcare?	1476797785	15951	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1464	36342	372751	by credit card	1476844673	15972	0	3	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+1465	36351	373066	i would like to pay bill online using credit card	1476850785	15987	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1468	36398	373177	CAN I PAY BILL BY CIMBCLICK	1476853689	15992	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	RequestPay
+1471	36475	373462	How to pay now	1476858894	16006	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1471	36481	373472	L like to pay my bill	1476858931	16006	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	RequestPay
+1472	36529	373477	How to make payment online?	1476858959	16007	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1473	36539	373551	payment	1476859600	16010	0	1	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	None	None	None	False	None
+1477	36643	373782	HOW TO PAY BILL?	1476861250	16017	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1479	36672	373933	HOW TO ONLINE PAYMENT?	1476867278	16023	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1479	36680	373959	how to pay online?	1476867437	16023	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1481	36734	374017	why your operator call me and tell me can paid by maybank 2 u	1476869656	16026	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Reason	False	PaymentChannelOthers
+1487	36873	374544	where can I pay this 0.30 ?	1476920188	16046	0	6	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1496	37062	374871	can i pay redone bill thru maybank 2 u	1476928464	16064	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+1496	37068	374885	is it compulsory for me to email the bill	1476928723	16064	0	9	English	Billing	Payment Channel	None	None	None	True	None
+1501	37256	375331	how to pay using redone?	1476935511	16080	0	5	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+1502	37281	375645	So what I can do now? Just want to pay the bill	1476943883	16096	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1505	37349	375778	i would like to pay now	1476945568	16104	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1505	37365	375827	can i use maybank 2 u?	1476946045	16104	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1507	37397	376396	good afternoon, could u help me to check did i do the payment RM 10 by 09 / 10 / 16 to this account?	1476952744	16125	0	20	English	Billing	Payment Status	Billing	PaymentStatus	ObjectName	False	ConfirmPayment
+1511	37500	376799	how to pay online thru redone web?	1476961996	16140	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1513	37516	376841	hi!can i ask where can pay the bill except redone shop?	1476966184	16143	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	MethodExcept
+1513	37529	376866	online banking?	1476966536	16143	0	2	English	Billing	Payment Channel	Billing	PaymentChannel	None	False	None
+1513	37530	376867	maybank 2 u?	1476966542	16143	0	2	English	Billing	Payment Channel	Billing	PaymentChannel	None	False	None
+1518	37643	377083	please advice how can i pay bill	1477015063	16154	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1521	37687	377968	i want to make payment	1477034528	16190	0	5	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	RequestPay
+1521	37690	377971	by maybank 2 u online	1477034585	16190	0	3	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	None	False	None
+1522	37715	377981	how to pay bill online	1477034977	16191	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1523	37729	378049	I tried to fill in the form for auto debit, I just could not enter items?	1477036041	16194	0	16	English	Billing	Auto Debit Application	Billing	AutoDebit	Procedure	False	PaymentChannelOthers
+1527	37842	378430	how to payment?	1477043656	16211	0	3	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+1532	37931	378684	CAN I CHANGE MY CREDIT CARD FOR AUTO BILLING?	1477096437	16225	0	9	English	Billing	Auto Debit Application	Billing	AutoDebit	Procedure	True	HowChangeDetails
+1534	38005	378756	How to pay my bill	1477098466	16227	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1534	38009	378762	can make payment at here?	1477098568	16227	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	RequestPay
+1538	38114	378886	Gud Morning, i would like to make a payment for my bill.	1477103571	16232	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1543	38255	379707	HOW TO PAY MY BILL THROUGH CIMBCLICKS	1477120662	16261	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1544	38278	379995	how to pay bill using maybank 2 u	1477131620	16269	0	7	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+1563	38804	381341	Can you check for me? is this number 01120099215 has been registered under audit debit?	1477206849	16317	0	15	English	Billing	Auto Debit Application	Billing	AutoDebit	Request	True	AutoDebitStatus
+1566	38911	381436	how o pay online - internet banking?	1477209149	16322	0	7	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+1566	38916	381448	i want to know how to pay my bill through internet banking	1477209202	16322	0	12	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+1579	39323	382793	can i know how to pay my bill using online payment?	1477281348	16373	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1587	39490	383985	Hi how can i make payment thru online?	1477312193	16422	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1610	40183	387428	I want tp pay by Credit card now.	1477458249	16553	0	8	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	RequestPay
+1634	40829	390777	make payment	1477559257	16691	0	2	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1634	40833	390789	how to make online payment?	1477559373	16691	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1646	41146	392696	I am a new user to redOne. I would like to pay my bill online. How do I do it?	1477633532	16765	0	20	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	RequestPay
+1662	41604	394269	so how to make payment through selcare?tq	1477697910	16826	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1694	42507	397476	i wish to pay my bill online	1477875362	16963	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1723	43246	399611	I would like to make online payment for no : 01110838468 & 0196802700 	1477897235	17063	0	13	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1765	44180	404161	hOW DO I PAY MY BILL?	1477975010	17278	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1769	44275	404501	another question is if i wish to pay my bill through credit card, i choose redtone telecommunications sdn bhd, am i right?	1477978080	17297	0	22	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	PayWho
+1771	44352	404498	I want to pay via online...but i did not know how to pay it..do you have guideline for it?	1477978047	17303	0	19	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1773	44380	404843	It's about jom pay. Is the ref 1 my unique number?	1477980187	17326	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	PaymentChannelOthers
+1793	44970	407822	hi customer care....is it possible to make payment through account ID??	1477999945	17447	0	11	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	True	HowPay
+1798	45054	408067	HOW TO PAY BILL ?	1478003112	17463	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1801	45106	408139	im use maybank 2 u to bankin? im have 3 acc id, can i ask which 1 acc ID that i want to pay it.	1478004845	17468	0	23	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	False	UseWhatAccountID
+1825	45783	410167	can i know the jompay code for red 1	1478060357	17550	0	9	English	Billing	Payment Type	Billing	PaymentChannel	ObjectName	True	PayWho
+1833	46035	411662	the ocbc card will terminate soon, HLB card is must to update for next bill.	1478071203	17612	0	15	English	Billing	Auto Debit Application	Billing	Document	Request	False	ChangeDetails
+1835	46098	411754	Where can i make my bill payment, your service center always say online service down, cannot pay. any other form of payment i can use like online payment?	1478072333	17619	0	28	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	MethodExcept
+1874	47111	415725	HOW TO PAY THE BILL	1478152293	17788	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1874	47112	415728	BY USING INTERNET BANKING	1478152325	17788	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	None
+1876	47154	416029	How to pay online?	1478155979	17804	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1877	47169	416037	i want to pay my bill	1478156065	17805	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1886	47486	417865	hye..I want to ask how to pay bill online?	1478214216	17885	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1889	47568	417993	i want to pay my red 1 bill online. how?	1478218996	17891	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1906	47877	419032	Hello can i pay bill via online banking?	1478231999	17945	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1909	47970	419252	is there any way to pay through internet banking?	1478233992	17950	0	9	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	HowPay
+1909	47971	419256	I wanna pay through Bank Islam	1478234003	17950	0	6	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	RequestPay
+1912	48043	419914	so, if i want to pay the bill using maybank 2 u...which account ID should I use?	1478242796	17983	0	15	English	Billing	Billing Details	Billing	PaymentChannel	ObjectName	False	UseWhatAccountID
+1922	48275	420601	Hi. I want to ask how to pay the bill? Can I using banking online to pay it?	1478251645	18023	0	18	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1922	48283	420664	I want to pay the bill through online banking.	1478252477	18023	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	RequestPay
+1922	48287	420759	I see. Seems like self care more easier. Can I know how is the process of paying the bill?	1478253380	18023	0	19	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1928	48436	421611	How do I make payment via your potal	1478311288	18070	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1932	48499	422368	How to pay with FPX	1478326407	18101	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1945	48797	424011	how to make a payment?	1478413558	18177	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1946	48810	424617	HOW TO PAY ON LINE	1478475122	18206	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1957	49061	426083	I paid it to the Red 1 Network Sdn. Bhd. It is true payee name for me to pay?	1478499792	18279	0	19	English	Billing	Payment Status	Billing	PaymentChannel	ObjectName	True	PayWho
+1958	49086	426125	Is there a simple way to pay bill ?	1478500396	18283	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+1958	49087	426128	I ned to make payment using this acc	1478500419	18283	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+1959	49112	426211	Is there any simple way to pay bill online?	1478502425	18288	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+1962	49144	427691	how can i pay my red 1 bill?	1478562888	18349	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1971	49394	429070	I want to pay red tone bill via online banking	1478586876	18410	0	10	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	RequestPay
+1974	49454	429676	how to online make payment	1478594957	18435	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1974	49457	429691	can i online made my redone bill payment	1478595055	18435	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	RequestPay
+1974	49462	429705	55 <NL>facePAW AI FEN<NL>can i online made my redone bill p	1478595276	18435	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	RequestPay
+1993	49876	432071	HOW TO PAY BILL BY CREDIT CARD	1478676707	18533	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2006	50254	434965	oooo....ok...so if i made online thru maybank 2 u.....is the payment will be real time away or will be delay a couple days	1478819881	18647	0	21	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentChannel	ObjectTime	True	WhenProcess
+2018	50576	436853	petronas e-pay meaning counter or machine	1478909797	18720	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectDefinition	False	PaymentChannelOthers
+2019	50585	436958	how may i pay online	1478918041	18725	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2032	51070	438416	hi,<NL>i want to pay bill by online	1478997341	18780	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2036	51177	438638	Can I online payment for my redone?	1479002647	18791	0	7	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	True	HowPay
+2037	51207	438833	How can I pay for my redone bill?	1479007821	18798	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2038	51241	438852	I'm Wong. How i'm going to pay my Redone bill via E wallet sms method?	1479008127	18799	0	15	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+2046	51511	440584	can i pay bill at pbe???	1479086514	18888	0	6	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	RequestPay
+2047	51546	440600	How can i make payment online ?	1479086618	18889	0	7	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+2047	51560	440662	how to pay through Jompay?	1479087441	18889	0	5	English	Billing	Payment Type	Billing	PaymentChannel	Procedure	False	HowPay
+2051	51696	441197	how i want to pay my bills	1479093673	18915	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2051	51701	441204	i want to pay my bill thru cimb click	1479093762	18915	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2052	51713	441226	how to pay bill in Singapore?	1479094033	18916	0	6	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2070	52182	442418	Hi, may i know how to pay bill online?	1479110468	18973	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2070	52188	442498	I want to pay my bills now but there are no instructions on your website	1479111017	18973	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2074	52282	442675	I live at gombak and there is celcom kiosk at giant	1479112055	18982	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	None	False	None
+2075	52295	442833	PAY BIL	1479114059	18988	0	2	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2075	52302	442853	I WANT HELP MY MUM PAY BIL BY USING MAYBANK 2 U	1479114297	18988	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2079	52384	443000	Can I make payment here by credit card?	1479117026	18998	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2097	52794	445929	HOW TO MAKE ONLINE PAYMENT	1479188315	19132	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2110	53205	447505	Online payment requested my bank login and password?	1479201056	19191	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PaymentChannelOthers
+2116	53400	448155	online banking	1479208817	19217	0	2	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2116	53401	448156	maybank 2 u	1479208820	19217	0	1	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2120	53531	448743	CAN I MAKE PAYMENT AT PBB ONLINE?	1479256608	19252	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	RequestPay
+2120	53544	448778	CREDIT CARD?	1479256853	19252	0	2	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	None
+2138	54096	450488	since i havent make my payment as the merchant near me system down .	1479273236	19323	0	14	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	None	False	None
+2143	54217	451015	HAI, HOW TO PAY BILL ONLIINE FROM HOME	1479278883	19353	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2143	54218	451022	WITHOUT SIGNUP TO AUTODEBIT FORM	1479278941	19353	0	5	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+2144	54234	451170	I want to pay my bill	1479280402	19359	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2154	54454	451935	how do i pay my bill online	1479295133	19395	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2168	54790	452630	But im using Maybank 2 e.	1479348779	19429	0	4	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	None	False	None
+2168	54793	452641	its maybank 2 e. not maybank 2 u.	1479348958	19429	0	4	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	None	False	None
+2168	54796	452646	how many day it will clear if I pay use jompay?	1479349014	19429	0	11	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectTime	False	WhenProcess
+2188	55236	456797	what is billier code?	1479540990	19617	0	4	English	Billing	Billing Details	Billing	PaymentChannel	ObjectName	False	PayWho
+2188	55240	456801	I'm Yeoh. i would like to make payment through jompay service	1479541044	19617	0	11	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	RequestPay
+2188	55242	456803	what is billier code? where should i find it?	1479541108	19617	0	9	English	Billing	Billing Details	Billing	PaymentChannel	ObjectName	False	PayWho
+2190	55295	456927	may i know how to online payment my bill	1479542938	19623	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2191	55328	456997	have any other way to pay bill?	1479544653	19624	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2191	55331	457000	how can i pay my redONE bill with Maybank 2 u.com	1479544807	19624	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2195	55466	457459	I'm online now, how to pay bill	1479559211	19645	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2213	55915	460086	i want to pay my bill	1479714381	19757	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2215	55958	460522	how can I make online payment then	1479723327	19777	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	Procedure	False	HowPay
+2215	55962	460528	Yes, I am planning to make the full payment now	1479723375	19777	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	None	False	RequestPay
+2215	55972	460548	I can't make any payment through bank (TAC)	1479723643	19777	0	8	English	Billing	Un-bar lines - Overdue Payment	None	None	None	False	None
+2215	55976	460552	I want to make payment now	1479723680	19777	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	Procedure	False	RequestPay
+2215	55982	460558	the question is how to make payment if my number is barred	1479723752	19777	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	Procedure	False	HowPay
+2218	56070	461056	maybank online	1479783699	19802	0	2	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2235	56559	462801	i need pay bill	1479819137	19873	0	4	English	Billing	Make Payment - Dealers	Billing	PaymentChannel	Procedure	False	RequestPay
+2241	56678	463184	how to pay my bill...	1479867521	19894	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2243	56730	463320	I would like to pay the bill of this month, but there is no record yet, may i know how?	1479868858	19898	0	20	English	Billing	Payment Channel	Billing	BillOutstanding	Procedure	True	WhichFieldToPay
+2245	56762	463619	HI,HOW TO MAKE A PAYMENT BY ONLINE	1479875086	19909	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2262	57152	466176	please advise payment method available	1479962813	20024	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	HowPay
+2262	57154	466179	online banking?	1479962851	20024	0	2	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	None
+2277	57617	468485	not, I mean now I want payment to u	1480050730	20118	0	9	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	RequestPay
+2293	58028	469905	how to pay the bill online?	1480121460	20172	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2320	58816	473665	need My Jompay ref 1 to pay bill online as i didn't receive my bill thru email	1480250542	20330	0	17	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+2320	58826	473698	wat about the ref number ?	1480251062	20330	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+2320	58828	473701	nvm pay thru jompay before, 1 st time.	1480251116	20330	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2320	58829	473702	never pay using jompay before i mean	1480251191	20330	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2324	58915	473852	I make the payment via maybank 2 u	1480292620	20338	0	6	English	Billing	Billing Charges	Billing	PaymentChannel	None	False	RequestPay
+2329	59033	474365	is there any method i can pay for this	1480301948	20361	0	9	English	Billing	Billing Details	Billing	PaymentChannel	ObjectName	False	HowPay
+2329	59034	474367	except from going to senheng store	1480301958	20361	0	6	English	Billing	Billing Details	None	None	None	False	None
+2330	59074	474812	So I make manual payment for last month bill ?	1480306525	20379	0	10	English	Billing	Auto Debit Application	Billing	PaymentChannel	Procedure	True	HowPay
+2330	59083	474846	Awesome. Last time it accepted Visa & Master only if I am not mistaken ...	1480306802	20379	0	15	English	Billing	Auto Debit Application	None	None	None	False	None
+2333	59147	475066	HI HOW TO PAY ONLINE?	1480309166	20389	0	5	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2351	59665	476411	I received the Invoice .<NL>Where do I pay for the charge?	1480329443	20449	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2359	59909	477506	HOW TO PAY BILL	1480388464	20495	0	4	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2365	60042	477726	Hai..can i pay the bill by using my iphone??	1480391475	20510	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2365	60048	477769	Can i pay through redone website using my iphone??	1480391780	20510	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2369	60145	477894	online transfer without using selfcare?	1480393418	20516	0	5	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+2371	60188	478164	how could I make an payment for the bill this month	1480396712	20527	0	11	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+2386	60528	479957	Account mbb	1480465892	20604	0	2	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	None	None	None	False	None
+2386	60531	479961	I need ac mbb to pay bill	1480465910	20604	0	7	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	None	None	None	False	None
+2386	60539	479975	If can't never mind I go to counter pay when I have time	1480466133	20604	0	13	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	None	None	None	False	None
+2393	60700	480350	if 1 of my line been blok how to make the payment for it?	1480469994	20623	0	14	English	Billing	Increase credit limit	Billing	PaymentChannel	Procedure	False	HowPay
+2398	60908	481494	HI,HOW CAN CHECK MY JOMPAY CODE ON MY BILL?I CAN'T FIND MY JOMPAY CODE.THX.	1480483576	20665	0	14	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+2398	60922	481530	BUT I DON'T HAVE MAYBANK 2 U,CAN I KNOW HOW TO MAKE PAYMENT BY EBANKING VIA PUBLIC BANK?THX YA.	1480484081	20665	0	19	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2399	60935	481562	How can i do 1-time payment for bill	1480484873	20668	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2399	60944	481574	Actually I intend to pay my bill for final time.	1480484999	20668	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2410	61260	482341	How can i pay the bill?	1480493378	20704	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentChannel	Procedure	False	HowPay
+2444	62137	488824	so about my payment to redone if without use auto payment can ?	1480576061	21016	0	13	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	MethodExcept
+2451	62277	490119	Paying bill online when is it possible?	1480584906	21070	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2454	62336	490581	hye<NL>i want to pay thru cimbcliks	1480590713	21095	0	6	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	RequestPay
+2462	62558	491335	how i pay online?	1480640516	21129	0	4	English	Billing	Billing Charges	Billing	PaymentChannel	Procedure	False	HowPay
+2467	62680	491479	may i know ur bank details for us to make online transfer	1480641646	21141	0	12	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	False	PayWho
+2481	63178	495771	I met some problem in paying the bill. Can i pay it thru online banking? pbb	1480688727	21362	0	16	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2481	63179	495783	corporate code is celcom right?	1480688888	21362	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	True	PayWho
+2485	63310	496346	Gut morning how to pay my bill on line??	1480721951	21389	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2485	63315	496356	Now I'm on line don't know how to pay my redone bill	1480722055	21389	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2486	63326	496474	can i pay my bill thru autodeduct	1480724514	21393	0	7	English	Billing	Payment Channel	Billing	AutoDebit	Procedure	True	HowApply
+2486	63333	496482	not auto debit , i want to pay my bill thru merchant by calling since bill has been barred	1480724673	21393	0	19	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2486	63351	496518	so i xouldnt pay by calling redone n deduct from my acc	1480725243	21393	0	12	English	Billing	Payment Channel	None	None	None	False	None
+2486	63353	496528	same as other provider, i just call them n asking for payment, straight away they verify n make the payment on the spot	1480725305	21393	0	23	English	Billing	Payment Channel	None	None	None	False	None
+2508	63929	500325	M 2 u	1480814010	21556	0	1	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2508	63930	500327	Maybank transfer	1480814021	21556	0	2	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2508	63933	500333	No I use m 2 u to pay bill	1480814063	21556	0	7	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2509	63980	500439	online banking	1480815046	21562	0	2	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2511	64043	500587	I joined 8 oct. My data usage should be calculated from when? 1 - 30 per month or 8 - 7 next mth?	1480816632	21566	0	19	English	Billing	Billing Charges	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2518	64240	501969	And I use online transfer to pay bill	1480839169	21624	0	8	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	None	False	None
+2521	64315	502262	CAN I MAKE A PAYMENT VIA TIHIS ONLINE	1480847276	21634	0	8	English	Billing	Billing Charges	Billing	PaymentChannel	Procedure	True	HowPay
+2522	64324	502384	how to make payment online	1480853854	21644	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2530	64519	503377	can I pay my Redone bill through Maybank 2 u?	1480899989	21687	0	9	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+2530	64524	503387	I think I can go thorugh Maybank 2 u to pay the redone	1480900133	21687	0	11	English	Billing	Payment Channel	Billing	PaymentChannel	None	False	None
+2530	64530	503395	it is ok, I will pay through Maybank 2 u	1480900189	21687	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	None	False	None
+2539	64792	504502	how do i pay redone bill online<NL>?	1480909182	21741	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2540	64800	504602	hello..just want to know,how can i pay redone's bills via online?	1480910307	21745	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2567	65691	509579	i wan to pay payment	1480999462	21933	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2567	65692	509580	how to online pay	1480999470	21933	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2568	65731	509677	Quite impossible for me to settle the payment at selfcare. I will do it via Maybank 2 u today	1481000208	21935	0	17	English	Billing	Billing Details	Billing	PaymentChannel	None	False	None
+2586	66330	513253	hi<NL>may I know how to paybill online?	1481090753	22066	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2588	66369	513392	i want make payment by online	1481092130	22073	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2589	66380	513810	Hi. I wish to make payment online via M 2 U... please advice	1481096480	22088	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	RequestPay
+2589	66392	513840	so it is not possible to remit pyment via m 2 u directly	1481096643	22088	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	True	WhenProcess
+2590	66400	514702	where can i pay the bill?	1481106518	22116	0	6	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2590	66406	514708	payment channel	1481106625	22116	0	2	English	Billing	Payment Channel	None	None	None	False	None
+2590	66408	514717	redone's dealer?	1481106727	22116	0	2	English	Billing	Payment Channel	None	None	None	False	None
+2590	66420	514742	which banker is red 1 corresponding corporator?	1481106951	22116	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	PayWho
+2592	66494	514860	HOW TO ONLINE PAY	1481110167	22121	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2592	66519	514938	any other method that i can use to pay?	1481111347	22121	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	True	HowPay
+2596	66625	515081	online can pay bill or not?	1481114677	22129	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2602	66826	516362	hi, how to pay my bill online? can i pay through maybank 2 u?	1481158831	22174	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2602	66844	516399	i'm trying to pay by maybank 2 u	1481159385	22174	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	HowPay
+2602	66845	516401	may i khow my account no?	1481159419	22174	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	UseWhatAccountID
+2602	66852	516415	i just register selfcare n get my bill amount. before i just pay my the agent where i reg my acc	1481159573	22174	0	21	English	Billing	Make Payment - Selfcare	None	None	None	False	None
+2604	66887	517298	PAY MY BILL	1481169978	22211	0	3	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	RequestPay
+2604	66891	517303	USING FPX	1481170025	22211	0	2	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	None
+2606	66959	517527	I WAN TO MAKE PAYMENT ONLINE	1481175752	22220	0	6	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	RequestPay
+2615	67198	519206	How to pay bill	1481201150	22278	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2622	67355	520771	hello, if i want to pay my bills online, how can i get redone account number?	1481258201	22344	0	16	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	PayWho
+2622	67363	520783	if i want to pay my bills online,	1481258360	22344	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2625	67497	521328	how can i pay the bill thru online?	1481271354	22365	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2641	67937	523851	HOW TO MAKE PAYMENT	1481357529	22460	0	4	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+2652	68300	527248	no.. every month i used m 2 u to make payment	1481518085	22599	0	9	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2656	68390	527709	how to online pay the bull?	1481531025	22617	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2656	68393	527714	how to online pay the bull?	1481531076	22617	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2658	68447	528150	I need to go redone branch to settle my bill?	1481547737	22638	0	10	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	True	HowPay
+2658	68448	528151	or paid directly thru internet banking	1481547763	22638	0	6	English	Billing	Billing Details	Billing	PaymentChannel	None	False	None
+2661	68564	528804	How to pay online?	1481589062	22665	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2663	68604	528923	Of RM 50 via maybank 2 u	1481590459	22669	0	4	English	Billing	Billing Charges	Billing	PaymentChannel	None	False	None
+2671	68782	529830	how to paybill online	1481605261	22720	0	4	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2674	68828	529976	I WOULD LIKE TO ENQUIRY, I WANT TO BANKING PAYMENT IN MAYBANK. SO HOW TO BANKING? PLS ADVISE<NL>MY NAME IS NAZEERE BHANU BINTI FAZUL MOHAMED<NL>IC NO: 741228 - 75 - 5038 <NL>A/C 200126708 	1481608192	22728	0	27	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2685	69106	531375	Hi, pls advise where i can pay bill at Bukit Mertajam, Penang	1481633104	22782	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectLocation	False	WherePay
+2687	69190	531436	How to make a online payment	1481633872	22785	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2688	69228	531660	maybank 2 u	1481636229	22790	0	1	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2695	69430	534152	how to pay through maybank 2 u	1481701694	22908	0	5	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	Procedure	False	HowPay
+2698	69521	534225	how should I know the date of my redone account monthly payment?	1481702228	22914	0	12	English	Billing	Billing Cycle	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2700	69563	534259	hello, how i pay the bill via maybank 2 u ?	1481702492	22916	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2700	69569	534284	may i know how i pay the bill via maybank 2 U ?	1481702667	22916	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2704	69636	534693	May i know what is jompay cod for redone?	1481708477	22933	0	9	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	False	PayWho
+2716	70020	536360	Morning,if let say i want to make payment from cimb, which is the corporate name for redone	1481762298	23012	0	17	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	ObjectName	False	PayWho
+2734	70495	537999	How to pay online	1481773214	23073	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2734	70499	538005	How to pay online	1481773334	23073	0	4	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2736	70580	538276	Hi, can I pay my bill online?	1481775469	23088	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2749	70965	540017	hi how to make payment online?	1481790070	23154	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2755	71140	540621	I want to pay this bil now! How?	1481794050	23179	0	8	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	RequestPay
+2755	71144	540627	I want to pay this bill now,how? My name is Cheah Soo Wei	1481794106	23179	0	13	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	RequestPay
+2755	71152	540640	This method can use by android hp?	1481794261	23179	0	7	English	Billing	Payment Channel	None	None	None	True	None
+2756	71165	540684	i just want to know how to pay the bill	1481796092	23182	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2756	71168	540697	after i download the 'DOWNLOAD AND PAY BILL " then what nee i do ?	1481796311	23182	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2756	71172	540716	no, i didnt see the pay now right noe miss. when i click the button on download & pay bill only form	1481796498	23182	0	22	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	True	CannotPayBill
+2763	71351	541775	Yes..maybank 2 u	1481812637	23240	0	1	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+2779	71789	544830	I WANT TO MAKE PAYMENT ONLINE. <NL>HOW TO GO ABOUT	1481863241	23372	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2779	71795	544854	I already log in & try to make online payment but can't get through	1481863394	23372	0	14	English	Billing	Make Payment - Selfcare	Billing	BillingTroubleShooting	Reason	False	CannotPayBill
+2780	71823	545019	I also want to know if 7 e also can perform if i would like to pay my bill there??	1481864948	23377	0	19	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectOthers	True	PaymentChannelOthers
+2790	72045	546835	can i pay bill by jompay?	1481895633	23461	0	6	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+2791	72076	547152	Can it be done at the sen heng branch that I made the payment?	1481898175	23472	0	14	English	Billing	Payment Status	None	None	None	True	None
+2791	72080	547166	do they give refund or make another payment?	1481898532	23472	0	8	English	Billing	Payment Status	None	None	None	True	None
+2794	72218	547500	Do you know how I can pay the bills? Maybank online can?	1481901144	23480	0	12	English	Billing	Data Bundle / PPU Rate	Billing	PaymentChannel	Procedure	True	HowPay
+2811	72654	550418	HOW TO MAKE BILL PAYMENT??	1481989002	23615	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2812	72669	550498	May i know how make the online payment	1481989841	23620	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2812	72682	550530	wat is my JOMPAY code??	1481990240	23620	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	ObjectName	False	PayWho
+2813	72714	550734	how can i do the payment now?	1482020577	23625	0	7	English	Billing	Increase credit limit	Billing	PaymentChannel	Procedure	False	HowPay
+2819	72895	551849	hello there <NL>can i pay the bill online without signing up for auto debit ?	1482051103	23676	0	15	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+2823	72986	552241	how to pay my bill via online payment	1482066065	23695	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2824	72999	552269	how to pay my bill now	1482068189	23697	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2830	73180	553657	how i can pay the bill through selfcare login	1482120635	23756	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2846	73625	555109	CAN I PAY THRU ONLINE?	1482142571	23814	0	5	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2848	73668	555239	I WULD LIKE TO MAKE PAYMENT FOR MY BILLS TRU THE WEB STE. NEED GUIDE	1482145112	23820	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2851	73754	555285	NEED TO PAY BILL TRU SELF CARE PORTAL	1482146090	23823	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2853	73809	555355	I WANT TO PAY THE BILL ,HOW CAN I DO	1482147299	23826	0	10	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2863	74053	555998	Hi, May I know how should I pay for the Bill via Maybank 2 U ?	1482159759	23851	0	14	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2864	74080	556094	how to pay bill using online transfer?	1482161402	23855	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+2864	74089	556126	how am i knw the bill is cleared?	1482162247	23855	0	8	English	Billing	Payment Channel	Billing	PaymentStatus	Procedure	False	WantUpdate
+2868	74183	557758	it is my code & ref no. Correct?	1482215039	23923	0	8	English	Billing	Payment Status	Billing	PaymentChannel	ObjectName	True	PaymentChannelOthers
+2869	74249	557924	Can I pay my redone bill online?	1482216898	23930	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2884	74930	559698	may i know how can i pay the bill via online	1482248288	24005	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2890	75135	561112	how can i make payment for other person via online payment?	1482297492	24057	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2890	75141	561121	but its for my mother number, how can i pay thru online?	1482297675	24057	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2890	75148	561128	maybank only?	1482297826	24057	0	2	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	MethodExcept
+2890	75149	561130	others bank? cimb?	1482297849	24057	0	3	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	None	False	None
+2900	75543	562184	i prefer use e-banking online, so how?	1482311841	24093	0	7	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+2908	75800	563099	can i pay the bill at 7 11?	1482326791	24133	0	7	English	Billing	Product Charges	Billing	PaymentChannel	ObjectLocation	True	WherePay
+2918	76080	564908	Can I know how to pay phone bill via this page	1482386368	24213	0	11	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2918	76095	564933	After open download &pay..then next .what can I do	1482386743	24213	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2924	76311	565490	hye<NL>can i know how to pay bill?	1482394974	24241	0	7	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	True	HowPay
+2934	76514	566555	how can i pay online	1482420619	24295	0	5	English	Billing	Billing Details	Billing	PaymentChannel	Procedure	False	HowPay
+2934	76523	566584	for bank islam	1482420941	24295	0	3	English	Billing	Billing Details	Billing	PaymentChannel	None	False	None
+2942	76719	567923	i am the customer for 0102204996 , like to pay bill now, please guide	1482476719	24357	0	14	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2945	76764	568378	Hello<NL>i would like to make payment<NL>can u assist me	1482489018	24377	0	9	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	True	HowPay
+2950	76876	568975	how to pay using current account	1482503142	24405	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2952	76904	569093	How to pay bil with online banking	1482506808	24411	0	7	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+2963	77196	570775	can you help me	1482587726	24481	0	4	English	Billing	Billing Details	None	None	None	True	None
+2963	77210	570792	is it i still receive a message	1482587970	24481	0	7	English	Billing	Billing Details	None	None	None	True	None
+2997	78113	574631	where can i settle the outstanding and register the new account? i am living somewhere around stadium melawati shah alam..	1482804237	24642	0	20	English	Billing	Billing Details	Billing	PaymentChannel	ObjectLocation	False	WherePay

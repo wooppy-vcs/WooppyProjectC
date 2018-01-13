@@ -1,0 +1,443 @@
+ok pls give me total bill outstanding	BillAmount
+however why does it line not combine with main line	MainSubLineOthers
+beside fullfill outodebit form do u have onother way to make pyment	HowPay
+terminate number	HowTerminate
+u can call me as bob , i just want to know about voice 48 \?	Promotions
+0163508496 was registered under sing heng motor trading sdn bhd or saw ling lee or soh guat khim \?	CheckDetails
+seperate all line become individual line	MainSubLineOthers
+i want on line banking	HowPay
+wat is my jompay code \? \?	PayWho
+cant pay nov bill	CannotPayBill
+pls send me the copy of contract	DocumentOthers
+why overcharge \?	WhyBillAmount
+so can u help check this line have outstading	BillAmount
+is there any data choice more than 1g \?	Recommendations
+when redone started prepaid \? \? \?	GeneralPlanInfo
+i cant make call	LineStatus
+yes only 0172052282 using rm38	CurrentPlanDetails
+still show the same plan , redplan 8	GeneralPlanInfo
+in short i just need to know the benefit of commitment sharing please give example tq	ItemDefinition
+is it possible for me to check my daughter 's line as well \?	MainSubLineDetails
+faizul i would like to purchase 1 gb now	RequestChangePlan
+am i charged for someone 's else phone bill \?	TotalBreakdown
+i ca n't receive tac number from the bank	BillingTroubleShootingOthers
+have my contact end \?	ContractStartEndDate
+i just made the payment of 12 88	ConfirmPaymentReceived
+i wan to top up for 016 8872618	RequestChangePlan
+and thats the only amount i have to settle for the month of november right \?	BillAmount
+ok then i will try again so account status still active ya \?	LineStatus
+did they open for sunday \?	OperatingHours
+ok can u give me my billing acct id \?	UseWhatAccount
+this 101 76 is pay when \?	PayingMonth
+for whatever reason i still want to terminate this line	HowTerminate
+but can change my name from tan jun jie to tan jun jia	ChangeDetails
+because i click on pay now button it will not proceed	CannotPayBill
+note that today is only 30 nov 2016 how can there be a dec bill \?	BillingOthers
+so i have to wait until 10 18 , then only i can proceed the termination \?	ContractStartEndDate
+so free 500 mb or no \?	GeneralPlanInfo
+yes , use 01110505068 this number to subcribe epaper can	GeneralOthers
+okay , just for your info i have a questian , how much free call i have in a month	VoiceDetails
+why the payment channel too slow \? \?	PaymentChannelOthers
+what is the charges for \? i dont think i use it as much	WhyItemAmount
+all this while i am using red8	CurrentPlanDetails
+but 28 does n't involved call	GeneralPlanInfo
+hello , i am norashikin and my number is 60 11 1085 6929 pymnt been md 3 days ago via jom paymcan u assist to check on yr siystem if it isis reflected \? i need my line to be reconnect tq	ConfirmPaymentReceived
+is it i m able to use 100 mb monthly \?	CurrentPlanDetails
+can i change my paln to data8 \?	RequestChangePlan
+i already try , allow all sites to show pop up , also cant	StillNotWorking
+why will terminated \? \? i got make payment oo	TerminationDetails
+so now i want to terminate the line then	HowTerminate
+just made pymt rm62 00	InformPayment
+what is there customer service number	GeneralOthers
+well my number , how to get it unblocked \?	HowUnbar
+i want confirmation bill pamyment	ConfirmPaymentReceived
+i used maybank 2 u	PaymentChannelOthers
+need check current balance for number 0193365548	CheckCallsUsage
+i'm using red plan rm8 i'm interested in data8 is it possible to make a switch \?	HowChangePlan
+but now she use want plan	CurrentPlanDetails
+i paid for rm150	InformPayment
+just check , is it received the money \?	ConfirmPaymentReceived
+can you please help me check , because i have 2 other lines , supplementary lines , can i change next month \?	MainSubLineDetails
+can u pls email to my email address \?	RequestSendBill
+current usage is zero \?	CheckTotalUsage
+so , just want to reflect back the first conversation , why redone still show on their website that i have to pay now \?	WhyNotUpdated
+so tomorrow still available in changng right \? \?	WhenChangePlan
+i am lim mui noi , 5548 may i know my subline commencement date \?	ContractStartEndDate
+whats the prob as i also dont know from where the outstanding \? \?	WhyBillAmount
+is tis amazing package for lifetime promotion \? \? \?	Promotions
+bill payment	InformPayment
+db1gb means unlimited \?	GeneralPlanInfo
+can i know the balance i have now \?	BillAmount
+hmmm my pop up blocker already off but still do n't see the link yet	StillNotWorking
+so how bout the advance payment in 01110520048	BillAmount
+hw can i check my activity \?	HowCheckUsage
+payment channel already give me confirmation , and deducted money	WhyNotUpdated
+are you there 01155007664 is 6 months over for this number	ContractStartEndDate
+u can c that i have two numbers	MainSubLineDetails
+i had email to careline@redone , regarding to chg the 0137783002 from data 8 to rp8	ChangePlanStatus
+mean anyone wont able to contact me in next 24 to 48 hours \?	LineStatus
+ok , the send to email \( fujimotorpolserian 8888 @hotmail com \)	RequestSendBill
+i have payment ady	InformPayment
+is there any way to get aug n sept bill \?	HowDownloadBill
+please check and ensure the payment was received	ConfirmPaymentReceived
+y when i already paid on 2 nd is not written paid	WhyNotUpdated
+what minimum amount should be i paid	BillAmount
+if i paid for phone no 0167914704 can or nt	RequestPay
+can u check from your system if the call forward i activated	AccountOthers
+ok is the price listed for data bundle in the redone website \?	PackagePrice
+i saw at your new data rm30 for 2g	GeneralPlanInfo
+i mean any basic data paln because my frinds told me red one offer basic data plan for customers	Promotions
+my play is there have 1 gb for internet \?	DataDetails
+bill inquiry	BillAmount
+yes poonamjit please unsuspend and activate it only for master 0192754930 number	RequestUnbar
+or can i just fill the registration form , with 4 supp line numbers and stated which plan to change	ChangePlanOthers
+yes , i do log in every month , today cant dowload	CannotViewBill
+could plz check on my august bill \? did i settle it \? sorry it should be july	BillAmount
+i need spread amount for both no	TotalBreakdown
+oh really can you exceed my limit to rm50	ChangeCreditLimit
+what does total current utilisation 217 63 means \?	ItemDefinition
+then after at most 5 working days , i can start to use 1gb \?	WhenPlanActivate
+also this account is having 2 number , how should i do if i would like to split them into individual account	MainSubLineOthers
+because i was told that the message from hotlink will be 4 hours but i waited and waited the message finally came but when i answer yes to port out , it says over time frame	PortInOthers
+transaction status success account id 201147546 invoice id 1610 201147546 date 14 10 2016 16 26 21 pm fpx txn id t 111947430700 auth code 1610141624170089 transaction amount myr 25 16	InformPayment
+hi actually i not understand to read view bill \?	HowViewBill
+01110836731 no services for this number can help check \? already bank in ytd	LineStatus
+about crazy8 program	GeneralPlanInfo
+i never submit any form for termination	TerminationOthers
+can u give phine number redone dealer at kota damansara kepong sungai buloh	BranchLocation
+hi , i want to change the plan to amazing plans , i have the requisition form , how to fill up the form part c change of old package and change of new package \? my current plan have 2 mobile number	HowChangePlan
+another question is to terminate my subline data base	CancelData
+i made payment rm153 68 today and i hope my account is closed and my name is clear from ctos	TerminationStatus
+may i know where is redone centre if i stay jalan genting klang setapak	BranchLocation
+the contract how long \?	ContractStartEndDate
+but after that i received a sms that say my reply is invalid so they cancel my request , can u plus help me to resubmit the request to leave u mobile	PortInOthers
+so which date before i need to close	CheckTerminateTime
+2 gb rm \?	ChangePlanOthers
+hallo , i need to confirm my package	CurrentPlanDetails
+try to pay online but this pop up this site can t be reached maybankard 3 dsecure maybank com my s server dns address could not be found	ErrorCode
+what are the differences between data 8 and data8 \?	GeneralPlanInfo
+my balance \?	BillAmount
+so wht should i do	HowUnbar
+hello i just paid my bill but my number still being suspended can u help me with that \? ty	RequestUnbar
+ok pls increase to 100 tq	ChangeCreditLimit
+under my ic no have 2 account right \?	CheckDetails
+data unlimited is something which will slow down if we reach limit data is it \?	DataDetails
+so the last bill i pay is 70 ya right \?	LastPayment
+ok when the data will refresh every month	WhenDataRefresh
+how to separate my number with other	HowAddSubLine
+call 8 no free 50minute call \?	GeneralPlanInfo
+last month i pay 2 times rm 16 96	HowRefund
+where is the celcom kiosk machine near brickfields	BranchLocation
+sir i cannotpay thru my iphone	CannotPayBill
+hi would like redone to reconnect back my line immediately i have make payment kindly react on this matter	RequestUnbar
+my roaming service is still activated , correct \?	RoamingOthers
+is there any charge for cancelation \?	CancelData
+just noticed my call has being barred	LineStatus
+can u help me to check why my data usage is already used 283 kb in this 1 january 2017 \?	CheckDataUsage
+can u show me next plan \?	Recommendations
+how long will be this promotion last \?	Promotions
+hello there can i pay the bill online without signing up for auto debit \?	HowPay
+i have already click top up 1 gb rm 20 but i dont get any message about it can you please help check what problem is it \?	ChangePlanStatus
+ok please change it to rm30 then	ChangeCreditLimit
+and i already pay rm 40 87 last night	InformPayment
+mean i only can change it next mth \?	WhenChangePlan
+why is my ic number wrong \? \? n u just closed the conversation	CheckDetails
+not supp line \?	MainSubLineDetails
+no is ok since is barred i will email my transaction payment to unbar line	RequestUnbar
+i have been transfer payment to my account last night , how come my i still cannt even call , sms , and wehcat whatsapp	WhyStillBar
+how do i change my login password \?	ChangeDetails
+ok so the rm8 not for calling \?	SubscribedPlanOthers
+if like that can i just terminate 011 105 40048	HowTerminate
+how do i change my email address used during registration \? i can change with 123	ChangeDetails
+the total amount due i see now is still rm 9 01	WhyBillAmount
+cuz when i port in on thursday , the operator told me take only 24hrs	PortInStatus
+my data usage now is 123 977 mb and charge on per use basis can i topup another rm 5 00 now	RequestChangePlan
+i ca n't make any calls my name is jayalatha number is 01110621318	LineStatus
+hi , i have a question i suppose to pay rm 55 33 but just now i just paid for rm 50 how can i pay for the rest \?	HowPay
+i go barred	RequestUnbar
+can u give me step to pay \?	HowPay
+now they ask me for rm 8 56	BillingOthers
+secondly , can you set up auto debit for me \?	HowApply
+welcome , my question is i bought 1gb data this morning to access internet but i ca n't access the data as well why \?	DataStatus
+internet soo slow now	DataDetails
+my line is barried	LineStatus
+the promotion only valid till then \?	Promotions
+just transfer from m 2 u any outstandig now \?	BillAmount
+can you let me know my outstanding bill amount \?	BillAmount
+check my sub line as well	MainSubLineDetails
+ok when is the deadline bfor the line is totally cut off	WhenPaymentLastDay
+total current utilisation refers to \?	ItemDefinition
+i dun remember already but i remember the staff asked my ic , and he also mentioned the deposit can claim after 3 months	HowRefund
+my existing rp 8 plan is that free call 53 mns per month \?	VoiceDetails
+do u means its will terminate automatically \?	HowTerminate
+5gb is 80 now \?	PackagePrice
+0198275288 i upgrade to data 8 add on addition 1 gb , rm 28	ChangePlanStatus
+hai how can i pay my bills using e wallet \?	HowPay
+i noticed there are 2 hp numbers registered under my name may i know the hp numbers as its not reflected in my bill	MainSubLineDetails
+im trying to change from rp8 \( agent 's fault \) to data8 \( package i wanted \) he told me i could do that for free without any charges so i can only apply for change between 1st to 10th of next month \?	HowChangePlan
+is it possible to have 2 accounts \?	HowAddSubLine
+group voice in what \? example please \?	ItemDefinition
+the situation is now i only used 019 and 017 number and planning to terminate the 011 number	HowTerminate
+payment has been performed and successful thank you for your checking	InformPayment
+im clerk of glt auto parts im want to know the amount bill november for mr low boon hua	BillAmount
+simcard problem	SIMCardOthers
+1 more thing , can i fill up termination form by online \?	HowTerminate
+could you please terminate it \? can you \? \?	HowTerminate
+the data8 same like this	GeneralPlanInfo
+fine can you pls check my outstanding bills	BillAmount
+if i paid full \? \? can used again itz \? \?	BarringOthers
+i cant downloadbill	CannotPayBill
+and there is no rm30 charges for the next months right \?	MonthlyCommitment
+what is the difference between limited and unlimited plan \?	ItemDefinition
+at redone centre senawang	BranchLocation
+if i nak upgrade internet package apa yg latest	Promotions
+data 8 come with free 500mb data , any notificatio if reach 80 of 500mb \?	GeneralOthers
+contract is 6 months only right \?	ContractStartEndDate
+so can use 10 gb even no 4 g coverage \?	GeneralPlanInfo
+hi redone , per this morning live chat i have forwarded my request for plan correction from my email clyong11@gmail com pls help to check thanks	ChangePlanStatus
+i have make payment to redone before	LastPayment
+but y total product charges is 45	WhyItemAmount
+or i will be charged based on my calls duration \?	CurrentPlanDetails
+how can i request for separated bill	RequestSendBill
+i wan open data	RequestChangePlan
+hmm but then these 20 sms charge before i use celcom , which is the time i'm still on redone network	WhyBillAmount
+can i make payment at pbb online \?	RequestPay
+received email saying that payment failed now i just make another 1 can u check if this is ok	ConfirmPaymentReceived
+and how many months do u keep the number after suspension \?	BarringOthers
+ok that mean 1 st oct im just pay rm 17 82 right \? \?	BillAmount
+im having problem with my line	LineStatus
+so will i be charged for registration fee again \? or will it be just transferred over	HowMuchChangePlan
+what is the difference between the data 8 and crazy 8	GeneralPlanInfo
+how come it is still active	LineStatus
+my location is at bandar utama at petaling jaya	BranchLocation
+how about redplan88	GeneralPlanInfo
+i am confused by your sms asking me to pay that amount this amount	WhyBillAmount
+hello plse tell me my credit amount as per today tq	BillAmount
+is this exceed the limit \?	WhyBar
+why before , for example 200 , i pay 150 , still can be used \?	PartialPayment
+i want to purchase the data 1 g	RequestChangePlan
+can you heip to check \? i pay rm 107 06 by pbb visa card just now	ConfirmPaymentReceived
+i wish to increase the 0124780089 data line from rm 30 to rm 50	RequestChangePlan
+but this morning why still stated the bill is pay now	WhyNotUpdated
+based on my current plan , is there any special promo plan \?	Promotions
+so i still have to pay rm 50 86 \?	BillAmount
+i have change my house address	ChangeDetails
+but in the download bill there is 44 56	BillAmount
+did i still have any unpay bill \?	BillAmount
+and what do you mean by basic internet \?	ItemDefinition
+they charge me rm 80 if i wanna to promote to main line	MainSubLineOthers
+mobile data	GeneralPlanInfo
+btw it , i wan to check my payment just nw did ur side rec \?	ConfirmPaymentReceived
+that amount base on usage or penalty so far im not receive any bill	WhyItemAmount
+can u set the limit to 1500	ChangeCreditLimit
+hi , just want to know why my account did n't update because yesterday i paid my bill but nothing change ain the view vill site i also didnt receive any message state that i 've pay my bill	WhyNotUpdated
+is there any branch in batu cave \?	BranchLocation
+i want to confirm is the 01110903061 was terminated \?	TerminationStatus
+i already pay all	InformPayment
+hi there , i wonder why i have two number in my account , while i only use the 017 number \?	CheckDetails
+can i get pamphlet for further information \?	Promotions
+then , how long is the process \?	CheckTerminateTime
+ok pls increase the credit limit	ChangeCreditLimit
+i have paid my bill , please open up my line 0177905700	RequestUnbar
+so confirm my plan as per your advice before \?	CurrentPlanDetails
+need change sim card or dont need \?	SIMCardOthers
+when will i not be charged on calls to fixed line then \?	VoiceDetails
+is it my linw jas been barred	LineStatus
+i wanted to ask my current account billing 0145332139	BillAmount
+ic i pay using maybank 2 u tis eveing	InformPayment
+hi redone good morning i would like to ask if i can qualify for redone 10 gb or 20 gb data \?	HowChangePlan
+okay so if i sent the form by this month , next month my plan will be change \?	WhenPlanActivate
+so will be 1 5gb , right \?	CurrentPlanDetails
+payment done by online banking	InformPayment
+my data is 2 gb \?	CurrentPlanDetails
+how ca n't i save a copy of my receipt \?	ReceiptProblem
+of course i know my account suspended if not i will ask ur help	LineStatus
+hello , my phone is lost pls temporarily freeze the account my mobile number 0166660110 account id 200516439 account name sia ming teck	HowSuspend
+any recent promo for smartphone	Promotions
+could you please check whether you have port out this line 0122193658 from tunetalk to redone \? i made request on 29 aug at puchong ioi boulevard	PortInStatus
+sorry i busy jus now i wan to close my data for 012 5802614	CancelData
+balance brought forward is rm 20 and total amount due is rm 0 how much shall i pay actually the bill tm 20 has been paid last month	BillAmount
+i have 6 lines under this account	MainSubLineDetails
+before i can pay with online	CannotPayBill
+rm20 is data \? \?	GeneralPlanInfo
+my question is besides this no i have another number 0177852538 i received a message from redone saying i have used 70 of 1 gb i am not sure how come this much	CheckDataUsage
+so the user take the data8 or data8 plan will need to pay the addition rm8 other calls fee gst right forever right \?	PackagePrice
+if i finish my data usage before next month and the speed will be slow , if i want to add on the speed a bit after i'm finish data usage , can i \? because the situation is i about to use finish my data usage and when the lunar new year i scare i will need to use it	RequestChangePlan
+if through ipay88 can \?	HowPay
+so this month bill is cleared \?	BillAmount
+i paid through maybank 2 u a few minutes ago	InformPayment
+done payment	InformPayment
+is there an app for redone to check the usage \?	HowCheckUsage
+can use back previous statement to pay \? \?	InformPayment
+that is temperately i means increase 4 ever	ChangeCreditLimit
+could you help to add on \?	RequestChangePlan
+if just apply sub line , can register through website by email \?	HowAddSubLine
+why m i taxed 5 42	WhyItemAmount
+i just paid my bill to 0168313846 amounting rm 9 00 but no receipt come out	ReceiptProblem
+i sent two forms \( rf caf \) and ic \( front back \)	ChangePlanStatus
+i still need to top up more rm 50 to cover \?	CheckUnbarAmount
+if i wanna do auto debit	AutoDebitDetails
+can you resend october 2016 statement to my email \?	RequestSendBill
+so my monthly commitment will still stay at rm 8 right \?	MonthlyCommitment
+it appears waiting for redone login com at left bottom of screen it looks like downloading , but end is appear our conversation chat room without any downloading file	ErrorCode
+so i dont have paid for extra rm 40 of imternet data	HowMuchChangePlan
+ok rm 38 unlimited data right \?	GeneralPlanInfo
+so the bills is zero	BillAmount
+okie , after clearing the 01110887584 is free number ald is it \?	AccountOthers
+i would like to adda data bundle to one of my subline	RequestChangePlan
+still not show in my online	WhyNotUpdated
+so can i change to data 8 \? for my mum	RequestChangePlan
+i want cancel this line , but i dun know is main or supp	MainSubLineOthers
+make call rm 8 min mont \?	GeneralPlanInfo
+i dont want use data anymore	CancelData
+why my current usage is rm47 it is too much then what i expected	WhyBillAmount
+i contacted one of your service representatives earlier about my plan upgrade progress	ChangePlanStatus
+already clicl downoad , but cannot download	CannotViewBill
+btw now got any plan \?	Recommendations
+any advice for new promotion	Promotions
+i wanna know the end date	WhenPaymentLastDay
+can you help me to check my port in status from maxis to redone \? name joseph yong king soon	PortInStatus
+this amount is dec \? \?	PayingMonth
+can help to active 01119298828	RequestUnbar
+rm20 internet data	RequestChangePlan
+if i finish the data , will the line slow down \?	DataDetails
+tat doesnt include last mth usage \?	CheckTotalUsage
+and may i got any time lock	WhenChangeData
+i use to receive my phone bills at my gmail but now no more !	RequestSendEveryMonth
+0124976046 go to data 8 with 500 mb	RequestChangePlan
+so i can request seperate my bill on 6th \?	MainSubLineOthers
+ok but i remember there is promotion saying there is a free call but limited	GeneralPlanInfo
+hi , may i know the lucky sim contest is it over	PackagePlanOthers
+hi , thank you to expedite my change plan application already get sms notification from redone however , my query is	ChangePlanOthers
+how long will his new credit limit last	ChangeCreditLimit
+u check my previous bills	RequestSendBill
+any saving program or new plan	Promotions
+why cannot log in your pay now	CannotPayBill
+after exceed the 1 gb usage will there e any charges \?	BillAmount
+could i swith it online \?	HowChangePlan
+can i cancel	CancelData
+my current bill is 43 33	BillAmount
+please enable the account	RequestUnbar
+bill	BillAmount
+can i know when can open back \?	CheckUnbarTime
+and what is the unbill amount \?	BillAmount
+why red 1 have taxation charges \?	ItemDefinition
+how to make payment in order to immediately use \?	HowPay
+0194719336 maintain redplan 8	RequestChangePlan
+monthy commite rm8 rite	MonthlyCommitment
+it is ok pls top up rm 20 for me for 1 gb	RequestChangePlan
+how can i identify my payment	HowConfirmPaymentReceived
+im stay at penang island , near georgetown , where is the nearest centre should i go \?	BranchLocation
+hi i want to ask about my bill in the number 0107652670	BillAmount
+if i cancel any charges	HowMuchPayment
+excellent ! so currently my account 's bill is cleared \?	BillAmount
+i want to cancel u line relly today and i will take proof to report	HowTerminate
+does it includes call credits \?	GeneralPlanInfo
+for next month and so on , i dont want to subscribe data option	CancelData
+any down time on my line \?	LineStatus
+my number barrew a week ago	HowUnbar
+can i have the copy of aug 2016 bill	HowDownloadBill
+ok how long it will take to be cleared	CheckUnbarTime
+ok \? thx \? past few month i also never receive any email	WhyNoEmail
+i make a payment rm50 on 25 9 and today rm50 can u check for me	InformPayment
+i have just sighed up for redone teacher package i got 2 nos 01110887859 and 0110887537 however my active no is 0139075550 \( celcome \) which all my friends are using it how to switch to redone teacher package \?	HowChangePlan
+search for me tiara mutiara service apartment jalan puchong	BranchLocation
+so already received my payment \? its total rm 70	ConfirmPaymentReceived
+but my bill is rm 29 68	BillAmount
+i using over 61 249 data , but it charge me rm 9 32	WhyItemAmount
+yesterday i make a payment and received msg from red 1 that payment is done	InformPayment
+how about auto debit \?	AutoDebitOthers
+ok so can i refund \?	HowRefundDeposit
+redone any prepaid \?	Recommendations
+so meaning now i am enjoying the 1gb right \?	CurrentPlanDetails
+pls elaborate explain redone new plan	Promotions
+oh that mean only amazing 48 got deposit requirm , ent	GeneralPlanInfo
+why there is no muamalat bank on fpx payment \? been searchin for it for hours	PaymentChannelOthers
+my partner no is block	LineStatus
+just wanna ask some quetion my credit limit only rm 50 right why now can till rm 1 xx	CheckCreditLimitAmount
+or can i apply today then effective starts from 1 st october \?	HowChangePlan
+just paid rm80 00 just now	InformPayment
+my question is how do you calculate the rm 15 50 \?	WhyItemAmount
+ozone mobile it is follow by shopping mall time hour \? \?	OperatingHours
+kindly advice the nearest agent location i am currently at jalan tun razak kuala lumpur	BranchLocation
+just to check what is the different of data 8 and data 8	GeneralPlanInfo
+how many digit is needed foe password setting	AccountDetailsOthers
+please proceed with the reconnection , i will pay for it	RequestUnbar
+why there is rm 2 charges for sms since i didnt sms to any of a person \?	WhyItemAmount
+once i reach the limit rm 50 then will be barred \?	BarringOthers
+1 11 2016 payment made rm8 35 1 12 2016 payment made rm8 48	InformPayment
+i also register for free epaper , but still not received please check too	WhyNoEmail
+only on 1 st to 10 th \? then if i terminate on 1 st jul , i still need to pay that intrnet \?	CancelData
+terminate 1 of supplmentary line	HowTerminate
+i am in nilai	BranchLocation
+my data usage has reached limit how to purchase for addition data \?	RequestChangePlan
+if suspended , i have to pay 40 \(	CheckUnbarAmount
+can i change to the 'new' package \?	RequestChangePlan
+how come still got another rm 19	WhyBillAmount
+i told you few times that i already make payment on 25 11 2016 @ 2026 hr	InformPayment
+normally how long before i need to request for it , tq	WhenChangeData
+n now cannot use this line	LineStatus
+how about the data \? activated as well \?	WhenPlanActivate
+on your opinion which one is better \?	Recommendations
+morning , i get a msge from red one , i want to switch my number to others provider , but redone has denied a request \? how can it happend \? its i can not switch to others provider \?	TerminationStatus
+i 've mada a payment just now	InformPayment
+how many free call and internet i got	CurrentPlanDetails
+where got show the balance 8 07 \?	HowViewBill
+crzay88 not lifetime is it \?	GeneralPlanInfo
+huh means it will still charge me the january bill \? \? \?	PayingMonth
+oh ya for roaming service in china is auto \?	RoamingOthers
+payment of rm 500 has n't reflected yet \?	ConfirmPaymentReceived
+y the bill can up to rm 140 24	WhyBillAmount
+and which is the nearest center nearby me , i live in puchong jaya	BranchLocation
+hi i'm ruhani nric 831102115018 i'm in doubt about my currect bill	TotalBreakdown
+for existing red customers , can eligible for data8 \?	ChangePlanOthers
+i also want to know if 7 e also can perform if i would like to pay my bill there \? \?	PaymentChannelOthers
+ok if i need to terminated how the process	HowTerminate
+i yr from today for this number \?	CurrentPlanDetails
+can not call other 1	LineStatus
+data activation	RequestChangePlan
+can i know the date i register 01110569990 , 01110917919 , 0189800032 \?	CheckDetails
+data getting slow	DataDetails
+when i sign up the account is charge rm30permonth	CurrentPlanDetails
+every month only rm8 \?	PackagePrice
+what is the meaning off net mob if miss call but got song playing will there be min charged my bill alot of 0 08 sen charges	ItemDefinition
+yes , rm30 is for 1gb	WhyBillAmount
+supposed to be my bill is 133 00	WhyBillAmount
+bandar sunway \?	BranchLocation
+hi can i ask u aboutt the new plan \?	Promotions
+if third party want to port out how \?	HowTerminate
+im now using ipt 8 500mb	DataDetails
+how about last month \? my product charge also rm 51 \?	WhyItemAmount
+total amount due is 2 02	BillAmount
+self care log in is not working at all	CannotPayBill
+i wan ask about debit movent on my august bill \?	ItemDefinition
+and i dont want to subscribe for data option on next month	CancelData
+how can i change from company to individual \?	AccountOthers
+okok later afte pay i contact you again may i know u until wat time \?	GeneralOthers
+so after end of this month will come out with new promotion \?	Promotions
+y off my number 01110621314	WhyBar
+no problem so how about the line \? is it okay \?	LineStatus
+can win the smartphone	HowPay
+hi , good morning , i had sent email for the upgrade to data8	ChangePlanStatus
+i juz now call 1909 the consultant say tis plan can change to tis eventhough in contract	ChangePlanOthers
+g all divert fee \?	ItemDefinition
+i see did n't update in my self care database	WhyNotUpdated
+why my bill always minus \?	WhyBillAmount
+make payment rm73 50	InformPayment
+do i need to go to any red 1 outlet to port out first	HowTerminate
+date time 11 11 2016 15 30 04 reference no 201611110010769257	InformPayment
+pls cotrol my limit xredit rm50	ChangeCreditLimit
+excuse me , tat day 1 of the redone staff say will refund on november	HowRefund
+so far i jz change my plan to data8 bt as i know my old contract will b end by this month , and i was received a msg shown i was in a new plan now so i'm confused on what plan i'm using it right nw	CurrentPlanDetails
+if i take red promo 88 i choose smart phone huawei mate 8 how much i need to pay per momth	PackagePrice
+i am staying in kepong , which redone centre cacan i submit termination request \?	BranchLocation
+hi , just paid rm135	InformPayment
+normally it was only 93 28 \?	WhyBillAmount
+hi faizul , i already set to allow all sites to show pop up \) but still the same	StillNotWorking
+hi there please tell my bill amount payable my number is 010 8866142	BillAmount
+if i were to submit my application form via email , could it be done by today \?	WhenPlanActivate
+please advise payment method available	HowPay
+so how about my old plan \? is it any penalty for me since i change it before its contract end	ChangePlanOthers
+if i m paying full how long shd i wait for reconnection \?	CheckUnbarTime
+is it free for upgrade \?	HowMuchChangePlan
+one more things the number 0192953767 did u port out already \? because i want transfer line to celcom	TerminationStatus

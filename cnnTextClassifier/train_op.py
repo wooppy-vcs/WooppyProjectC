@@ -24,7 +24,7 @@ def train(config, model=TextCNN):
     # else:
 
     datasets = data_helpers.get_datasets(data_path=config.training_path, vocab_tags_path=config.tags_vocab_path,
-                                         vocab_char_path=config.char_vocab_path, config=config,
+                                         vocab_char_path=config.char_vocab_path, enable_char=config.enable_char,
                                          sentences=config.data_column, tags=config.tags_column)
     # datasets_val = data_helpers.get_datasets(data_path=config.test_path, vocab_tags_path=config.tags_vocab_path,
     #                                          sentences=config.data_column, tags=config.tags_column)
@@ -55,7 +55,10 @@ def train(config, model=TextCNN):
     vocab_tags_list = [idx for b, idx in datasets['target_names'].items()]
 
     # Randomise and Split train/val set
-    dev_sample_index = -1 * int(config.dev_sample_fraction * float(len(y)))
+    if config.enable_char:
+        dev_sample_index = -1 * int(0.1 * float(len(y)))
+    else:
+        dev_sample_index = -1 * int(config.dev_sample_fraction * float(len(y)))
     correct_splitting = True
     while correct_splitting:
         random.shuffle(data)
@@ -152,6 +155,8 @@ def train(config, model=TextCNN):
                     embedding_size=config.embedding_dim,
                     filter_sizes=config.filter_sizes,
                     num_filters_layer1=config.num_filters[0],
+                    num_filters_layer2=config.num_filters[1],
+                    num_filters_layer3=config.num_filters[2],
                     l2_reg_lambda=config.l2_reg_lambda,
                     weights_array=weights_array)
 
@@ -271,25 +276,20 @@ def train(config, model=TextCNN):
                 train_summary_writer.add_summary(summaries, step)
 
             # Validation method
-            def dev_step(x_batch, y_batch, word_lengths=None, char_ids=None, writer=None):
+            def dev_step(x_batch, y_batch, char_ids=None, word_lengths=None, writer=None):
                 """
                 Evaluates model on a dev set
                 """
                 if config.enable_char:
                     feed_dict = {cnn.input_x: x_batch,
                                  cnn.input_y: y_batch,
-                                 cnn.dropout_keep_prob: config.dropout_keep_prob,
+                                 cnn.dropout_keep_prob: 1.0,
                                  cnn.word_lengths: word_lengths,
                                  cnn.char_ids: char_ids}
                 else:
                     feed_dict = {cnn.input_x: x_batch,
                                  cnn.input_y: y_batch,
-                                 cnn.dropout_keep_prob: config.dropout_keep_prob}
-
-                # JIALER MOD COMMENTED
-                # step, summaries, loss, accuracy, weighted_accuracy = sess.run(
-                #     [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy],
-                #     feed_dict)
+                                 cnn.dropout_keep_prob: 1.0}
 
                 step, summaries, loss, accuracy, weighted_accuracy, predictions = sess.run(
                     [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.weighted_accuracy, cnn.predictions],
@@ -335,6 +335,9 @@ def train(config, model=TextCNN):
             else:
                 batches = data_helpers.batch_iter(list(zip(x_train, y_train)), config.batch_size, config.num_epochs)
 
+
+
+
             num_batches_per_epoch = int((len(x_train) - 1) / config.batch_size) + 1
 
             print("Training Starting.......")
@@ -356,22 +359,25 @@ def train(config, model=TextCNN):
                         print("=======================================================")
                         print("Epoch number: {}".format(i + 1))
                         print("\nEvaluation:")
-                        loss, f_score = dev_step(x_dev, y_dev, word_lengths_dev, char_ids_dev, writer=dev_summary_writer)
+
+                        loss, f_score = dev_step(x_dev, y_dev, char_ids_dev, word_lengths_dev,
+                                                 writer=dev_summary_writer)
                         hist_loss.append(loss)
                         hist_f_score.append(f_score)
+
                         print("=======================================================")
 
-                        # if i > 0 and hist_loss[i - 1] - hist_loss[i] > config.min_delta:
-                        #     if hist_loss[i] < min_loss:
-                        if i > 0 and hist_f_score[i] > max_f_score:
-                            # min_loss = hist_loss[i]
-                            max_f_score = hist_f_score[i]
-                            path = saver.save(sess, checkpoint_prefix, global_step=current_step)
-                            print("----new BEST f1 score----")
-                            print("Saved model checkpoint to {}\n".format(path))
-                            print("Checkpoint Number = {}".format(i + 1))
-                            print("=======================================================")
-                            patience_cnt = 0
+                        if i > 0 and hist_loss[i - 1] - hist_loss[i] > config.min_delta:
+                            if hist_loss[i] < min_loss:
+                                # if i > 0 and hist_f_score[i] > max_f_score:
+                                min_loss = hist_loss[i]
+                                # max_f_score = hist_f_score[i]
+                                path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+                                print("----new BEST f1 score----")
+                                print("Saved model checkpoint to {}\n".format(path))
+                                print("Checkpoint Number = {}".format(i + 1))
+                                print("=======================================================")
+                                patience_cnt = 0
                         else:
                             patience_cnt += 1
                         if patience_cnt > config.patience:
@@ -396,13 +402,13 @@ def train(config, model=TextCNN):
                         hist_f_score.append(f_score)
                         print("=======================================================")
 
-                        # if i > 0 and hist_loss[i - 1] - hist_loss[i] > config.min_delta:
-                        #     if hist_loss[i] < min_loss:
-                        if i > 0 and hist_f_score[i] > max_f_score:
-                                # min_loss = hist_loss[i]
-                            max_f_score = hist_f_score[i]
+                        if i > 0 and hist_loss[i - 1] - hist_loss[i] > config.min_delta:
+                            if hist_loss[i] < min_loss:
+                        # if i > 0 and hist_f_score[i] > max_f_score:
+                                min_loss = hist_loss[i]
+                            # max_f_score = hist_f_score[i]
                             path = saver.save(sess, checkpoint_prefix, global_step=current_step)
-                            print("----new BEST f1 score----")
+                            print("----new Minimum loss----")
                             print("Saved model checkpoint to {}\n".format(path))
                             print("Checkpoint Number = {}".format(i+1))
                             print("=======================================================")

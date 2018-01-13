@@ -400,7 +400,7 @@ def load_vocab(filename):
     return d
 
 
-def get_datasets_multiple_files(container_path, vocab_tags_path, vocab_char_path, system_path, sentences = 0, tags = 1,
+def get_datasets_multiple_files(container_path, vocab_tags_path, system_path, vocab_char_path="", sentences = 0, tags = 1,
                                 remove_none=False):
     """
     # Load single tab delimited text file.
@@ -456,27 +456,28 @@ def get_datasets_multiple_files(container_path, vocab_tags_path, vocab_char_path
     datasets = dict()
     datasets['data'] = data
     datasets['target'] = target_names
-    target = []
+    # target = []
 
     vocab_chars = get_char_vocab(data)
 
     vocab_tags = get_vocab_tags(target_names)
-    if not os.path.exists(system_path):
-        os.makedirs(system_path)
-
-    write_vocab_tags(vocab_chars, vocab_char_path)
-    write_vocab_tags(vocab_tags, vocab_tags_path)
+    # if not os.path.exists(system_path):
+    #     os.makedirs(system_path)
+    #
+    # write_vocab_tags(vocab_chars, vocab_char_path)
+    # write_vocab_tags(vocab_tags, vocab_tags_path)
     # target_names_dict = load_vocab(vocab_tags_path)
     # for s in target_names:
     #     target.append(int(target_names_dict[str(s)]))
 
-    datasets['target_names'] = target
+    datasets['vocab_chars'] = vocab_chars
+    datasets['vocab_tags'] = vocab_tags
     # class_weight = calculate_weight(target, target_names_dict)
     # write_vocab_tags(class_weight, class_weights_path)
     return datasets
 
 
-def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, sentences=0, tags=1, tags_2=None,
+def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, enable_char=False, sentences=0, tags=1, tags_2=None,
                  tags_3=None, scores=None):
     """
     # Load single tab delimited text file.
@@ -538,12 +539,12 @@ def get_datasets(data_path, vocab_tags_path, vocab_char_path=None, config=None, 
     datasets['data'] = data
     datasets['target'] = target
     datasets['target_names'] = target_names_dict
-    datasets['scores'] = score
     if tags_2 is not None and tags_3 is not None:
+        datasets['scores'] = score
         datasets['target_2'] = target_2
         datasets['target_3'] = target_3
     # datasets['class_weights'] = class_weights
-    if config.enable_char:
+    if enable_char:
         char_dict = load_vocab(vocab_char_path)
         datasets['vocab_chars'] = char_dict
 
@@ -634,7 +635,7 @@ def get_processing_word(vocab_chars=None):
         #         if allow_unk:
         #             word = vocab_words[UNK]
         #         else:
-        #             raise Exception("Unknow key is not allowed. Check that your vocab (tags?) is correct")
+        #             raise Exception("Unknown key is not allowed. Check that your vocab (tags?) is correct")
         #
         # # 3. return tuple char ids, word id
         # if vocab_chars is not None and chars == True:

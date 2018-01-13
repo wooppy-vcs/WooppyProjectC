@@ -1,0 +1,67 @@
+conversation_tagging_id	index_en	id	msg	time	chat_id	user_id	word count	Language	Preassigned Topic	Preassigned Subtopic	Topic_L1	Topic_L2	AnswerType	Confirmation	Scenario
+38	997	37270	when should i pay my bill... 1 st day of every month?	1465267238	1756	0	10	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	True	WhenBillUpdate
+60	1448	48247	how i want to pay my bill online?	1465541272	2204	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+64	1558	51051	Hi morning<NL>where can i check from and to what date is the billing being charged?	1465697783	2324	0	15	English	Billing	Billing Cycle	Billing	PaymentCycle	ObjectName	False	WhenBillUpdate
+64	1563	51057	i wanna know the end date	1465697815	2324	0	6	English	Billing	Billing Cycle	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+66	1630	51446	when can I settle the bill?	1465707687	2336	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+95	2389	58119	ooh..ok..tq.. my data plan is already slow..when is the start date of my line?	1465954515	2654	0	14	English	Billing	Billing Details	Billing	Wrong	ObjectTime	False	None
+102	2524	58641	Can i pay my bill using maybank 2 u?	1465959360	2685	0	7	English	Billing	Make Payment - Kiosk / Epay / BSN / Maybank / RHB	Billing	PaymentChannel	ObjectName	True	MethodExcept
+199	4797	97441	when is due date to make payment	1467419175	4409	0	7	English	Billing	Payment Channel	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+199	4800	97444	may i know when is the due date for my bill of July 2016 	1467419223	4409	0	14	English	Billing	Payment Channel	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+199	4805	97449	i would like to know when is the due date for me to to make bill payment	1467419273	4409	0	17	English	Billing	Payment Channel	Billing	PaymentCycle	Object	False	WhenPaymentLastDay
+231	5696	110106	ok,i will try it. i want to ask when i will get my first bill	1467787654	4972	0	15	English	Billing	Make Payment - Selfcare	Billing	PaymentCycle	Object	False	WhenBillUpdate
+235	5775	110955	Hi. I would like to know my jom bay biller's code... i want to pay my bills with cimb click.	1467883589	5008	0	20	English	Billing	Payment Channel	Billing	PaymentChannel	ObjectName	False	PayWho
+267	6551	120126	I fread filemon.customer red 1.. Now how to make payments through online..	1468375979	5396	0	12	English	Billing	Payment Channel	Billing	PaymentChannel	Procedure	False	HowPay
+305	7538	147725	i performing online payment right now	1469151767	6547	0	6	English	Billing	Billing Details	Billing	PaymentChannel	None	False	None
+645	15424	298399	ok..understand...normally u will give the bill on 1 st of the month right? so i will pay before 15 th	1474426605	12764	0	18	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	True	WhenBillUpdate
+775	18502	307541	i use jom pay	1474879329	13155	0	4	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+775	18503	307548	through cimb jompay	1474879439	13155	0	3	English	Billing	Payment Status	Billing	PaymentChannel	None	False	None
+856	20429	313498	HI<NL>may i know when this number will renew the billing each month? 01155011735 	1475051937	13408	0	13	English	Billing	Billing Cycle	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+1271	31199	354102	i've received a notification to make a payment rm 38.59 before 14 oct	1476323255	15151	0	12	English	Billing	Make Payment - Selfcare	Billing	PaymentCycle	None	False	None
+1290	31670	355457	invoice date should be on 1 / 7 / 2016 and due date is 31 / 7 / 2016 	1476341743	15218	0	11	English	Billing	Billing Details	Billing	PaymentCycle	None	False	None
+1300	31965	355908	so this account when is the due date?	1476347683	15233	0	8	English	Billing	Make Payment - Selfcare	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1300	31966	355909	for the sept inv due date...	1476347709	15233	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1306	32094	356165	Thankyou very much Mr. Afiq . Oh yeah , 1 more thing , can i know when the exact that i have to pay the bills ? Or they will send to my email ?	1476352090	15249	0	35	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1340	32927	359204	because red 1 have send message to me tommorow is due date.	1476448230	15378	0	12	English	Billing	Billing Charges	Billing	PaymentCycle	None	False	None
+1341	32963	359284	RM 0 redONE: Your Oct bill for account 201797454 is now ready. Please remit RM 56.58 before 01 Nov 2016 to avoid service interruption.	1476451282	15381	0	22	English	Billing	Billing Charges	Billing	PaymentCycle	None	False	None
+1356	33402	361560	due date 31 / 10 	1476515401	15476	0	3	English	Billing	Billing Details	Billing	PaymentCycle	None	False	None
+1426	35377	368736	ok...if I not mistake the 72.26 the payment is due on 31 - 10 - 16 	1476686757	15785	0	12	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	True	WhenPaymentLastDay
+1426	35384	368806	and for the total 72.26 it not DUE YET	1476687057	15785	0	9	English	Billing	Billing Details	Billing	PaymentCycle	None	False	None
+1426	35387	368834	heyyy how come there are 2 month payment due	1476687253	15785	0	9	English	Billing	Billing Details	Billing	BillOutstanding	Reason	False	WhyBillAmount
+1540	38169	379352	when is my billing date	1477114863	16250	0	5	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1553	38539	380816	I'm a new customer.... When will I receive my first bill. I 've waiting for the bill....but until now I've never reveived any. Need some clearification....	1477195176	16298	0	26	English	Billing	Reprint / Resend Bill	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+1781	44549	406236	If i use direct debit from my credit card, normally t debit on which date of the month?	1477985734	17374	0	18	English	Billing	Auto Debit Application	Billing	AutoDebit	ObjectTime	False	WhenAutoDebit
+1819	45576	409648	my i know my dead line ?	1478056731	17529	0	7	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1819	45578	409670	may i know due date for 011 5505 7447 	1478056896	17529	0	9	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1819	45582	409677	i saw the nov 2016 bill and the due date is 30 / 11 / 16 	1478056961	17529	0	12	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1819	45586	409694	the current bill i print out , it show due on 30 / 11 / 16 	1478057041	17529	0	12	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1821	45668	409769	can you let me know the date for payment every month?	1478057426	17532	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1821	45671	409803	bill is start from 1 / 11 - 30 / 11 	1478057677	17532	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1822	45716	409896	i know...cause i pay only but i dunno when is the actual due?	1478058280	17535	0	13	English	Billing	Make Payment - Selfcare	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1827	45889	411258	double confirm invoice date 01 / 11 / 2016 	1478068719	17580	0	5	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+1863	46854	414746	how to pay bill by mb 2 u	1478142576	17744	0	6	English	Billing	Make Payment - Selfcare	Billing	PaymentChannel	Procedure	False	HowPay
+1890	47580	417996	start date of bill	1478219055	17892	0	4	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+1897	47736	418493	so when is my bill cycle? 1 st or 28 th?	1478226331	17913	0	8	English	Billing	Billing Cycle	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+1981	49582	430434	I signed up the data RM 8 + yesterday, isnt payment due is 8 dec?	1478651115	18466	0	13	English	Billing	Billing Charges	Billing	PaymentCycle	ObjectTime	True	WhenPaymentLastDay
+1981	49589	430449	what is the last date for the monthly payment	1478651363	18466	0	9	English	Billing	Billing Charges	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+1991	49857	432059	Can u help me to check the due date that i need to pay my nov' 16 outstanding	1478676252	18531	0	17	English	Billing	Waiver	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2198	55537	457721	When is my due date for payment?	1479611027	19656	0	7	English	Billing	Billing Charges	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2198	55539	457727	When is my due date for payment?	1479611133	19656	0	7	English	Billing	Billing Charges	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2278	57629	468531	my billing date was?	1480052846	20122	0	4	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2279	57639	468629	so how about my billing date	1480055018	20131	0	6	English	Billing	Deposit Refund	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2287	57876	469175	WHEN I WANT TO PAY THIS BILL.WHEN DATE?	1480062031	20148	0	8	English	Billing	Billing Cycle	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2300	58288	470947	when is the next payment due?	1480138220	20216	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2474	62958	492726	how red 1 calculate the billing cycle..?	1480651323	21191	0	7	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2591	66460	514746	usually REdone would sms me when to pay	1481106979	22117	0	8	English	Billing	Billing Charges	Billing	PaymentCycle	None	False	None
+2591	66472	514763	so when of each month should I login into the acc and get the finalized bill of the previous month to pay?	1481107254	22117	0	22	English	Billing	Billing Charges	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2608	66998	517652	sorry to ask..if i choose the January means im viewing the bill of December or January?	1481177411	22224	0	16	English	Billing	Billing Details	Billing	BillOutstanding	ObjectTime	True	PayingMonth
+2623	67425	520938	can i check the cycle date for my number 0167989016 and 0167781009 	1481260758	22349	0	12	English	Billing	Data Bundle / PPU Rate	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2623	67434	520959	when my data will recyle	1481261082	22349	0	5	English	Billing	Data Bundle / PPU Rate	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2642	67968	524047	let me know the payment dute date	1481365237	22468	0	7	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2735	70538	538266	okay then now tell me when is the due date for RM 345.50 ? 1 st Jan 2017 right?	1481775373	23085	0	16	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2735	70548	538323	may I know when is the due date for RM 374.50 ?	1481775695	23085	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2735	70551	538360	can u explain why I received that sms?	1481775913	23085	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentCycle	Reason	True	None
+2740	70692	539555	When the due date that i suppose to pay the balance to avoid it	1481787152	23134	0	14	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2794	72165	547320	When will be my bill cycle? Means by which date of the month?	1481899661	23480	0	13	English	Billing	Data Bundle / PPU Rate	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2887	75013	560727	When d date i should pay eveey month	1482292078	24042	0	8	English	Billing	Billing Details	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate
+2891	75158	561136	When is billing date each month of my account?	1482297989	24059	0	9	English	Billing	Billing Cycle	Billing	PaymentCycle	ObjectTime	False	WhenBillUpdate

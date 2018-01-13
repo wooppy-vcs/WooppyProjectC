@@ -39,8 +39,10 @@ class TextCNN(object):
                     self.embedded_chars_expanded,
                     W,
                     strides=[1, 1, 1, 1],
+
                     padding="VALID",
                     name="conv")
+
                 # Apply nonlinearity
                 h = tf.nn.relu(tf.nn.bias_add(conv, b), name="relu")
                 # Maxpooling over the outputs
@@ -60,6 +62,7 @@ class TextCNN(object):
         # Add dropout
         with tf.name_scope("dropout"):
             self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
+            self.h_dense = tf.layers.dense(self.h_drop, units=num_filters_total, activation=tf.nn.relu)
 
         # Final (unnormalized) scores and predictions
         with tf.name_scope("output"):

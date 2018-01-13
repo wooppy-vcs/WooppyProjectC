@@ -1,0 +1,501 @@
+conversation_tagging_id	index_en	id	msg	time	chat_id	user_id	word count	Language	Preassigned Topic	Preassigned Subtopic	Topic_L1	Topic_L2	AnswerType	Confirmation	Scenario
+1821	45642	409620	hi<NL>I already pay the bill why my phone dont have line?	1478056541	17532	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyStillBar
+1821	45658	409669	can i ask why my line will be suspend	1478056892	17532	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	True	WhyBar
+1821	45659	409675	why need to charge Rm 10 ?	1478056921	17532	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	None	Reason	False	
+1821	45661	409686	why my line will be suspend?	1478056994	17532	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+1821	45665	409757	after the payment will unsuspend the line for free, why need charge for 10 ?	1478057338	17532	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	CheckUnbarAmount
+1821	45669	409782	how long is the period will be barred if didnt make the payment	1478057548	17532	0	13	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	TimeToBarring
+1821	45676	409895	unsuspend my line	1478058279	17532	0	3	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+1830	45938	411374	hi.. i have paid my bill but my line still suspended	1478069329	17607	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	WhyStillBar
+1830	45947	411422	what about my line suspension??	1478069503	17607	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	False	LineStatus
+1839	46187	412105	I ALREADY MAKE A FULL PAYMENT BUT MY NUMBER STILL CAN'T USE	1478074909	17631	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyStillBar
+1843	46286	412937	WHY UR COMPANY BAR MY LINE?	1478084493	17662	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+1849	46552	413563	If my line is currently bare and full payment was made, how long it will be reinstate?	1478129648	17686	0	17	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+1872	47059	415437	so the line is till open?	1478148703	17771	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	True	LineStatus
+1872	47060	415439	i saw the status is suspended	1478148721	17771	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+1888	47546	417935	Hi there, Can you please kindly help me to check the status of 01110510907 as I am oversea for few months and forget to pay the bill. Just paid it recently and found that seem like the line been cut off	1478217720	17888	0	41	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	False	LineStatus
+1907	47894	419045	hi good morning<NL>my line has been suspended but ive already paid my bill and hit has yet to be unsuspended.... so how to go about it?	1478232095	17946	0	26	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Procedure	False	HowUnbar
+1907	47907	419148	and when will my line be unsuspended	1478232978	17946	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+1920	48236	420547	Why my no. 01155066256 is barred whereas i pay my bills.?	1478250989	18019	0	11	English	Billing	Make Payment - Selfcare	Billing	Barring	Reason	False	WhyStillBar
+1921	48245	420580	my no 01155066256 is barred please check for me.what is wrong?	1478251442	18021	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	LineStatus
+1941	48724	423517	My number has been barred. This morning i've made a paymet for the oustanding bills via credit card. How long i can get back my number? Pls advice. Tq	1478395400	18152	0	29	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+1947	48825	424714	HI... y my number still cannot use	1478481127	18214	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyStillBar
+1956	49032	425992	can u unblock it back this no	1478498275	18275	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+1964	49183	427763	unbar my phone number	1478567911	18353	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+1964	49194	427786	ya, is it possible for unbarring?	1478568233	18353	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	HowUnbar
+1965	49233	427845	Please activate my number	1478568922	18355	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+1965	49242	427854	Can i know , normally how much will be barred ?	1478569049	18355	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+1970	49371	428846	can u unblock my no	1478581741	18399	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+1985	49661	430559	May I know why i paid for 2 days already, why still on barred ?	1478653966	18474	0	15	English	Billing	Increase credit limit	Billing	Barring	Reason	True	WhyStillBar
+1985	49664	430567	May I know why i paid for 2 days already, why still on barred ?	1478654000	18474	0	15	English	Billing	Increase credit limit	Billing	Barring	Reason	True	WhyStillBar
+1995	49920	432117	hi, why is 1 of my sub-line suspended?	1478678742	18536	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+1995	49932	432241	can u unsuspend the line now?	1478680470	18536	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+1995	49935	432252	ok. how soon the line can be used?	1478680588	18536	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+1995	49939	432268	by the way, as the line has been barred, i i wonder what is the purpose of suspending the line?	1478680757	18536	0	20	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+1996	49949	432302	my line has been bared	1478681275	18542	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2005	50206	434871	Hi good evening <NL>My number is 01110867826 <NL>Can u check why Cannot call out <NL>Thanks	1478782135	18645	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	True	LineStatus
+2006	50241	434952	if i want to open barr what is minimum payment i should pay	1478819534	18647	0	13	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2006	50249	434960	is there any extra charges to unsuspend	1478819718	18647	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2011	50366	435572	is it my linw JAS BEEN BARRED	1478835075	18671	0	7	English	Billing	Billing Details	Billing	Barring	None	True	LineStatus
+2018	50551	436828	hai..... <NL>jika line disconnected and if today i ll make pyment.... when it will be connected?	1478908991	18720	0	16	English	Billing	Make Payment - Selfcare	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2020	50610	437196	HELLO REDONE IM KIRAN KUMAR HERE. 1 OF REDONE USER, I'VE BEEN PAID THIS MONTH NOVEMBER BILL. BUT I COULNDN'T MAKE ANY CALLS OR MSG DUE TO MY STATUS WAS BARRED. PLEASE CHECK THE STATEMENT. MY PAYMENT METHOD WILL BE ONLINE TRANSACTION. PLEASE HAVE A LOOK ON IT. MY REDONE NUMBER WILL BE 0136830524. TQ	1478927398	18736	0	55	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Reason	False	LineStatus
+2020	50611	437197	ELLO REDONE IM KIRAN KUMAR HERE. 1 OF REDONE USER, I'VE BEEN PAID THIS MONTH NOVEMBER BILL. BUT I COULNDN'T MAKE ANY CALLS OR MSG DUE TO MY STATUS WAS BARRED. PLEASE CHECK THE STATEMENT. MY PAYMENT METHOD WILL BE ONLINE TRANSACTION. PLEASE HAVE A LOOK ON IT. MY REDONE NUMBER WILL BE 0136830524. TQ	1478927412	18736	0	55	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Reason	False	LineStatus
+2021	50667	437342	nmy line has been barred..	1478931215	18740	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	LineStatus
+2021	50678	437355	i cannot make calls from my phone , it has been barred	1478931452	18740	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	LineStatus
+2024	50776	437601	please help me unbar the number as well	1478940789	18751	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2024	50801	437702	please help unsuspend my line	1478942509	18751	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2024	50802	437703	how long the line can be use?	1478942513	18751	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	None	Object	False	
+2024	50808	437710	unsuspend the line please	1478942664	18751	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2031	51043	438379	activate my barred account	1478996653	18778	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2048	51606	440829	please don't tell me u guys have terminated my line	1479089161	18896	0	10	English	Billing	Billing Details	Billing	Barring	Object	True	LineStatus
+2069	52144	442386	Hi my name Kavita Arumugam<NL>Phone 0193818546 <NL>Can you please connect my line as its barred	1479110307	18972	0	14	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	Barring	Request	False	RequestUnbar
+2069	52152	442427	Can you please connect my line as its barred<NL>I'm having difficulties as every time I need to add my credit limit.<NL>Can you please add on my credit limit to RM 200 	1479110526	18972	0	30	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	Barring	Request	False	RequestUnbar
+2069	52173	442538	Do you reconnect my line?	1479111338	18972	0	5	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	Barring	Request	True	LineStatus
+2086	52510	443918	if my bill got barred, am i able to unbar it today if i pay the bill now ?	1479171945	19039	0	19	English	Billing	Make Payment - Selfcare	Billing	Barring	Request	True	CheckUnbarTime
+2087	52522	443907	Hi, I have paid my bills rm 50 through maybank 2 u yesterday 930 am, and the rest of my bills via selfcare this morning, so can I know when are you going to connect my phone line? can you make is asap. thanks	1479171890	19041	0	40	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	CheckUnbarTime
+2088	52554	444034	hi my group line is barred but i made payment yesterday through jompay,	1479173000	19047	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	LineStatus
+2088	52570	444075	can activate the line today?	1479173349	19047	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2090	52633	444203	IM PAID ALREADY WHY MY STATES ALSO BARRED	1479174151	19054	0	8	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyStillBar
+2094	52712	444784	why my line is been barred<NL><NL>this is jega jothi 851031145840 	1479177859	19082	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2096	52751	445888	WHEN CAN UNBARRED MY LINE	1479188070	19131	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2096	52754	445916	WHEN CAN UNBARRED MY LINE	1479188228	19131	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2096	52764	445958	so,when can unbarred my line	1479188525	19131	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2099	52832	446043	hi, i have paid my bill, why until now i couldnt make any calls yet ? i paid it an hour ago	1479189055	19136	0	22	English	Billing	Billing Details	Billing	Barring	Reason	False	LineStatus
+2101	52882	446437	why I make payment already still cannot using?	1479193659	19152	0	8	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyStillBar
+2106	53028	446725	i Got a question whether my 0199216888 is active now?	1479196053	19164	0	10	English	Billing	Auto Debit Application	Billing	Barring	None	True	LineStatus
+2106	53066	446894	0199216888 is already active now	1479197166	19164	0	5	English	Billing	Auto Debit Application	Billing	None	None	False	
+2107	53132	446772	can u help me to check my line still active..?	1479196346	19167	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	True	LineStatus
+2107	53141	446816	barring mean unable to call..?	1479196603	19167	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectDefinition	True	LineStatus
+2107	53142	446817	what wrong with my account..	1479196613	19167	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	None	ObjectName	False	None
+2109	53191	447461	Hai, i have made payment today and when i can use it	1479200634	19187	0	12	English	Billing	Payment Status	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2111	53256	447518	my account got barred	1479201142	19192	0	4	English	Billing	Payment Status	Billing	Barring	None	False	LineStatus
+2111	53258	447523	can u check whether it is still barred or not ?	1479201170	19192	0	11	English	Billing	Payment Status	Billing	Barring	ObjectName	True	LineStatus
+2112	53277	447570	my line have been bloked today	1479201486	19193	0	6	English	Billing	Make Payment - Selfcare	Billing	Barring	None	False	LineStatus
+2112	53288	447599	i need to unblock my line	1479201676	19193	0	6	English	Billing	Make Payment - Selfcare	Billing	Barring	Procedure	False	HowUnbar
+2112	53292	447603	i need to make full payment or i make payment for Oct' 2016 will do	1479201722	19193	0	14	English	Billing	Make Payment - Selfcare	Billing	Barring	ObjectNumeric	False	HowUnbar
+2115	53355	447955	line barred	1479205947	19210	0	2	English	Billing	Payment Status	Billing	Barring	None	False	LineStatus
+2115	53360	447962	please enable back my line	1479205988	19210	0	5	English	Billing	Payment Status	Billing	Barring	Request	False	RequestUnbar
+2115	53371	447978	as long as i got the payment receipt for your to verify, why take so long	1479206218	19210	0	16	English	Billing	Payment Status	Billing	Barring	Reason	False	CheckUnbarTime
+2116	53391	448052	how to deactivate line after been bar	1479207755	19217	0	7	English	Billing	Payment Status	Billing	Barring	Procedure	False	HowUnbar
+2116	53398	448137	it is true that i have to mail the receipt of the payment to careline	1479208477	19217	0	15	English	Billing	Payment Status	Billing	PaymentStatus	Procedure	True	ConfirmPaymentReceived
+2122	53590	448972	on 3 / 11 / 16 i got message for nov billing, redone instruct to paid rm 61.81 before 1 dec. also, i got a message on 13 / 11 / 16 instrut to paid before 14 nov before line barred which is yesterday.	1479258588	19258	0	36	English	Billing	Billing Charges	Billing	Barring	None	False	LineStatus
+2123	53610	449123	my line got barred..but the total to pay ( rm 141.24 is for dec bill...how come?	1479260541	19265	0	15	English	Billing	Billing Details	Billing	Barring	Reason	False	CheckUnbarAmount
+2124	53651	449133	my line 0198807766 already barred please increase credit limit...	1479260655	19266	0	9	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2124	53655	449161	please increase credit limit...my line 0198807766 	1479260872	19266	0	6	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2126	53701	449383	the account has been bared	1479263278	19278	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2126	53709	449424	if i need to unbarr how much min i need to pay??	1479263477	19278	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2126	53712	449439	if i pay now, what time can rebarr??	1479263557	19278	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2127	53726	449410	i want reconnect my line	1479263404	19280	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Procedure	False	HowUnbar
+2128	53754	449535	i already settle payment for october but still can not use	1479264507	19285	0	11	English	Billing	Increase credit limit	Billing	Barring	Reason	False	WhyStillBar
+2128	53763	449569	can you release	1479264786	19285	0	3	English	Billing	Increase credit limit	Billing	Barring	Request	False	RequestUnbar
+2129	53785	449610	unbarred my lines. I have just paid	1479265115	19287	0	7	English	Billing	Make Payment - Selfcare	Billing	Barring	Request	False	RequestUnbar
+2129	53792	449629	can you unbarre my lines and i want to cancel the following lines: 01110613323 01110876989 01155026989. 	1479265316	19287	0	16	English	Billing	Make Payment - Selfcare	Billing	Barring	Request	False	RequestUnbar
+2130	53805	449688	i want to proceed to chnage the limit from 50 to 100 	1479265886	19294	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2135	53986	450210	my line has been barred since 30 sept 2016 	1479270145	19314	0	9	English	Billing	Billing Charges	Billing	Barring	None	False	LineStatus
+2136	54044	450332	Hi, i already paid my bill but my phone still displays no service. Why?	1479271597	19317	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyStillBar
+2138	54088	450469	hi , I've been told that my line has been blocked , can you help my check for the reasons?	1479272894	19323	0	20	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	True	WhyBar
+2139	54114	450524	hello there, i've made payment for my account on 15 / 11 / 2016. but today my line still be bared. once i check the balance still not decreasing, it remain same. but i also have check my account, it have been deducted. can <NL>you please explain this situation...	1479274557	19325	0	45	English	Billing	Payment Status	Billing	Barring	Reason	True	WhyStillBar
+2143	54224	451078	MY NUMBER HAD BEEN BARRED COUPLE OF HOURS AGO	1479279384	19353	0	9	English	Billing	Make Payment - Selfcare	Billing	Barring	None	False	LineStatus
+2147	54300	451253	Hi i had an overdue payment last night at 10.30 pm. But till now my phone cannot make/received a call..JUNAIDI BIN JAMIL. 780628025319 	1479281728	19365	0	22	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2147	54304	451292	Fine. Do assist me re activate my barred/suspended line..tq	1479281984	19365	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2147	54311	451373	Why the charge so high? the line just cost RM 8 per month but the unsuspend cost me RM 10. 	1479282385	19365	0	20	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	CheckUnbarAmount
+2150	54372	451610	hi, can you help me temperaly upgrade limit to rm 100 for this number 0165167363 	1479286762	19379	0	14	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	True	IncreaseCreditLimit
+2151	54393	451677	hi...my redone have been block...is there any due payment to you	1479287913	19382	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2151	54406	451696	so what do I have to do to open up back my line	1479288135	19382	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Procedure	False	HowUnbar
+2155	54469	452056	Found out my line was barred and immediately I pay my bill. How soon would the line be unharmed?	1479297713	19401	0	19	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2155	54470	452059	I mean unbarred	1479297734	19401	0	3	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2155	54501	452134	No is ok since is barred. I will email my transaction payment to unbar line.	1479298911	19401	0	15	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	RequestUnbar
+2156	54507	452069	Because i forgot to settle the payment, i think my service has been shut off	1479297899	19402	0	15	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2156	54509	452073	i just settled the payment. can you please check the status of my telephone service	1479297920	19402	0	15	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectOthers	True	LineStatus
+2160	54593	452247	Hi, may I ask, I have made my payment for Oct & Nov bill, but why my line still being barred?	1479340246	19412	0	21	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyStillBar
+2166	54743	452566	I can't use my phne	1479347436	19427	0	5	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	None	False	LineStatus
+2167	54763	452594	i just done for payment so when can open line for me	1479348043	19428	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2167	54764	452598	sms i already received for payment but still cant call out	1479348163	19428	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2170	54825	452662	How long have I to wait after payment been made to unbarred my line ?	1479349716	19431	0	15	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2170	54840	452685	how can , I clear it by today ?	1479350082	19431	0	9	English	Billing	Un-bar lines - Overdue Payment	Billing	None	Procedure	False	
+2173	54904	452871	hi i want to know why my line is still get barred	1479352282	19441	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyStillBar
+2176	54987	453215	Hi, bill over, block outgoing. Pay online now, how long taking to unblock?	1479358039	19455	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2176	54996	453238	only RM 16 outstanding. can u unblock first?	1479358243	19455	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2176	54999	453241	if i pay online using CC now, how long will back to service?	1479358273	19455	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2178	55030	454412	Hi. I have paid my oustanding. Can unblock my outgoing call and my packet data	1479429219	19508	0	15	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2193	55411	457197	Why did you block my number.?	1479551745	19634	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2193	55413	457201	I cant make calls.why?	1479551808	19634	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2200	55566	457762	hello i want to update my limit	1479612542	19659	0	7	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	Procedure	False	IncreaseCreditLimit
+2200	55573	457773	last week i just upadte my limit to day u say no match	1479612822	19659	0	13	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	CreditLimit	None	False	CheckCreditLimitAmount
+2201	55586	457925	My line been bock.. 0195713878 <NL>outstanding RM 10. 	1479618160	19669	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2204	55660	458464	my phone unable to use	1479637362	19692	0	5	English	Billing	Increase credit limit	Billing	Barring	None	False	LineStatus
+2208	55738	459176	1 of the numbers in my account has reached its maximum credit limit. Is it possible to stretch the limit beyond its current limit allowed?	1479696059	19725	0	25	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	CreditLimit	Request	True	IncreaseCreditLimit
+2208	55746	459220	How am i to let RedOne know about the advance payment? Or will it be automatically allowed for the limit to be increased once the amount has been credited?	1479696580	19725	0	29	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	CreditLimit	Procedure	True	IncreaseCreditLimit
+2211	55833	459974	Hi. I think my number is barred	1479711753	19754	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2211	55837	459979	I have paid all my bills but i cannot use my number...	1479711785	19754	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2211	55843	459986	Is my number barred?	1479712032	19754	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	True	LineStatus
+2215	55948	460456	can you temporary unbar my number so that I can make my payment?	1479722100	19777	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2215	55963	460530	I can't receive TAC number from the bank	1479723394	19777	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	BillingTroubleShooting	None	False	BillingTroubleShootingOthers
+2215	55965	460533	I am in oversea and I can't receive call or SMS	1479723476	19777	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2215	55969	460545	it was disconnected	1479723622	19777	0	3	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2215	55970	460546	I can't receive call or sms	1479723630	19777	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2217	56019	460906	1 of my line get barred	1479779229	19795	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2217	56035	460925	erm nope but can u reconnect it	1479779391	19795	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	True	RequestUnbar
+2220	56113	461125	hi,my sub line 0107884688 is over limit now.so what can i do ?	1479785767	19806	0	13	English	Billing	Increase credit limit	Billing	Barring	Procedure	False	HowUnbar
+2220	56116	461133	hi,my sub line 0107884688 limit reach	1479785872	19806	0	6	English	Billing	Increase credit limit	Billing	Barring	None	False	LineStatus
+2220	56117	461134	so what can i do to ublock the line?	1479785885	19806	0	9	English	Billing	Increase credit limit	Billing	Barring	Procedure	False	HowUnbar
+2220	56122	461160	ok,so did i have to change bk the limit next time?	1479786072	19806	0	11	English	Billing	Increase credit limit	Billing	CreditLimit	Procedure	True	IncreaseCreditLimit
+2221	56151	461335	since it is already barred and suspended	1479789670	19810	0	7	English	Billing	Waiver	Billing	Barring	None	False	LineStatus
+2221	56152	461336	anyway, is it possible to reactivate my line back?	1479789700	19810	0	9	English	Billing	Waiver	Billing	Barring	Procedure	True	HowUnbar
+2231	56462	462498	now block already..	1479807364	19863	0	3	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2231	56474	462563	that's number block already	1479808023	19863	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2231	56475	462564	how to active back?	1479808034	19863	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Procedure	False	HowUnbar
+2231	56480	462575	ok.. please help me active back..	1479808225	19863	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2234	56523	462629	about 1 hour ago I talk to your staff to reactivate my sub line	1479811378	19866	0	14	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	HowUnbar
+2234	56526	462633	but my nomber still suspended	1479811418	19866	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	LineStatus
+2239	56632	462942	I have made a payment on the 11 November. Still wonder why the line is still suspended?	1479862584	19881	0	17	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyStillBar
+2248	56848	463809	I would like to activate my number	1479878435	19916	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2248	56849	463813	Why my number always got barred without informing ?	1479878482	19916	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2248	56854	463821	Please activate my number	1479878631	19916	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2248	56863	463831	I would like to change my credit limit	1479878788	19916	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2248	56864	463832	Yes please do I need to increase my limit every month?	1479878810	19916	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Procedure	True	IncreaseCreditLimit
+2250	56889	463973	pls check 0137459839 why status is barred and connot call out .	1479882291	19926	0	12	English	Billing	Increase credit limit	Billing	Barring	Reason	False	WhyBar
+2250	56899	463989	0137459839 THE CREDIT LIMIT CAN UPDATE	1479882655	19926	0	6	English	Billing	Increase credit limit	Billing	CreditLimit	Request	True	IncreaseCreditLimit
+2253	56976	464186	hi, just now i already payment for november. until now my phone still can't call out.	1479887073	19939	0	16	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	None	False	LineStatus
+2253	56977	464189	can i know when can open back?	1479887102	19939	0	7	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2265	57204	466665	my credit limit going to be over. I just make payment for the current bill. Can you guys pls increase my limit to RM 200. just worry wii be disconnect the payment.	1479970206	20043	0	31	English	Billing	Increase credit limit	Billing	CreditLimit	Request	True	IncreaseCreditLimit
+2267	57310	466884	Could i know, why my phone - 0175568642 cant make a call?	1479972933	20054	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	True	WhyBar
+2275	57511	467898	hello..i just paid my bill but my number still being suspended.can u help me with that?ty	1480039086	20091	0	16	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2276	57577	467956	my phoneline was barred	1480040039	20092	0	4	English	Billing	Billing Details	Billing	Barring	None	False	LineStatus
+2280	57682	468652	please unbar my line. thanks	1480055759	20132	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2280	57688	468726	can you please unbar my line?	1480056778	20132	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2280	57695	468748	or does it mean whenever it exceeds rm 50 the line will be barred?	1480056953	20132	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	True	WhyBar
+2281	57713	468687	CANNOT CALL OUT	1480056263	20133	0	3	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2281	57738	468820	so i already paid why still cannot call out ?	1480057314	20133	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2288	57889	469412	why I canot make a call or to call toll free 1800110800 	1480067304	20155	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2290	57935	469723	Payment done, please reconnect my service. Thank you.	1480078200	20165	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2290	57944	469746	Ok, please reconnect for me.	1480078768	20165	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2291	57955	469813	hi, good morning, since yesterday night, i face problem of can't calling out and the mobile data is shutdown. May u assign for this case?	1480117499	20168	0	25	English	Billing	Increase credit limit	Billing	Barring	Reason	True	LineStatus
+2291	57968	469826	calling limit?	1480117667	20168	0	2	English	Billing	Increase credit limit	Billing	CreditLimit	ObjectName	False	CheckCreditLimitAmount
+2299	58237	470446	my phone line is barred already 01110596071 	1480131425	20194	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2300	58273	470910	payment made but still barred	1480137744	20216	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2300	58278	470918	i think i made a payment recently and the line still barred	1480137870	20216	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2301	58302	471138	Pls help me open my line.	1480140656	20225	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2303	58368	471248	i cannot make a call bcos the line is block	1480145903	20230	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2303	58380	471271	i know the reason. can you temporary unbar the line bcos this only happen sometimes	1480146218	20230	0	15	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	True	RequestUnbar
+2303	58383	471281	do i have to pay? this only occur sometimes. normally i don"t exceed the limit	1480146325	20230	0	15	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Procedure	True	CheckUnbarAmount
+2308	58494	472002	I already payment yesterday , why still Barr my line?	1480211988	20259	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyStillBar
+2308	58496	472004	0164304609 why Barr this line?	1480212030	20259	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2311	58551	472081	why my phone been barred?	1480214349	20264	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2312	58578	472082	I JUST PAID RM 100 <NL>STILL CANNOT CALL OUT <NL>Y	1480214362	20265	0	9	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	Barring	None	False	LineStatus
+2312	58590	472154	so... I can make call rite...	1480215434	20265	0	6	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	Barring	ObjectDefinition	True	LineStatus
+2319	58752	473495	line no signal is it due to credit limit?	1480246547	20322	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	True	LineStatus
+2319	58761	473504	so once reach the limit the phone would cease to even be able to call that person?	1480246778	20322	0	17	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	True	LineStatus
+2319	58762	473505	as i tried to call that person but just say not reachable	1480246808	20322	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	None	None	False	
+2319	58764	473507	oh even cannot receive calls?	1480246863	20322	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	True	LineStatus
+2319	58771	473514	ok so may you temporary this month increase the limit for that number to RM 100 	1480247077	20322	0	15	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	True	IncreaseCreditLimit
+2320	58815	473662	My line has been barrier	1480250478	20330	0	5	English	Billing	Make Payment - Selfcare	Billing	Barring	None	False	LineStatus
+2322	58867	473772	My number 01110818807 had been barred and I had already paid the payment. Please help me activate my number back. Thank you	1480290438	20335	0	22	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	Barring	Request	False	RequestUnbar
+2324	58902	473802	I already make payment on 25 / 11. However i received message that my line will be barred by 15 / 12. 	1480291510	20338	0	18	English	Billing	Billing Charges	Billing	Barring	None	False	LineStatus
+2331	59089	474858	MY NO 0162923612 LINE IS BARRED	1480306850	20381	0	6	English	Billing	Increase credit limit	Billing	Barring	None	False	LineStatus
+2332	59124	474957	Hp barred. How much i need to pay?	1480307769	20384	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2344	59431	475963	I ad made the payment.please reactivate my line ( 0175472853 )	1480323319	20428	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2349	59620	476330	RM 0 redONE: Kindly submit the RM 56.17 payment before 14 Dec 2016 to avoid your line being barred on 15 Dec 2016. 	1480328313	20446	0	21	English	Billing	Billing Details	Billing	Barring	Procedure	False	LineStatus
+2349	59623	476334	Regarding the message, my line already barred..	1480328394	20446	0	7	English	Billing	Billing Details	Billing	Barring	None	False	LineStatus
+2351	59685	476530	I can not use call function now.<NL>So I think pay it first.<NL>.	1480331536	20449	0	12	English	Billing	Make Payment - Selfcare	Billing	Barring	None	False	LineStatus
+2351	59690	476555	Can not call other 1.	1480331877	20449	0	5	English	Billing	Make Payment - Selfcare	Billing	Barring	None	False	LineStatus
+2351	59691	476557	It had reached to Credit Limit.	1480331930	20449	0	6	English	Billing	Make Payment - Selfcare	Billing	Barring	None	False	LineStatus
+2351	59692	476558	I can not use call function now.	1480331938	20449	0	7	English	Billing	Make Payment - Selfcare	Billing	Barring	None	False	LineStatus
+2354	59762	476926	PLEASE ACTIVATE MY LINE 0199806878 AFTER PAYMENT RM 80 + RM 260 28 / 11 / 2016. 	1480380750	20472	0	9	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	Barring	Request	False	RequestUnbar
+2355	59803	477046	but still barres	1480381935	20475	0	3	English	Billing	Payment Status	Billing	Barring	None	False	LineStatus
+2355	59820	477109	last month they told me if got barred issue, go pay at kiosk.	1480382746	20475	0	13	English	Billing	Payment Status	Billing	Barring	None	False	HowUnbar
+2362	59961	477551	why my line has been barred	1480389733	20498	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2362	59975	477583	what do you mean by exceeding credit limit?	1480390197	20498	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectDefinition	False	WhyBar
+2363	60012	477624	Yesterday i already pay the payment,but still barred..yesterday i ask your staff,he say help me to check,because the line already suspended,so your staff say if want open the line,i will pay the charges RM 10.00 on next month	1480390442	20501	0	37	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2364	60027	477603	paid rm 50 adv f releses bar	1480390305	20504	0	6	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2369	60134	477867	status barred	1480393102	20516	0	2	English	Billing	Billing Details	Billing	Barring	Reason	False	LineStatus
+2369	60140	477884	Izit the service will resume after i online banking payment	1480393272	20516	0	10	English	Billing	Billing Details	Billing	Barring	None	True	HowUnbar
+2369	60143	477889	how long will resume after payment done	1480393350	20516	0	7	English	Billing	Billing Details	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2372	60199	478215	can u help me to activate back my number??<NL>My name is I TIANG A/L EPROT	1480397258	20532	0	15	English	Billing	Increase credit limit	Billing	Barring	Request	True	RequestUnbar
+2372	60209	478310	my number ha been barred	1480397861	20532	0	5	English	Billing	Increase credit limit	Billing	Barring	None	False	LineStatus
+2372	60210	478311	can u help me to activate it back	1480397868	20532	0	8	English	Billing	Increase credit limit	Billing	Barring	Request	True	RequestUnbar
+2373	60225	478287	unbarred line	1480397787	20534	0	2	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2373	60230	478298	can u help me to unbarred my phone line?	1480397812	20534	0	9	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	True	RequestUnbar
+2375	60284	478520	i just paid Rm 100 this morning wh my line barred<NL>pay online m 2 u	1480399887	20542	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyStillBar
+2375	60293	478549	alright...but suddenly 10 : 47 been barred	1480400232	20542	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2375	60296	478552	pls kindly increased my credit limit.	1480400267	20542	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	Request	False	IncreaseCreditLimit
+2381	60395	478757	my phone block due to no payment	1480404386	20554	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2381	60400	478762	pls unblock	1480404411	20554	0	2	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2382	60414	478816	Unbar my number	1480405114	20557	0	3	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2382	60416	478819	Pls unbar 01110633129 	1480405127	20557	0	3	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2382	60426	478839	Pls unbar it i will made payment on the statment created	1480405382	20557	0	11	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2382	60429	478843	Just unbar it, why redone so scare i wont pay for next month	1480405443	20557	0	13	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2382	60432	478846	So pls unbar my line now	1480405605	20557	0	6	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2384	60465	479842	line been block	1480462014	20597	0	3	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	Barring	None	False	LineStatus
+2384	60475	479852	connect back my line, yesterday paid 270 	1480462160	20597	0	7	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	Barring	Request	False	RequestUnbar
+2384	60484	479861	so you remember to unblock my phone later 830 am.thx	1480462627	20597	0	9	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	Barring	Request	False	RequestUnbar
+2388	60586	480103	My line has been barred butr just now I already made payment n please open the line by this morning	1480467607	20610	0	20	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2388	60591	480128	Mean that any extra cost?	1480467756	20610	0	5	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	None	ObjectNumeric	True	None
+2390	60630	480193	I've already paid my current outstanding amount.. But still my postpaid is still barred n right now my phone cannot detect any network	1480468930	20615	0	23	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2392	60677	480296	my number already barred	1480469559	20619	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2392	60685	480342	my num already barred	1480469940	20619	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2393	60709	480386	then why my father cant call out?	1480470213	20623	0	7	English	Billing	Increase credit limit	Billing	Barring	Reason	False	WhyBar
+2401	60997	481743	PAYMENT DONE, PLEASE REACTIVE MY SERVICE.	1480487809	20678	0	6	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	Barring	Request	False	RequestUnbar
+2401	60998	481764	PAYMENT DONE, PLEASE REACTIVE MY SERVICE.	1480488022	20678	0	6	English	Billing	Un-bar lines - Increase CL from RM200 to RM300	Billing	Barring	Request	False	RequestUnbar
+2407	61147	482206	HI<NL>PLEASE UNBAR THE LINE	1480491991	20699	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2407	61149	482211	BUT THE LINE IS NOT UNBAR	1480492008	20699	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2407	61157	482238	u just check in ur system i got pay money and unbar the line thats it	1480492189	20699	0	16	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2407	61166	482256	just unbar the line	1480492347	20699	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2407	61167	482261	as long as payment in already then u shud unbar the line	1480492364	20699	0	12	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2408	61185	482282	Hi Sir/Mdm,<NL><NL>I need assistance to check whether my account is still being barred or not as I have make full payment for the overdue bill before 2 p.m. just now? I cannot call from my phone due to it is not registered to any networks at the moment.<NL><NL>Thank you.	1480492611	20702	0	49	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	False	LineStatus
+2410	61258	482334	Hi. May i know status for my number 01110615127 	1480493233	20704	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	True	LineStatus
+2412	61310	482545	Hi.. sorry.. i want to ask. How to request for unsuspended line?	1480495314	20713	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Procedure	False	HowUnbar
+2416	61394	482845	hi<NL>why my account has been block?	1480498209	20726	0	6	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Reason	False	WhyBar
+2416	61398	482854	to temporary unbare	1480498235	20726	0	3	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2418	61433	482929	HELLO, TODAY I JUZ PAY FOR RM 50 AND MY PHONE HAD BEEN BARRED DUE TO OVER CREDIT LIMIT?	1480499070	20730	0	18	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2418	61436	482943	HOW COME MY PHONE GET BARRED?	1480499121	20730	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2418	61450	482995	so can u unbarred my phone ?	1480499778	20730	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	True	RequestUnbar
+2419	61458	483626	can help me unbar my line	1480509303	20759	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2419	61461	483636	can help me unbar my line	1480509389	20759	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2433	61816	485269	I just wat to check when is the exact time my line will be unsuspended	1480557326	20831	0	15	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2435	61870	486552	Why my supplementry line was barred	1480562262	20888	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2437	61901	486778	BUT WHY MY NUMBER GOT SUSPENDED?	1480563045	20913	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2450	62256	489853	i cannot top up data due to credit limit exceed	1480583047	21064	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	CreditLimit	None	False	CheckCreditLimitAmount
+2458	62437	491029	Hi,<NL><NL>I am looking for help to re-active my account. I have made full payment for my overdue bill. I would also like to change my current plan to the new Data 8 + plan.<NL><NL>Thank you.	1480633709	21116	0	33	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2473	62873	491942	can you check my account status: 0132179090 	1480645597	21165	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	True	LineStatus
+2474	62916	492599	i think my sim suspended..	1480650208	21191	0	5	English	Billing	Billing Details	Billing	Barring	None	False	LineStatus
+2474	62917	492600	how come red 1 suspend my sim...?	1480650231	21191	0	7	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyBar
+2474	62957	492725	then u all suspended my acct on 15 / 11 	1480651304	21191	0	8	English	Billing	Billing Details	Billing	Barring	None	False	LineStatus
+2479	63085	493640	my sim card still cant used..<NL>pls check	1480659253	21257	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	False	LineStatus
+2479	63094	493683	y my line still no active..?	1480659498	21257	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	LineStatus
+2479	63110	493719	this is what u say ."Sir your account have suspend."	1480659724	21257	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2479	63111	493731	of course i know my account suspended...if not i will ask ur help...	1480659842	21257	0	13	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2479	63152	493879	u just activate for me .i will terminate later...	1480661408	21257	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2482	63215	495938	Hi,<NL><NL>I would like to request assistance to reactivate my line as I already made payment for the overdue bill.<NL><NL>Thank you.	1480691215	21371	0	20	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2491	63484	497688	Pls unsuspended my account...tq	1480741549	21446	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	RequestUnbar
+2495	63580	498055	Hello dear sir/madam i have got problem with my sim card cant give call , i think the line has been suspended , could u please help me	1480746845	21461	0	28	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Procedure	True	HowUnbar
+2496	63609	498273	Hi, I have just made payment to my account. please unbar	1480752934	21472	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2496	63612	498279	please unbar my line, as i have just made payment	1480753000	21472	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2517	64206	501539	I already paid<NL>why still in emergency call	1480832438	21607	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	WhyStillBar
+2524	64368	502516	Hi, can you unbarred my line. Tq	1480857435	21650	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2524	64386	502534	my line still unable to make a call.	1480857751	21650	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2524	64388	502536	Oh tq, because today i reveive sms say that i need to pay rm 208.35 before 1 jan, but the line already barred .may i know why?	1480857889	21650	0	26	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2535	64682	504077	barred	1480905869	21718	0	1	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2542	64853	505331	i had already suspended	1480917354	21774	0	4	English	Billing	Waiver	Billing	Barring	None	False	LineStatus
+2542	64855	505336	when i suspend it on 1 st nov	1480917365	21774	0	7	English	Billing	Waiver	Billing	Barring	None	False	LineStatus
+2543	64904	505266	My line is barred. I have made payment yesterday for outstanding amount. When can my line get activated again ?	1480916669	21775	0	20	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2543	64910	505291	My line is barred. I have made payment yesterday for outstanding amount. When can my line get activated again ?	1480916940	21775	0	20	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2543	64932	505351	Then how come so fast already barred ?	1480917427	21775	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	LineStatus
+2546	65052	505618	already made my payment yesterday. can i reactive back mu line?	1480919297	21785	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2546	65062	505644	can i unbarred and reactive back?	1480919502	21785	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2547	65078	505635	Hi, can you please activate the line for 01110919175. Already make a payment an hour ago.	1480919426	21786	0	16	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2548	65086	505863	Hi my name is Tan Yee Jia 790501016238 phone number 01110539003. my line is block? I already made the full payment yesterday. can u please unbarred it?	1480921690	21795	0	27	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2554	65269	507168	may I know when will my mobile 01110838364 be activated?	1480937756	21845	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2554	65276	507183	I know but my line still no signal	1480937931	21845	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2557	65344	507799	I want active my account	1480950723	21872	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	HowUnbar
+2559	65394	508175	Hi customer service, yesterday I chat with 1 of your colleague here saying I agreed to pay RM 10 for reconnect back my line.. he/she said is done and asked me to try 5 mins later. but till now my line is still barred. can you please check?<NL>Tan Yee Jia 790501016238 phone number 01110539003. 	1480982505	21887	0	53	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectName	True	WhyBar
+2562	65466	508440	morning.. already clear the payment , please unbarred my line	1480986851	21898	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2564	65554	508879	PAYMENT IS CLEAR .PLEASE UNBARED	1480991257	21911	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2569	65746	509922	i want to unsuspended my number	1481005564	21944	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	HowUnbar
+2569	65756	509932	unsuspended for both line	1481005764	21944	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2574	65952	510451	can u activate it back	1481010183	21960	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2576	66002	510655	01110676767 MY PAYMENT ALREADY,WHY DON HAVE UNBARRED ME	1481014452	21969	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyStillBar
+2576	66007	510664	WHY UNDER SUSPENDED	1481014593	21969	0	3	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2576	66025	510699	now cant active back	1481014949	21969	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2579	66095	511126	Hi.. Can you help me to unbar my line as I've made my payment yesterday	1481026435	21990	0	15	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2579	66112	511161	I am not aware of the reconnectiom fee	1481026667	21990	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	CheckUnbarAmount
+2584	66209	512371	why i can call out?	1481080177	22038	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2584	66223	512395	barred	1481080477	22038	0	1	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2598	66673	515399	When the coverage will be recover? I've paid the suspended bill already. Does it take a long time?	1481118816	22146	0	18	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2599	66694	515679	can u pls reopen my account pls?	1481120749	22156	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2599	66711	515726	how long the payment didn't pay will be suspended?	1481121009	22156	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	LineStatus
+2599	66717	515757	Then pls reconnect back	1481121248	22156	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2614	67174	519058	y off my number 01110621314 	1481198423	22272	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2614	67187	519094	y unsuspend	1481198719	22272	0	2	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2626	67507	522384	Why my line is still suspended when payment has been made ?	1481327235	22403	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2626	67523	522406	Please unbar the line and send my appeal	1481327751	22403	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2629	67597	522812	Request for release line no 0139538162 from barred status	1481336362	22418	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2631	67650	522969	how much i need pay for unbar my account?	1481337495	22421	0	9	English	Billing	Billing Details	Billing	Barring	Object	False	CheckUnbarAmount
+2636	67771	523279	i have already made payment and would like to unbared my line	1481342854	22439	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2636	67785	523354	so please help to reconnect back mine both lines	1481343910	22439	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2637	67794	523451	HOW I CAN UNBARRED MY ACCOUNT WITH ONLINE	1481345185	22447	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Procedure	False	HowUnbar
+2637	67813	523539	..thank you for the good service..okey unsuspend for both line,	1481346042	22447	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2641	67924	523838	BUT THE SMS SAY AVOID YOU LINE BARRED ON 12 DEC	1481356986	22460	0	10	English	Billing	Billing Details	Billing	Barring	None	False	LineStatus
+2646	68075	524695	Call blocked	1481380532	22487	0	2	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2646	68076	524700	My 2 nd number 017 4648105 has been blocked.	1481380564	22487	0	8	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2647	68086	525189	Hello , Would like to ask <NL>Customer ID 201289980. I already settled the bill..how come the status still barred?<NL>the balance still not yet deduct?	1481423102	22508	0	23	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyStillBar
+2647	68103	525206	how long will it take to unbarred?	1481423544	22508	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2649	68136	526621	I can't use Internet or Cal why 01110833923 	1481500777	22576	0	8	English	Billing	Payment Status	Billing	Barring	Reason	False	WhyBar
+2651	68251	526895	I didn't receive my monthly phone bills. So now my phone numbers has been blocked!	1481509007	22586	0	15	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2651	68258	526910	now both of my phone numbers are blocked:<NL> 0134883788 & 0164005311 	1481509197	22586	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2654	68348	527626	why mu line barred	1481529258	22613	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2654	68353	527633	i want to check, why my ine have been barred	1481529293	22613	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2654	68362	527654	pls help unbarred now	1481529665	22613	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2657	68409	527860	I have made my payment and why is my number 0128877776 is barred? ?	1481537496	22626	0	14	English	Billing	Increase credit limit	Billing	Barring	Reason	False	WhyStillBar
+2657	68419	527903	Can you why is my line is barred	1481537838	22626	0	8	English	Billing	Increase credit limit	Billing	Barring	Reason	False	WhyBar
+2659	68468	528299	HI;NEED TO MAKE PAYMENT TO UNBAR MY LINE	1481550569	22646	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	HowUnbar
+2659	68474	528311	how much must be remitted to have my line re-activated!	1481550654	22646	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2659	68485	528341	how much must i pay now in order to reactivate my line?	1481551022	22646	0	12	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2659	68509	528379	CHECK N REACTIVATE MY LINE IMMEDIATELY	1481551903	22646	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2659	68518	528388	YES I NEED MY LINE UNSUSPENDED	1481552013	22646	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2667	68687	529088	and redone is warning me service suspension	1481594252	22678	0	7	English	Billing	Auto Debit Application	Billing	Barring	None	False	LineStatus
+2675	68843	530107	Hi, please help me check why my phone cannot call out & no internet?<NL>tq	1481611823	22736	0	14	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectName	False	WhyBar
+2707	69705	534841	PLEASE Help un bar my ACCOUNT	1481716258	22940	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	False	RequestUnbar
+2710	69776	535166	unsuspend line	1481722532	22956	0	2	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2714	69976	536279	can u check the min amount to pay for unbarred my line 0123858031 	1481761754	23007	0	13	English	Billing	Billing Details	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2716	70035	536434	Can u check when the line can be unbarred??/	1481762793	23012	0	9	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2717	70050	536643	Payment done, please reactive	1481764322	23022	0	4	English	Billing	Billing Details	Billing	Barring	Request	False	RequestUnbar
+2720	70099	536892	I would like to request for unbar my line so that I can make online payment	1481766318	23032	0	16	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2720	70119	536939	how to I make a payment	1481766534	23032	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentChannel	Procedure	False	HowPay
+2720	70129	536961	If i can... i won't be talk to you right?	1481766691	23032	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	None	None	True	
+2722	70202	537260	but i still cannot making call	1481769649	23039	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2723	70216	537182	can u activate my number now	1481769303	23042	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2725	70266	537315	Barred line	1481769940	23048	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2725	70270	537322	how long does it take to be unbarred?	1481769965	23048	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2726	70291	537395	MY redONE number already barred	1481770325	23052	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2726	70296	537407	can you unbarred it	1481770359	23052	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2728	70357	537564	may i know how much to pay.. can i pay only Dec bill to open barred	1481770952	23057	0	16	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2728	70363	537663	could u open barred	1481771421	23057	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2729	70371	537539	Release line	1481770856	23058	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2729	70372	537543	hi i already make payment, can you assist to release the line	1481770873	23058	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2730	70393	537697	CAN U UNBLOCK MY BLOCK?	1481771500	23065	0	5	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2730	70404	537795	BUT IN MY MESSAGE THE BALANCE IS UNTIL 14 DEC	1481771882	23065	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	None	False	BillAmount
+2732	70451	537868	CAN U UP MY LINE.. MY LINE HAS BEEN BARRED	1481772269	23069	0	10	English	Billing	Payment Status	Billing	Barring	Request	True	RequestUnbar
+2732	70463	537924	how soon I can get the sms	1481772551	23069	0	7	English	Billing	Payment Status	Billing	PaymentStatus	ObjectTime	False	ConfirmPaymentReceived
+2740	70683	539535	what it is mean?	1481786561	23134	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	None	ObjectDefinition	False	
+2743	70774	539857	how about my sub line ?	1481788673	23143	0	6	English	Billing	Payment Status	Billing	None	ObjectName	False	
+2743	70777	539866	which is?	1481788750	23143	0	2	English	Billing	Payment Status	Billing	None	ObjectName	False	
+2743	70785	539886	just dont touch my both line untill 14 jan 2017 	1481788920	23143	0	10	English	Billing	Payment Status	Billing	None	Request	False	
+2743	70813	540016	just dont touch my both line and unbar back the line	1481790068	23143	0	11	English	Billing	Payment Status	Billing	Barring	Request	False	RequestUnbar
+2744	70874	539752	line reactivate	1481788021	23145	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2744	70885	539882	is it mean i have to pay all 293.33 to unbarred ?	1481788903	23145	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2747	70928	539956	sorry why still cant call? need to active anything?	1481789527	23150	0	9	English	Billing	Make Payment - Selfcare	Billing	Barring	Reason	True	WhyBar
+2750	71002	540056	hi, i have paid all the bill, but the status still in suspended.	1481790330	23156	0	13	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	None	False	LineStatus
+2751	71025	540166	hai there<NL>could you please unbarred my mobile since i already made the payment?	1481790929	23160	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2751	71034	540206	could you please unbarred my number urgent	1481791125	23160	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2754	71116	540492	hi is my line being bared?	1481792695	23173	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectName	True	LineStatus
+2757	71189	540757	I want to ask my line was barred but I just made payment this afternoon via M 2 u online for 45.15 	1481797149	23188	0	20	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2757	71200	540822	previous case also i did not pay full amount but they unbar my line	1481798486	23188	0	14	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	None	False	LineStatus
+2757	71201	540826	but why the latest bill 45.13 they given me time until 31 dec to make payment as on the bill???	1481798574	23188	0	19	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2758	71210	541120	My no barred from call. Already paid this morning usng maybsnk 2 u.	1481806125	23207	0	11	English	Billing	Payment Status	Billing	Barring	None	False	LineStatus
+2758	71223	541144	Rm 150 	1481806569	23207	0	2	English	Billing	Payment Status	Billing	None	None	False	
+2762	71300	541428	I already paid yesterday, why line being barred?	1481810155	23223	0	8	English	Billing	Payment Status	Billing	Barring	Reason	False	WhyStillBar
+2762	71314	541468	Yup, i just made payment on 14 dec , why today yor system captured.	1481810491	23223	0	14	English	Billing	Payment Status	Billing	PaymentStatus	Reason	False	WhyNotUpdated
+2763	71335	541727	May i know when i can use my line	1481812235	23240	0	9	English	Billing	Payment Status	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2764	71362	542202	HOW TO REACTIVE LINE?	1481815175	23263	0	4	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Procedure	False	HowUnbar
+2764	71367	542243	how to reactive my line that is currently being suspended?	1481815471	23263	0	10	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Procedure	False	HowUnbar
+2764	71371	542265	OK when is the deadline bfor the line is totally cut off	1481815634	23263	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	PaymentCycle	ObjectTime	False	WhenPaymentLastDay
+2764	71375	542293	and pls unbared it for me tq	1481815805	23263	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2765	71384	542300	Why my line is still barred	1481815929	23265	0	6	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyStillBar
+2765	71393	542325	why my line is still barred	1481816148	23265	0	6	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyStillBar
+2765	71402	542361	than why is it barred	1481816335	23265	0	5	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyBar
+2765	71407	542381	Why do i need to settle the full bill to unbarred	1481816475	23265	0	11	English	Billing	Billing Details	Billing	Barring	Reason	False	CheckUnbarAmount
+2767	71452	542528	can u check waht status for my no?<NL> 01110812114 	1481843296	23273	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectName	True	LineStatus
+2767	71453	542531	i already pay the bill but why i get barred today	1481843325	23273	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2769	71510	542691	I want to know why my number is not in service any more.	1481846406	23280	0	13	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyBar
+2773	71618	543891	Please check my line was barred	1481854401	23332	0	6	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2773	71619	543893	and how much i need to pay inorder to open back	1481854418	23332	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2774	71650	543982	morning, my line has been barred. what is my minimum payment to get back my line ASAP? tq	1481855304	23334	0	18	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2776	71702	544155	just noticed my call has being barred	1481856640	23339	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2776	71711	544171	only for this month, ?	1481856729	23339	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	None	ObjectName	True	
+2781	71831	545135	How much min pymrnt cn I py	1481867127	23384	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	None	ObjectNumeric	False	None
+2781	71840	545154	Cn u help me to open my line	1481867423	23384	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2781	71841	545157	Minimum pyment how much cn I pay	1481867449	23384	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	None	ObjectNumeric	False	
+2782	71854	545439	Can I know about my phone coverage is active or not?	1481871428	23397	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectName	True	LineStatus
+2782	71868	545456	I got the message to pay around rm 250 ++ before 1 january and how u can barred before 1 january and I dont have any message to make a payment before 15 hb december???????!!!!!!	1481871676	23397	0	32	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	WhyBar
+2792	72087	547170	When will my line unbarred?	1481898589	23475	0	5	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2793	72112	547234	1 of my line is get barred	1481899205	23478	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2795	72252	547580	Hi can you help me check how much i need to pay for the outstanding to active my account?	1481902405	23487	0	19	English	Billing	Billing Details	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2797	72307	547905	but why need fo barred in going call and sms?	1481936506	23500	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2797	72317	547915	i hope you can help me, not open for outgoing call and sms but only for in going call and sms, that all..	1481936670	23500	0	23	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2798	72333	548937	hi,i've made my bill payment yesterday but i still cant use my number dialing out to others	1481955392	23544	0	17	English	Billing	Payment Channel	Billing	Barring	Reason	False	LineStatus
+2802	72438	549274	Looks like i cannot use my line	1481966303	23560	0	7	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Reason	False	LineStatus
+2802	72441	549278	what is the minimum i can pay to unbarr my line	1481966362	23560	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectNumeric	False	CheckUnbarAmount
+2803	72454	549301	My total amount due is 185.51. but today i paid rm 96.00. can redone unbar my line	1481966664	23563	0	16	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2805	72492	549512	I have transferred my payment <NL>Can unblock my phone line?	1481971900	23573	0	10	English	Billing	Billing Details	Billing	Barring	Request	True	RequestUnbar
+2806	72513	549927	Hi need help to re- activate my suspended phone line	1481979312	23592	0	10	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2809	72608	550280	Hi..my phone was barred. I have paid the bill rm 50. but still barred. Could you assist me? Tq	1481985664	23609	0	17	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	True	RequestUnbar
+2809	72617	550296	Meaning that i have to pay all the bill include december?	1481985851	23609	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	BillOutstanding	ObjectName	True	WhichFieldToPay
+2809	72622	550304	If i pay the bill, how long it takes to be unbarred?	1481985979	23609	0	12	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2815	72766	551517	Hi. My line was barred recently and I already cleared the payment. May I know how long it takes before i could use my line again?	1482041872	23662	0	26	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2817	72849	551717	help me to expediate it if you can	1482046526	23669	0	8	English	Billing	Payment Status	Billing	None	Request	False	
+2818	72858	551722	hi, i have already paid my bill using m 2 u but my number is still barred	1482046690	23671	0	15	English	Billing	Payment Status	Billing	Barring	Reason	False	WhyStillBar
+2818	72861	551732	hi, i would like to unbar my number please.	1482046742	23671	0	9	English	Billing	Payment Status	Billing	Barring	Request	False	RequestUnbar
+2821	72934	551941	so when my line will be activated	1482053121	23681	0	7	English	Billing	Payment Status	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2821	72939	551948	so when?	1482053239	23681	0	2	English	Billing	Payment Status	Billing	None	ObjectTime	False	
+2821	72949	551971	my question is simple... when my line wil be activated !!	1482053503	23681	0	11	English	Billing	Payment Status	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2821	72952	551979	i repeat my question.. when my line wil be activated??	1482053567	23681	0	10	English	Billing	Payment Status	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2825	73026	552350	My Line barred	1482069687	23700	0	3	English	Billing	Payment Status	Billing	Barring	None	False	LineStatus
+2825	73029	552356	i have make my payment on Saturday	1482069756	23700	0	7	English	Billing	Payment Status	Billing	PaymentStatus	None	False	LastPayment
+2829	73158	553644	why barred my oline	1482120495	23755	0	4	English	Billing	Billing Charges	Billing	Barring	Reason	False	WhyBar
+2835	73305	554154	Once I make the payment, will my phone number be immediately unlocked?	1482128579	23776	0	12	English	Billing	Make Payment - Selfcare	Billing	Barring	ObjectName	True	CheckUnbarTime
+2838	73401	554254	Please active my phone..	1482129947	23782	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2838	73406	554280	my phone is 011 - 10628831 paid already RM 195 	1482130133	23782	0	7	English	Billing	Unsuspend lines - (Within 50 days)	Billing	PaymentStatus	None	False	ConfirmPaymentReceived
+2847	73639	555182	WHY MY ACCOUNT WAS BARRED	1482144114	23817	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2847	73655	555207	so wht should i do	1482144428	23817	0	5	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Procedure	False	HowUnbar
+2852	73790	555309	kindly activate my phone. already paid just kow	1482146608	23825	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2855	73885	555509	oh really. I thought that if I paid for 1 month bill it is enough to activate my line.	1482150910	23830	0	19	English	Billing	Billing Details	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2856	73899	555760	i have paid the bill. pls activate my line that barred	1482154669	23840	0	11	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2861	74008	555955	pls reconnect	1482159051	23849	0	2	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2866	74119	557166	hi,my line is barred, can i active my line again ?	1482206648	23901	0	11	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2868	74164	557719	Why I payed my bill juz now,but still can't active my phone??	1482214599	23923	0	12	English	Billing	Payment Status	Billing	Barring	Reason	False	WhyStillBar
+2868	74180	557744	after that I make transactions,but still can't active my phone	1482214919	23923	0	10	English	Billing	Payment Status	Billing	Barring	Reason	False	WhyStillBar
+2868	74186	557766	U means that by cash can directly activate?	1482215094	23923	0	8	English	Billing	Payment Status	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2868	74187	557769	if by jompay need take some time??	1482215113	23923	0	7	English	Billing	Payment Status	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2872	74378	558349	I have paid my bills and I need assistance to reactivate my line	1482224833	23944	0	13	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2875	74511	558633	Seek for your help to unblock my line.	1482229796	23955	0	8	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2875	74528	558702	meaning if there is no sms notification, my line will still under bar status?	1482230315	23955	0	14	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	ObjectName	True	LineStatus
+2876	74539	558703	hello...how come my sim no service?	1482230317	23958	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2876	74558	558790	what problem	1482231299	23958	0	2	English	Billing	Unsuspend lines - (Within 50 days)	Billing	None	ObjectName	False	
+2876	74563	558798	so can actice it?	1482231400	23958	0	4	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Procedure	True	HowUnbar
+2876	74566	558801	so how can i active it	1482231420	23958	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Procedure	False	HowUnbar
+2876	74569	558806	so need pay more RM 10 ?	1482231472	23958	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2876	74570	558809	how come suddenly my line is in Suspended (Barred)	1482231494	23958	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	WhyBar
+2876	74578	558824	so u will help me proceed to unsuspend right?	1482231616	23958	0	9	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2879	74660	559052	why barred my line again?	1482237712	23974	0	5	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Reason	False	WhyBar
+2879	74666	559124	why barred my line again?i ald settled my december bill.	1482238599	23974	0	10	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Reason	False	WhyStillBar
+2879	74674	559139	why barred my line?	1482238788	23974	0	4	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Reason	False	WhyBar
+2882	74859	559501	hi, I've already made a payment which is RM 120 but I still cant call out	1482244117	23993	0	15	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyStillBar
+2882	74876	559554	so i cant call out now until next month?	1482244850	23993	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectTime	True	LineStatus
+2886	74966	560013	hai, i just paid my bill and im wondering how long for it to be unbarred?	1482284210	24019	0	16	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2888	75062	560812	So, any other way for me to unbarred my line?	1482293116	24046	0	10	English	Billing	Payment Status	Billing	Barring	ObjectName	True	HowUnbar
+2889	75107	561030	Why I cannot make a phone call?yesterday I already pay my bills	1482295768	24055	0	12	English	Billing	Billing Details	Billing	Barring	Reason	False	WhyStillBar
+2889	75126	561090	Ok later I will try to pay online . How long will be taken to reconnect back my line?	1482296973	24055	0	19	English	Billing	Billing Details	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2894	75225	561524	to day also my phone get barred and ask me to payment another 185 	1482304935	24075	0	14	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2894	75241	561579	then how much should i pay?	1482305262	24075	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	BillOutstanding	ObjectNumeric	False	BillAmount
+2894	75243	561584	what should i do?	1482305294	24075	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	None	Procedure	False	
+2904	75656	562785	Hi, may i know how much i hv to pay to unbar my line. Number is 0182694073 	1482322748	24120	0	17	English	Billing	Billing Details	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2904	75668	562806	Or do i need to call cs to unbar?	1482323173	24120	0	9	English	Billing	Billing Details	Billing	Barring	Procedure	True	HowUnbar
+2904	75671	562815	So it will unbar immidiately?	1482323253	24120	0	5	English	Billing	Billing Details	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2907	75745	563024	My number still not reconnected yet	1482326081	24130	0	6	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	LineStatus
+2907	75756	563041	my number still suspended after i made payment	1482326196	24130	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Reason	False	LineStatus
+2909	75815	563119	My line been blocked. I already do payment but still blocked	1482326905	24134	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	LineStatus
+2909	75831	563180	I already pay now. Can unbar now?	1482327504	24134	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	True	RequestUnbar
+2909	75833	563189	Yes. When can I use it?	1482327604	24134	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2909	75837	563210	When exceeded limit and we already pay and red 1 also acknowledged receive payment. Why not automatically connect back the line. Is too trouble with it	1482327798	24134	0	26	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	True	CheckUnbarTime
+2910	75853	563322	can you unbarred my account?	1482329346	24144	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	True	RequestUnbar
+2911	75895	563398	Yup, i mean if i make a payment now. Can u open my line back shortly ?	1482330561	24145	0	17	English	Billing	Payment Status	Billing	Barring	Request	True	RequestUnbar
+2919	76111	564949	My line been barred, make payment on 20 / 12 / 2016 of RM 74.55. Please activate back my line as soon as possible. My phone number is 0162630026 and my last 4 digits IC number is 5470. <NL>Thank you.	1482386928	24215	0	34	English	Billing	Billing Details	Billing	Barring	Request	False	RequestUnbar
+2932	76442	566483	Dear redone team.<NL>I have made payment about 1 hour ago,however I still couldnt make any call nor login to internet my phone number is 011 - 10522489. <NL><NL>Thank you.	1482418708	24291	0	26	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	LineStatus
+2932	76460	566509	May i know when the line will be unbarred	1482419280	24291	0	9	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectTime	True	CheckUnbarTime
+2939	76638	567309	Hey. Why is my line blocked when my amount due is only rm 29 ?	1482462429	24329	0	13	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	WhyBar
+2946	76779	568420	My line still barred...i make payment yesterday 22 dec 2016 in morning by jompay...please check asap .my redone no. 0132987171 	1482489743	24380	0	20	English	Billing	Payment Status	Billing	Barring	Reason	False	LineStatus
+2949	76853	568924	Pls connect my line , I already make payment . My number 0187882553 	1482502559	24403	0	13	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2953	76919	569127	hi. i've already made the payment but my line hasn't been reconnected yet. i've already restart my phone multiple times, but still failed. pls assist	1482507844	24413	0	25	English	Billing	Un-bar lines - Overdue Payment	Billing	Barring	Request	False	RequestUnbar
+2954	76937	569607	hello, please active my number	1482551633	24432	0	5	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Request	False	RequestUnbar
+2956	76999	569970	MY LINE IS UNACTIVE...HOW TO ACTIVE MY LINE???	1482563588	24451	0	8	English	Billing	Unsuspend lines - (Within 50 days)	Billing	Barring	Procedure	False	HowUnbar
+2960	77080	570609	I already paid my bill, why still do not reconnect back my line?	1482581255	24475	0	13	English	Billing	Payment Status	Billing	Barring	Reason	False	WhyStillBar
+2960	77120	570650	means once the payment reflect to you account, then without any statement or anything you will reconnect back my account right?	1482582644	24475	0	21	English	Billing	Payment Status	Billing	Barring	Procedure	True	HowUnbar
+2960	77123	570653	how long the transaction will take to reflect to your account?	1482582719	24475	0	11	English	Billing	Payment Status	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2961	77144	570734	Hi, this number 012 5881768 the line has been barred. Kindly check and revert. Main line 012 - 4733483 	1482586708	24478	0	17	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	ObjectName	False	LineStatus
+2962	77171	570762	Cannot make outgoing call	1482587464	24480	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2969	77360	571113	i have been transfer payment to my account last night ,how come my i still cannt even call,sms,and wehcat whatsapp	1482629017	24495	0	20	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectName	False	WhyStillBar
+2969	77371	571124	i still need to top up more RM 50 to cover?	1482629478	24495	0	10	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectNumeric	True	CheckUnbarAmount
+2977	77565	572410	My number is barred on 26 December 2016 at 10 : 58 : 34 A.M . I paid already through Online banking on 26 December 2016 at 12 : 18 PM. So can Red 1 make my line number active immediately?	1482725943	24554	0	35	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Request	True	RequestUnbar
+2977	77583	572441	ohh ok, thank you so much Miss Aisyah. I will restart my phone after this for 5 min. But after end of this month, my line will barred again or not ya?	1482726277	24554	0	32	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectName	True	LineStatus
+2979	77620	572744	ACCOUNT IS NOT ACTIVATE?	1482734461	24567	0	4	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectName	True	LineStatus
+2979	77622	572749	my phone can't call out and access internet for couple of week, what happen?	1482734482	24567	0	14	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	Reason	False	LineStatus
+2984	77779	573542	CAN U PLEASE CHECK IT FOR ME	1482754660	24593	0	7	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	None	ObjectName	True	None
+2984	77798	573561	SO WHEN CAN IT BE UNBARRED?	1482755034	24593	0	6	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	ObjectTime	False	CheckUnbarTime
+2986	77845	573650	Hi, why is my number barred?	1482756930	24597	0	6	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Reason	False	WhyBar
+2987	77876	573696	Hi my supplement line 0127049080 is barred. Peyment is made this evening at 3.26 pm. Please advise. Thanx	1482757833	24599	0	18	English	Billing	Increase credit limit	Billing	Barring	Procedure	False	HowUnbar
+2990	77961	573860	PHONE UNDER BARRED	1482762506	24610	0	3	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	None	False	LineStatus
+2991	77991	574126	i would like my line to be unbarred.	1482794231	24620	0	8	English	Billing	Un-bar lines - Increase CL from RM150 to RM200	Billing	Barring	Request	False	RequestUnbar
+2992	78013	574328	pls unbarred h/p 01110748488 (supplementary) coz I already made pymt just now for rm 62 - 00 TQVM	1482798633	24626	0	15	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	Request	False	RequestUnbar
+2995	78063	574477	My hp num can not call out and dun have 3 G	1482803010	24635	0	11	English	Billing	Un-bar lines - Increase CL from RM50 to RM100	Billing	Barring	None	False	LineStatus
+2998	78128	574667	i wan ask now i want payment. and when can open back my line??	1482804655	24645	0	14	English	Billing	Un-bar lines - Increase CL from RM100 to RM150	Billing	Barring	ObjectTime	False	CheckUnbarTime
