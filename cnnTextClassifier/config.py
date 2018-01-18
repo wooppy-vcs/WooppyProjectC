@@ -5,10 +5,11 @@ import os
 
 class Config():
 
-    def __init__(self, dataset_name, classifier_type="", run_number=None, doc_length=None, model_name="",
+    def __init__(self, dataset_name, version, classifier_type="", run_number=None, doc_length=None, model_name="",
                  checkpoint_dir="", transfer_learning=False, enable_char=False):
 
-        self.runs_folder = "Runs/Account_Billing_v2"
+        self.version = version
+        self.runs_folder = "Runs/Architecture-v2/{}/".format(self.version)
         self.classifier_type = classifier_type
         self.doc_length = doc_length
         self.model_name = model_name
@@ -27,11 +28,12 @@ class Config():
                                                     self.model_name))
 
         self.dataset_name = dataset_name
-        default_data_path = "data/" + self.dataset_name
+        default_data_path = "data/Architecture-v2/{}/{}".format(self.version, self.dataset_name)
 
         self.training_path = default_data_path + "/Training_data.txt"
         self.test_path = default_data_path + "/Test_data.txt"
-        self.development_path = default_data_path + "/Development_data.txt"
+        # self.test_path = "data" + "/Test_data_testing.txt"
+        # self.development_path = default_data_path + "/Development_data.txt"
         self.tags_vocab_path = default_data_path + "/tags_vocab.txt"
         self.char_vocab_path = default_data_path + "/chars_vocab.txt"
 

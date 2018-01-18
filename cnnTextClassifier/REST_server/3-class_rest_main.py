@@ -116,5 +116,13 @@ def get_tags():
     my_dict_string = ongoing_session.predict_words(text.strip())
     return my_dict_string, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
+
+@app.route('/get_model', methods=['GET'])
+def get_model():
+    string = json.dumps({"First Layer Model": ongoing_session.L1_model.checkpoint_file,
+                        "Second Layer Account Model": ongoing_session.account_model.checkpoint_file,
+                        "Second Layer Billing Model": ongoing_session.billing_model.checkpoint_file})
+    return string, 200, {'Content-Type': 'application/json; charset=utf-8'}
+
 if __name__ == "__main__":
     app.run(debug=False, host='0.0.0.0', port="4444")

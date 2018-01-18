@@ -155,3 +155,4 @@ data/tags_vocab.txt
 /cnnTextClassifier/Runs/
 /cnnTextClassifier/Archived_runs/
 /cnnTextClassifier/transfer_learning_models/
+/cnnTextClassifier/test.py

@@ -5,7 +5,9 @@ import numpy as np
 class TextCNNv2(object):
     """
     A CNN for text classification.
-    Uses an embedding layer, followed by a convolutional, max-pooling and softmax layer.
+    This version comprises into 3 filter sizes. The process goes from:
+    Embedding layer -> Convolution layer 1 -> Convolution layer 2 + Concatenation -> 4 - Max pooling
+    -> Dense layer -> Output logit
     """
     def __init__(
       self, sequence_length, num_classes, vocab_size,

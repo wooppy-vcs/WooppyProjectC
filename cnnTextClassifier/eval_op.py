@@ -9,6 +9,7 @@ from sklearn import metrics
 import os
 
 
+
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
     if x.ndim == 1:
@@ -273,7 +274,7 @@ def evaluation(config):
         #                                               result,
         #                                               readable_probabilities_array))
 
-        predictions_human_readable = np.column_stack((np.array(x_raw),
+        predictions_human_readable = np.column_stack((np.array(datasets['data']),
                                                       [idx_to_tag[int(prediction)] for prediction in
                                                        all_predictions],
                                                       [idx_to_tag[int(expected_label)] for expected_label in

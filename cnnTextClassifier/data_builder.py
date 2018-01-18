@@ -220,6 +220,63 @@ def converting_data(data_path, test_path, binary, outpath, dev_percentage=0.2, r
             data_helpers.write_data_to_file(test_sentences, test_tags, outpath + "/Test_data.txt")
 
 
+def split_bill_account(dict_path, data_path, outpath_bill, outpath_account):
+    '''
+    Splitting dataset into billing and account data plus removing None followed by storing them into
+    respective directories.
+    :param dict_path: L3:L1 map dictionary
+    :param data_path: data that needs to be splitted
+    :param outpath_bill: directory to store bill only dataset
+    :param outpath_account: directory to store account only dataset
+    :return: no return.
+    '''
+    mapping = dict()
+    maps = list(open(dict_path, 'r', encoding="utf8").readlines())
+    maps = [s.split("\t") for s in maps]
+    for x, y in maps:
+        mapping[x.strip()] = y.strip()
+    # Load data from files
+    examples = list(open(data_path, 'r', encoding="utf8").readlines())
+    examples = [s.split("\t") for s in examples]
+    train_sentences = [s[0] for s in examples]
+    train_tags = [s[1].strip() for s in examples]
+
+    bill_sentences = []
+    bill_tags = []
+    account_sentences = []
+    account_tags = []
+
+    for idx, tag in enumerate(train_tags):
+        if tag != "None":
+            if mapping[tag] == "Account":
+                account_sentences.append(train_sentences[idx])
+                account_tags.append(tag)
+            elif mapping[tag] == "Billing":
+                bill_sentences.append(train_sentences[idx])
+                bill_tags.append(tag)
+
+    data_helpers.write_data_to_file(account_sentences, account_tags, outpath_account)
+    data_helpers.write_data_to_file(bill_sentences, bill_tags, outpath_bill)
+
+
+def convert_l1_to_l3(test_set, l3_test_dict, outpath):
+
+    mapping = dict()
+    maps = list(open(l3_test_dict, 'r', encoding="utf8").readlines())
+    maps = [s.split("\t") for s in maps]
+    for x, y in maps:
+        mapping[x.strip()] = y.strip()
+
+    tags = []
+
+    examples = list(open(test_set, 'r', encoding="utf8").readlines())
+    sentences = [s.strip() for s in examples]
+
+    for sentence in sentences:
+        tags.append(mapping[sentence])
+
+    data_helpers.write_data_to_file(sentences, tags, outpath)
+
 # ================================Build Data=======================================================
 # test_sample_percentage = 0.2
 # # val_sample_percentage = 0.1 # 20% of training data
@@ -249,8 +306,35 @@ def converting_data(data_path, test_path, binary, outpath, dev_percentage=0.2, r
 
 
 # ==================================== converting data ===============================================
-dict_path = "data/L3-Map-L1-Dict.txt"
-outpath = "Project-A-R-Level-1_Billing_Account-v2"
-config = Config(dataset_name="Project-A-R-Scenario_Billing_Account-v2")
-converting_data(config.training_path, config.test_path, binary=False, outpath="data/"+outpath, remove_none=False,
-                dict_path=dict_path)
+# dict_path = "data/L3-Map-None.txt"
+# dict_path = "data/Architecture-v2/v4/L3-Map-ReducedtoOthers.txt"
+# dict_path = "data/Architecture-v2/L3-Map-L1-Dict.txt"
+
+# outpath = "Project-A-R-Scenario-Acc-Bill-Reduced-Class"
+# outpath = "Project-A-R-Scenario-Acc-Bill-ReducedtoOthers"
+# outpath = "Architecture-v2/v2/Project-A-R-Level-1-Reduced-Class"
+# outpath = "Architecture-v2/v4/Project-A-R-Level-1-ReducedtoOthers"
+
+datapath = "data/Project-A-R-Scenario-Acc-Bill-ReducedtoOthers"
+# datapath = "data/Project-A-R-Scenario_Billing_Account-v2"
+# datapath = "data/Project-A-R-Scenario-Acc-Bill-ReducedtoOthers"
+
+# converting_data(datapath+"/Training_data.txt", datapath+"/Test_data.txt", binary=False, outpath="data/"+outpath,
+#                 remove_none=False, dict_path=dict_path)
+
+
+# ==================================== split billing account ===============================================
+dict_path = "data/Architecture-v2/L3-Map-L1-Dict.txt"
+# datapath = "data/Project-A-R-Scenario_Billing_Account-v2"
+outpath = "data/Architecture-v2/v4/"
+# split_bill_account(dict_path, datapath+"/Training_data.txt",
+#                    outpath+"Project-A-R-BillingOnly-ReducedtoOthers/Training_data.txt",
+#                    outpath+"Project-A-R-AccountOnly-ReducedtoOthers/Training_data.txt")
+
+
+# ==================================== Generate 2nd layer test data ===============================================
+
+# convert_l1_to_l3(outpath+"Project-A-R-BillingOnly-ReducedtoOthers/test_to_be_processed.txt", datapath+"/Test_data.txt",
+#                  outpath+"Project-A-R-BillingOnly-ReducedtoOthers/Test_data.txt")
+# convert_l1_to_l3(outpath+"/FN-sentences-layer1.txt", datapath+"/Test_data.txt",
+#                  "Runs/Architecture-v2/v4/Level-1-len40-CNNv0/False-Negative-distribution-data.txt")

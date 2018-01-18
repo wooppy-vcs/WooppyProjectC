@@ -86,19 +86,19 @@ def analyse_data(data_path, test_path, vocab_path, outpath):
 # ===================================Purely for data analysing===============================================
 # outpath = config.default_data_path
 # analyse_data(config.training_path, config.test_path, config.tags_vocab_path, outpath)
+#
+# outpath = "data/Project-A-R-Scenario-Acc-Bill-Reduced-Class"
+#
+# # outpath = "data/Project-A-R-Level-1_Billing_Account-v2"
+# analyse_data(outpath+"/Training_data.txt", outpath+"/Test_data.txt", outpath+"/tags_vocab.txt", outpath)
 
 
-# outpath = "data/Project-A-R-Level-1_Billing_Account-v2"
-# analyse_data(outpath+"/Training_data.txt", outpath+"/Test_data.txt", outpath+"/tags_vocab.txt", outpath)]
+# ===========================To get FN distribuation for two layers architecture =====================================
+# tags = []
 
-tags = []
-
-temp = list(open("data/Project-A-R-Scenario_Billing_Account-v2/tags_vocab.txt", 'r', encoding="utf8").readlines())
-tags_vocab = [s.strip() for s in temp]
-
-count_and_write("Runs/Account_Billing_v2/Level-1-v2-len40-CNNv0/Layer-1-Account_FN_Distribution.txt",
-                "Runs/Account_Billing_v2/Level-1-v2-len40-CNNv0/False-Negative-Account-distribution.txt", tags, tags_vocab)
-
-
-
-
+# temp = list(open("data/Project-A-R-Scenario_Billing_Account-v2/tags_vocab.txt", 'r', encoding="utf8").readlines())
+# temp = list(open("data/Project-A-R-Scenario-Acc-Bill-Reduced-Class/tags_vocab.txt", 'r', encoding="utf8").readlines())
+# tags_vocab = [s.strip() for s in temp]
+#
+# count_and_write("Runs/Architecture-v2/v2/Level-1-len40-CNNv0/False-Negative-distribution-data.txt",
+#                 "Runs/Architecture-v2/v2/Level-1-len40-CNNv0/False-Negative-distribution.txt", tags, tags_vocab)
