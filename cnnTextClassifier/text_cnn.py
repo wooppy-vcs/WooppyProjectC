@@ -39,7 +39,6 @@ class TextCNN(object):
                     self.embedded_chars_expanded,
                     W,
                     strides=[1, 1, 1, 1],
-
                     padding="VALID",
                     name="conv")
 

@@ -8,6 +8,7 @@ from tensorflow.contrib import learn
 from sklearn import metrics
 import os
 
+from cnnTextClassifier.data_helpers import load_vocab
 
 
 def softmax(x):
@@ -195,33 +196,69 @@ def evaluation(config):
         #         k += 1
         #
         # else:
+        merged_vocab = dict()
+        with open("data/Project-A-R-Scenario_Billing_Account-v2/tags_merged_vocab.txt") as f:
+            for idx, word in enumerate(f):
+                merged_vocab[idx] = int(word.strip())
 
+        y_shape = len(available_target_names)
+        confusion_matrix = np.zeros([y_shape, y_shape])
         for y_test_check, y_pred in zip(y_test, all_predictions.astype(int)):
-                correct_preds_tags[y_test_check] += (int(y_test_check == y_pred))
-                total_correct_tags[y_test_check] += 1
-                total_preds_tags[y_pred] += 1
+                # correct_preds_tags[y_test_check] += (int(y_test_check == y_pred))
+                # total_correct_tags[y_test_check] += 1
+                # total_preds_tags[y_pred] += 1
+                # extra
+                map1 = merged_vocab[y_test_check]
+                map2 = merged_vocab[y_pred]
+                confusion_matrix[map1][map2] += 1
 
-        p_tags = []
-        r_tags = []
-        f1_tags = []
+        path = config.out_dir+"/confmat.txt"
+        with open(path, 'w') as f:
+            for name in available_target_names:
+                f.write("\t{}".format(name))
+            f.write("\n")
+            for idx, name in enumerate(available_target_names):
+                f.write("{}\t".format(name))
+                for i in range(len(confusion_matrix[idx])):
+                    f.write("{}\t".format(confusion_matrix[idx][i]))
+                f.write("\n")
+        # extra
+        tp_by_tags = np.zeros(y_shape)
+        total_predict_by_tags = np.zeros(y_shape)
+        total_labeled_by_tags = np.zeros(y_shape)
+        fp_by_tags = np.zeros(y_shape)
+        fn_by_tags = np.zeros(y_shape)
 
-        for i in range(len(available_target_names)):
-            p_temp = correct_preds_tags[i] / total_preds_tags[i] if correct_preds_tags[i] > 0 else 0
-            r_temp = correct_preds_tags[i] / total_correct_tags[i] if correct_preds_tags[i] > 0 else 0
-            f1_temp = 2 * p_temp * r_temp / (p_temp + r_temp) if correct_preds_tags[i] > 0 else 0
-            p_tags += [p_temp]
-            r_tags += [r_temp]
-            f1_tags += [f1_temp]
+        for idx in range(y_shape):
+            tp_by_tags[idx] = confusion_matrix[idx][idx]
+            for n in range(y_shape):
+                total_correct_tags[idx] += confusion_matrix[idx][n]
+                total_preds_tags[idx] += confusion_matrix[n][idx]
 
-        f1_score_group = []
-        is_more_than_zero = 0
+        for idx in range(y_shape):
+            fp_by_tags[idx] = total_preds_tags[idx]-tp_by_tags[idx]
+            fn_by_tags[idx] = total_correct_tags[idx]-tp_by_tags[idx]
+        # p_tags = []
+        # r_tags = []
+        # f1_tags = []
+        #
+        # for i in range(len(available_target_names)):
+        #     p_temp = correct_preds_tags[i] / total_preds_tags[i] if correct_preds_tags[i] > 0 else 0
+        #     r_temp = correct_preds_tags[i] / total_correct_tags[i] if correct_preds_tags[i] > 0 else 0
+        #     f1_temp = 2 * p_temp * r_temp / (p_temp + r_temp) if correct_preds_tags[i] > 0 else 0
+        #     p_tags += [p_temp]
+        #     r_tags += [r_temp]
+        #     f1_tags += [f1_temp]
+        #
+        # f1_score_group = []
+        # is_more_than_zero = 0
+        #
+        # for idx, x in enumerate(total_correct_tags):
+        #     if x > 0:
+        #         f1_score_group += [f1_tags[idx]]
+        #         is_more_than_zero += 1
 
-        for idx, x in enumerate(total_correct_tags):
-            if x > 0:
-                f1_score_group += [f1_tags[idx]]
-                is_more_than_zero += 1
-
-        overall_f1 = (np.sum(f1_score_group))/is_more_than_zero
+        # overall_f1 = (np.sum(f1_score_group))/is_more_than_zero
 
         # print("tags\tp\tr\tf1\n")
         # for idx, name in enumerate(available_target_names):
@@ -292,8 +329,10 @@ def evaluation(config):
             for idx, name in enumerate(available_target_names):
                 # f.write("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_tags[idx], r_tags[idx],
                 #                                                               f1_tags[idx], total_correct_tags[idx]))
-                tp = correct_preds_tags[idx]
-                f.write("{}\t{}\t{}\t{}\n".format(name, tp, (total_preds_tags[idx]-tp), (total_correct_tags[idx]-tp)))
+                # tp = correct_preds_tags[idx]
+                tp = tp_by_tags[idx]
+                # f.write("{}\t{}\t{}\t{}\n".format(name, tp, (total_preds_tags[idx]-tp), (total_correct_tags[idx]-tp)))
+                f.write("{}\t{}\t{}\t{}\n".format(name, tp, (fp_by_tags[idx]), (fn_by_tags[idx])))
             # f.write("\nNo of class present\t{}\t\tOverall f1\t{:04.2f}\n".format(is_more_than_zero, overall_f1))
             # f.write(metrics.classification_report(y_test_forconf, all_predictions_forconf, target_names=available_target_names))
 

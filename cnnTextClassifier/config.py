@@ -9,7 +9,8 @@ class Config():
                  checkpoint_dir="", transfer_learning=False, enable_char=False):
 
         self.version = version
-        self.runs_folder = "Runs/Architecture-v2/{}/".format(self.version)
+        # self.runs_folder = "Runs/Architecture-v2/{}/".format(self.version)
+        self.runs_folder = "Runs/Account_Billing_v2"
         self.classifier_type = classifier_type
         self.doc_length = doc_length
         self.model_name = model_name
@@ -28,7 +29,8 @@ class Config():
                                                     self.model_name))
 
         self.dataset_name = dataset_name
-        default_data_path = "data/Architecture-v2/{}/{}".format(self.version, self.dataset_name)
+        # default_data_path = "data/Architecture-v2/{}/{}".format(self.version, self.dataset_name)
+        default_data_path = "data/Project-A-R-Scenario_Billing_Account-v2"
 
         self.training_path = default_data_path + "/Training_data.txt"
         self.test_path = default_data_path + "/Test_data.txt"

@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 from cnnTextClassifier.REST_server.config_for_rest import RESTConfig
 from flask import Flask, request, json
-from tensorflow.contrib import learn
+from tensorflow.contrib.learn.python.learn import preprocessing
 
 from cnnTextClassifier import data_helpers
 from cnnTextClassifier.data_helpers import load_vocab
@@ -17,7 +17,7 @@ class OngoingSession:
 
         # Map data into vocabulary
         self.vocab_path = os.path.join(checkpoint_dir, "..", "vocab")
-        self.vocab_processor = learn.preprocessing.VocabularyProcessor.restore(self.vocab_path)
+        self.vocab_processor = preprocessing.VocabularyProcessor.restore(self.vocab_path)
 
         self.checkpoint_file = tf.train.latest_checkpoint(checkpoint_dir)
 

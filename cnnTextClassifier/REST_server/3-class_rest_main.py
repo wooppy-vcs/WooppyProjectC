@@ -1,10 +1,9 @@
 import os
 
 import numpy as np
-import tensorflow as tf
+from tensorflow.contrib.learn.python.learn import preprocessing
 from cnnTextClassifier.REST_server.main_config import REST_Config
 from flask import Flask, request, json
-from tensorflow.contrib import learn
 
 from cnnTextClassifier import data_helpers
 from cnnTextClassifier.REST_server.graph_importer import ImportGraph
@@ -91,7 +90,7 @@ def prepare_vocab(tags_vocab_path, checkpoint_dir):
 
     # Map data into vocabulary
     vocab_path = os.path.join(checkpoint_dir, "..", "vocab")
-    vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
+    vocab_processor = preprocessing.VocabularyProcessor.restore(vocab_path)
 
     return categories, vocab_processor
 
@@ -120,8 +119,8 @@ def get_tags():
 @app.route('/get_model', methods=['GET'])
 def get_model():
     string = json.dumps({"First Layer Model": ongoing_session.L1_model.checkpoint_file,
-                        "Second Layer Account Model": ongoing_session.account_model.checkpoint_file,
-                        "Second Layer Billing Model": ongoing_session.billing_model.checkpoint_file})
+                         "Second Layer Account Model": ongoing_session.account_model.checkpoint_file,
+                         "Second Layer Billing Model": ongoing_session.billing_model.checkpoint_file})
     return string, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 if __name__ == "__main__":

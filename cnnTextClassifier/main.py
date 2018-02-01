@@ -12,9 +12,10 @@ if __name__ == "__main__":
 
     model = {TextCNN: "CNNv0"}
 
+    dataset_name = {"Project-A-R-Scenario_Billing_Account-v2": "Scenario"}
     # dataset_name = {"Project-A-R-Level-1-ReducedtoOthers": "Level-1"}
-    dataset_name = {"Project-A-R-AccountOnly-ReducedtoOthers": "Account_Only_Scenarios",
-                    "Project-A-R-BillingOnly-ReducedtoOthers": "Billing_Only_Scenarios"}
+    # dataset_name = {"Project-A-R-AccountOnly-ReducedtoOthers": "Account_Only_Scenarios",
+    #                 "Project-A-R-BillingOnly-ReducedtoOthers": "Billing_Only_Scenarios"}
 
     for a in model:
         # if a == LSTMCNN:
@@ -24,7 +25,7 @@ if __name__ == "__main__":
         for x in dataset_name:
             config = Config(dataset_name=x, version=version, classifier_type=dataset_name[x],
                             doc_length=40, model_name=model[a])
-            train_op.train(config=config, model=a)
+            # train_op.train(config=config, model=a)
             # special_train_op.train(config=config, model=a)
             eval_op.evaluation(config=config)
 
