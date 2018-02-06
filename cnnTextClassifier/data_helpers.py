@@ -200,8 +200,7 @@ def get_datasets_localdatasinglefile(data_file,categories):
     return datasets
 
 
-def get_datasets_localdatacategorizedbyfilename(container_path=None, categories=None, categories_dict=None, load_content=True,
-                           encoding='utf-8', shuffle=True, random_state=42):
+def get_datasets_localdatacategorizedbyfilename(container_path=None, categories=None, categories_dict=None, load_content=True, encoding='utf-8', shuffle=True, random_state=42):
     """
     # Load text files categorized by filename.
     :return: data and labels of the dataset
@@ -297,10 +296,10 @@ def load_embedding_vectors_word2vec(vocabulary, filename, binary):
                     if ch != b'\n':
                         word.append(ch)
                 word = str(b''.join(word), encoding=encoding, errors='strict')
-                word_to_check = 'iphone6s'
-                if word == word_to_check:
-                    print("word2vec contains : " + word_to_check)
-                # print(word)
+                # word_to_check = 'iphone6s'
+                # if word == word_to_check:
+                #     print("word2vec contains : " + word_to_check)
+                # # print(word)
                 idx = vocabulary.get(word)
 
                 if idx != 0:

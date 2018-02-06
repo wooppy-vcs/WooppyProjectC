@@ -120,7 +120,7 @@ def load_dict(path):
 
 app = Flask(__name__, static_folder=os.path.join("templates", "assets"))
 app.secret_key = 'rem4lyfe'
-# checkpoint_dir = "Enriched-x10-runs(LSTM&CNNv0)/runs-0-Scenario-len80-CNN-Enriched/checkpoints"
+# checkpoint_dir = "Enriched-x10-Runs(LSTM&CNNv0)/Runs-0-Scenario-len80-CNN-Enriched/checkpoints"
 config = REST_Config()
 ongoing_session = OngoingSession(config, prepare_vocab)
 merged_maps = load_dict(config.merged_vocab)

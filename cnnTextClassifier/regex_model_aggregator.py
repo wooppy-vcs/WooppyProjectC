@@ -2,34 +2,34 @@ import csv
 
 import numpy as np
 
-from cnnTextClassifier.REST_server.main_config import REST_Config
-from cnnTextClassifier.REST_server.ternary_class_rest_main import OngoingSession
+# from cnnTextClassifier.REST_server.main_config import REST_Config
+# from cnnTextClassifier.REST_server.ternary_class_rest_main import OngoingSession
 from cnnTextClassifier.data_helpers import load_vocab
 from cnnTextClassifier.regex_tagger import create_persistent_dictionaries, tag_input_string
-from cnnTextClassifier.REST_server.ternary_class_rest_main import prepare_vocab
+# from cnnTextClassifier.REST_server.ternary_class_rest_main import prepare_vocab
 
 
 class RegexTernaryModel:
-    def __init__(self, keyword_dict_compiled_pattern, scenario_dictionary, ongoing_session):
+    def __init__(self, keyword_dict_compiled_pattern, scenario_dictionary):
         self.keyword_dict_compiled_pattern = keyword_dict_compiled_pattern
         self.scenario_dictionary = scenario_dictionary
-        self.ongoing_session = ongoing_session
+        # self.ongoing_session = ongoing_session
 
-    def predict_prioritise_model(self, sentence):
-        regex_tag = tag_input_string(sentence, keyword_dict_compiled_pattern, scenario_dictionary)
-        model_tag, level1_probabilities, tags_probabilities_pair = self.ongoing_session.predict_sentence(sentence)
-        if model_tag == "None" and float(level1_probabilities["None"]) > 0.8:
-            return regex_tag, "regex", level1_probabilities, tags_probabilities_pair
-        else:
-            return model_tag, "model", level1_probabilities, tags_probabilities_pair
+    # def predict_prioritise_model(self, sentence):
+    #     regex_tag = tag_input_string(sentence, keyword_dict_compiled_pattern, scenario_dictionary)
+    #     # model_tag, level1_probabilities, tags_probabilities_pair = self.ongoing_session.predict_sentence(sentence)
+    #     if model_tag == "None" and float(level1_probabilities["None"]) > 0.8:
+    #         return regex_tag, "regex", level1_probabilities, tags_probabilities_pair
+    #     else:
+    #         return model_tag, "model", level1_probabilities, tags_probabilities_pair
 
     def predict_prioritise_regex(self, sentence):
         regex_tag = tag_input_string(sentence, keyword_dict_compiled_pattern, scenario_dictionary)
-        model_tag = self.ongoing_session.predict_sentence(sentence)
-        if regex_tag == "None":
-            return model_tag, "model"
-        else:
-            return regex_tag, "regex"
+        # model_tag = self.ongoing_session.predict_sentence(sentence)
+        # if regex_tag == "None":
+        #     return model_tag, "model"
+        # else:
+        return regex_tag, "regex"
 
     def run_evaluation(self, test, vocab_tags, test_vocab_map):
         y_shape = len(vocab_tags)
@@ -37,22 +37,24 @@ class RegexTernaryModel:
         tp_by_tags = np.zeros(y_shape)
         total_predict_by_tags = np.zeros(y_shape)
         total_labeled_by_tags = np.zeros(y_shape)
-        precision_by_tags = np.zeros(y_shape)
-        recall_by_tags = np.zeros(y_shape)
-        f1_by_tags = np.zeros(y_shape)
+        # precision_by_tags = np.zeros(y_shape)
+        fp_by_tags = np.zeros(y_shape)
+        # recall_by_tags = np.zeros(y_shape)
+        fn_by_tags = np.zeros(y_shape)
+        # f1_by_tags = np.zeros(y_shape)
         predictions = []
         tag_sources = []
         # probabilities_list = []
         # idx_to_tag = {idx: tag for tag, idx in vocab_tags.items()}
-        probabilities = []
+        # probabilities = []
         i = 1
         for sentence, tag in test:
             print("Data Number: {}".format(i))
-            prediction, tag_source, l1_probs, scenario_probs = self.predict_prioritise_model(sentence)
-            confusion_matrix[vocab_tags[test_vocab_map[tag]]][vocab_tags[test_vocab_map[prediction]]] += 1
+            prediction, tag_source = self.predict_prioritise_regex(sentence)
+            confusion_matrix[vocab_tags[tag]][vocab_tags[prediction]] += 1
             predictions.append(test_vocab_map[prediction])
             tag_sources.append(tag_source)
-            probabilities.append(scenario_probs)
+            # probabilities.append(scenario_probs)
             i += 1
         print("Evaluating...")
         for idx in range(y_shape):
@@ -60,25 +62,28 @@ class RegexTernaryModel:
             for n in range(y_shape):
                 total_labeled_by_tags[idx] += confusion_matrix[idx][n]
                 total_predict_by_tags[idx] += confusion_matrix[n][idx]
-            recall_by_tags[idx] = tp_by_tags[idx] / total_labeled_by_tags[idx] if tp_by_tags[idx] > 0 else 0
-            precision_by_tags[idx] = tp_by_tags[idx] / total_predict_by_tags[idx] if tp_by_tags[idx] > 0 else 0
-            f1_by_tags[idx] = (2 * precision_by_tags[idx] * recall_by_tags[idx]) / (
-                precision_by_tags[idx] + recall_by_tags[idx]) if tp_by_tags[idx] > 0 else 0
+            # recall_by_tags[idx] = tp_by_tags[idx] / total_labeled_by_tags[idx] if tp_by_tags[idx] > 0 else 0
+            fn_by_tags[idx] = total_labeled_by_tags[idx]-tp_by_tags[idx]
+            # precision_by_tags[idx] = tp_by_tags[idx] / total_predict_by_tags[idx] if tp_by_tags[idx] > 0 else 0
+            fp_by_tags[idx] = total_predict_by_tags[idx]-tp_by_tags[idx]
+            # f1_by_tags[idx] = (2 * precision_by_tags[idx] * recall_by_tags[idx]) / (
+            #     precision_by_tags[idx] + recall_by_tags[idx]) if tp_by_tags[idx] > 0 else 0
 
-        return precision_by_tags, recall_by_tags, f1_by_tags, predictions, confusion_matrix, tag_sources, probabilities
+        return tp_by_tags, fn_by_tags, fp_by_tags, predictions, confusion_matrix, tag_sources\
+            # , probabilities
 
     def evaluate(self, test_data, vocab_tags, test_vocab_map):
-        precision_by_tags, recall_by_tags, f1_by_tags, predictions, confusion_matrix, tag_sources, scenario_probs = \
+        # precision_by_tags, recall_by_tags, f1_by_tags, predictions, confusion_matrix, tag_sources, scenario_probs = \
+        #     self.run_evaluation(test_data, vocab_tags, test_vocab_map)
+        tp_by_tags, fn_by_tags, fp_by_tags, predictions, confusion_matrix, tag_sources = \
             self.run_evaluation(test_data, vocab_tags, test_vocab_map)
         sentences, tags_label = zip(*test_data)
-        tags_label = [test_vocab_map[tag] for tag in tags_label]
+        # tags_label = [test_vocab_map[tag] for tag in tags_label]
 
         human_readable_results = np.column_stack((np.array(sentences), predictions, tags_label, tag_sources))
         print("Generating Reports...")
-        generate_results("Runs/regex_model_results_0.1.2.csv",
-                         human_readable_results)
-        generate_report("Runs/regex_model_report_0.1.2.txt", precision_by_tags, recall_by_tags,
-                        f1_by_tags, vocab_tags)
+        generate_results("Runs/regex_model_results_0.1.0.csv", human_readable_results)
+        generate_report("Runs/regex_model_report_0.1.0.txt", tp_by_tags, fn_by_tags, fp_by_tags, vocab_tags)
         print("End of Test...")
 
 
@@ -106,11 +111,11 @@ def generate_report(path, p_bytags, r_bytags, f1_bytags, tags):
     :param tags: dic[idx] = tag
     :return:
     """
+    tags_vocab = {idx: tag for tag, idx in tags.items()}
     with open(path, 'w', newline='') as f:
-        f.write("tags\tPrecision\tRecall\tF1\n")
-        for name, idx in tags.items():
-            f.write("{}\t{:04.2f}\t{:04.2f}\t{:04.2f}\n".format(name, p_bytags[idx], r_bytags[idx],
-                                                                f1_bytags[idx]))
+        f.write("tags\tTP\tFN\tFP\n")
+        for idx, name in tags_vocab.items():
+            f.write("{}\t{}\t{}\t{}\n".format(name, int(p_bytags[idx]), int(r_bytags[idx]), int(f1_bytags[idx])))
     f.close()
 
 
@@ -133,9 +138,9 @@ def load_dict(path):
 
 if __name__ == "__main__":
     keyword_dict_compiled_pattern, scenario_dictionary = create_persistent_dictionaries()
-    config = REST_Config()
-    ongoing_session = OngoingSession(config, prepare_vocab)
-    model = RegexTernaryModel(keyword_dict_compiled_pattern, scenario_dictionary, ongoing_session)
+    # config = REST_Config()
+    # ongoing_session = OngoingSession(config, prepare_vocab)
+    model = RegexTernaryModel(keyword_dict_compiled_pattern, scenario_dictionary)
     vocab_tags = load_vocab("data/Architecture-v2/v3-corrected-tags/new_vocab_tags.txt")
     test_vocab_map = load_dict("data/Architecture-v2/v3-corrected-tags/merged_tags.txt")
     test = read_test_set("data/Project-A-R-Scenario_Billing_Account-v2/Test_data.txt")

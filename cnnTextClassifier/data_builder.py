@@ -221,7 +221,7 @@ def converting_data(data_path, test_path, binary, outpath, dev_percentage=0.2, r
 
 
 def split_bill_account(dict_path, data_path, outpath_bill, outpath_account):
-    '''
+    """
     Splitting dataset into billing and account data plus removing None followed by storing them into
     respective directories.
     :param dict_path: L3:L1 map dictionary
@@ -229,7 +229,7 @@ def split_bill_account(dict_path, data_path, outpath_bill, outpath_account):
     :param outpath_bill: directory to store bill only dataset
     :param outpath_account: directory to store account only dataset
     :return: no return.
-    '''
+    """
     mapping = dict()
     maps = list(open(dict_path, 'r', encoding="utf8").readlines())
     maps = [s.split("\t") for s in maps]

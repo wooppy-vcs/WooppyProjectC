@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+
 class ImportGraph():
     """  Importing and running isolated TF graph """
     def __init__(self, loc):

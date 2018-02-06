@@ -156,3 +156,6 @@ data/tags_vocab.txt
 /cnnTextClassifier/Archived_runs/
 /cnnTextClassifier/transfer_learning_models/
 /cnnTextClassifier/test.py
+/inception/
+/pdf_manipulator/
+/server/
