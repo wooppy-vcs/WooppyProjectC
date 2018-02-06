@@ -31,7 +31,7 @@ class RegexTernaryModel:
         # else:
         return regex_tag, "regex"
 
-    def run_evaluation(self, test, vocab_tags, test_vocab_map):
+    def run_evaluation(self, test, vocab_tags):
         y_shape = len(vocab_tags)
         confusion_matrix = np.zeros([y_shape, y_shape])
         tp_by_tags = np.zeros(y_shape)
@@ -52,7 +52,7 @@ class RegexTernaryModel:
             print("Data Number: {}".format(i))
             prediction, tag_source = self.predict_prioritise_regex(sentence)
             confusion_matrix[vocab_tags[tag]][vocab_tags[prediction]] += 1
-            predictions.append(test_vocab_map[prediction])
+            predictions.append(prediction)
             tag_sources.append(tag_source)
             # probabilities.append(scenario_probs)
             i += 1
@@ -72,11 +72,11 @@ class RegexTernaryModel:
         return tp_by_tags, fn_by_tags, fp_by_tags, predictions, confusion_matrix, tag_sources\
             # , probabilities
 
-    def evaluate(self, test_data, vocab_tags, test_vocab_map):
+    def evaluate(self, test_data, vocab_tags):
         # precision_by_tags, recall_by_tags, f1_by_tags, predictions, confusion_matrix, tag_sources, scenario_probs = \
         #     self.run_evaluation(test_data, vocab_tags, test_vocab_map)
         tp_by_tags, fn_by_tags, fp_by_tags, predictions, confusion_matrix, tag_sources = \
-            self.run_evaluation(test_data, vocab_tags, test_vocab_map)
+            self.run_evaluation(test_data, vocab_tags)
         sentences, tags_label = zip(*test_data)
         # tags_label = [test_vocab_map[tag] for tag in tags_label]
 
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     test_vocab_map = load_dict("data/Architecture-v2/v3-corrected-tags/merged_tags.txt")
     test = read_test_set("data/Project-A-R-Scenario_Billing_Account-v2/Test_data.txt")
 
-    model.evaluate(test_data=test, vocab_tags=vocab_tags, test_vocab_map=test_vocab_map)
+    model.evaluate(test_data=test, vocab_tags=vocab_tags)
 
     #
     # print(model.predict_prioritise_model("Why bar me?"))
