@@ -1,0 +1,7 @@
+mongodb:
+#  endpoint: "mongodb://admin:WooppyPa$$@192.168.0.182:28017"
+  endpoint: "mongodb://admin:WooppyPa$$@wooppy.hopto.org:28017"
+  database: "redContact"
+  collection: "scenarioClassifierRegex"
+  keyword_regex: "keywordRegex"
+  scenario_keywords: "scenarioKeywords"

@@ -62,10 +62,25 @@ class OngoingSession:
 
         return predicted_category, tags_probabilities_pair
 
-    def predict_words(self, words):
-        predicted_category=None
-        tags_probabilities_pair = {}
+    def predict_sentence(self, sentences):
+        level_1_prediction, level1_probabilities = self.evaluation(sentences, self.L1_model, self.l1_vocab_processor,
+                                                                   self.l1_categories)
+        tags_probabilities_pair = None
 
+        if level_1_prediction == "Account":
+            predicted_category, tags_probabilities_pair = self.evaluation(sentences, self.account_model,
+                                                                          self.account_vocab_processor,
+                                                                          self.account_categories)
+        elif level_1_prediction == "Billing":
+            predicted_category, tags_probabilities_pair = self.evaluation(sentences, self.billing_model,
+                                                                          self.billing_vocab_processor,
+                                                                          self.billing_categories)
+        else:
+            predicted_category = level_1_prediction
+
+        return predicted_category, level1_probabilities, tags_probabilities_pair
+
+    def predict_words(self, words, merged_map):
         level_1_prediction, level1_probabilities = self.evaluation(words, self.L1_model, self.l1_vocab_processor,
                                                                    self.l1_categories)
 
@@ -81,7 +96,7 @@ class OngoingSession:
             predicted_category = level_1_prediction
             tags_probabilities_pair = level1_probabilities
 
-        return json.dumps({"words": words, "category": predicted_category,
+        return json.dumps({"words": words, "category": merged_map[predicted_category],
                            "tags": tags_probabilities_pair})
 
 
@@ -94,12 +109,21 @@ def prepare_vocab(tags_vocab_path, checkpoint_dir):
 
     return categories, vocab_processor
 
+def load_dict(path):
+    example = list(open(path, 'r', encoding="utf8").readlines())
+    f = [s.split("\t") for s in example]
+    originals = [s[0] for s in f]
+    maps = [s[1].strip() for s in f]
+    merged_vocab = {original: mapped for original, mapped in zip(originals, maps)}
+    return merged_vocab
+
 
 app = Flask(__name__, static_folder=os.path.join("templates", "assets"))
 app.secret_key = 'rem4lyfe'
 # checkpoint_dir = "Enriched-x10-runs(LSTM&CNNv0)/runs-0-Scenario-len80-CNN-Enriched/checkpoints"
 config = REST_Config()
 ongoing_session = OngoingSession(config, prepare_vocab)
+merged_maps = load_dict(config.merged_vocab)
 
 
 @app.route('/get_tags', methods=['POST'])
@@ -112,7 +136,7 @@ def get_tags():
     if text.strip() == '':
         return '{"error" : "Add non-whitespace text to your request!"}'
 
-    my_dict_string = ongoing_session.predict_words(text.strip())
+    my_dict_string = ongoing_session.predict_words(text.strip(), merged_maps)
     return my_dict_string, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 
@@ -124,4 +148,4 @@ def get_model():
     return string, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0', port="4444")
+    app.run(debug=False, host='0.0.0.0', port="1444")

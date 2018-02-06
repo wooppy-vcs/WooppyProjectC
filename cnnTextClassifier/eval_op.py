@@ -1,9 +1,10 @@
 #! /usr/bin/env python
-import numpy
+import numpy as np
 import tensorflow as tf
 import csv
 from cnnTextClassifier import data_helpers
-from pylab import *
+from pylab import matplotlib
+matplotlib.use('Agg')
 from tensorflow.contrib import learn
 from sklearn import metrics
 import os
@@ -104,7 +105,7 @@ def evaluation(config):
             all_probabilities = None
             if config.enable_char:
                 for idx, (x_test_batch, _, char_ids_batch, word_lengths_batch) in enumerate(batches):
-                    print("Batch : " + str(idx))
+                    # print("Batch : " + str(idx))
                     # char_ids_batch = np.expand_dims(char_ids_batch, 0)
                     # word_lengths_batch = np.expand_dims(word_lengths_batch, 0)
                     batch_predictions_scores = sess.run([predictions, scores], {input_x: x_test_batch,
@@ -121,7 +122,7 @@ def evaluation(config):
                         all_probabilities = probabilities
             else:
                 for idx, batch in enumerate(batches):
-                    print("Batch : " + str(idx))
+                    # print("Batch : " + str(idx))
                     batch_predictions_scores = sess.run([predictions, scores], {input_x: batch,
                                                                                 dropout_keep_prob: 1.0})
                     all_predictions = np.concatenate([all_predictions, batch_predictions_scores[0]])
@@ -136,10 +137,10 @@ def evaluation(config):
     print("=======================================================")
     idx_to_tag = {idx: tag for tag, idx in datasets['target_names'].items()}
 
-    for idx, prediction in enumerate(all_predictions):
-        print("Input       : " + x_raw[idx])
-        print("Predicted   : " + idx_to_tag[int(prediction)])
-        print("")
+    # for idx, prediction in enumerate(all_predictions):
+    #     print("Input       : " + x_raw[idx])
+    #     print("Predicted   : " + idx_to_tag[int(prediction)])
+    #     print("")
 
     # Print accuracy if y_test is defined
     if y_test is not None:
@@ -196,11 +197,13 @@ def evaluation(config):
         #         k += 1
         #
         # else:
-        merged_vocab = dict()
-        with open("data/Project-A-R-Scenario_Billing_Account-v2/tags_merged_vocab.txt") as f:
-            for idx, word in enumerate(f):
-                merged_vocab[idx] = int(word.strip())
-
+        example = list(open(config.merged_map, 'r', encoding="utf8").readlines())
+        f = [s.split("\t") for s in example]
+        indexes = [s[0] for s in f]
+        maps = [s[1].strip() for s in f]
+        merged_vocab = {int(idx): int(mapped) for idx, mapped in zip(indexes, maps)}
+        print(merged_vocab)
+        
         y_shape = len(available_target_names)
         confusion_matrix = np.zeros([y_shape, y_shape])
         for y_test_check, y_pred in zip(y_test, all_predictions.astype(int)):
@@ -364,15 +367,15 @@ def evaluation(config):
                     tmp_arr.append(float(0))
             norm_conf.append(tmp_arr)
 
-        plt.clf()
+        # matplotlib.pyplot.clf()
 
-        fig = plt.figure(figsize=(18, 18))
-        ax = fig.add_subplot(111)
-        res = ax.imshow(array(norm_conf), cmap=cm.jet, interpolation='nearest')
-        cb = fig.colorbar(res)
-        plt.xticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='vertical')
-        plt.yticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='horizontal')
+        # fig = matplotlib.pyplot.figure(figsize=(18, 18))
+        # ax = matplotlib.fig.add_subplot(111)
+        # res = matplotlib.ax.imshow(array(norm_conf), cmap=cm.jet, interpolation='nearest')
+        # cb = matplotlib.fig.colorbar(res)
+        # matplotlib.pyplot.xticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='vertical')
+        # matplotlib.pyplot.yticks([idx for idx, item in enumerate(available_target_names)], available_target_names, rotation='horizontal')
 
-        out_path = os.path.join(model_path, "..", "confmat.png")
+        # out_path = os.path.join(model_path, "..", "confmat.png")
 
-        savefig(out_path, format="png")
+        # savefig(out_path, format="png")
