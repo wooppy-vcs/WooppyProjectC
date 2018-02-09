@@ -80,7 +80,7 @@ class OngoingSession:
 
         return predicted_category, level1_probabilities, tags_probabilities_pair
 
-    def predict_words(self, words, merged_map):
+    def predict_words(self, words, merged_map, white_list):
         level_1_prediction, level1_probabilities = self.evaluation(words, self.L1_model, self.l1_vocab_processor,
                                                                    self.l1_categories)
 
@@ -96,8 +96,11 @@ class OngoingSession:
             predicted_category = level_1_prediction
             tags_probabilities_pair = level1_probabilities
 
-        return json.dumps({"words": words, "category": merged_map[predicted_category],
-                           "tags": tags_probabilities_pair})
+        mapped_category = merged_map[predicted_category]
+        if mapped_category in white_list:
+            return json.dumps({"words": words, "category": mapped_category, "tags": tags_probabilities_pair})
+        else:
+            return json.dumps({"words" :words, "category": "None"})
 
 
 def prepare_vocab(tags_vocab_path, checkpoint_dir):
@@ -117,6 +120,10 @@ def load_dict(path):
     merged_vocab = {original: mapped for original, mapped in zip(originals, maps)}
     return merged_vocab
 
+def load_white_list(path):
+    example = list(open(path, 'r', encoding='utf8').readlines())
+    tags = [s.strip() for s in example]
+    return tags
 
 app = Flask(__name__, static_folder=os.path.join("templates", "assets"))
 app.secret_key = 'rem4lyfe'
@@ -124,6 +131,7 @@ app.secret_key = 'rem4lyfe'
 config = REST_Config()
 ongoing_session = OngoingSession(config, prepare_vocab)
 merged_maps = load_dict(config.merged_vocab)
+white_list_tags = load_white_list(config.white_list_tags)
 
 
 @app.route('/get_tags', methods=['POST'])
@@ -136,7 +144,7 @@ def get_tags():
     if text.strip() == '':
         return '{"error" : "Add non-whitespace text to your request!"}'
 
-    my_dict_string = ongoing_session.predict_words(text.strip(), merged_maps)
+    my_dict_string = ongoing_session.predict_words(text.strip(), merged_maps, white_list_tags)
     return my_dict_string, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 

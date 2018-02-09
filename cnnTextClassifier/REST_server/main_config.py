@@ -15,6 +15,7 @@ class REST_Config():
     account_tags_vocab = default_data_dir+"Project-A-R-Account_Only-v2/tags_vocab_main.txt"
 
     merged_vocab = default_data_dir+"merged_tags.txt"
+    white_list_tags = "REST_server\white_list_tags.txt"
 
     # # for logging
     # layer_1_dir = "cnnTextClassifier/Runs/Architecture-v2/v1/Level-1-v2-len40-CNNv0/checkpoints/model-27354.meta"
