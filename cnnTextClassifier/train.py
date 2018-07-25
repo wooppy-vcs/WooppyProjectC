@@ -15,7 +15,7 @@ import yaml
 # tf.flags.DEFINE_string("checkpoint_dir", "runs/1499936835/checkpoints", "")
 tf.flags.DEFINE_string("checkpoint_dir", "", "")
 # Data loading params
-tf.flags.DEFINE_float("dev_sample_percentage", .1, "Percentage of the training data to use for validation")
+tf.flags.DEFINE_float("dev_sample_percentage", 0, "Percentage of the training data to use for validation")
 
 # Model Hyperparameters
 tf.flags.DEFINE_boolean("enable_word_embeddings", True, "Enable/disable the word embedding (default: True)")
@@ -39,7 +39,7 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 # tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 # tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 tf.flags.DEFINE_integer("batch_size", 16, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 10, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 500, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
@@ -100,11 +100,16 @@ elif dataset_name == "localdatacategorizedbyfilename":
     datasets = data_helpers.get_datasets_localdatacategorizedbyfilename(container_path=cfg["datasets"][dataset_name]["data_file"]["path"],
                                                              categories_dict=cfg["datasets"][dataset_name]["categories_dict"])
 
-x_text, y = data_helpers.load_data_labels(datasets)
+elif dataset_name == "multilabel":
+    datasets = data_helpers.get_datasets_multilabel(container_path=cfg["datasets"][dataset_name]["container_path"])
 
+
+x_text, y = data_helpers.load_data_labels(datasets)
+print("this is y length")
+print(len(y))
 # Build vocabulary
 max_document_length = max([len(x.split(" ")) for x in x_text])
-print("max_document_length" + str(max_document_length))
+print("max_document_length: " + str(max_document_length))
 
 # max_document_length = 200
 vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
@@ -113,26 +118,33 @@ x = np.array(list(vocab_processor.fit_transform(x_text)))
 # Randomly shuffle data
 np.random.seed(10)
 shuffle_indices = np.random.permutation(np.arange(len(y)))
+print("this is x length")
+print(len(x))
 x_shuffled = x[shuffle_indices]
 y_shuffled = y[shuffle_indices]
 print(y_shuffled.shape)
 
 # Split train/test set
 # TODO: This is very crude, should use cross-validation
-dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
+if FLAGS.dev_sample_percentage != 0:
+    dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
+else:
+    dev_sample_index = len(x)
 x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
 y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
 # print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))
 # print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
-# print(x_train)
-# print(y_train)
+
+print(y_train)
 
 print('Train/Dev split: %d/%d' % (len(y_train), len(y_dev)))
 print('train shape:', x_train.shape)
 print('dev shape:', x_dev.shape)
-print('vocab_size', len(vocab_processor.vocabulary_))
-print('sentence max words', max_document_length)
+print('vocab_size:', len(vocab_processor.vocabulary_))
+print('sentence max words:', max_document_length)
 
+# for i, content in enumerate(x_train):
+#     print(content)
 
 # Training
 # ==================================================
@@ -274,10 +286,12 @@ with tf.Graph().as_default():
             x_batch, y_batch = zip(*batch)
             train_step(x_batch, y_batch)
             current_step = tf.train.global_step(sess, global_step)
-            if current_step % FLAGS.evaluate_every == 0:
-                print("\nEvaluation:")
-                dev_step(x_dev, y_dev, writer=dev_summary_writer)
-                print("")
+            if FLAGS.dev_sample_percentage != 0:
+                if current_step % FLAGS.evaluate_every == 0:
+                    print("\nEvaluation:")
+                    dev_step(x_dev, y_dev, writer=dev_summary_writer)
+                    print("")
+
             if current_step % FLAGS.checkpoint_every == 0:
                 path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                 print("Saved model checkpoint to {}\n".format(path))

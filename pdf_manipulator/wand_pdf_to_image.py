@@ -64,7 +64,12 @@ def save_as_image(file, destination, dpi=300):
             saved_image_path_list.append(save_destination)
             i.save(filename=save_destination)
 
-    return num_pages, saved_image_path_list
+    if num_pages < 2:
+        one_page = True
+    else:
+        one_page = False
+
+    return num_pages, saved_image_path_list, one_page
 
 
 def make_vertical_image(saved_image_path_list, save_image_folder, one_page=False):
@@ -78,7 +83,7 @@ def make_vertical_image(saved_image_path_list, save_image_folder, one_page=False
         # mid = np.asarray(imgs)
         # mid = (np.asarray(i) for i in imgs)
         # print(mid)
-        # imgs_comb = np.vstack(mid)'
+        # imgs_comb = np.vstack(mid)
         temp = []
         for i in imgs:
             array = np.asarray(i.resize(min_shape))
@@ -90,10 +95,19 @@ def make_vertical_image(saved_image_path_list, save_image_folder, one_page=False
         # imgs_comb = np.vstack((np.asarray(i.resize(min_shape)) for i in imgs))
         imgs_comb = PILImage.fromarray(imgs_comb)
 
-        background = PILImage.new(mode='RGBA', size=(2560, 7020), color=(255, 255, 255, 255))
+        width = 2560
+        height = 7020
+        background = PILImage.new(mode='RGBA', size=(width, height), color=(255, 255, 255, 255))
         bg_w, bg_h = background.size
         offset = (int((bg_w - min_shape[0]) / 2), int((bg_h - min_shape[1]*2) / 2))
         background.paste(imgs_comb, offset)
+
+        # rescale background in case GPU not enough RAM for image
+        maxwidth = 1024
+        maxheight = 2808
+        # resize_ratio = min(maxheight / height, maxwidth / width)
+        background.thumbnail([maxwidth, maxheight], PILImage.ANTIALIAS)
+
         vertical_image_path = os.path.join(save_image_folder, 'vertical.png')
         background.save(vertical_image_path)
         # vertical_image_path = os.path.join(save_image_folder, 'vertical.png')
@@ -128,6 +142,13 @@ def make_vertical_image(saved_image_path_list, save_image_folder, one_page=False
         bg_w, bg_h = background.size
         offset = (int((bg_w - min_shape[0]) / 2), int((bg_h - min_shape[1] * 2) / 2))
         background.paste(imgs_comb, offset)
+
+        # rescale background in case GPU not enough RAM for image
+        maxwidth = 1024
+        maxheight = 2808
+        # resize_ratio = min(maxheight / height, maxwidth / width)
+        background.thumbnail([maxwidth, maxheight], PILImage.ANTIALIAS)
+
         vertical_image_path = os.path.join(save_image_folder, 'vertical.png')
         background.save(vertical_image_path)
 

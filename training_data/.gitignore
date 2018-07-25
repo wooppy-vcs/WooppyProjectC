@@ -140,5 +140,5 @@ ENV/
 .ropeproject
 
 # Custom
-/raw_pdf_folder/
+#/raw_pdf_folder/
 /pdf_and_image_folder/

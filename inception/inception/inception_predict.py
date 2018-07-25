@@ -17,14 +17,14 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-
 from datetime import datetime
+
 import math
 import os.path
 import time
-
 import numpy as np
 import tensorflow as tf
+import config
 
 from inception.inception import image_processing
 from inception.inception import inception_model as inception
@@ -34,14 +34,21 @@ FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_string('test_file_path', '',
                            """JPEG file to predict with graph""")
+# tf.app.flags.DEFINE_string('checkpoint_dir_image',
+#                            os.path.join('inception',
+#                                         'inception',
+#                                         'models',
+#                                         'image',
+#                                         '299x299x3',
+#                                         'inception',
+#                                         '100000'),
+#                            """Directory where to read model checkpoints.""")
+PROJECT_ROOT_PATH = config.PROJECT_ROOT
 tf.app.flags.DEFINE_string('checkpoint_dir_image',
-                           os.path.join('inception',
+                           os.path.join(PROJECT_ROOT_PATH,
                                         'inception',
-                                        'models',
-                                        'image',
-                                        '299x299x3',
-                                        'inception',
-                                        '100000'),
+                                        'cv_train',
+                                        'multilabel'),
                            """Directory where to read model checkpoints.""")
 
 # Flags governing the data used for prediction.
@@ -73,7 +80,7 @@ def predict(image_path, checkpoint_path=None):
         # inference model.
         logits_op, _ = inception.inference(image, num_classes)
 
-        probs_op = tf.nn.softmax(logits_op)
+        probs_op = tf.nn.sigmoid(logits_op)
 
         # Restore the moving average version of the learned variables for eval.
         variable_averages = tf.train.ExponentialMovingAverage(

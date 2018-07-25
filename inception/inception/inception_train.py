@@ -27,16 +27,16 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from inception.inception import image_processing
-from inception.inception import inception_model as inception
-from inception.inception.slim import slim
+from inception import image_processing
+from inception import inception_model as inception
+from inception.slim import slim
 
 FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_string('train_dir', '/tmp/imagenet_train',
                            """Directory where to write event logs """
                            """and checkpoint.""")
-tf.app.flags.DEFINE_integer('max_steps', 10000000,
+tf.app.flags.DEFINE_integer('max_steps', 2000,
                             """Number of batches to run.""")
 tf.app.flags.DEFINE_string('subset', 'train',
                            """Either 'train' or 'validation'.""")
@@ -114,6 +114,8 @@ def _tower_loss(images, labels, num_classes, scope, reuse_variables=None):
     # Build the portion of the Graph calculating the losses. Note that we will
     # assemble the total_loss using a custom function below.
     split_batch_size = images.get_shape().as_list()[0]
+    logits = tf.Print(logits, [logits], summarize=30)
+    labels = tf.Print(labels, [labels], summarize=30)
     inception.loss(logits, labels, batch_size=split_batch_size)
 
     # Assemble all of the losses for the current tower only.
@@ -215,6 +217,7 @@ def train(dataset):
         # Override the number of preprocessing threads to account for the increased
         # number of GPU towers.
         num_preprocess_threads = FLAGS.num_preprocess_threads * FLAGS.num_gpus
+        # images and labels PER BATCH
         images, labels = image_processing.distorted_inputs(
             dataset,
             num_preprocess_threads=num_preprocess_threads)

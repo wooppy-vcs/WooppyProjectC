@@ -5,8 +5,7 @@ import os
 import shutil
 
 raw_training_data_folder_directory = os.path.join('raw_pdf_folder')
-# pdf_and_image_folder_directory = os.path.join('converted_folder')
-pdf_and_image_folder_directory = os.path.join('temp')
+pdf_and_image_folder_directory = os.path.join('converted_folder')
 
 
 def next_incremental_folder_path(parent_folder_path):
@@ -42,7 +41,7 @@ for file in os.listdir(raw_training_data_folder_directory):
         current_training_data_text_destination_path = os.path.join(current_training_data_destination_path, 'text')
         current_training_data_label_destination_path = os.path.join(current_training_data_destination_path, 'label')
 
-        num_pages, saved_image_path_list, one_page = wand_pdf_to_image.save_as_image(file=current_file_directory,
+        num_pages, saved_image_path_list = wand_pdf_to_image.save_as_image(file=current_file_directory,
                                                                            destination=current_training_data_image_destination_path)
         if num_pages < 2:
             vertical_image_path = wand_pdf_to_image.make_vertical_image(saved_image_path_list=saved_image_path_list,
@@ -56,7 +55,7 @@ for file in os.listdir(raw_training_data_folder_directory):
         # Try to extract text. Removes trailing whitespaces
         extracted_text = pdf_to_text.extract_text(files=[current_file_directory]).strip()
         save_destination = os.path.join(current_training_data_text_destination_path, "data" + ".txt")
-        destination_filename = os.path.join(current_training_data_destination_path, filename[:-4] + ".txt")
+        destination_filename = os.path.join(current_training_data_destination_path, filename[:-4]  + ".txt")
         destination_multilabel = os.path.join(current_training_data_label_destination_path, "multilabel" + ".txt")
         # save_destination_root = os.path.join(pdf_and_image_folder_directory, filename[:-4] + ".txt")
         with open(save_destination, "w+") as f:

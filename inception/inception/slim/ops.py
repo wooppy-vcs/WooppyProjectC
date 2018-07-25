@@ -30,9 +30,14 @@ import tensorflow as tf
 
 from tensorflow.python.training import moving_averages
 
-from inception.inception.slim import losses
-from inception.inception.slim import scopes
-from inception.inception.slim import variables
+try:
+    from inception.slim import losses
+    from inception.slim import scopes
+    from inception.slim import variables
+except ImportError:
+    from inception.inception.slim import losses
+    from inception.inception.slim import scopes
+    from inception.inception.slim import variables
 
 # Used to keep the update ops done by batch_norm.
 UPDATE_OPS_COLLECTION = '_update_ops_'

@@ -47,7 +47,7 @@ DATA_DIR="${PROJECT_DIR}/training_data/inception_tfrecords"
 #TRAIN_DATA_DIR="${DATA_DIR}/train"
 #VALIDATION_DATA_DIR="${DATA_DIR}/validation"
 TRAIN_DATA_DIR="${PROJECT_DIR}/training_data/converted_folder"
-VALIDATION_DATA_DIR="${PROJECT_DIR}/test_data/converted_folder"
+VALIDATION_DATA_DIR="${PROJECT_DIR}/training_data/converted_folder"
 # File containing list of labels
 LABELS_FILE="${PROJECT_DIR}/training_data/labels.txt"
 

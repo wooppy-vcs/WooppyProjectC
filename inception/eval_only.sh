@@ -34,7 +34,7 @@ BATCH_SIZE=1
 # effects amount of CPU memory used. Multiples of ~4GB
 MEM_FACTOR=8
 # Number of test data to validate on
-NUM_VALID_EXAMPLES=31
+NUM_VALID_EXAMPLES=11
 # Number of training steps per evaluation
 # Also how often checkpoint files are written
 VALID_RATE=10000
@@ -51,31 +51,6 @@ fi
 a=0
 #	        --pretrained_model_checkpoint_path="${MODEL_PATH}" \
 while [ "$a" -lt "$TOTAL_STEPS" ]; do
-    if test "$1" = "new" && test "$a" -eq 0; then
-        echo "Starting transfer learning script"
-        echo "jialer removed transfer learning huehue"
-        bazel-bin/inception/cv_train \
-	        --num_gpu="${NUM_GPU}" \
-	        --batch_size="${BATCH_SIZE}" \
-	        --train_dir="${TRAIN_DIR}" \
-	        --data_dir="${DATA_DIR}" \
-	        --fine_tune=True \
-	        --initial_learning_rate=0.001 \
-	        --input_queue_memory_factor="${MEM_FACTOR}" \
-	        --max_steps="${VALID_RATE}"
-    else
-        echo "Continuing learning from prev. checkpoint"
-        bazel-bin/inception/cv_train \
-            --num_gpu="${NUM_GPU}" \
-            --batch_size="${BATCH_SIZE}" \
-            --train_dir="${TRAIN_DIR}" \
-            --data_dir="${DATA_DIR}" \
-            --checkpoint_dir="${TRAIN_DIR}" \
-            --initial_learning_rate=0.001 \
-            --input_queue_memory_factor="${MEM_FACTOR}" \
-            --max_steps="${VALID_RATE}"
-    fi
-
     echo "Starting Validation script"
     bazel-bin/inception/cv_eval \
         --eval_dir="${EVAL_DIR}" \

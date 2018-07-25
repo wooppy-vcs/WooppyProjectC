@@ -8,6 +8,7 @@ import tensorflow as tf
 import time
 import datetime
 import numpy as np
+import config
 
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, render_template, jsonify
 from werkzeug.utils import secure_filename
@@ -18,29 +19,28 @@ from pdf_manipulator import pdf_to_text
 from pdf_manipulator import wand_pdf_to_image
 from pdf_manipulator import image_to_text
 
-IMAGE_UPLOAD_FOLDER = os.path.join('uploads', 'image_files')
-TEXT_UPLOAD_FOLDER = os.path.join('uploads', 'texts')
+UPLOAD_FOLDER = os.path.join('uploads')
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+PROJECT_ROOT_DIR = config.PROJECT_ROOT
 
-classification_dict = {0: "Others",
-                       1: "Storage & Memory Cards",
-                       2: "Tablets",
-                       3: "Screen Protectors",
-                       4: "Cool Gadgets",
-                       5: "Cables & Charges",
-                       6: "Mobile Phones",
-                       7: "Cases & Covers",
-                       8: "Mobile Car Accessories",
-                       9: "Wearables",
-                       10: "Audio",
-                       11: "Powerbanks & Batteries",
-                       12: "Camera & Accessories",
-                       13: "Selfie Accessories"}
+classification_dict = {
+                        0: "Administration",
+                        1: "Audit",
+                        2: "Finance and Accounting",
+                        3: "Health and Safety",
+                        4: "Human Resources",
+                        5: "IT",
+                        6: "Legal",
+                        7: "Operations / Consulting / Manufacturing",
+                        8: "Others",
+                        9: "Sales and Marketing",
+                        10: "Strategy and Business Development",
+                        11: "Training and Learning"
+                       }
 
 app = Flask(__name__, static_folder=os.path.join("templates", "assets"))
 app.secret_key = 'rem4lyfe'
-app.config['IMAGE_UPLOAD_FOLDER'] = IMAGE_UPLOAD_FOLDER
-app.config['TEXT_UPLOAD_FOLDER'] = TEXT_UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 def try_make_dir(try_path):
@@ -80,9 +80,9 @@ def upload_file():
     return render_template(os.path.join('upload.html'))
 
 
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    return send_from_directory(os.path.join(app.config['IMAGE_UPLOAD_FOLDER'], 'original'), filename)
+@app.route('/uploads/<folder_id>/image/vertical.png')
+def uploaded_file(folder_id):
+    return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER'], folder_id, 'image'), 'vertical.png')
 
 
 @app.route('/infer', methods=['POST'])
@@ -119,11 +119,12 @@ def infer_category():
         # Try to convert pdf to image
         image_save_path = os.path.join('uploads', folder_id, 'image')
         try_make_dir(image_save_path)
-        num_pages, saved_image_path_list = wand_pdf_to_image.save_as_image(file=pdf_path, destination=image_save_path)
+        num_pages, saved_image_path_list, one_page = wand_pdf_to_image.save_as_image(file=pdf_path, destination=image_save_path)
 
         # Join all pages into one vertical image for image recognition
         vertical_image_path = wand_pdf_to_image.make_vertical_image(saved_image_path_list=saved_image_path_list,
-                                                                    save_image_folder=image_save_path)
+                                                                    save_image_folder=image_save_path,
+                                                                    one_page=one_page)
 
         # If no text found
         if not extracted_text:
@@ -134,12 +135,14 @@ def infer_category():
                 # print(extracted_text)
 
         # Run text classification
-        prediction, probabilities = predictor.predict(x_raw=extracted_text,
-                                                      checkpoint_dir="models/text/cnn_text_bk_with04/checkpoints")
-
+        prediction, probabilities = predictor.predict(x_raw=str(extracted_text),
+                                                      checkpoint_dir=os.path.join(PROJECT_ROOT_DIR,"cnnTextClassifier/runs/1507001278/checkpoints"))
+        # print("probabilities is : ")
+        # print(probabilities[0])
         idtoprobability_dict = collections.OrderedDict()
         classtoprobability_dict = collections.OrderedDict()
-        for idx, probability in enumerate(probabilities[0:14]):
+        for idx, probability in enumerate(probabilities[0][0:12]):
+            # print("idx is : " + str(idx))
             idtoprobability_dict[int(idx)] = float(probability)
             classtoprobability_dict[classification_dict[int(idx)]] = float(probability)
 
@@ -181,6 +184,11 @@ def infer_category():
         # Run image classification
 
         logits, probs = inception.predict(vertical_image_path)
+        sx = ""
+        lol = probs[0][1:]
+        for x in lol:
+            sx += str(x) + "\t"
+        print(sx)
         all_probabilities = probs[0][1:]
 
         # for class_predictions in prediction:
@@ -277,8 +285,8 @@ def infer_category():
 
         final_json = [{"model": "Overall", "data": mean_json}, {"model": "Text", "data": text_json},
                       {"model": "Image", "data": image_json}]
-
-        return render_template(os.path.join('results.html'), result_json=final_json, original_string=text if has_text else None, file='uploads/'+filename if has_image else None)
+        print(os.path.isfile(vertical_image_path))
+        return render_template(os.path.join('results.html'), result_json=final_json, original_string=extracted_text, folder_id=folder_id)
 
     return render_template(os.path.join('upload.html'))
 
@@ -291,4 +299,16 @@ if __name__ == '__main__':
     #     model_dir=vggnet_b.final_image_model_dir,
     #     config=tf.estimator.RunConfig().replace(keep_checkpoint_max=1000))
 
+    print('<div class="<%= name.toLowerCase() %>-legend">'+
+                                '<span class="<%= name.toLowerCase() %>-legend-text">'+
+                                '<%= min %>'+
+                                '</span>'+
+                                '<% for (var i = min; i <= max; i += (max-min)/6){ %>'+
+                                '<span class="<%= name.toLowerCase() %>-legend-box" style="background-color: <%= colorManager.getColor(i).color %>;">  </span>'+
+                                '<% } %>'+
+                                '<span class="<%= name.toLowerCase() %>-legend-text">'+
+                                '<%= max %>'+
+                                '</span>'+
+                                '</div>')
     app.run(debug=False, host='0.0.0.0', port="5000")
+

@@ -17,9 +17,10 @@ word_embeddings:
 
 datasets:
   # Support currently 3 datasets: mrpolarity, 20newsgroup and localdata
-  default: localdatacategorizedbyfilename
+#  default: localdatacategorizedbyfilename
 #  default: localdatasingledata
 #  default: localdata
+  default: multilabel
 #  default: mrpolarity
 #  default: 20newsgroup
   mrpolarity:
@@ -58,12 +59,21 @@ datasets:
     # has been used. The dataset includes following 3 domains:
     # arxiv, jdm and plos
 #    container_path: ../../data/SentenceCorpus
-    container_path: data/Categories
+#    container_path: data/Categories
+    container_path: data/CV
     categories:
-#      - category_1
-#      - category_2
-#      - category_3
-#      - category_4
+      - Administration
+      - Audit
+      - FinanceAndAccounting
+      - HealthAndSafety
+      - HumanResources
+      - IT
+      - Legal
+      - OperationsConsultingManufacturing
+      - Others
+      - SalesAndMarketing
+      - StrategyAndBusinessDevelopment
+      - TrainingAndLearning
     shuffle: True
     random_state: 42
 
@@ -128,6 +138,26 @@ datasets:
       SalesMarketing: 11
       Sciences: 12
       Services: 13
+
+  multilabel:
+
+    test_data_file:
+      path: "../test_data/converted_folder"
+#    container_path: "data/Multilabel"
+    container_path: "../training_data/converted_folder"
+    categories:
+      - Administration
+      - Audit
+      - FinanceAndAccounting
+      - HealthAndSafety
+      - HumanResources
+      - IT
+      - Legal
+      - OperationsConsultingManufacturing
+      - Others
+      - SalesAndMarketing
+      - StrategyAndBusinessDevelopment
+      - TrainingAndLearning
 
     shuffle: True
     random_state: 42

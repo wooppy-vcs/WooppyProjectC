@@ -46,6 +46,8 @@ def predict(x_raw, checkpoint_dir):
     # Map data into vocabulary
     vocab_path = os.path.join(FLAGS.checkpoint_dir, "..", "vocab")
     vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
+    print("this is x_raw")
+    print(x_raw)
     x_raw = [data_helpers.clean_str(x_raw)]
     x_test = np.array(list(vocab_processor.transform(x_raw)))
     # print(x_test)
@@ -82,7 +84,9 @@ def predict(x_raw, checkpoint_dir):
             predictions, scores = sess.run([predictions, scores],
                                            {input_x: x_test, dropout_keep_prob: 1.0})
             prediction = predictions[0]
-            probabilities = softmax(scores)[0]
+            # probabilities = softmax(scores)[0]
+            probabilities_op = tf.nn.sigmoid(scores)
+            probabilities = sess.run(probabilities_op)
 
     # datasets = {"target_names": cfg["datasets"]["localdatasingledata"]["categories"]}
     # categories = datasets["target_names"]
