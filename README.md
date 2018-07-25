@@ -23,7 +23,16 @@ Besides that, do install the requirements for OCR which is listed in a seperate 
 p/s: There are further `requirements.txt` located in each subfolder of this project. Do go through them as well...
 
 ### Installing
-You need to reconfigure the directory of your model checkpoints. There are two checkpoint configuration files, each for the text and image classifier, respectively. They are located at `cnnTextClassifier/runs/1507001278/checkpoints/checkpoint` and `inception/cv_train/multilabel/checkpoint`.
+Firstly, you need to download the model files into your project, follow these steps to get the models into your project folder:
+
+1. Go to this [Google Drive Link](https://drive.google.com/drive/folders/1qZX1MUaeKvh1BQj5hCaDgaEvYyFkAIjZ?usp=sharing).
+
+2.For each of the folders in the Google Drive Link, copy the contents into the respective project directory, please make a directory for it if directory does not exist:
+* Content of `TextModel` into `cnnTextClassifier/runs/1507001278/checkpoints`
+* Content of `ImageModel` into `inception/cv_train/multilabel`
+* Content of `GoogleNewsVectors` into `cnnTextClassifier/data/GoogleNews-vectors-negative300.bin` 
+
+Then, you need to reconfigure the directory of your model checkpoints. There are two checkpoint configuration files, each for the text and image classifier, respectively. They are located at `cnnTextClassifier/runs/1507001278/checkpoints/checkpoint` and `inception/cv_train/multilabel/checkpoint`. Edit them so that it points to the right directory on your machine.
 
 ### Retraining of Models
 Please refer to documentations of the individual models on how to retrain the the model with your own data.
@@ -49,4 +58,3 @@ export PYTHONPATH=.
 ```
 python3 server/rest_server.py
 ```
-
