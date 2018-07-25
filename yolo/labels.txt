@@ -1,0 +1,12 @@
+Administration
+Audit
+FinanceAndAccounting
+HealthAndSafety
+HumanResources
+IT
+Legal
+OperationsConsultingManufacturing
+Others
+SalesAndMarketing
+StrategyAndBusinessDevelopment
+TrainingAndLearning

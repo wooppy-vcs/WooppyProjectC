@@ -84,7 +84,10 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from inception.inception.slim import scopes
+try:
+  from inception.slim import scopes
+except ImportError:
+  from inception.inception.slim import scopes
 
 # Collection containing all the variables created using slim.variables
 MODEL_VARIABLES = '_model_variables_'

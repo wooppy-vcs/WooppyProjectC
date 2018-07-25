@@ -1,4 +1,6 @@
 import wand
+import numpy as np
+import PIL.Image as PILImage
 import os
 import time
 from wand.image import Image
@@ -36,15 +38,17 @@ def save_as_image(file, destination, dpi=300):
         print("No pdf file found for image extraction.")
         return None
 
-    print(file)
+    # print(file)
 
     all_pages = Image(filename=file, resolution=dpi)
     num_pages = len(all_pages.sequence)
-    print("Number of pages: " + str(num_pages))
+    # print("Number of pages: " + str(num_pages))
 
     # image_folder_id = time.strftime("%Y%m%dT%H%M%S")
     # save_path = destination
     # try_make_dir(os.path.join(save_path))
+
+    saved_image_path_list = []
 
     for page in range(num_pages):
         single_image = all_pages.sequence[page]
@@ -55,6 +59,100 @@ def save_as_image(file, destination, dpi=300):
             i.alpha_channel = 'remove'  # Remove transparency and replace with bg.
             # i.save(filename="pdftoimage." + str(page) + ".png")
             # i.save(filename=os.path.join(save_path, "pdftoimage." + str(page) + ".png"))
-            i.save(filename=os.path.join(destination, str(page) + ".png"))
+            save_destination = os.path.join(destination, str(page) + ".png")
+            # save_destination = os.path.join(destination, str(page) + ".jpg")
+            saved_image_path_list.append(save_destination)
+            i.save(filename=save_destination)
 
-    return num_pages
+    if num_pages < 2:
+        one_page = True
+    else:
+        one_page = False
+
+    return num_pages, saved_image_path_list, one_page
+
+
+def make_vertical_image(saved_image_path_list, save_image_folder, one_page=False):
+    if not one_page:
+        imgs = [PILImage.open(i).convert("RGBA") for i in saved_image_path_list]
+        min_shape = sorted([(np.sum(i.size), i.size) for i in imgs])[0][1]
+
+        # hard code this because some cv uses U.S. letter dimension instead of A4. this is A4 pixels at 300dpi.
+        # min_shape = (2480, 3508)
+
+        # mid = np.asarray(imgs)
+        # mid = (np.asarray(i) for i in imgs)
+        # print(mid)
+        # imgs_comb = np.vstack(mid)
+        temp = []
+        for i in imgs:
+            array = np.asarray(i.resize(min_shape))
+            # print(array.size)
+            # temp.append(np.asarray(i))
+            temp.append(array)
+        # print(len(temp))
+        imgs_comb = np.vstack(temp)
+        # imgs_comb = np.vstack((np.asarray(i.resize(min_shape)) for i in imgs))
+        imgs_comb = PILImage.fromarray(imgs_comb)
+
+        width = 2560
+        height = 7020
+        background = PILImage.new(mode='RGBA', size=(width, height), color=(255, 255, 255, 255))
+        bg_w, bg_h = background.size
+        offset = (int((bg_w - min_shape[0]) / 2), int((bg_h - min_shape[1]*2) / 2))
+        background.paste(imgs_comb, offset)
+
+        # rescale background in case GPU not enough RAM for image
+        maxwidth = 1024
+        maxheight = 2808
+        # resize_ratio = min(maxheight / height, maxwidth / width)
+        background.thumbnail([maxwidth, maxheight], PILImage.ANTIALIAS)
+
+        vertical_image_path = os.path.join(save_image_folder, 'vertical.png')
+        background.save(vertical_image_path)
+        # vertical_image_path = os.path.join(save_image_folder, 'vertical.png')
+        # imgs_comb.save(vertical_image_path)
+
+    # this is only for CV project, need not pollute the original code
+    else:
+        imgs = [PILImage.open(i).convert("RGBA") for i in saved_image_path_list]
+        min_shape = sorted([(np.sum(i.size), i.size) for i in imgs])[0][1]
+
+        # hard code this because some cv uses U.S. letter dimension instead of A4. this is A4 pixels at 300dpi.
+        # min_shape = (2480, 3508)
+        temp = []
+        for i in imgs:
+            # print(i.size)
+            array = np.asarray(i.resize(min_shape))
+            # print(array.size)
+            # temp.append(np.asarray(i))
+            temp.append(array)
+        # print(len(temp))
+
+        # make white page
+        white_img = PILImage.new(mode="RGBA", size=min_shape, color=(255, 255, 255, 255))
+        white_array = np.asarray(white_img)
+        temp.append(white_array)
+
+        imgs_comb = np.vstack(temp)
+        # imgs_comb = np.vstack((np.asarray(i.resize(min_shape)) for i in imgs))
+        imgs_comb = PILImage.fromarray(imgs_comb)
+
+        background = PILImage.new(mode='RGBA', size=(2560, 7020), color=(255, 255, 255, 255))
+        bg_w, bg_h = background.size
+        offset = (int((bg_w - min_shape[0]) / 2), int((bg_h - min_shape[1] * 2) / 2))
+        background.paste(imgs_comb, offset)
+
+        # rescale background in case GPU not enough RAM for image
+        maxwidth = 1024
+        maxheight = 2808
+        # resize_ratio = min(maxheight / height, maxwidth / width)
+        background.thumbnail([maxwidth, maxheight], PILImage.ANTIALIAS)
+
+        vertical_image_path = os.path.join(save_image_folder, 'vertical.png')
+        background.save(vertical_image_path)
+
+        # vertical_image_path = os.path.join(save_image_folder, 'vertical.png')
+        # imgs_comb.save(vertical_image_path)
+
+    return vertical_image_path

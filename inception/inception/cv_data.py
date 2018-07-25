@@ -18,8 +18,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from inception.inception.dataset import Dataset
-
+try:
+    from inception.dataset import Dataset
+except ImportError:
+    from inception.inception.dataset import Dataset
 
 class CVData(Dataset):
     """Shopee data set."""
@@ -29,14 +31,14 @@ class CVData(Dataset):
 
     def num_classes(self):
         """Returns the number of classes in the data set."""
-        return 14
+        return 12
 
     def num_examples_per_epoch(self):
         """Returns the number of examples in the data subset."""
         if self.subset == 'train':
-            return 68004
+            return 20
         if self.subset == 'validation':
-            return 17013
+            return 11
 
     def download_message(self):
         """Instruction to ensure sharded shopee images to TFRecord."""

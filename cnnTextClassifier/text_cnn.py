@@ -60,6 +60,7 @@ class TextCNN(object):
         with tf.name_scope("dropout"):
             self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
 
+
         # Final (unnormalized) scores and predictions
         with tf.name_scope("output"):
             W = tf.get_variable(
@@ -75,7 +76,8 @@ class TextCNN(object):
 
         # CalculateMean cross-entropy loss
         with tf.name_scope("loss"):
-            losses = tf.nn.softmax_cross_entropy_with_logits(logits=self.scores, labels=self.input_y)
+            # losses = tf.nn.softmax_cross_entropy_with_logits(logits=self.scores, labels=self.input_y)
+            losses = tf.nn.sigmoid_cross_entropy_with_logits(logits=self.scores, labels=self.input_y)
             self.loss = tf.reduce_mean(losses) + l2_reg_lambda * l2_loss
 
         # Accuracy

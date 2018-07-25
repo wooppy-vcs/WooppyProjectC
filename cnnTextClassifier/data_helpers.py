@@ -216,6 +216,47 @@ def get_datasets_localdatacategorizedbyfilename(container_path=None, categories=
     datasets['target_names'] = target_names
     return datasets
 
+def get_datasets_multilabel(container_path=None):
+    """
+    # Load text files with multilabel.
+    :return: data and labels of the dataset
+    """
+    # Load data from files
+
+    data = []
+    id = []
+    multilabels = []
+
+    folders = [f for f in sorted(listdir(container_path))]
+    for i, folder in enumerate(folders):
+
+        with open(container_path + "/" + folder + "/" + "text" + "/" + "data.txt", 'r', encoding="utf8") as f:
+            # print(container_path + "/" + folder + "/" + "text" + "/" + "data.txt")
+            data.append(f.read())
+            id.append(folder)
+
+        with open(container_path + "/" + folder + "/" + "label" + "/" + "multilabel.txt", 'r', encoding="utf8") as f:
+            # print(container_path + "/" + folder + "/" + "label" + "/" + "multilabel.txt")
+            alllines = f.readlines()
+            multilabel = [0 for j in alllines]
+            for count, currentline in enumerate(alllines):
+                multilabel[count] = float(currentline.split(":\t")[1].strip())
+                # if(currentline.split(":\t")[1].strip()) == "1":
+                #     multilabel[count] = float("0.5")
+            multilabels.append(multilabel)
+
+
+    datasets = dict()
+    datasets['data'] = data
+    datasets['id'] = id
+    print("ti data")
+    print(data)
+    datasets['multilabel'] = multilabels
+
+    return datasets
+
+
+
 def load_data_labels(datasets):
     """
     Load data and labels
@@ -227,13 +268,16 @@ def load_data_labels(datasets):
     x_text = [clean_str(sent) for sent in x_text]
     # Generate labels
     labels = []
-    print(len(x_text))
-    print(len(datasets['target']))
+    print(x_text)
+    # print(len(datasets['target']))
+    try:
+        for i in range(len(x_text)):
+            label = [0 for j in datasets['target_names']]
+            label[datasets['target'][i]] = 1
+            labels.append(label)
+    except KeyError:
+        labels = datasets['multilabel']
 
-    for i in range(len(x_text)):
-        label = [0 for j in datasets['target_names']]
-        label[datasets['target'][i]] = 1
-        labels.append(label)
     y = np.array(labels)
     return [x_text, y]
 

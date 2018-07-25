@@ -1,5 +1,4 @@
 *.npy
-runs/
 
 # Created by https://www.gitignore.io/api/python,ipythonnotebook
 
@@ -67,3 +66,4 @@ target/
 ### IPythonNotebook ###
 # Temporary data
 .ipynb_checkpoints/
+#/data/GoogleNews-vectors-negative300.bin/GoogleNews-vectors-negative300.bin

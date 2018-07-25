@@ -40,9 +40,9 @@ py_library(
 )
 
 py_library(
-    name = "shopee_data",
+    name = "cv_data",
     srcs = [
-        "shopee_data.py",
+        "cv_data.py",
     ],
     deps = [
         ":dataset",
@@ -91,12 +91,12 @@ py_binary(
 )
 
 py_binary(
-    name = "shopee_eval",
+    name = "cv_eval",
     srcs = [
-        "shopee_eval.py",
+        "cv_eval.py",
     ],
     deps = [
-        ":shopee_data",
+        ":cv_data",
         ":inception_eval",
     ],
 )
@@ -146,12 +146,12 @@ py_binary(
 )
 
 py_binary(
-    name = "shopee_train",
+    name = "cv_train",
     srcs = [
-        "shopee_train.py",
+        "cv_train.py",
     ],
     deps = [
-        ":shopee_data",
+        ":cv_data",
         ":inception_train",
     ],
 )

@@ -11,17 +11,13 @@
 
 # Directories
 # current directory
-#PROJECT_DIR="/home/wooppy/Projects/WooppyProjectC"
-PROJECT_DIR="/home/wooppy/Projects/WooppyProjectC/WooppyProjectC"
+PROJECT_DIR="/home/wooppy/Projects/WooppyProjectC"
 # Directory containing TFRecord data
-#DATA_DIR="${PROJECT_DIR}/training_data/image_files"
-DATA_DIR="${PROJECT_DIR}/training_data/inception_tfrecords"
+DATA_DIR="${PROJECT_DIR}/training_data/image_files"
 # Directory to store trained checkpoint and event files
-#TRAIN_DIR="${PROJECT_DIR}/WooppyProjectC/inception/cv_train/trial"
-TRAIN_DIR="${PROJECT_DIR}/inception/cv_train/multilabel"
+TRAIN_DIR="${PROJECT_DIR}/WooppyProjectC/inception/cv_train/trial"
 # Directory to store evaluation files
-#EVAL_DIR="${PROJECT_DIR}/WooppyProjectC/inception/cv_eval/trial"
-EVAL_DIR="${PROJECT_DIR}/inception/cv_eval/multilabel"
+EVAL_DIR="${PROJECT_DIR}/WooppyProjectC/inception/cv_eval/trial"
 
 # Directory for pretrained Inception v3 models
 INCEPTION_MODEL_DIR="${HOME}/inception-v3-model"
@@ -37,9 +33,9 @@ MEM_FACTOR=8
 NUM_VALID_EXAMPLES=31
 # Number of training steps per evaluation
 # Also how often checkpoint files are written
-VALID_RATE=10000
+VALID_RATE=5
 # Total steps to train, multiple of VALID_RATE
-TOTAL_STEPS=10000
+TOTAL_STEPS=500
 
 bazel build //inception:cv_train
 bazel build //inception:cv_eval
@@ -49,16 +45,15 @@ if [ "$1" == "new" ]; then
 fi
 
 a=0
-#	        --pretrained_model_checkpoint_path="${MODEL_PATH}" \
 while [ "$a" -lt "$TOTAL_STEPS" ]; do
     if test "$1" = "new" && test "$a" -eq 0; then
         echo "Starting transfer learning script"
-        echo "jialer removed transfer learning huehue"
         bazel-bin/inception/cv_train \
 	        --num_gpu="${NUM_GPU}" \
 	        --batch_size="${BATCH_SIZE}" \
 	        --train_dir="${TRAIN_DIR}" \
 	        --data_dir="${DATA_DIR}" \
+	        --pretrained_model_checkpoint_path="${MODEL_PATH}" \
 	        --fine_tune=True \
 	        --initial_learning_rate=0.001 \
 	        --input_queue_memory_factor="${MEM_FACTOR}" \

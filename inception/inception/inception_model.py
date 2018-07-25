@@ -28,7 +28,10 @@ import re
 
 import tensorflow as tf
 
-from inception.inception.slim import slim
+try:
+    from inception.slim import slim
+except ImportError:
+    from inception.inception.slim import slim
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -113,23 +116,35 @@ def loss(logits, labels, batch_size=None):
 
     # Reshape the labels into a dense Tensor of
     # shape [FLAGS.batch_size, num_classes].
-    sparse_labels = tf.reshape(labels, [batch_size, 1])
-    indices = tf.reshape(tf.range(batch_size), [batch_size, 1])
-    concated = tf.concat(axis=1, values=[indices, sparse_labels])
-    num_classes = logits[0].get_shape()[-1].value
-    dense_labels = tf.sparse_to_dense(concated,
-                                      [batch_size, num_classes],
-                                      1.0, 0.0)
+    # sparse_labels = tf.reshape(labels, [batch_size, 1])
+    # indices = tf.reshape(tf.range(batch_size), [batch_size, 1])
+    sparse_labels = tf.reshape(labels, [batch_size, 13])
+    # indices = tf.reshape(tf.range(batch_size), [batch_size, 13])
+
+    # concated = tf.concat(axis=1, values=[indices, sparse_labels])
+    # num_classes = logits[0].get_shape()[-1].value
+    # dense_labels = tf.sparse_to_dense(concated,
+    #                                   [batch_size, num_classes],
+    #                                   1.0, 0.0)
 
     # Cross entropy loss for the main softmax prediction.
+    # slim.losses.cross_entropy_loss(logits[0],
+    #                                dense_labels,
+    #                                label_smoothing=0.1,
+    #                                weight=1.0)
     slim.losses.cross_entropy_loss(logits[0],
-                                   dense_labels,
+                                   sparse_labels,
                                    label_smoothing=0.1,
                                    weight=1.0)
 
     # Cross entropy loss for the auxiliary softmax head.
+    # slim.losses.cross_entropy_loss(logits[1],
+    #                                dense_labels,
+    #                                label_smoothing=0.1,
+    #                                weight=0.4,
+    #                                scope='aux_loss')
     slim.losses.cross_entropy_loss(logits[1],
-                                   dense_labels,
+                                   sparse_labels,
                                    label_smoothing=0.1,
                                    weight=0.4,
                                    scope='aux_loss')

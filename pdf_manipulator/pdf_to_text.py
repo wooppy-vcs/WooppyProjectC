@@ -137,7 +137,8 @@ def main(args=None):
 
     ## Test Code
     outfp = extract_text(**vars(A))
-    outfp.close()
+    print(outfp)
+    # outfp.close()
     return 0
 
 

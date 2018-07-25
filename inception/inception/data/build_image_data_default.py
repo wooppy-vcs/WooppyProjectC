@@ -82,12 +82,12 @@ tf.app.flags.DEFINE_string('validation_directory', '/tmp/',
 tf.app.flags.DEFINE_string('output_directory', '/tmp/',
                            'Output data directory')
 
-tf.app.flags.DEFINE_integer('train_shards', 1,
+tf.app.flags.DEFINE_integer('train_shards', 2,
                             'Number of shards in training TFRecord files.')
-tf.app.flags.DEFINE_integer('validation_shards', 1,
+tf.app.flags.DEFINE_integer('validation_shards', 2,
                             'Number of shards in validation TFRecord files.')
 
-tf.app.flags.DEFINE_integer('num_threads', 1,
+tf.app.flags.DEFINE_integer('num_threads', 2,
                             'Number of threads to preprocess the images.')
 
 # The labels file contains a list of valid labels are held in this file.
@@ -109,17 +109,9 @@ def _int64_feature(value):
     return tf.train.Feature(int64_list=tf.train.Int64List(value=value))
 
 
-def _float_feature(value):
-    if not isinstance(value, list):
-        value = [value]
-    return tf.train.Feature(float_list=tf.train.FloatList(value=value))
-
-
 def _bytes_feature(value):
     """Wrapper for inserting bytes features into Example proto."""
-    if not isinstance(value, list):
-        value = [value]
-    return tf.train.Feature(bytes_list=tf.train.BytesList(value=value))
+    return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
 
 
 def _convert_to_example(filename, image_buffer, label, text, height, width):
@@ -145,10 +137,8 @@ def _convert_to_example(filename, image_buffer, label, text, height, width):
         'image/width': _int64_feature(width),
         'image/colorspace': _bytes_feature(tf.compat.as_bytes(colorspace)),
         'image/channels': _int64_feature(channels),
-        # 'image/class/label': _int64_feature(label),
-        'image/class/label': _float_feature(label),
-        # 'image/class/text': _bytes_feature(tf.compat.as_bytes(text)),
-        'image/class/text': _bytes_feature([tf.compat.as_bytes(i) for i in text]),
+        'image/class/label': _int64_feature(label),
+        'image/class/text': _bytes_feature(tf.compat.as_bytes(text)),
         'image/format': _bytes_feature(tf.compat.as_bytes(image_format)),
         'image/filename': _bytes_feature(tf.compat.as_bytes(os.path.basename(filename))),
         'image/encoded': _bytes_feature(tf.compat.as_bytes(image_buffer))}))
@@ -273,7 +263,7 @@ def _process_image_files_batch(coder, thread_index, ranges, name, filenames,
                 image_buffer, height, width = _process_image(filename, coder)
             except Exception as e:
                 print(e)
-                print('SKIPPED: Unexpected error while decoding %s.' % filename)
+                print('SKIPPED: Unexpected eror while decoding %s.' % filename)
                 continue
 
             example = _convert_to_example(filename, image_buffer, label,
@@ -380,39 +370,21 @@ def _find_image_files(data_dir, labels_file):
     texts = []
 
     # Leave label index 0 empty as a background class.
-    # label_index = 1
+    label_index = 1
 
     # Construct the list of JPEG files and labels.
-    # for text in unique_labels:
-    #     jpeg_file_path = '%s/%s/*' % (data_dir, text)
-    #     matching_files = tf.gfile.Glob(jpeg_file_path)
-    #
-    #     labels.extend([label_index] * len(matching_files))
-    #     texts.extend([text] * len(matching_files))
-    #     filenames.extend(matching_files)
-    #
-    #     if not label_index % 100:
-    #         print('Finished finding files in %d of %d classes.' % (
-    #             label_index, len(labels)))
-    #     label_index += 1
+    for text in unique_labels:
+        jpeg_file_path = '%s/%s/*' % (data_dir, text)
+        matching_files = tf.gfile.Glob(jpeg_file_path)
 
-    for file in os.listdir(data_dir):
-        if os.path.isdir(os.path.join(data_dir, file)):
-            filenames.append(os.path.join(data_dir, file, 'image', 'vertical.png'))
+        labels.extend([label_index] * len(matching_files))
+        texts.extend([text] * len(matching_files))
+        filenames.extend(matching_files)
 
-            with open(os.path.join(data_dir, file, 'label', 'multilabel.txt'), 'r') as multilabel_file:
-                each_text_array = []
-                each_label_array = []
-                each_text_array.append("Background")
-                each_label_array.append(0.0)
-                for line in multilabel_file.readlines():
-                    if len(line.split('\t')) > 1:
-                        split = line.split('\t')
-                        each_text_array.append(split[0][:-1])
-                        each_label_array.append(float(split[1]))
-
-            texts.append(each_text_array)
-            labels.append(each_label_array)
+        if not label_index % 100:
+            print('Finished finding files in %d of %d classes.' % (
+                label_index, len(labels)))
+        label_index += 1
 
     # Shuffle the ordering of all image files in order to guarantee
     # random ordering of the images with respect to label in the

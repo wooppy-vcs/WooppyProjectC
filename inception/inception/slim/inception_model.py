@@ -45,9 +45,12 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from inception.inception.slim import ops
-from inception.inception.slim import scopes
-
+try:
+    from inception.slim import ops
+    from inception.slim import scopes
+except ImportError:
+    from inception.inception.slim import ops
+    from inception.inception.slim import scopes
 
 def inception_v3(inputs,
                  dropout_keep_prob=0.8,
@@ -326,7 +329,8 @@ def inception_v3(inputs,
                                     restore=restore_logits)
                     # 1000
                     end_points['logits'] = logits
-                    end_points['predictions'] = tf.nn.softmax(logits, name='predictions')
+                    # end_points['predictions'] = tf.nn.softmax(logits, name='predictions')
+                    end_points['predictions'] = tf.nn.sigmoid(logits, name='predictions')
             return logits, end_points
 
 

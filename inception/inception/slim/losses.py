@@ -155,6 +155,11 @@ def cross_entropy_loss(logits, one_hot_labels, label_smoothing=0,
   Returns:
     A tensor with the softmax_cross_entropy loss.
   """
+  # print("losses.py line 158")
+  # print("Shape of logit is: ")
+  # print(logits.get_shape())
+  # print("Shape of label is: ")
+  # print(one_hot_labels.get_shape())
   logits.get_shape().assert_is_compatible_with(one_hot_labels.get_shape())
   with tf.name_scope(scope, 'CrossEntropyLoss', [logits, one_hot_labels]):
     num_classes = one_hot_labels.get_shape()[-1].value
@@ -163,8 +168,11 @@ def cross_entropy_loss(logits, one_hot_labels, label_smoothing=0,
       smooth_positives = 1.0 - label_smoothing
       smooth_negatives = label_smoothing / num_classes
       one_hot_labels = one_hot_labels * smooth_positives + smooth_negatives
-    cross_entropy = tf.contrib.nn.deprecated_flipped_softmax_cross_entropy_with_logits(
-        logits, one_hot_labels, name='xentropy')
+    # cross_entropy = tf.contrib.nn.deprecated_flipped_softmax_cross_entropy_with_logits(
+    #     logits, one_hot_labels, name='xentropy')
+
+    cross_entropy = tf.nn.sigmoid_cross_entropy_with_logits(
+        logits=logits, labels=one_hot_labels, name='xentropy')
 
     weight = tf.convert_to_tensor(weight,
                                   dtype=logits.dtype.base_dtype,

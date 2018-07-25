@@ -82,12 +82,12 @@ tf.app.flags.DEFINE_string('validation_directory', '/tmp/',
 tf.app.flags.DEFINE_string('output_directory', '/tmp/',
                            'Output data directory')
 
-tf.app.flags.DEFINE_integer('train_shards', 1,
+tf.app.flags.DEFINE_integer('train_shards', 2,
                             'Number of shards in training TFRecord files.')
-tf.app.flags.DEFINE_integer('validation_shards', 1,
+tf.app.flags.DEFINE_integer('validation_shards', 2,
                             'Number of shards in validation TFRecord files.')
 
-tf.app.flags.DEFINE_integer('num_threads', 1,
+tf.app.flags.DEFINE_integer('num_threads', 2,
                             'Number of threads to preprocess the images.')
 
 # The labels file contains a list of valid labels are held in this file.
@@ -109,17 +109,9 @@ def _int64_feature(value):
     return tf.train.Feature(int64_list=tf.train.Int64List(value=value))
 
 
-def _float_feature(value):
-    if not isinstance(value, list):
-        value = [value]
-    return tf.train.Feature(float_list=tf.train.FloatList(value=value))
-
-
 def _bytes_feature(value):
     """Wrapper for inserting bytes features into Example proto."""
-    if not isinstance(value, list):
-        value = [value]
-    return tf.train.Feature(bytes_list=tf.train.BytesList(value=value))
+    return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
 
 
 def _convert_to_example(filename, image_buffer, label, text, height, width):
@@ -145,10 +137,8 @@ def _convert_to_example(filename, image_buffer, label, text, height, width):
         'image/width': _int64_feature(width),
         'image/colorspace': _bytes_feature(tf.compat.as_bytes(colorspace)),
         'image/channels': _int64_feature(channels),
-        # 'image/class/label': _int64_feature(label),
-        'image/class/label': _float_feature(label),
-        # 'image/class/text': _bytes_feature(tf.compat.as_bytes(text)),
-        'image/class/text': _bytes_feature([tf.compat.as_bytes(i) for i in text]),
+        'image/class/label': _int64_feature(label),
+        'image/class/text': _bytes_feature(tf.compat.as_bytes(text)),
         'image/format': _bytes_feature(tf.compat.as_bytes(image_format)),
         'image/filename': _bytes_feature(tf.compat.as_bytes(os.path.basename(filename))),
         'image/encoded': _bytes_feature(tf.compat.as_bytes(image_buffer))}))
@@ -403,12 +393,10 @@ def _find_image_files(data_dir, labels_file):
             with open(os.path.join(data_dir, file, 'label', 'multilabel.txt'), 'r') as multilabel_file:
                 each_text_array = []
                 each_label_array = []
-                each_text_array.append("Background")
-                each_label_array.append(0.0)
-                for line in multilabel_file.readlines():
+                for line in multilabel_file.readline():
                     if len(line.split('\t')) > 1:
                         split = line.split('\t')
-                        each_text_array.append(split[0][:-1])
+                        each_text_array.append(split[0])
                         each_label_array.append(float(split[1]))
 
             texts.append(each_text_array)

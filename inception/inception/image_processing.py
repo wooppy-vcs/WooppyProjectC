@@ -44,11 +44,15 @@ import tensorflow as tf
 
 FLAGS = tf.app.flags.FLAGS
 
-tf.app.flags.DEFINE_integer('batch_size', 32,
+tf.app.flags.DEFINE_integer('batch_size', 1,
                             """Number of images to process in a batch.""")
-tf.app.flags.DEFINE_integer('image_height', 299,
+# tf.app.flags.DEFINE_integer('image_height', 299,
+#                             """Provide square images of this size.""")
+# tf.app.flags.DEFINE_integer('image_width', 299,
+#                             """Provide square images of this size.""")
+tf.app.flags.DEFINE_integer('image_height', 2808,
                             """Provide square images of this size.""")
-tf.app.flags.DEFINE_integer('image_width', 299,
+tf.app.flags.DEFINE_integer('image_width', 1024,
                             """Provide square images of this size.""")
 tf.app.flags.DEFINE_integer('num_preprocess_threads', 4,
                             """Number of preprocessing threads per tower. """
@@ -260,7 +264,7 @@ def distort_image(image, height, width, bbox, thread_id=0, scope=None):
         distorted_image = tf.image.resize_images(distorted_image, [height, width],
                                                  method=resize_method)
         # Restore the shape since the dynamic slice based upon the bbox_size loses
-        # the third dimension.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    # the third dimension.
         distorted_image.set_shape([height, width, 3])
         if not thread_id:
             tf.summary.image('cropped_resized_image',
@@ -294,6 +298,7 @@ def eval_image(image, height, width, scope=None):
         # Crop the central region of the image with an area containing 87.5% of
         # the original image.
         image = tf.image.central_crop(image, central_fraction=0.875)
+        # image = tf.image.central_crop(image, central_fraction=1)
 
         # Resize the image to the expected height and width for the neural network
         image = tf.expand_dims(image, 0)    # add an additional dimension so that it can be passed into resize_bilinear
@@ -374,13 +379,21 @@ def parse_example_proto(example_serialized):
     text: Tensor tf.string containing the human-readable label.
   """
     # Dense features in Example proto.
+    # feature_map = {
+    #     'image/encoded': tf.FixedLenFeature([], dtype=tf.string,
+    #                                         default_value=''),
+    #     'image/class/label': tf.FixedLenFeature([1], dtype=tf.int64,
+    #                                             default_value=-1),
+    #     'image/class/text': tf.FixedLenFeature([], dtype=tf.string,
+    #                                            default_value=''),
+    # }
     feature_map = {
         'image/encoded': tf.FixedLenFeature([], dtype=tf.string,
                                             default_value=''),
-        'image/class/label': tf.FixedLenFeature([1], dtype=tf.int64,
-                                                default_value=-1),
-        'image/class/text': tf.FixedLenFeature([], dtype=tf.string,
-                                               default_value=''),
+        'image/class/label': tf.FixedLenFeature([13], dtype=tf.float32,),
+                                                # default_value=-1),
+        'image/class/text': tf.FixedLenFeature([13], dtype=tf.string,)
+                                               # default_value=''),
     }
     sparse_float32 = tf.VarLenFeature(dtype=tf.float32)
     # Sparse features in Example proto.
@@ -390,8 +403,10 @@ def parse_example_proto(example_serialized):
                                      'image/object/bbox/xmax',
                                      'image/object/bbox/ymax']})
 
+    # i think this is the place where data is extracted from tfrecord into exact label and stuff, and put into features
     features = tf.parse_single_example(example_serialized, feature_map)
-    label = tf.cast(features['image/class/label'], dtype=tf.int32)
+    # label = tf.cast(features['image/class/label'], dtype=tf.int32)
+    label = tf.cast(features['image/class/label'], dtype=tf.float32)
 
     xmin = tf.expand_dims(features['image/object/bbox/xmin'].values, 0)
     ymin = tf.expand_dims(features['image/object/bbox/ymin'].values, 0)
@@ -491,9 +506,9 @@ def batch_inputs(dataset, batch_size, train, num_preprocess_threads=None,
         images_and_labels = []
         for thread_id in range(num_preprocess_threads):
             # Parse a serialized Example proto to extract the image and metadata.
-            image_buffer, label_index, bbox, _ = parse_example_proto(
-                example_serialized)
-            image = image_preprocessing(image_buffer, bbox, train, thread_id)
+            image_buffer, label_index, bbox, _ = parse_example_proto(example_serialized)
+            # image = image_preprocessing(image_buffer, bbox, train, thread_id)
+            image = image_preprocessing(image_buffer, [], train, thread_id)
             images_and_labels.append([image, label_index])
 
         images, label_index_batch = tf.train.batch_join(
@@ -501,6 +516,9 @@ def batch_inputs(dataset, batch_size, train, num_preprocess_threads=None,
             batch_size=batch_size,
             capacity=2 * num_preprocess_threads * batch_size)
 
+        # print("image_processing.py line 513:")
+        # print("shape of label_index_batch is: ")
+        # print(label_index_batch.get_shape())
         # Reshape images into these desired dimensions.
         height = FLAGS.image_height
         width = FLAGS.image_width
@@ -512,4 +530,8 @@ def batch_inputs(dataset, batch_size, train, num_preprocess_threads=None,
         # Display the training images in the visualizer.
         tf.summary.image('images', images)
 
-        return images, tf.reshape(label_index_batch, [batch_size])
+        # print("image_processing.py line 527:")
+        # print("shape of reshaped label_index_batch is: ")
+        # x = tf.reshape(label_index_batch, [batch_size, 13])
+        # print(x.get_shape())
+        return images, tf.reshape(label_index_batch, [batch_size, 13])

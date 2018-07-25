@@ -1,3 +1,192 @@
+<!--<!doctype html>-->
+<!--<html>-->
+
+<!--<head>-->
+    <!--<title>CNN CV Categorizer</title>-->
+    <!--<meta charset="utf-8"/>-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1"/>-->
+    <!--<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"/>-->
+    <!--<script src="assets/js/Chart.js"></script>-->
+    <!--<style>-->
+        <!--.custom-file-upload {-->
+            <!--border: 1px solid #ccc;-->
+            <!--display: inline-block;-->
+            <!--padding: 6px 12px;-->
+            <!--cursor: pointer;-->
+        <!--}-->
+
+        <!--.image {-->
+            <!--margin: auto;-->
+            <!--max-width: 100%;-->
+            <!--max-height: 100%;-->
+        <!--}-->
+
+        <!--.imagepreview {-->
+            <!--display: flex;-->
+            <!--height: 300px;-->
+            <!--width: 300px;-->
+            <!--margin: auto;-->
+        <!--}-->
+
+    <!--</style>-->
+<!--</head>-->
+<!--<title>Results</title>-->
+
+<!--<body>-->
+<!--<section id="banner">-->
+    <!--<h1>Wooppy CV Inferrer V1.0</h1>-->
+    <!--<p>Upload a CV in PDF form we will categorize it!</p>-->
+<!--</section>-->
+<!--<section id="one" class="wrapper">-->
+    <!--<div class="inner">-->
+                <!--<div class="flex flex-3">-->
+        <!--{% for result in result_json %}-->
+            <!--<article>-->
+                <!--<h3>{{ result["model"] }}:</h3>-->
+                <!--<table>-->
+                  <!--<tr>-->
+                    <!--<th>Category</th>-->
+                    <!--<th>Probability</th>-->
+                  <!--</tr>-->
+                    <!--{% for pair in result["data"]["All classes"] %}-->
+                    <!--<tr>-->
+                    <!--<td>{{ pair["category"] }}</td>-->
+                    <!--<td>{{ "%.2f" | format(pair["probability"]|float()*100) }}%</td>-->
+                        <!--{% endfor %}-->
+                    <!--</tr>-->
+                <!--</table>-->
+                <!--<div>-->
+                    <!--{% if result["model"] == "Text" %}-->
+                        <!--<h4>{{ original_string }}</h4>-->
+                    <!--{% elif result["model"] == "Image" %}-->
+                        <!--<div class="imagepreview">-->
+                            <!--&lt;!&ndash;<img class="image" id="image" src="{{ file }}">&ndash;&gt;-->
+                            <!--<img class="image" id="image" src="{{ url_for('uploaded_file', folder_id=folder_id) }}">-->
+                        <!--</div>-->
+                    <!--{% endif %}-->
+                <!--</div>-->
+            <!--</article>-->
+        <!--{% endfor %}-->
+                <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
+<!--<section>-->
+
+<!--<canvas id="myChart" width="800" height="400"></canvas>-->
+    <!--<script>-->
+    <!--&lt;!&ndash;var result_json_js = [{"data": {"1st Prediction": {"category": "Mobile Phones", "probability": "0.0718"}, "2nd Prediction": {"category": "Others", "probability": "0.0717"}, "3rd Prediction": {"category": "Cables \u0026 Charges", "probability": "0.0716"}, "All classes": [{"category": "Mobile Phones", "probability": "0.0718"}, {"category": "Others", "probability": "0.0717"}, {"category": "Cables \u0026 Charges", "probability": "0.0716"}, {"category": "Cool Gadgets", "probability": "0.0716"}, {"category": "Audio", "probability": "0.0716"}, {"category": "Selfie Accessories", "probability": "0.0716"}, {"category": "Camera \u0026 Accessories", "probability": "0.0714"}, {"category": "Cases \u0026 Covers", "probability": "0.0714"}, {"category": "Wearables", "probability": "0.0714"}, {"category": "Storage \u0026 Memory Cards", "probability": "0.0714"}, {"category": "Mobile Car Accessories", "probability": "0.0714"}, {"category": "Screen Protectors", "probability": "0.0712"}, {"category": "Tablets", "probability": "0.0710"}, {"category": "Powerbanks \u0026 Batteries", "probability": "0.0709"}]}, "model": "Text"}];&ndash;&gt;-->
+    <!--var result_json_js = {{result_json| tojson}}-->
+    <!--console.log(result_json_js[0]["data"]["All classes"]);-->
+    <!--for (var i = 0; i < result_json_js.length; i++){-->
+        <!--console.log(result_json_js[i]["model"]);-->
+        <!--var probabilityList = [];-->
+        <!--var labelList = [];-->
+        <!--&lt;!&ndash;for (pair in result_json_js[i]["data"]["All classes"]){&ndash;&gt;-->
+        <!--for (var j = 0; j < result_json_js[i]["data"]["All classes"].length; j++){-->
+            <!--&lt;!&ndash;probabilityList.push(parseFloat(pair["probability"]));&ndash;&gt;-->
+            <!--probabilityList.push(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));-->
+            <!--labelList.push(result_json_js[i]["data"]["All classes"][j]["category"])-->
+            <!--console.log(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));-->
+        <!--}-->
+    <!--}-->
+
+    <!--var ctx = document.getElementById("myChart").getContext('2d');-->
+		<!--var purple_orange_gradient = ctx.createLinearGradient(0, 0, 0, 600);-->
+      <!--purple_orange_gradient.addColorStop(0, 'yellow');-->
+			<!--&lt;!&ndash; purple_orange_gradient.addColorStop(0.25, 'cyan'); &ndash;&gt;-->
+      <!--&lt;!&ndash; purple_orange_gradient.addColorStop(0.5, 'green'); &ndash;&gt;-->
+      <!--&lt;!&ndash; purple_orange_gradient.addColorStop(0.75, 'yellow'); &ndash;&gt;-->
+      <!--purple_orange_gradient.addColorStop(1, 'red');-->
+
+    <!--console.log("fsdfdsf");-->
+    <!--for(x in probabilityList){-->
+    <!--}-->
+    <!--var myChart = new Chart(ctx, {-->
+        <!--type: 'bar',-->
+        <!--data: {-->
+       			<!--&lt;!&ndash;labels : ["Others","Storage & Memory Cards", "Tablets", "Screen Protectors","Cool Gadgets","Cables & Charges","Mobile Phones","Cases & Covers","Mobile Car Accessories","Wearables","Audio","Powerbanks & Batteries","Camera & Accessories", "Selfie Accessories"],&ndash;&gt;-->
+                <!--labels : labelList,-->
+            <!--datasets: [{-->
+                <!--&lt;!&ndash; label: '# of Votes', &ndash;&gt;-->
+
+                <!--data: probabilityList,-->
+
+                <!--&lt;!&ndash; backgroundColor : "rgba(255, 99, 132, 0.2)", &ndash;&gt;-->
+                <!--backgroundColor : purple_orange_gradient,-->
+                <!--borderColor: [-->
+                    <!--'rgba(255,99,132,1)',-->
+                    <!--'rgba(54, 162, 235, 1)',-->
+                    <!--'rgba(255, 206, 86, 1)',-->
+                    <!--'rgba(75, 192, 192, 1)',-->
+                    <!--'rgba(153, 102, 255, 1)',-->
+                    <!--'rgba(255, 159, 64, 1)',-->
+                    <!--'rgba(255,99,132,1)',-->
+                    <!--'rgba(54, 162, 235, 1)',-->
+                    <!--'rgba(255, 206, 86, 1)',-->
+                    <!--'rgba(75, 192, 192, 1)',-->
+                    <!--'rgba(153, 102, 255, 1)',-->
+                    <!--'rgba(255, 159, 64, 1)',-->
+                    <!--'rgba(153, 102, 255, 1)',-->
+                    <!--'rgba(255, 159, 64, 1)'-->
+                <!--],-->
+                <!--borderWidth: 0-->
+            <!--}]-->
+        <!--},-->
+        <!--options: {-->
+            <!--responsive : false,-->
+            <!--animation: {-->
+                <!--duration:5000-->
+            <!--},-->
+            <!--scales: {-->
+                <!--yAxes: [{-->
+                    <!--ticks: {-->
+                        <!--beginAtZero:true,-->
+                        <!--autoSkip: false,-->
+                    		<!--maxRotation: 90,-->
+                    		<!--minRotation: 90-->
+                    <!--},-->
+                    <!--scaleLabel: {-->
+                        <!--display: true,-->
+                        <!--labelString: 'Probability'-->
+     							 <!--}-->
+                <!--}],-->
+                <!--xAxes: [{-->
+                    <!--gridLines: {-->
+                    		<!--display:false-->
+               		  <!--},-->
+                    <!--ticks: {-->
+                        <!--beginAtZero:true,-->
+                        <!--autoSkip: false,-->
+                    		<!--maxRotation: 60,-->
+                    		<!--minRotation: 60-->
+                    <!--},-->
+                    <!--scaleLabel: {-->
+                        <!--display: true,-->
+                        <!--labelString: 'Categories'-->
+     							 <!--}-->
+                <!--}],-->
+            <!--},-->
+            <!--title: {-->
+                <!--display: true,-->
+                <!--text: 'Probabilities for result["model"]'-->
+            <!--},-->
+            <!--legend : {-->
+                <!--display : false-->
+             <!--}-->
+        <!--}-->
+    <!--});-->
+
+
+    <!--</script>-->
+
+<!--</section>-->
+
+
+
+<!--</body>-->
+
+<!--</html>-->
+
 <!doctype html>
 <html>
 
@@ -7,6 +196,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"/>
     <script src="assets/js/Chart.js"></script>
+    <!--<script src="assets/js/Chart.HeatMap.S.js"></script>-->
     <style>
         .custom-file-upload {
             border: 1px solid #ccc;
@@ -37,6 +227,170 @@
     <h1>Wooppy Category Inferrer V1.1</h1>
     <p>Upload a file and/or header and we will categorize it!</p>
 </section>
+
+<section id="two" class="wrapper">
+    <div class = "inner">
+            <h2>Results</h2>
+             <article>
+                 <script src="assets/js/Chart.HeatMap.S.js"></script>
+                <canvas id='{{ index|length }}' width="1400" height="600"></canvas>
+                <script>
+                var result_json_js = {{result_json| tojson}}
+                console.log(result_json_js[0]["data"]["All classes"]);
+                    var i = {{ index|length }}
+                    console.log(result_json_js[i]["model"]);
+                    var model = ''
+                    var probabilityList = [];
+                    var probabilityListOverall = [];
+                    var probabilityListText = [];
+                    var probabilityListImage = [];
+
+                    <!--var labelList = ["Others","Storage & Memory Cards", "Tablets", "Screen Protectors","Cool Gadgets","Cables & Charges","Mobile Phones","Cases & Covers","Mobile Car Accessories","Wearables","Audio","Powerbanks & Batteries","Camera & Accessories", "Selfie Accessories"];-->
+                    var labelList = ["Administration","Audit","Finance and Accounting","Health and Safety","Human Resources","IT","Legal","Operations / Consulting / Manufacturing","Others","Sales and Marketing","Strategy and Business Development","Training and Learning"];
+
+                    var labelprobabilitydict = {};
+                    var labelprobabilitydictOverall = {};
+                    var labelprobabilitydictText = {};
+                    var labelprobabilitydictImage = {};
+
+
+                    for (var j = 0; j < result_json_js[i]["data"]["All classes"].length; j++){
+                        model = result_json_js[i]["model"];
+                        labelprobabilitydictOverall[result_json_js[0]["data"]["All classes"][j]["category"]] = result_json_js[0]["data"]["All classes"][j]["probability"]
+                        labelprobabilitydictText[result_json_js[1]["data"]["All classes"][j]["category"]] = result_json_js[1]["data"]["All classes"][j]["probability"]
+                        labelprobabilitydictImage[result_json_js[2]["data"]["All classes"][j]["category"]] = result_json_js[2]["data"]["All classes"][j]["probability"]
+                        console.log(result_json_js[0]["data"]["All classes"][j]["category"])
+                        console.log(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));
+                    }
+                    console.log("fsdfsdf");
+                    for (var j = 0; j < labelList.length; j++){
+                        probabilityList.push(Math.floor(labelprobabilitydict[labelList[j]]*100));
+                        probabilityListOverall.push(Math.floor(labelprobabilitydictOverall[labelList[j]]*100));
+                        probabilityListText.push(Math.floor(labelprobabilitydictText[labelList[j]]*100));
+                        probabilityListImage.push(Math.floor(labelprobabilitydictImage[labelList[j]]*100));
+                        console.log(labelprobabilitydictOverall[labelList[j]]);
+                    }
+                    console.log(probabilityListOverall);
+                    var data = {
+                      labels : labelList,
+                      datasets : [
+                        {
+                          label: 'Overall',
+                          data: probabilityListOverall
+                        },
+                        {
+                          label: 'Text',
+                          data: probabilityListText
+                        },
+                        {
+                          label: 'Image',
+                          data: probabilityListImage
+                        }
+
+
+                      ]
+                    };
+
+                    var options = {
+                        // String - background color for graph
+                        backgroundColor: '#eee',
+
+                        // Boolean - whether each box in the dataset is outlined
+                        stroke: false,
+
+                        // Number - width of the outline stroke.
+                        strokePerc: 0.05,
+
+                        // String - the outline stroke color.
+                        strokeColor: "rgb(128,128,128)",
+
+                        // String - the outline stroke highlight color.
+                        highlightStrokeColor: "rgb(192,192,192)",
+
+                        // Boolean - whether to draw the heat map boxes with rounded corners
+                        rounded: true,
+
+                        // Number - the radius (as a percentage of size) of the rounded corners
+                        roundedRadius: 0.1,
+
+                        // Number - padding between heat map boxes (as a percentage of box size)
+                        paddingScale: 0.05,
+
+                        // String - "gradient", "palette"
+                        colorInterpolation: "gradient",
+
+                        // Array[String] - the colors used for the active color scheme.
+                        // Any number of colors is allowed.
+                        <!--colors: [ "rgba(220,220,220,0.9)", "rgba(151,187,205,0.9)"],-->
+                        colors: ['red','yellow','green'],
+
+                        // Boolean - whether boxes change color on hover.
+                        colorHighlight: true,
+
+                        // Number - a floating point value which specifies how much lighter or
+                        // darker a color becomes when hovered, where 1 is no change,
+                        // 0.9 is slightly darker, and 1.1 is slightly lighter.
+                        colorHighlightMultiplier: 0.92,
+
+                        // Boolean - Whether to draw labels on the boxes
+                        showLabels: true,
+
+                        // Number - the font size of the label as percentage of box height
+                        labelScale: 0.2,
+
+                        // String - label font family
+                        labelFontFamily: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
+
+                        // String - label font style
+                        labelFontStyle: "normal",
+
+                        // String - label font color
+                        labelFontColor: "rgba(0,0,0,0.5)",
+
+                        // String - tooltipTemplate
+                        tooltipTemplate: "<%= xLabel %> | <%= yLabel %> : <%= value %>",
+
+                        // String - template for legend generation
+                        legendTemplate : '<div class="<%= name.toLowerCase() %>-legend">'+
+                                '<span class="<%= name.toLowerCase() %>-legend-text">'+
+                                '<%= min %>'+
+                                '</span>'+
+                                '<% for (var i = min; i <= max; i += (max-min)/6){ %>'+ // change 6 to number of divisions required
+                                '<span class="<%= name.toLowerCase() %>-legend-box" style="background-color: <%= colorManager.getColor(i).color %>;">  </span>'+
+                                '<% } %>'+
+                                '<span class="<%= name.toLowerCase() %>-legend-text">'+
+                                '<%= max %>'+
+                                '</span>'+
+                                '</div>'
+                    };
+
+                    var ctx = document.getElementById('{{ index|length }}').getContext('2d');
+                    var newChart = new Chart(ctx).HeatMap(data, options);
+
+                </script>
+
+                 <!--<div class="<%= name.toLowerCase() %>-legend">-->
+                     <!--<span class="<%= name.toLowerCase() %>-legend-text"><%= min %></span>-->
+                     <!--<% for (var i = min; i <= max; i += (max-min)/6){ %>-->
+                        <!--<span class="<%= name.toLowerCase() %>-legend-box" style="background-color:-->
+                     <!--<%= colorManager.getColor(i).color %>;">-->
+                        <!--</span><% } %>-->
+                     <!--<span class="<%= name.toLowerCase() %>-legend-text"><%= max %></span>-->
+                 <!--</div>-->
+
+                <!--<div class="<%= name.toLowerCase() %>-legend">-->
+                     <!--<span class="<%= name.toLowerCase() %>-legend-text"><%= 0 %></span>-->
+                     <!--<% for (var i = 0; i <= 1; i += (1-0)/6){ %>-->
+                        <!--<span class="<%= name.toLowerCase() %>-legend-box" style="background-color:-->
+                     <!--<%= colorManager.getColor(i).color %>;">-->
+                        <!--</span><% } %>-->
+                     <!--<span class="<%= name.toLowerCase() %>-legend-text"><%= 1 %></span>-->
+                <!--</div>-->
+
+            </article>
+    </div>
+</section>
+
 <section id="one" class="wrapper">
     <div class="inner">
                 <div class="flex flex-3">
@@ -60,7 +414,8 @@
                         <h4>{{ original_string }}</h4>
                     {% elif result["model"] == "Image" %}
                         <div class="imagepreview">
-                            <img class="image" id="image" src="{{ file }}">
+                            <!--<img class="image" id="image" src="{{ file }}">-->
+                            <img class="image" id="image" src="{{ url_for('uploaded_file', folder_id=folder_id) }}">
                         </div>
                     {% endif %}
                 </div>
@@ -69,118 +424,140 @@
                 </div>
     </div>
 </section>
-<section>
 
-<canvas id="myChart" width="800" height="400"></canvas>
-    <script>
-    <!--var result_json_js = [{"data": {"1st Prediction": {"category": "Mobile Phones", "probability": "0.0718"}, "2nd Prediction": {"category": "Others", "probability": "0.0717"}, "3rd Prediction": {"category": "Cables \u0026 Charges", "probability": "0.0716"}, "All classes": [{"category": "Mobile Phones", "probability": "0.0718"}, {"category": "Others", "probability": "0.0717"}, {"category": "Cables \u0026 Charges", "probability": "0.0716"}, {"category": "Cool Gadgets", "probability": "0.0716"}, {"category": "Audio", "probability": "0.0716"}, {"category": "Selfie Accessories", "probability": "0.0716"}, {"category": "Camera \u0026 Accessories", "probability": "0.0714"}, {"category": "Cases \u0026 Covers", "probability": "0.0714"}, {"category": "Wearables", "probability": "0.0714"}, {"category": "Storage \u0026 Memory Cards", "probability": "0.0714"}, {"category": "Mobile Car Accessories", "probability": "0.0714"}, {"category": "Screen Protectors", "probability": "0.0712"}, {"category": "Tablets", "probability": "0.0710"}, {"category": "Powerbanks \u0026 Batteries", "probability": "0.0709"}]}, "model": "Text"}];-->
-    var result_json_js = {{result_json| tojson}}
-    console.log(result_json_js[0]["data"]["All classes"]);
-    for (var i = 0; i < result_json_js.length; i++){
-        console.log(result_json_js[i]["model"]);
-        var probabilityList = [];
-        var labelList = [];
-        <!--for (pair in result_json_js[i]["data"]["All classes"]){-->
-        for (var j = 0; j < result_json_js[i]["data"]["All classes"].length; j++){
-            <!--probabilityList.push(parseFloat(pair["probability"]));-->
-            probabilityList.push(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));
-            labelList.push(result_json_js[i]["data"]["All classes"][j]["category"])
-            console.log(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));
-        }
-    }
+<!--<section id="three" class="wrapper">-->
+    <!--<div class = "inner">-->
+        <!--&lt;!&ndash;<div class = "flex flex-3">&ndash;&gt;-->
+            <!--<h1>CV bar chart</h1>-->
+            <!--{% set index = [] %}-->
+            <!--{% for result in result_json %}-->
 
-    var ctx = document.getElementById("myChart").getContext('2d');
-		var purple_orange_gradient = ctx.createLinearGradient(0, 0, 0, 600);
-      purple_orange_gradient.addColorStop(0, 'yellow');
-			<!-- purple_orange_gradient.addColorStop(0.25, 'cyan'); -->
-      <!-- purple_orange_gradient.addColorStop(0.5, 'green'); -->
-      <!-- purple_orange_gradient.addColorStop(0.75, 'yellow'); -->
-      purple_orange_gradient.addColorStop(1, 'red');
+             <!--<article>-->
+                <!--<canvas id='{{ index|length }}' width="400" height="400"></canvas>-->
+                <!--<script>-->
+                <!--&lt;!&ndash;var result_json_js = [{"data": {"1st Prediction": {"category": "Mobile Phones", "probability": "0.0718"}, "2nd Prediction": {"category": "Others", "probability": "0.0717"}, "3rd Prediction": {"category": "Cables \u0026 Charges", "probability": "0.0716"}, "All classes": [{"category": "Mobile Phones", "probability": "0.0718"}, {"category": "Others", "probability": "0.0717"}, {"category": "Cables \u0026 Charges", "probability": "0.0716"}, {"category": "Cool Gadgets", "probability": "0.0716"}, {"category": "Audio", "probability": "0.0716"}, {"category": "Selfie Accessories", "probability": "0.0716"}, {"category": "Camera \u0026 Accessories", "probability": "0.0714"}, {"category": "Cases \u0026 Covers", "probability": "0.0714"}, {"category": "Wearables", "probability": "0.0714"}, {"category": "Storage \u0026 Memory Cards", "probability": "0.0714"}, {"category": "Mobile Car Accessories", "probability": "0.0714"}, {"category": "Screen Protectors", "probability": "0.0712"}, {"category": "Tablets", "probability": "0.0710"}, {"category": "Powerbanks \u0026 Batteries", "probability": "0.0709"}]}, "model": "Text"}];&ndash;&gt;-->
+                <!--var result_json_js = {{result_json| tojson}}-->
+                <!--console.log(result_json_js[0]["data"]["All classes"]);-->
+                    <!--var i = {{ index|length }}-->
+                    <!--console.log(result_json_js[i]["model"]);-->
+                    <!--var model = ''-->
+                    <!--var probabilityList = [];-->
+                    <!--var labelList = ["Others","Storage & Memory Cards", "Tablets", "Screen Protectors","Cool Gadgets","Cables & Charges","Mobile Phones","Cases & Covers","Mobile Car Accessories","Wearables","Audio","Powerbanks & Batteries","Camera & Accessories", "Selfie Accessories"];-->
+                    <!--var labelprobabilitydict = {};-->
 
-    console.log("fsdfdsf");
-    for(x in probabilityList){
-    }
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-       			<!--labels : ["Others","Storage & Memory Cards", "Tablets", "Screen Protectors","Cool Gadgets","Cables & Charges","Mobile Phones","Cases & Covers","Mobile Car Accessories","Wearables","Audio","Powerbanks & Batteries","Camera & Accessories", "Selfie Accessories"],-->
-                labels : labelList,
-            datasets: [{
-                <!-- label: '# of Votes', -->
+                    <!--&lt;!&ndash;for (pair in result_json_js[i]["data"]["All classes"]){&ndash;&gt;-->
+                    <!--for (var j = 0; j < result_json_js[i]["data"]["All classes"].length; j++){-->
+                        <!--&lt;!&ndash;probabilityList.push(parseFloat(pair["probability"]));&ndash;&gt;-->
+                        <!--model = result_json_js[i]["model"];-->
+                        <!--&lt;!&ndash;probabilityList.push(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"])*100);&ndash;&gt;-->
+                        <!--&lt;!&ndash;labelList.push(result_json_js[i]["data"]["All classes"][j]["category"])&ndash;&gt;-->
+                        <!--labelprobabilitydict[result_json_js[i]["data"]["All classes"][j]["category"]] = result_json_js[i]["data"]["All classes"][j]["probability"]-->
+                        <!--console.log(parseFloat(result_json_js[i]["data"]["All classes"][j]["probability"]));-->
+                    <!--}-->
 
-                data: probabilityList,
-
-                <!-- backgroundColor : "rgba(255, 99, 132, 0.2)", -->
-                backgroundColor : purple_orange_gradient,
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive : false,
-            animation: {
-                duration:5000
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true,
-                        autoSkip: false,
-                    		maxRotation: 90,
-                    		minRotation: 90
-                    },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Probability'
-     							 }
-                }],
-                xAxes: [{
-                    gridLines: {
-                    		display:false
-               		  },
-                    ticks: {
-                        beginAtZero:true,
-                        autoSkip: false,
-                    		maxRotation: 60,
-                    		minRotation: 60
-                    },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Categories'
-     							 }
-                }],
-            },
-            title: {
-                display: true,
-                text: 'Probabilities for result["model"]'
-            },
-            legend : {
-                display : false
-             }
-        }
-    });
+                    <!--for (var j = 0; j < labelList.length; j++){-->
+                        <!--probabilityList.push(labelprobabilitydict[labelList[j]]*100);-->
+                    <!--}-->
 
 
-    </script>
+                <!--var ctx = document.getElementById('{{ index|length  }}').getContext('2d');-->
+                    <!--var purple_orange_gradient = ctx.createLinearGradient(0, 0, 600, 0);-->
+                  <!--purple_orange_gradient.addColorStop(0, 'yellow');-->
+                        <!--&lt;!&ndash; purple_orange_gradient.addColorStop(0.25, 'cyan'); &ndash;&gt;-->
+                  <!--&lt;!&ndash; purple_orange_gradient.addColorStop(0.5, 'green'); &ndash;&gt;-->
+                  <!--&lt;!&ndash; purple_orange_gradient.addColorStop(0.75, 'yellow'); &ndash;&gt;-->
+                  <!--purple_orange_gradient.addColorStop(1, 'red');-->
 
-</section>
+                <!--var myChart = new Chart(ctx, {-->
+                    <!--type: 'horizontalBar',-->
+                    <!--&lt;!&ndash;type: 'bar',&ndash;&gt;-->
+                    <!--data: {-->
+                            <!--&lt;!&ndash;labels : ["Others","Storage & Memory Cards", "Tablets", "Screen Protectors","Cool Gadgets","Cables & Charges","Mobile Phones","Cases & Covers","Mobile Car Accessories","Wearables","Audio","Powerbanks & Batteries","Camera & Accessories", "Selfie Accessories"],&ndash;&gt;-->
+                            <!--labels : labelList,-->
+                        <!--datasets: [{-->
+                            <!--&lt;!&ndash; label: '# of Votes', &ndash;&gt;-->
+
+                            <!--data: probabilityList,-->
+
+                            <!--&lt;!&ndash; backgroundColor : "rgba(255, 99, 132, 0.2)", &ndash;&gt;-->
+                            <!--backgroundColor : purple_orange_gradient,-->
+                            <!--borderColor: [-->
+                                <!--'rgba(255,99,132,1)',-->
+                                <!--'rgba(54, 162, 235, 1)',-->
+                                <!--'rgba(255, 206, 86, 1)',-->
+                                <!--'rgba(75, 192, 192, 1)',-->
+                                <!--'rgba(153, 102, 255, 1)',-->
+                                <!--'rgba(255, 159, 64, 1)',-->
+                                <!--'rgba(255,99,132,1)',-->
+                                <!--'rgba(54, 162, 235, 1)',-->
+                                <!--'rgba(255, 206, 86, 1)',-->
+                                <!--'rgba(75, 192, 192, 1)',-->
+                                <!--'rgba(153, 102, 255, 1)',-->
+                                <!--'rgba(255, 159, 64, 1)',-->
+                                <!--'rgba(153, 102, 255, 1)',-->
+                                <!--'rgba(255, 159, 64, 1)'-->
+                            <!--],-->
+                            <!--borderWidth: 0-->
+                        <!--}]-->
+                    <!--},-->
+                    <!--options: {-->
+                        <!--responsive : false,-->
+                        <!--animation: {-->
+                            <!--duration:5000-->
+                        <!--},-->
+                        <!--scales: {-->
+                            <!--yAxes: [{-->
+                                <!--barPercentage: 1.0,-->
+
+                                <!--ticks: {-->
+                                    <!--&lt;!&ndash;display: false,&ndash;&gt;-->
+                                    <!--beginAtZero:true,-->
+                                    <!--autoSkip: false,-->
+                                    <!--maxRotation: 0,-->
+                                    <!--minRotation: 0-->
+                                <!--},-->
+                                <!--scaleLabel: {-->
+                                    <!--&lt;!&ndash;display: true,&ndash;&gt;-->
+                                    <!--&lt;!&ndash;labelString: 'Categories'&ndash;&gt;-->
+                                             <!--}-->
+                            <!--}],-->
+                            <!--xAxes: [{-->
+                                <!--gridLines: {-->
+                                        <!--display:false-->
+                                  <!--},-->
+                                <!--ticks: {-->
+                                    <!--max : 100,-->
+                                    <!--min : 0,-->
+                                    <!--beginAtZero:true,-->
+                                    <!--autoSkip: false,-->
+                                        <!--maxRotation: 90,-->
+                                        <!--minRotation: 90-->
+                                <!--},-->
+                                <!--scaleLabel: {-->
+                                    <!--display: true,-->
+                                    <!--labelString: 'Probability (%)'-->
+                                <!--}-->
+                            <!--}],-->
+                        <!--},-->
+                        <!--title: {-->
+                            <!--display: true,-->
+                            <!--text: 'Probabilities for ' + model-->
+                        <!--},-->
+                        <!--legend : {-->
+                            <!--display : false-->
+                         <!--}-->
+                    <!--}-->
+                <!--});-->
 
 
+                <!--</script>-->
+
+            <!--</article>-->
+            <!--{% set __ = index.append(1) %}-->
+            <!--{% endfor %}-->
+
+    <!--</div>-->
+<!--</section>-->
 
 </body>
 
